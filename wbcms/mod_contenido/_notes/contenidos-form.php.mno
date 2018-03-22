@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_Recordset1" value="name:id_seccion;datatype:int,name:idioma;datatype:int,name:estatus;datatype:int,name:orden;datatype:int,name:nombre;datatype:string,name:contenido;datatype:blob,name:keywords;datatype:blob,name:description;datatype:blob" />
+	<infoitem key="UD_Recordset2" value="name:nombre_es;datatype:string,name:id_categoria;datatype:int" />
+	<infoitem key="UD_rstbl_secciones_contenido" value="name:categoria;datatype:int,name:estatus;datatype:int,name:orden;datatype:int,name:fecha;datatype:int,name:nombre_es;datatype:int,name:imagen;datatype:int,name:introduccion_es;datatype:int,name:contenido_es;datatype:int,name:keywords_es;datatype:int,name:description_es;datatype:int,name:id_contenido;datatype:int" />
+	<infoitem key="UD_rstbl_secciones" value="name:idioma;datatype:int,name:estatus;datatype:int,name:orden;datatype:int,name:columnas;datatype:int,name:nombre_es;datatype:int,name:contenido_es;datatype:int,name:keywords_es;datatype:int,name:description_es;datatype:int,name:nombre_en;datatype:int,name:contenido_en;datatype:int,name:keywords_en;datatype:int,name:description_en;datatype:int,name:id_seccion;datatype:int" />
+</info>

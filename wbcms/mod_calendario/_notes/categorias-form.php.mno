@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_rstbl_calendario_categorias" value="name:estatus;datatype:int,name:orden;datatype:int,name:categoria;datatype:int,name:icono;datatype:int,name:id_categoria;datatype:int" />
+</info>

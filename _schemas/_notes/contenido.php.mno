@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_Recordset1" value="name:seccion_nombre;datatype:string,name:id_contenido;datatype:int,name:seccion;datatype:int,name:categoria;datatype:int,name:idioma;datatype:int,name:estatus;datatype:int,name:orden;datatype:int,name:fecha;datatype:date,name:nombre;datatype:string,name:imagen;datatype:string,name:introduccion;datatype:blob,name:contenido;datatype:blob,name:keywords;datatype:blob,name:description;datatype:blob,name:categoria_id;datatype:int,name:categoria_nombre;datatype:string,name:seccion_id;datatype:int" />
+</info>

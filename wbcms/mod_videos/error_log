@@ -1,0 +1,5 @@
+[27-Jun-2014 09:19:03 America/El_Salvador] PHP Warning:  Parameter 2 to Trigger_Default_FormValidation() expected to be a reference, value given in /home/kapricho/public_html/includes/tng/tNG.class.php on line 228
+[27-Jun-2014 09:21:18 America/El_Salvador] PHP Warning:  Parameter 2 to Trigger_Default_FormValidation() expected to be a reference, value given in /home/kapricho/public_html/includes/tng/tNG.class.php on line 228
+[27-Jun-2014 09:23:21 America/El_Salvador] PHP Warning:  Parameter 2 to Trigger_Default_FormValidation() expected to be a reference, value given in /home/kapricho/public_html/includes/tng/tNG.class.php on line 228
+[27-Jun-2014 09:25:39 America/El_Salvador] PHP Warning:  Parameter 2 to Trigger_Default_FormValidation() expected to be a reference, value given in /home/kapricho/public_html/includes/tng/tNG.class.php on line 228
+[27-Jun-2014 10:04:28 America/El_Salvador] PHP Warning:  Parameter 2 to Trigger_Default_FormValidation() expected to be a reference, value given in /home/kapricho/public_html/includes/tng/tNG.class.php on line 228

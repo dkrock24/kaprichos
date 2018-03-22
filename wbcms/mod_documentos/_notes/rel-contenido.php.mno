@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_Recordset1" value="name:nombre_es;datatype:string,name:id_documento;datatype:int" />
+	<infoitem key="UD_Recordset2" value="name:estatus;datatype:string,name:id_estatus;datatype:int" />
+	<infoitem key="UD_Recordset3" value="name:estatus;datatype:string,name:id_estatus;datatype:int" />
+	<infoitem key="UD_Recordset4" value="name:nombre_es;datatype:string,name:id_seccion;datatype:int" />
+	<infoitem key="UD_Recordset5" value="name:estatus;datatype:string,name:id_estatus;datatype:int" />
+	<infoitem key="UD_Recordset6" value="name:nombre_es;datatype:string,name:id_categoria;datatype:int" />
+	<infoitem key="UD_Recordset7" value="name:estatus;datatype:string,name:id_estatus;datatype:int" />
+	<infoitem key="UD_Recordset8" value="name:nombre_es;datatype:string,name:id_contenido;datatype:int" />
+	<infoitem key="UD_Recordset9" value="name:estatus;datatype:string,name:id_estatus;datatype:int" />
+	<infoitem key="UD_Recordset10" value="name:titulo_es;datatype:string,name:id_noticia;datatype:int" />
+</info>

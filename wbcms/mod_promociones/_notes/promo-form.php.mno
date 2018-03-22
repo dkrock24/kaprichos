@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_rstbl_promociones" value="name:nombre;datatype:int,name:descripcion;datatype:int,name:imagen;datatype:int,name:estatus;datatype:int,name:id_promocion;datatype:int" />
+	<infoitem key="UD_rscat" value="name:id_categoria;datatype:int,name:superior;datatype:int,name:idioma;datatype:int,name:estatus;datatype:int,name:orden;datatype:int,name:nombre_es;datatype:string,name:nombre_en;datatype:string,name:imagen;datatype:string,name:contenido_es;datatype:blob,name:contenido_en;datatype:blob" />
+</info>

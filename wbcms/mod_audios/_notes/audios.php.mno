@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_Recordset1" value="name:nombre;datatype:string,name:id_categoria;datatype:int" />
+	<infoitem key="UD_Recordset2" value="name:estatus;datatype:string,name:id_estatus;datatype:int" />
+	<infoitem key="UD_Recordset3" value="name:estatus;datatype:string,name:id_estatus;datatype:int" />
+	<infoitem key="UD_Recordset4" value="name:estatus;datatype:string,name:id_estatus;datatype:int" />
+	<infoitem key="UD_rstbl_audios1" value="name:categoria;datatype:string,name:estatus;datatype:string,name:fecha;datatype:date,name:nombre;datatype:string,name:privado;datatype:string,name:nivel;datatype:int,name:descargable;datatype:string,name:id_audio;datatype:int" />
+</info>

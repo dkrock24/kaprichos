@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_Recordset1" value="name:nombre;datatype:string,name:id_album;datatype:int" />
+	<infoitem key="UD_rstbl_galeria_fotos1" value="name:imagen;datatype:string,name:nombre;datatype:blob,name:album;datatype:string,name:orden;datatype:int,name:fecha;datatype:date,name:id_foto;datatype:int" />
+</info>

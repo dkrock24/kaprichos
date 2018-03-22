@@ -1,0 +1,343 @@
+#navbar   {
+	font-size: 8px;
+	text-transform: uppercase;
+	color: #999999;
+	text-decoration: none;
+	font-weight: bold;
+	margin: 5px;
+	height: auto;
+	width: 100%;
+	clear: both;
+	float: none;
+}
+#navbar a {
+	color: #999999;
+	text-decoration: none;
+}
+a{
+color: #000;
+	text-decoration: none;
+}
+#contenidoppal {
+	margin: 5px;
+	height: auto;
+	width: 100%;
+	clear: both;
+	float: none;
+}
+#subcontenido {
+	clear: both;
+	float: none;
+	height: auto;
+	width: 100%;
+	margin: 5px;
+}
+
+h1 {
+	font-size: 24px;
+	font-weight: normal;
+	line-height: normal;
+	color: #C60;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 5px;
+	padding-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 10px;
+	margin-left: 0px;
+}
+h2 {
+	font-size: 18px;
+	font-weight: bold;
+	margin: 0px;
+	padding: 0px;
+	line-height: normal;
+
+}
+h3 {
+	font-size: 14px;
+	font-weight: bold;
+	margin: 0px;
+	padding: 0px;
+	line-height: normal;
+	color:#747A3C;
+}
+.menuppal {
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 15px;
+	height: 37px;
+	padding-top: 10px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+}
+#formbuscar #keyword {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #666;
+	text-decoration: none;
+	background-color: #FFF;
+	border: 1px none #FFF;
+	height: 20px;
+	width: 140px;
+	line-height: 11px;
+	margin: 0px;
+	padding: 0px;
+}
+#formbuscar #botonbuscar {
+	clear: none;
+	float: left;
+	height: 19px;
+	width: 18px;
+	margin-left: 5px;
+}
+#layout_wrapper #layout_menu #buscatxt {
+	color: #FFF;
+}
+#formbuscar #inputkeyword {
+	clear: none;
+	float: left;
+	width: 145px;
+	margin: 0px;
+	padding: 0px;
+}
+
+.menuppal li {
+	display: inline;
+	list-style-type: none;
+	padding-top: 0px;
+	padding-right: 10px;
+	padding-bottom: 0px;
+	padding-left: 10px;
+	margin: 0px;
+	font-weight: bold;
+	color: #FFF;
+	background-image: url(../images/separador-menu.png);
+	background-repeat: no-repeat;
+	background-position: right center;
+}
+#facebooktxt {
+	font-size: 9px;
+	color: #666;
+	line-height: 12px;
+}
+.menuppal li a {
+	color: #FFF;
+	text-decoration: none;
+}
+#layout_footer table tr td {
+	color: #FFF;
+	font-size: 11px;
+	line-height: 14px;
+}
+#subcategorias {
+	background-image: url(../images/bg-categorias.jpg);
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+#subcategorias h1 {
+	font-size: 12px;
+	margin: 0px;
+	padding-top: 10px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 10px;
+	font-weight: bold;
+	color: #FFF;
+}
+#subcategorias #categorias {
+	margin: 0px;
+	list-style-type: none;
+	padding-top: 15px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 10px;
+}
+#subcategorias #categorias li {
+	margin: 0px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #FFF;
+	padding: 4px;
+}
+.boxarreglo {
+	background-color: #FFF;
+	float: left;
+	height: 200px;
+	width: 143px;
+	position: relative;
+	margin-left: 0px;
+	margin-bottom: 50px;
+	margin-top: 0px;
+	margin-right: 0px;
+	padding: 3px;
+}
+.boxarreglo .foto {
+	width: 140px;
+	position: relative;
+	height: 200px;
+	overflow: hidden;
+	clear: both;
+	margin-left:auto;
+	margin-right:auto;
+	cursor: pointer;
+}
+.boxarreglo .texto {
+    background-image: url(../images/precio.png);
+	background-position:center;
+	font-size: 11px;
+	line-height: 14px;
+	text-align: center;
+	height: 45px;
+	clear: both;
+	position: relative;
+	width: 143px;
+	overflow: hidden;
+    padding-top: 0px;
+}
+
+.boxarreglo .precio a {
+	color: #FFF;
+	text-decoration: none;
+}
+
+#imagen_reducida {
+ /*height:200px; */
+ height:200px;
+ overflow:hidden;
+ z-index:-1px;
+ position:relative;
+ display: block;
+ margin: auto;
+ width:100%;
+		/*position:relative;
+		top:-0px;
+		z-index:-2px;
+		width:110%;
+		height:200px;
+		overflow:hidden;
+		display:block;*/
+		
+ }
+#imagen_r{
+float:center;  
+min-width:200px;
+padding-bottom:0px;  
+line-height : 1em;  
+margin: 0 auto 0px auto;  
+clear: both;
+position:relative;
+z-index:-1px;  
+ }
+ #imagen_rd{
+float:center;  
+padding-bottom:0px;  
+line-height : 1em;  
+margin: 0 auto 0px auto;  
+clear: both;
+position:relative;
+z-index:-1px;
+ 
+ }
+
+#navegando {
+	clear: both;
+	float: none;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#productos {
+	width: 750px;
+	float: left;
+	clear: right;
+	height: auto;
+	position: relative;
+}
+.fakab {
+	font-weight: bold;
+	text-transform: uppercase;
+	color: #FFF;
+	text-decoration: none;
+	background-color: #5E6332;
+	padding: 3px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #990;
+	border-right-color: #660;
+	border-bottom-color: #660;
+	border-left-color: #990;
+	width:auto;
+}
+.precioint {
+	font-size: 24px;
+	text-align: center;
+}
+.bordegris1 {
+	border: 1px solid #CCC;
+}
+#back {
+	background-image: url(../images/back-bg.gif);
+	height: 25px;
+	width: 800px;
+	padding-left: 10px;
+	padding-top: 5px;
+	background-repeat: no-repeat;
+	background-position: center center;
+	}
+	#pricebox {
+	background-image: url(../images/pricebox.png);
+	background-repeat: no-repeat;
+	height: 120px;
+	width: 120px;
+	padding: 15px;
+}
+.tachado {
+	color: #900;
+	text-decoration: line-through;
+}
+#textoimg {
+	clear: none;
+	float: left;
+	height: auto;
+	width: 700px;
+	margin: 0px;
+}
+#tipimagen {
+	clear: none;
+	float: left;
+	height: 151px;
+	width: 150px;
+	margin-top: 0px;
+	padding-right:5px;
+	padding-left:5px;
+}
+#textoimg2 {
+	clear: none;
+	float: left;
+	height: auto;
+	width: 700px;
+	margin: 0px;
+	background-color:#EAF0B5;
+}
+#tipimagen2 {
+	clear: none;
+	float: right;
+	height: 88px;
+	width: 130px;
+	margin-top: 5px;
+	padding-right:5px;
+	padding-left:5px;
+}
+#lis{
+		color:#333;
+			}		

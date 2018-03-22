@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_Recordset1" value="name:idioma;datatype:string,name:id_idioma;datatype:int" />
+	<infoitem key="UD_rstbl_secciones" value="name:idioma;datatype:int,name:estatus;datatype:int,name:orden;datatype:int,name:nombre;datatype:int,name:contenido;datatype:int,name:keywords;datatype:int,name:description;datatype:int,name:id_seccion;datatype:int" />
+</info>

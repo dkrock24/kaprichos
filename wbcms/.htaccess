@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "Restricted Area"
+AuthUserFile "/home/kapricho/.htpasswds/public_html/wbcms/passwd"
+require valid-user

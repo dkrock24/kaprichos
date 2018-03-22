@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_Recordset1" value="name:estatus;datatype:string,name:id_estatus;datatype:int" />
+	<infoitem key="UD_rstbl_users1" value="name:username;datatype:string,name:email;datatype:string,name:nivel;datatype:int,name:estatus;datatype:string,name:pnombre;datatype:string,name:apellidos;datatype:string,name:id_user;datatype:int" />
+</info>

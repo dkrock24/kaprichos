@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_rsdocsanteriores" value="name:id_documento;datatype:int,name:fecha;datatype:date,name:nombre;datatype:string,name:version;datatype:real" />
+	<infoitem key="UD_rsusuarios" value="name:id_user;datatype:int,name:username;datatype:string,name:pnombre;datatype:string,name:apellidos;datatype:string" />
+	<infoitem key="UD_Recordset1" value="name:nombre;datatype:string,name:id_categoria;datatype:int" />
+	<infoitem key="UD_rstbl_documentos" value="name:categoria;datatype:int,name:estatus;datatype:int,name:fecha;datatype:int,name:nombre;datatype:int,name:documento;datatype:int,name:imagen;datatype:int,name:sinopsis;datatype:int,name:privado;datatype:int,name:nivel;datatype:int,name:descargable;datatype:int,name:predecesor;datatype:int,name:version;datatype:int,name:usuario;datatype:int,name:id_documento;datatype:int" />
+</info>

@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_rstbl_users" value="name:username;datatype:int,name:password;datatype:int,name:email;datatype:int,name:nivel;datatype:int,name:pnombre;datatype:int,name:snombre;datatype:int,name:apellidos;datatype:int,name:id_user;datatype:int" />
+</info>

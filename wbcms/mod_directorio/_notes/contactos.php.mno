@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_Recordset1" value="name:nombre;datatype:string,name:id_division;datatype:int" />
+	<infoitem key="UD_Recordset2" value="name:estatus;datatype:string,name:id_estatus;datatype:int" />
+	<infoitem key="UD_rstbl_directorio_contactos1" value="name:division;datatype:string,name:estatus;datatype:string,name:orden;datatype:int,name:nombre;datatype:string,name:cargo;datatype:string,name:id_contacto;datatype:int" />
+</info>

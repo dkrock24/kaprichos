@@ -1,0 +1,85 @@
+@charset "utf-8";
+/* CSS Document */
+
+body,td,th {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: 16px;
+}
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background-attachment: fixed;
+	background-image: url(../images/bg-general.jpg);
+	background-repeat: repeat-y;
+	background-position: center top;
+	background-color: #F0BED7;
+}
+#layout_wrapper {
+	margin: 0px;
+	padding: 0px;
+	clear: both;
+	float: none;
+	height: auto;
+	width: 100%;
+	position: absolute;
+}
+#layout_header {
+	padding: 0px;
+	clear: both;
+	float: none;
+	height: 128px;
+	width: 980px;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;
+	background-image: url(../images/bg-header.jpg);
+	background-repeat: no-repeat;
+	background-position: center top;
+	position: relative;
+}
+#layout_menu {
+	padding: 0px;
+	clear: both;
+	float: none;
+	height: 37px;
+	width: 980px;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;
+	position: relative;
+	background-image: url(../images/bg-menu.jpg);
+}
+#layout_content {
+	padding: 0px;
+	clear: both;
+	float: none;
+	min-height: 400px;
+	height: auto;
+	width: 980px;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;
+	position: relative;
+}
+#layout_footer {
+	padding: 0px;
+	clear: both;
+	float: none;
+	height: auto;
+	width: 980px;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;
+	position: relative;
+	background-color: #D82787;
+}
+#contactoheader {
+	text-align: center;
+}

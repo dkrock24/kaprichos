@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_Recordset1" value="name:estatus;datatype:string,name:id_estatus;datatype:int" />
+	<infoitem key="UD_Recordset2" value="name:categoria_es;datatype:string,name:id_categoria;datatype:int" />
+	<infoitem key="UD_rstbl_enlaces1" value="name:estatus;datatype:string,name:categoria;datatype:string,name:nombre_es;datatype:string,name:enlace;datatype:string,name:id_enlace;datatype:int" />
+</info>

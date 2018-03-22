@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_rsseccion" value="name:id_seccion;datatype:int,name:idioma;datatype:int,name:estatus;datatype:int,name:orden;datatype:int,name:columnas;datatype:int,name:nombre;datatype:string,name:contenido;datatype:blob,name:keywords;datatype:blob,name:description;datatype:blob" />
+	<infoitem key="UD_rscategoria" value="name:seccion_nombre;datatype:string,name:id_categoria;datatype:int,name:seccion;datatype:int,name:idioma;datatype:int,name:estatus;datatype:int,name:orden;datatype:int,name:columnas;datatype:int,name:nombre;datatype:string,name:contenido;datatype:blob,name:keywords;datatype:blob,name:description;datatype:blob,name:seccion_id;datatype:int" />
+	<infoitem key="UD_rscontenidos" value="name:id_contenido;datatype:int,name:nombre;datatype:string,name:imagen;datatype:string,name:introduccion;datatype:blob" />
+</info>

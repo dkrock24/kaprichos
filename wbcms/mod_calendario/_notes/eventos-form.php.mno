@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_Recordset1" value="name:categoria;datatype:string,name:id_categoria;datatype:int" />
+	<infoitem key="UD_Recordset2" value="name:tipo;datatype:string,name:id_tipo;datatype:int" />
+	<infoitem key="UD_rstbl_calendario_eventos" value="name:estatus;datatype:int,name:privado;datatype:int,name:orden;datatype:int,name:categoria;datatype:int,name:tipo;datatype:int,name:evento;datatype:int,name:imagen;datatype:int,name:descripcion;datatype:int,name:fecha_inicio;datatype:int,name:fecha_fin;datatype:int,name:horas;datatype:int,name:lugar;datatype:int,name:id_evento;datatype:int" />
+	<infoitem key="UD_Recordset3" value="name:tipo_es;datatype:string,name:id_tipo;datatype:int" />
+</info>

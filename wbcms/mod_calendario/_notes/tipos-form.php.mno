@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_rstbl_calendario_tipos" value="name:estatus;datatype:int,name:orden;datatype:int,name:tipo;datatype:int,name:id_tipo;datatype:int" />
+</info>

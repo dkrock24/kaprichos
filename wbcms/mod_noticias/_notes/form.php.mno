@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_Recordset1" value="name:tipo_es;datatype:string,name:id_tipo;datatype:int" />
+	<infoitem key="UD_Recordset2" value="name:idioma;datatype:string,name:id_idioma;datatype:int" />
+	<infoitem key="UD_rstbl_noticias" value="name:tipo;datatype:int,name:idioma;datatype:int,name:estatus;datatype:int,name:orden;datatype:int,name:fecha;datatype:int,name:imagen;datatype:int,name:titulo_es;datatype:int,name:introduccion_es;datatype:int,name:contenido_es;datatype:int,name:keywords_es;datatype:int,name:description_es;datatype:int,name:titulo_en;datatype:int,name:introduccion_en;datatype:int,name:contenido_en;datatype:int,name:keywords_en;datatype:int,name:description_en;datatype:int,name:id_noticia;datatype:int" />
+</info>

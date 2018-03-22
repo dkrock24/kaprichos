@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_Recordset1" value="name:id_seccion;datatype:int,name:idioma;datatype:int,name:estatus;datatype:int,name:orden;datatype:int,name:columnas;datatype:int,name:nombre_es;datatype:string,name:nombre_en;datatype:string,name:contenido_es;datatype:blob,name:contenido_en;datatype:blob,name:keywords_es;datatype:string,name:keywords_en;datatype:string,name:description_es;datatype:string,name:description_en;datatype:string" />
+	<infoitem key="UD_rstbl_menus" value="name:nombre_es;datatype:int,name:nombre_en;datatype:int,name:estatus;datatype:int,name:orden;datatype:int,name:enlace;datatype:int,name:seccion;datatype:int,name:id_menu;datatype:int" />
+</info>

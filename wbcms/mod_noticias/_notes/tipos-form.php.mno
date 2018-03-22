@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_rstbl_noticias_tipo" value="name:tipo_es;datatype:int,name:tipo_en;datatype:int,name:id_tipo;datatype:int" />
+</info>

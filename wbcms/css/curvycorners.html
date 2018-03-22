@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Rounded Corners</title>
+<script type="text/javascript" src="curvycorners.js"></script>
+<style type="text/css">
+body{
+	background:#B1D0E0;
+	color:#444;
+	font-family:"Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif;
+	font-size:11px;
+}
+label{display:block; margin-bottom:2px;}
+
+.myBox {
+    width: 220px;
+    padding: 10px;
+    background-color: #DDEEF6;
+    border: 1px solid #DDEEF6;
+
+    /* Do rounding (native in Firefox and Safari) */
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+}
+
+.myInput {
+    margin: 2px auto;
+    color: #333;
+    width: 200px;
+    background-color: #FFF;
+    border: 1px solid #AACCEE;
+	padding:6px;
+	margin-bottom:10px;
+	
+    /* Do rounding (native in Firefox and Safari) */
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+  
+}
+.button{
+	border:0; margin:0; padding:0;
+	background:#33B9F3;
+	border:solid 1px #3399DD;
+	color:#FFFFFF;
+	font-weight:bold;
+	padding:4px;
+	
+    /* Do rounding (native in Firefox and Safari) */
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+
+}
+</style>
+<script type="text/JavaScript">
+
+  addEvent(window, 'load', initCorners);
+
+  function initCorners() {
+    var setting = {
+      tl: { radius: 6 },
+      tr: { radius: 6 },
+      bl: { radius: 6 },
+      br: { radius: 6 },
+      antiAlias: true
+    }
+    curvyCorners(setting, "#myBox");
+	curvyCorners(setting, "myInput");
+	curvyCorners(setting, "button");
+  }
+  
+  
+</script>
+</head>
+
+<body>
+More tutorials: <a href="http://woork.blogspot.com/">http://woork.blogspot.com</a> <br /><br />
+
+<div class="myBox" id="myBox">
+	<label for="user">Username or e-mail</label>
+	<input type="text" class="myInput" id="user"/>
+	
+	<label for="psw">Password</label>
+	<input type="text" class="myInput" id="psw"/>
+
+	<input type="button" value="Submit" class="button"/>
+</div>
+
+</body>
+</html>

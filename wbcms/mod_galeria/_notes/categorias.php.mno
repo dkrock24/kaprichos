@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_Recordset1" value="name:estatus;datatype:string,name:id_estatus;datatype:int" />
+	<infoitem key="UD_rstbl_galeria_categorias1" value="name:imagen;datatype:string,name:categoria;datatype:string,name:estatus;datatype:string,name:orden;datatype:int,name:id_categoria;datatype:int" />
+</info>

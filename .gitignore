@@ -1,0 +1,11 @@
+# Cache and logs (Symfony2)
+/uploaded/mod_productos/*
+/Connections/*
+/error_log
+
+
+# Backup entities generated with doctrine:generate:entities command
+**/Entity/*~
+
+/nbproject/private/*
+.idea

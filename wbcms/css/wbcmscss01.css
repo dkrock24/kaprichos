@@ -1,0 +1,125 @@
+#header li {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: #FFFFFF;
+	text-decoration: none;
+	list-style-type: none;
+	display: inline;
+	margin: 0px;
+	padding: 0px;
+}
+#header ul {
+	margin: 0px;
+	padding: 0px;
+}
+#header a {
+	color: #FFFFFF;
+	text-decoration: none;
+	margin: 0px;
+	padding-top: 8px;
+	padding-right: 10px;
+	padding-bottom: 9px;
+	padding-left: 10px;
+}
+#header a:hover {
+	color: #FFCC00;
+	text-decoration: none;
+	background-color: #024D75;
+}
+#homeiframe {
+	height: 600px;
+	width: 100%;
+	overflow: auto;
+	border: 1px solid #FFFFFF;
+	margin: 0px;
+	padding: 0px;
+}
+.modaccess {
+	height: 100px;
+	width: 120px;
+	background-image: url(../images/modcellbg.jpg);
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	text-decoration: none;
+	clear: right;
+	float: left;
+	margin: 5px;
+	overflow: hidden;
+	cursor: pointer;
+}
+.modaccess:hover {
+	height: 100px;
+	width: 120px;
+	background-image: url(../images/modcellbgover.jpg);
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	text-decoration: none;
+	clear: right;
+	float: left;
+	margin: 5px;
+	overflow: hidden;
+	cursor: pointer;
+}
+h1 {
+	font-family: "Arial Narrow", Arial, Verdana;
+	font-weight: bold;
+	font-size: 16px;
+	color: #006699;
+}
+#submenu {
+	background-color: #EEEEEE;
+	height: auto;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border: solid 1px #CCCCCC;
+	padding: 10px;
+}
+#submenu ul {
+	margin: 0px;
+	padding: 0px;
+}
+
+#submenu  li {
+	list-style-type: none;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	text-decoration: none;
+	margin: 0px;
+	padding-top: 8px;
+	padding-right: 0px;
+	padding-bottom: 8px;
+	padding-left: 0px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #CCCCCC;
+}
+#submenu a {
+	color: #666666;
+	text-decoration: none;
+}
+#submenu a {
+	color: #666666;
+	text-decoration: none;
+}
+.headerdropdown {
+	list-style-type: none;
+	padding: 0px;
+	margin: 0px;
+}
+.headerdropdown li {
+	list-style-type: none;
+	padding: 5px;
+	margin: 0px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #45839A;
+}
+.headerdropdown a {
+	font-size: 10px;
+	color: #FFFFFF;
+	text-decoration: none;
+	font-weight: bold;
+}

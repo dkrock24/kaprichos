@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_accesos" value="name:id_acceso;datatype:int,name:nombre;datatype:string,name:descripcion;datatype:blob,name:enlace;datatype:string" />
+</info>

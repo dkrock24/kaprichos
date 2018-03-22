@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_Recordset1" value="name:referencia;datatype:string,name:id_ubicacion;datatype:int" />
+	<infoitem key="UD_Recordset2" value="name:idioma;datatype:string,name:id_idioma;datatype:int" />
+	<infoitem key="UD_Recordset3" value="name:estatus;datatype:string,name:id_estatus;datatype:int" />
+	<infoitem key="UD_rstbl_publicidad1" value="name:id_ubicacion;datatype:string,name:idioma;datatype:string,name:estatus;datatype:string,name:orden;datatype:int,name:referencia;datatype:string,name:id_publicidad;datatype:int" />
+</info>

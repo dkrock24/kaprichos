@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_rscategorias" value="name:id_categoria;datatype:int,name:nombre_es;datatype:string" />
+	<infoitem key="UD_rsofertas" value="name:id_producto;datatype:int,name:categoria;datatype:int,name:estatus;datatype:int,name:orden;datatype:int,name:fecha;datatype:date,name:nombre_es;datatype:string,name:nombre_en;datatype:string,name:imagen;datatype:string,name:introduccion_es;datatype:blob,name:introduccion_en;datatype:blob,name:contenido1_es;datatype:blob,name:contenido1_en;datatype:blob,name:contenido2_es;datatype:blob,name:contenido2_en;datatype:blob,name:numerico1;datatype:real,name:numerico2;datatype:real,name:cheque1;datatype:int,name:cheque2;datatype:int,name:customnum;datatype:int,name:customtxt_es;datatype:blob,name:customtxt_en;datatype:blob,name:keywords_es;datatype:string,name:keywords_en;datatype:string,name:description_es;datatype:string,name:description_en;datatype:string" />
+</info>

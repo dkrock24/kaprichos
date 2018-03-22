@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_rsnoticiappal" value="name:id_noticia;datatype:int,name:tipo;datatype:int,name:idioma;datatype:int,name:estatus;datatype:int,name:orden;datatype:int,name:fecha;datatype:date,name:titulo;datatype:string,name:imagen;datatype:string,name:introduccion;datatype:blob,name:contenido;datatype:blob,name:keywords;datatype:blob,name:description;datatype:blob" />
+	<infoitem key="UD_rsnoticias" value="name:id_noticia;datatype:int,name:tipo;datatype:int,name:idioma;datatype:int,name:estatus;datatype:int,name:orden;datatype:int,name:fecha;datatype:date,name:titulo;datatype:string,name:imagen;datatype:string,name:introduccion;datatype:blob,name:contenido;datatype:blob,name:keywords;datatype:blob,name:description;datatype:blob" />
+	<infoitem key="UD_rslanoticia" value="name:id_noticia;datatype:int,name:tipo;datatype:int,name:idioma;datatype:int,name:estatus;datatype:int,name:orden;datatype:int,name:fecha;datatype:date,name:titulo;datatype:string,name:imagen;datatype:string,name:introduccion;datatype:blob,name:contenido;datatype:blob,name:keywords;datatype:blob,name:description;datatype:blob" />
+</info>
