@@ -1,473 +1,2213 @@
-<?php require_once('Connections/conne10.php'); ?>
-<?php
-if (!function_exists("GetSQLValueString")) {
-function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
-{
-  $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
-
-  $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
-
-  switch ($theType) {
-    case "text":
-      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
-      break;    
-    case "long":
-    case "int":
-      $theValue = ($theValue != "") ? intval($theValue) : "NULL";
-      break;
-    case "double":
-      $theValue = ($theValue != "") ? "'" . doubleval($theValue) . "'" : "NULL";
-      break;
-    case "date":
-      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
-      break;
-    case "defined":
-      $theValue = ($theValue != "") ? $theDefinedValue : $theNotDefinedValue;
-      break;
-  }
-  return $theValue;
-}
-}
-
-// Load the tNG classes
-require_once('includes/tng/tNG.inc.php');
-
-if (!function_exists("GetSQLValueString")) {
-function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
-{
-  if (PHP_VERSION < 6) {
-    $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
-  }
-
-  $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
-
-  switch ($theType) {
-    case "text":
-      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
-      break;    
-    case "long":
-    case "int":
-      $theValue = ($theValue != "") ? intval($theValue) : "NULL";
-      break;
-    case "double":
-      $theValue = ($theValue != "") ? doubleval($theValue) : "NULL";
-      break;
-    case "date":
-      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
-      break;
-    case "defined":
-      $theValue = ($theValue != "") ? $theDefinedValue : $theNotDefinedValue;
-      break;
-  }
-  return $theValue;
-}
-}
-
-mysql_select_db($database_conne10, $conne10);
-$query_rscategorias1 = "SELECT id_categoria, nombre_es FROM tbl_productos_categorias WHERE superior = 0 AND estatus = 1 ORDER BY orden ASC";
-$rscategorias1 = mysql_query($query_rscategorias1, $conne10) or die(mysql_error());
-$row_rscategorias1 = mysql_fetch_assoc($rscategorias1);
-$totalRows_rscategorias1 = mysql_num_rows($rscategorias1);
-
-mysql_select_db($database_conne10, $conne10);
-$query_rsrandomcat = "SELECT id_categoria, nombre_es, imagen, contenido_es FROM tbl_productos_categorias WHERE estatus = 1 ORDER BY rand()";
-$rsrandomcat = mysql_query($query_rsrandomcat, $conne10) or die(mysql_error());
-$row_rsrandomcat = mysql_fetch_assoc($rsrandomcat);
-$totalRows_rsrandomcat = mysql_num_rows($rsrandomcat);
-
-$colname_rsrandomcat2 = $row_rsrandomcat['id_categoria'];
-
-mysql_select_db($database_conne10, $conne10);
-$query_rsrandomcat2 = sprintf("SELECT id_categoria, nombre_es, imagen, contenido_es FROM tbl_productos_categorias WHERE estatus = 1 AND id_categoria != %s ORDER BY rand()", GetSQLValueString($colname_rsrandomcat2, "int"));
-$rsrandomcat2 = mysql_query($query_rsrandomcat2, $conne10) or die(mysql_error());
-$row_rsrandomcat2 = mysql_fetch_assoc($rsrandomcat2);
-$totalRows_rsrandomcat2 = mysql_num_rows($rsrandomcat2);
-
-$colname_rsrandomcat3 = $row_rsrandomcat2['id_categoria'];
-
-mysql_select_db($database_conne10, $conne10);
-$query_rsrandomcat3 = sprintf("SELECT id_categoria, nombre_es, imagen, contenido_es FROM tbl_productos_categorias WHERE estatus = 1 AND id_categoria != %s AND id_categoria!='".$row_rsrandomcat['id_categoria']."' ORDER BY rand()", GetSQLValueString($colname_rsrandomcat3, "int"));
-$rsrandomcat3 = mysql_query($query_rsrandomcat3, $conne10) or die(mysql_error());
-$row_rsrandomcat3 = mysql_fetch_assoc($rsrandomcat3);
-$totalRows_rsrandomcat3 = mysql_num_rows($rsrandomcat3);
-
-mysql_select_db($database_conne10, $conne10);
-$query_rsrandomprod1 = "SELECT id_producto, nombre_es, imagen, numerico1, numerico2 FROM tbl_productos WHERE estatus = 1 ORDER BY rand()";
-$rsrandomprod1 = mysql_query($query_rsrandomprod1, $conne10) or die(mysql_error());
-$row_rsrandomprod1 = mysql_fetch_assoc($rsrandomprod1);
-$totalRows_rsrandomprod1 = mysql_num_rows($rsrandomprod1);
-
-$colname_rsrandomprod2 = $row_rsrandomprod1['id_producto'];
-
-mysql_select_db($database_conne10, $conne10);
-$query_rsrandomprod2 = sprintf("SELECT id_producto, nombre_es, imagen, numerico1, numerico2 FROM tbl_productos WHERE estatus = 1 AND id_producto != %s ORDER BY rand()", GetSQLValueString($colname_rsrandomprod2, "int"));
-$rsrandomprod2 = mysql_query($query_rsrandomprod2, $conne10) or die(mysql_error());
-$row_rsrandomprod2 = mysql_fetch_assoc($rsrandomprod2);
-$totalRows_rsrandomprod2 = mysql_num_rows($rsrandomprod2);
-
-mysql_select_db($database_conne10, $conne10);
-$query_rspublicidad = "SELECT archivo, enlace FROM tbl_publicidad WHERE estatus = 1 ORDER BY rand()";
-$rspublicidad = mysql_query($query_rspublicidad, $conne10) or die(mysql_error());
-$row_rspublicidad = mysql_fetch_assoc($rspublicidad);
-$totalRows_rspublicidad = mysql_num_rows($rspublicidad);
-
-mysql_select_db($database_conne10, $conne10);
-$query_rsarreglos1 = "SELECT * FROM tbl_productos WHERE tbl_productos.estatus=1 and categoria<>10 ORDER BY rand()  LIMIT 0,5";
-$rsarreglos1 = mysql_query($query_rsarreglos1, $conne10) or die(mysql_error());
-$row_rsarreglos1 = mysql_fetch_assoc($rsarreglos1);
-$totalRows_rsarreglos1 = mysql_num_rows($rsarreglos1);
-
-
-// Show Dynamic Thumbnail
-$objDynamicThumb1 = new tNG_DynamicThumbnail("", "KT_thumbnail1");
-$objDynamicThumb1->setFolder("uploaded/mod_productos/");
-$objDynamicThumb1->setRenameRule("{rsrandomcat.imagen}");
-$objDynamicThumb1->setResize(215, 200, true);
-$objDynamicThumb1->setWatermark(false);
-
-// Show Dynamic Thumbnail
-$objDynamicThumb2 = new tNG_DynamicThumbnail("", "KT_thumbnail2");
-$objDynamicThumb2->setFolder("uploaded/mod_productos/");
-$objDynamicThumb2->setRenameRule("{rsrandomcat3.imagen}");
-$objDynamicThumb2->setResize(215, 200, true);
-$objDynamicThumb2->setWatermark(false);
-
-// Show Dynamic Thumbnail
-$objDynamicThumb3 = new tNG_DynamicThumbnail("", "KT_thumbnail3");
-$objDynamicThumb3->setFolder("uploaded/mod_productos/");
-$objDynamicThumb3->setRenameRule("{rsrandomcat3.imagen}");
-$objDynamicThumb3->setResize(200,0, true);
-$objDynamicThumb3->setWatermark(false);
-
-// Show Dynamic Thumbnail
-$objDynamicThumb4 = new tNG_DynamicThumbnail("", "KT_thumbnail4");
-$objDynamicThumb4->setFolder("uploaded/mod_productos/");
-$objDynamicThumb4->setRenameRule("{rsarreglos1.imagen}");
-$objDynamicThumb4->setResize(250,0, true);
-$objDynamicThumb4->setWatermark(false);
-
-// Show Dynamic Thumbnail
-$objDynamicThumb5 = new tNG_DynamicThumbnail("", "KT_thumbnail1");
-$objDynamicThumb5->setFolder("uploaded/mod_productos/");
-$objDynamicThumb5->setRenameRule("{rsarreglos1.imagen}");
-$objDynamicThumb5->setResize(200, 140, true);
-$objDynamicThumb5->setWatermark(false);
-
-
-
-mysql_select_db($database_conne10, $conne10);
-$query_rscategorias = "SELECT id_categoria, nombre_es FROM tbl_productos_categorias WHERE estatus = 1 ORDER BY orden ASC";
-$rscategorias = mysql_query($query_rscategorias, $conne10) or die(mysql_error());
-$row_rscategorias = mysql_fetch_assoc($rscategorias);
-$totalRows_rscategorias = mysql_num_rows($rscategorias);
-
-mysql_select_db($database_conne10, $conne10);
-$query_rspromociones = "SELECT * FROM tbl_promociones WHERE tbl_promociones.estatus='1' ORDER BY rand()";
-$rspromociones = mysql_query($query_rspromociones, $conne10) or die(mysql_error());
-$row_rspromociones = mysql_fetch_assoc($rspromociones);
-$totalRows_rspromociones = mysql_num_rows($rspromociones);
-
-
-?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/kaprichos01.dwt.php" codeOutsideHTMLIsLocked="false" -->
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html lang="en">
 <head>
+<title>Smart Bazaar an E-commerce Online Shopping Category Flat Bootstrap Responsive Website Template | Home :: w3layouts</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<!-- InstanceBeginEditable name="doctitle" -->
-<title>Inicio-Floristeria Kaprichos</title>
-<!-- InstanceEndEditable -->
-<!-- InstanceBeginEditable name="head" -->
-<meta name="Description" content="descripcion" />
-<meta name="Keywords" content="keywords" />
-<link rel="stylesheet" href="css/jd.gallery.css" type="text/css" media="screen" charset="utf-8" />
-		<script src="Scripts/mootools-1.2.1-core-yc.js" type="text/javascript"></script>
-		<script src="Scripts/mootools-1.2-more.js" type="text/javascript"></script>
-		<script src="Scripts/jd.gallery.js" type="text/javascript"></script>
-<style type="text/css">
-<!--
-#homebox01 {
-	height: 450px;
-	width: 540px;
-	overflow: hidden;
-}
+<meta name="keywords" content="Smart Bazaar Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+    function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- Custom Theme files -->
+<link href="assets/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="assets/css/style.css" rel="stylesheet" type="text/css" media="all" /> 
+<link href="assets/css/menu.css" rel="stylesheet" type="text/css" media="all" /> <!-- menu style --> 
+<link href="assets/css/ken-burns.css" rel="stylesheet" type="text/css" media="all" /> <!-- banner slider --> 
+<link href="assets/css/animate.min.css" rel="stylesheet" type="text/css" media="all" /> 
+<link href="assets/css/owl.carousel.css" rel="stylesheet" type="text/css" media="all"> <!-- carousel slider -->  
+<!-- //Custom Theme files -->
+<!-- font-awesome icons -->
+<link href="assets/css/font-awesome.css" rel="stylesheet"> 
+<!-- //font-awesome icons -->
+<!-- js -->
+<script src="assets/js/jquery-2.2.3.min.js"></script> 
+<!-- //js --> 
+<!-- web-fonts -->
+<link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Lovers+Quarrel' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Offside' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Tangerine:400,700' rel='stylesheet' type='text/css'>
+<!-- web-fonts --> 
+<script src="assets/js/owl.carousel.js"></script>  
+<script>
+$(document).ready(function() { 
+  $("#owl-demo").owlCarousel({ 
+    autoPlay: 3000, //Set AutoPlay to 3 seconds 
+    items :4,
+    itemsDesktop : [640,5],
+    itemsDesktopSmall : [480,2],
+    navigation : true
+ 
+  }); 
+}); 
+</script>
+<script src="assets/js/jquery-scrolltofixed-min.js" type="text/javascript"></script>
+<script>
+    $(document).ready(function() {
 
-.homebox3 .vermas a {
-	font-weight: bold;
-	color: #FFF;
-	text-decoration: none;
-}
-.homebox3 {
-	height: 215px;
-	width: 200px;
-	overflow: hidden;
-	border: 1px solid #CCC;
-	position: relative;
-	background-repeat: no-repeat;
-	background-position: center center;
-	padding:0px;
-	margin-right:30px;
-    }
-.homebox3 .texto {
-	height: 25px;
-	width: 200px;
-	position: absolute;
-	bottom: 0px;
-	right: 0px;
-	background-image: url(images/nombre.png);
-	background-repeat: no-repeat;
-	background-position: center center;
-	overflow: hidden;
-	padding-top: 10px;
-	padding-right: 0px;
-	padding-bottom: 0px;
-	color:#FFFFFF;
-	font-weight:bold;
-}
-.homebox3 .vermas {
-    position: absolute;
-	right: 9px;
-	bottom: 9px;
-	overflow: hidden;
-	height: 18px;
-	width: 52px;
-	color: #FFF;
-	text-decoration: none;
-	text-align: center;
-	font-weight: bold;
-}
+        // Dock the header to the top of the window when scrolled past the banner. This is the default behaviour.
 
--->
-</style>
-<!-- InstanceEndEditable -->
-<meta name="language" content="es" />
-<meta name="author" content="Rodolfo Semsch - www.wboxinteractive.com" />
-<meta name="robots" content="INDEX, FOLLOW" />
-<meta name="revisit-after" content="15 days" />
-<meta name="Reply-to" content="rodolfo@wboxinteractive.com" />
-<meta name="document-rights" content="Copyrighted Work" />
-<meta name="document-type" content="Web Page" />
-<meta name="document-rating" content="General" />
-<meta name="document-distribution" content="Global" />
-<meta name="document-state" content="Dynamic" />
-<meta name="cache-control" content="Public" />
-<link href="css/layoutcss.css" rel="stylesheet" type="text/css" />
-<link href="css/globalcss.css" rel="stylesheet" type="text/css" />
-<link href="css/lytebox.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="Scripts/lytebox.js"></script>
-<style type="text/css">
-<!--
-#logotipo {
-	position:absolute;
-	width:222px;
-	height:112px;
-	z-index:1;
-	left: 10px;
-	top: 10px;
-}
-#Facebook {
-	position:absolute;
-	width:120px;
-	height:28px;
-	z-index:2;
-	left: 550px;
-	top: 19px;
-}
-#facebooktxt {
-	position:absolute;
-	width:111px;
-	height:53px;
-	z-index:3;
-	left: 555px;
-	top: 53px;
-}
-#buscador {
-	position:absolute;
-	width:186px;
-	height:26px;
-	z-index:1;
-	left: 786px;
-	top: 6px;
-}
-#buscatxt {
-	position:absolute;
-	width:55px;
-	height:21px;
-	z-index:2;
-	left: 731px;
-	top: 9px;
-}
-#contactoheader {
-	position:absolute;
-	width:252px;
-	height:97px;
-	z-index:4;
-	left: 281px;
-	top: 17px;
-}
--->
-</style>
+        $('.header-two').scrollToFixed();  
+        // previous summary up the page.
+
+        var summaries = $('.summary');
+        summaries.each(function(i) {
+            var summary = $(summaries[i]);
+            var next = summaries[i + 1];
+
+            summary.scrollToFixed({
+                marginTop: $('.header-two').outerHeight(true) + 10, 
+                zIndex: 999
+            });
+        });
+    });
+</script>
+<!-- start-smooth-scrolling -->
+<script type="text/javascript" src="assets/js/move-top.js"></script>
+<script type="text/javascript" src="assets/js/easing.js"></script> 
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+      $(".scroll").click(function(event){   
+        event.preventDefault();
+        $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+      });
+    });
+</script>
+<!-- //end-smooth-scrolling -->
+<!-- smooth-scrolling-of-move-up -->
+  <script type="text/javascript">
+    $(document).ready(function() {
+    
+      var defaults = {
+        containerID: 'toTop', // fading element id
+        containerHoverID: 'toTopHover', // fading element hover id
+        scrollSpeed: 1200,
+        easingType: 'linear' 
+      };
+      
+      $().UItoTop({ easingType: 'easeOutQuart' });
+      
+    });
+  </script>
+  <!-- //smooth-scrolling-of-move-up -->
+<script src="assets/js/bootstrap.js"></script> 
 </head>
-
 <body>
-<div id="layout_wrapper">
-  <div id="layout_header">
-    <div id="logotipo"><a href="index.php"><img src="images/flores-para-el-salvador.png" width="222" height="112" alt="Kapricho's Floristería - Flores para El Salvador" border="0" /></a></div>
-    <div id="Facebook"><a href="http://www.facebook.com/pages/Kaprichos-Floristeria/151224814917493" target="_blank"><img src="images/boton-facebook.png" width="120" height="28" alt="Visítenos en Facebook" border="0"/></a></div>
-    <div id="facebooktxt"><a href="http://www.facebook.com/pages/Kaprichos-Floristeria/151224814917493" target="_blank">Siguenos en Facebook y encuentra promociones y precios exclusivos para nuestros fans</a></div>
-    <div id="contactoheader"><img src="images/numero.png" border="0"><br />
-       <a href="mailto:info@kaprichosfloristeria.com" style="font-size:14px; color:#5E6332;; line-height:18px;"><strong>info@kaprichosfloristeria.com</strong></a><br />
-    <span style="color:#D82686; font-size: 12px; line-height:22px;"><strong>Entregas a domicilio en todo El Salvador</strong></span></div>
-  </div>
-  <div id="layout_menu">
-    <div id="buscador">
-      <form id="formbuscar" name="formbuscar" method="post" action="resultados.php">
-          <div id="inputkeyword">
-            <input type="text" name="eltermino" id="eltermino" style="border:none; width:145px" />
-          </div>
-          <div id="botonbuscar">
-            <input type="image" name="clicktosearch" id="clicktosearch" src="images/buscar-flores-el-salvador.png" />
-          </div>
-      </form>
+
+  <script>
+    $('#myModal88').modal('show');
+  </script> 
+  <!-- header -->
+  <div class="header">
+    <div class="w3ls-header"><!--header-one--> 
+      <div class="w3ls-header-left">
+        <p> <span style="font-size:16px;">+503 <i class="fa fa-phone" aria-hidden="true"></i> ( 2532 - 1561 )  ( 2223 - 3515 ) </span></p>
+      </div>
+      <div class="w3ls-header-right" style="color:black;">
+        <ul>
+          <li class="dropdown head-dpdn">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true"></i> Iniciar Sesión<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="login.html">Login </a></li> 
+              <li><a href="signup.html">Sign Up</a></li> 
+              <li><a href="login.html">My Orders</a></li>  
+              <li><a href="login.html">Wallet</a></li> 
+            </ul> 
+          </li> 
+          <li class="dropdown head-dpdn">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i> Carro de Compras<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="offers.html">Cash Back Offers</a></li> 
+              <li><a href="offers.html">Product Discounts</a></li>
+              <li><a href="offers.html">Special Offers</a></li> 
+            </ul> 
+          </li> 
+          <li class="dropdown head-dpdn">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-gift" aria-hidden="true"></i> Comprar Ahora<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="offers.html">Product Gift card</a></li> 
+              <li><a href="offers.html">Occasions Register</a></li>
+              <li><a href="offers.html">View Balance</a></li> 
+            </ul> 
+          </li> 
+          <li class="dropdown head-dpdn">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-gift" aria-hidden="true"></i> Idioma<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="offers.html">Spanish</a></li> 
+              <li><a href="offers.html">Enhlish</a></li>
+              
+            </ul> 
+          </li> 
+        </ul>
+      </div>
+      <div class="clearfix"> </div> 
     </div>
-    <div id="buscatxt">Buscar:</div>
-    <ul class="menuppal">
-      <li><a href="catalogo.php">Catálogo</a></li>
-      <li><a href="ofertas.php">Ofertas</a></li>
-      <li><a href="preguntas.php">Preguntas</a></li>
-      <li><a href="pago.php">¿Cómo pagar?</a></li>
-      <li><a href="servicios.php">Servicios</a></li>
-      <li><a href="tip.php">Tips</a></li>
-      <li><a href="contacto.php">Contáctenos</a></li>
-      <li><a href="videos.php">Videos</a></li>
-    </ul>
-  </div>
-  <div id="layout_content">
-    <table width="100%" border="0" cellspacing="10" cellpadding="0">
-      <tr>
-        <td width="170" valign="top"><div id="subcategorias">
-          <h1>Arreglos florales para<br/> El Salvador</h1>
-          <ul id="categorias">
-            <?php do { ?>
-              <li><a href="categoria.php?c=<?php echo $row_rscategorias['id_categoria']; ?>"><?php echo $row_rscategorias['nombre_es']; ?></a></li>
-              <?php } while ($row_rscategorias = mysql_fetch_assoc($rscategorias)); ?>
-          </ul>
-        </div></td>
-        <td valign="top"><!-- InstanceBeginEditable name="MAIN" -->
- <table border="0" cellpadding="0" cellspacing="0" width="100%">
-            <tr>
-            <td height="450" valign="top" width="500px" style="margin-left:5px;">
-            <div id="homebox01">
-            <script type="text/javascript">
-			function startGallery() {
-				var myGallery = new gallery($('myGallery'), {
-					timed: true
-				});
-			}
-			window.addEvent('domready',startGallery);
-		</script>
-			<div id="myGallery">
-				  <?php do{?>
-			  <div class="imageElement">
-				<h3><?php echo $row_rspromociones['nombre']; ?></h3>
-					<p><?php echo $row_rspromociones['descripcion']; ?></p>
-					<a href="
-                    <?php if($row_rspromociones['enlace']!=""){?>                   
-                    <?php echo $row_rspromociones['enlace'];?>
-                     <?php } else {?>#
-                    <?php }?>" title="<?php echo $row_rspromociones['nombre']; ?>" class="open"></a>
-				<img border="0" src="uploaded/mod_promociones/<?php echo $row_rspromociones['imagen']; ?>" class="full"/>
-					<img border="0" src="uploaded/mod_promociones/<?php echo $row_rspromociones['imagen']; ?>" class="thumbnail" /></div>
-                    <?php } while($row_rspromociones = mysql_fetch_assoc($rspromociones));?>
-			
-                </div>
-           </div></td>
+    <div class="header-two"><!-- header-two -->
+      <div class="container">
+        <div class="row">
+          <div class="col-ms-3">
+            <div class="header-search">
+              <form action="#" method="post">
+                <button type="submit" class="btn btn-default" aria-label="Left Align">
+                  <i class="fa fa-search" aria-hidden="true" style="color:black;"> </i>
+                </button>
+                <input type="search" name="Search" placeholder="Search for a Product..." required="">
+                
+              </form>
+            </div>
+          </div>
+          <div class="col-ms-3">
+            <div class="header-logo">
+              <img src="images/flores-para-el-salvador.png"/>
+        </div> 
+          </div>
+          <div class="col-ms-3">
+            <div class="header-cart"> 
+          <div class="my-account">
+            <a href="contact.html"><i class="fa fa-money" aria-hidden="true"></i> 0.0 Articulos</a>           
+          </div>
+          <div class="cart"> 
+            <form action="#" method="post" class="last"> 
+              <input type="hidden" name="cmd" value="_cart" />
+              <input type="hidden" name="display" value="1" />
+              <button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
+            </form>  
+          </div>
+          <div class="clearfix"> </div> 
+        </div> 
+          </div>
+        </div>
+        
          
-            <td width="200" height="450" valign="top" align="center">
-            <div class="homebox3" ><a href="categoria.php?c=<?php echo $row_rsrandomcat['id_categoria']?>">
-           <img src="<?php echo $objDynamicThumb1->Execute(); ?>" border="0"  />
- <div class="texto"><?php echo $row_rsrandomcat['nombre_es']; ?></div></a>
-              </div><br/>
-<div class="homebox3" >
-            <a href="categoria.php?c=<?php echo $row_rsrandomcat3['id_categoria']?>">
-             <img src="<?php echo $objDynamicThumb2->Execute(); ?>" border="0"  />
-              <div class="texto"><?php echo $row_rsrandomcat3['nombre_es']; ?></div></a>
-              </div>              
-              </td>
-            </tr>
-        </table>
-    <div style="margin-top:20px;">
-            <?php 
-			$buscar = array(" ", "(", ")");
-	  		$reempla = array("%20", "%28", "%29");
-			do { ?>
-              <div class="boxarreglo" style="margin-right:0px;" >
-                <div class="foto" style="background: url(<?php echo str_replace($buscar, $reempla, $objDynamicThumb5->Execute()); ?>) no-repeat center center;"><a href="arreglos-ver.php?id=<?php echo $row_rsarreglos1['id_producto']; ?>">
-               <img src="images/blank.gif" alt="<?php echo $row_rsarreglos1['nombre_es']; ?>" width="30" height="180" border="0" /></a></div>
-                <div class="texto"><a href="arreglos-ver.php?id=<?php echo $row_rsarreglos1['id_producto']; ?>"><?php echo $row_rsarreglos1['nombre_es']; ?><br/>
-                $<?php echo number_format($row_rsarreglos1['numerico1'],2); ?></a><br/>
-                <a href="uploaded/mod_productos/<?php echo $row_rsarreglos1['imagen'];?>" rel="lytebox[galera]" title="<?php echo $row_rsarreglos1['nombre_es']; ?>"><img src="images/venta.png" border="0"></a>
-               <a href="arreglos-ver.php?id=<?php echo $row_rsarreglos1['id_producto']; ?>"><img src="images/buy.png" border="0"></a>
-                </div>
+        
+        
+        <div class="clearfix"> </div>
+
+
+      </div>    
+      <div class="header-three"><!-- header-three -->
+      <div class="container">
+        <div class="row">
+
+          <div class="col-md-3">
+              <div class="move-text">
+                <div class="marquee"><a href="offers.html"> INICIO</div>
               </div>
-<?php } while ($row_rsarreglos1 = mysql_fetch_assoc($rsarreglos1)); ?>
+          </div>
+
+          <div class="col-md-3">
+            <div class="menu">
+                <div class="cd-dropdown-wrapper">
+                  <a class="cd-dropdown-trigger" href="#0">COMPRAR</a>
+                  <nav class="cd-dropdown"> 
+                    <a href="#0" class="cd-close">Close</a>
+                    <ul class="cd-dropdown-content"> 
+                      <li><a href="offers.html">Today's Offers</a></li>
+                      <li class="has-children">
+                        <a href="#">Electronics</a> 
+                        <ul class="cd-secondary-dropdown is-hidden">
+                          <li class="go-back"><a href="#">Menu</a></li>
+                          <li class="see-all"><a href="products.html">All Electronics</a></li>
+                          <li class="has-children">
+                            <a href="#">MOBILE PHONES</a>  
+                            <ul class="is-hidden"> 
+                              <li class="go-back"><a href="#">All Electronics</a></li> 
+                              <li class="has-children">
+                                <a href="#0">SmartPhones</a> 
+                                <ul class="is-hidden"> 
+                                  <li class="go-back"><a href="#"> </a></li>
+                                  <li><a href="products.html">Android</a></li>
+                                  <li><a href="products.html">Windows</a></li>
+                                  <li><a href="products.html">Black berry</a></li>
+                                </ul>
+                              </li>
+                              <li> <a href="products.html">IPhones</a> </li>
+                              <li><a href="products.html">Tablets</a></li>
+                              <li><a href="products.html">IPad</a></li>
+                              <li><a href="products.html">Feature Phones</a></li> 
+                            </ul>
+                          </li> 
+                          <li class="has-children">
+                            <a href="#">LARGE APPLIANCES</a> 
+                            <ul class="is-hidden"> 
+                              <li class="go-back"><a href="#">All Electronics </a></li>
+                              <li><a href="products.html">Refrigerators</a></li> 
+                              <li><a href="products.html">Washing Machine</a></li>
+                              <li><a href="products.html">Office Technology</a></li>
+                              <li><a href="products.html">Air conditioner</a></li>
+                              <li><a href="products.html">Home Automation</a></li>
+                            </ul>
+                          </li> 
+                          <li class="has-children">
+                            <a href="#">ENTERTAINMENT</a> 
+                            <ul class="is-hidden"> 
+                              <li class="go-back"><a href="#">All Electronics</a></li>
+                              <li><a href="products.html">Tv & Accessories</a></li>
+                              <li><a href="products.html">Digital Camera</a></li>
+                              <li><a href="products.html">Gaming</a></li>
+                              <li><a href="products.html">Home Audio & Theater</a></li>
+                              <li class="has-children">
+                                <a href="#">Computer</a>
+                                <ul class="is-hidden">
+                                  <li class="go-back"><a href="#"> </a></li> 
+                                  <li><a href="products.html">Laptop </a></li>
+                                  <li><a href="products.html">Gaming PC</a></li>
+                                  <li><a href="products.html">Monitors</a></li>
+                                  <li><a href="products.html">Networking</a></li>
+                                  <li><a href="products.html">Printers & Supplies</a></li>
+                                  <li><a href="products.html">Accessories</a></li>
+                                </ul>
+                              </li> 
+                            </ul>
+                          </li> 
+                          <li class="has-children">
+                            <a href="#">HOME APPLIANCES</a> 
+                            <ul class="is-hidden">
+                              <li class="go-back"><a href="#0">All Electronics </a></li>
+                              <li class="has-children"><a href="#">Kitchen appliances</a>
+                                <ul class="is-hidden">
+                                  <li class="go-back"><a href="#0"> </a></li>
+                                  <li><a href="products.html">Rice Cookers</a></li>
+                                  <li><a href="products.html">Mixer Juicer</a></li>
+                                  <li><a href="products.html">Grinder</a></li>
+                                  <li><a href="products.html">Blenders & Choppers</a></li>
+                                  <li><a href="products.html">Microwave Oven</a></li>
+                                  <li><a href="products.html">Food Processors</a></li>
+                                </ul>
+                              </li>
+                              <li><a href="products.html">Purifiers</a></li>
+                              <li><a href="products.html">Geysers</a></li>
+                              <li><a href="products.html">Gas Stove</a></li>
+                              <li><a href="products.html">Vacuum Cleaner</a></li>
+                              <li><a href="products.html">Sewing Machine</a></li> 
+                              <li><a href="products.html">Heaters & Fans</a></li>
+                            </ul>
+                          </li>
+                          <li class="has-children">
+                            <a href="#">SMALL DEVICES</a> 
+                            <ul class="is-hidden"> 
+                              <li class="go-back"><a href="#0">All Electronics </a></li>
+                              <li><a href="products.html">Wifi Dongle</a></li>
+                              <li><a href="products.html">Router & Modem</a></li>
+                              <li class="has-children"><a href="#">Storage Devices</a>
+                                <ul class="is-hidden">
+                                  <li class="go-back"><a href="#0"> </a></li>
+                                  <li><a href="products.html">Cloud Storage</a></li>
+                                  <li><a href="products.html">Hard Disk</a></li>
+                                  <li><a href="products.html">SSD</a></li>
+                                  <li><a href="products.html">Pen Drive</a></li>
+                                  <li><a href="products.html">Memory card</a></li> 
+                                  <li><a href="products.html">Security Devices</a></li> 
+                                </ul>
+                              </li> 
+                              <li><a href="products.html">Office Supplies</a></li>
+                              <li><a href="products.html">Cut the Cable</a></li>
+                              <li><a href="products.html">Auto Electronics</a></li>  
+                            </ul>
+                          </li>
+                          <li class="has-children">
+                            <a href="#">PERSONAL CARE</a> 
+                            <ul class="is-hidden"> 
+                              <li class="go-back"><a href="#0">All Electronics </a></li>
+                              <li><a href="products.html">Epilator</a></li> 
+                              <li><a href="products.html">Hair Styler</a></li>
+                              <li><a href="products.html">Trimmer & Shaver</a></li>
+                              <li><a href="products.html">Health Care</a></li> 
+                              <li><a href="products.html">cables</a></li>
+                            </ul>
+                          </li>
+                        </ul> <!-- .cd-secondary-dropdown --> 
+                      </li> <!-- .has-children -->
+                      <li class="has-children">
+                        <a href="#">Fashion Store</a> 
+                        <ul class="cd-secondary-dropdown is-hidden">
+                          <li class="go-back"><a href="#">Menu</a></li>
+                          <li class="see-all"><a href="products1.html">All Fashion Stores</a></li>
+                          <li class="has-children">
+                            <a href="#">GIRLS' CLOTHING</a> 
+                            <ul class="is-hidden">  
+                              <li class="go-back"><a href="#">All Fashion Stores</a></li>
+                              <li><a href="products1.html">Ethnic wear </a></li>
+                              <li><a href="products1.html">Maternity wear</a></li>
+                              <li><a href="products1.html">inner & nightwear </a></li>
+                              <li><a href="products1.html">casual wear </a></li>
+                              <li><a href="products1.html">formal wear</a></li>
+                              <li><a href="products1.html">Sports wear</a></li>
+                            </ul>
+                          </li> 
+                          <li class="has-children">
+                            <a href="#">BOYS' CLOTHING</a> 
+                            <ul class="is-hidden">  
+                              <li class="go-back"><a href="#">All Fashion Stores</a></li>
+                              <li><a href="products1.html">Jeans</a></li>  
+                              <li><a href="products1.html">Casual wear</a></li> 
+                              <li><a href="products1.html">Shorts</a></li> 
+                              <li><a href="products1.html">T-Shirts & Polos</a></li> 
+                              <li><a href="products1.html">Trousers & Chinos</a></li> 
+                            </ul>
+                          </li> 
+                          <li class="has-children">
+                            <a href="#">JACKETS</a> 
+                            <ul class="is-hidden">
+                              <li class="go-back"><a href="#">All Fashion Stores</a></li>
+                              <li><a href="products1.html">Blazers</a></li>
+                              <li><a href="products1.html">Bomber jackets</a></li>
+                              <li><a href="products1.html">Denim Jackets</a></li>
+                              <li><a href="products1.html">Duffle Coats</a></li>
+                              <li><a href="products1.html">Leather Jackets</a></li>
+                              <li><a href="products1.html">Parkas</a></li>
+                            </ul>
+                          </li> 
+                          <li class="has-children">
+                            <a href="#">ACCESSORIES </a> 
+                            <ul class="is-hidden"> 
+                              <li class="go-back"><a href="#">All Fashion Stores</a></li>
+                              <li><a href="products1.html">Watches </a></li>
+                              <li><a href="products1.html">Eyewear </a></li>
+                              <li><a href="products1.html">Jewellery </a></li>
+                              <li class="has-children">
+                                <a href="#">Footwear </a>  
+                                <ul class="is-hidden">
+                                  <li class="go-back"><a href="#"> </a></li>
+                                  <li><a href="products1.html">Ethnic</a></li>  
+                                  <li><a href="products1.html">Casual wear</a></li>
+                                  <li><a href="products1.html">Sports Shoes</a></li>
+                                  <li><a href="products1.html">Boots</a></li>
+                                </ul> 
+                              </li> 
+                              <li><a href="products1.html">Stoles & Scarves</a></li>
+                              <li><a href="products1.html">Handbags</a></li>
+                            </ul>
+                          </li>
+                          <li class="has-children">
+                            <a href="#">BEAUTY</a> 
+                            <ul class="is-hidden">
+                              <li class="go-back"><a href="#">All Fashion Stores</a></li>
+                              <li><a href="products1.html">Perfumes & Deos</a></li>
+                              <li><a href="products1.html">Lipsticks & Nail Polish</a></li>
+                              <li><a href="products1.html">Beauty Gift Hampers</a></li> 
+                              <li><a href="products1.html">Personal Grooming</a></li>
+                              <li><a href="products1.html">Travel bags</a></li>
+                            </ul>
+                          </li>
+                          <li class="has-children">
+                            <a href="products1.html">PERSONAL CARE</a> 
+                            <ul class="is-hidden"> 
+                              <li class="go-back"><a href="#">All Fashion Stores</a></li>
+                              <li><a href="products1.html">Face Care</a></li>
+                              <li><a href="products1.html">Nail Care</a></li>
+                              <li><a href="products1.html">Hair Care</a></li>
+                              <li><a href="products1.html">Body Care</a></li>
+                              <li><a href="products1.html">Bath & Spa</a></li>   
+                            </ul>
+                          </li>
+                        </ul> <!-- .cd-secondary-dropdown --> 
+                      </li> <!-- .has-children -->
+                      <li class="has-children">
+                        <a href="products2.html">Kids Fashion & Toys</a> 
+                        <ul class="cd-secondary-dropdown is-hidden"> 
+                          <li class="go-back"><a href="#">Menu</a></li>
+                          <li class="see-all"><a href="products2.html">All Kids Fashions</a></li>
+                          <li class="has-children">
+                            <a href="products2.html">KIDS CLOTHING</a> 
+                            <ul class="is-hidden"> 
+                              <li class="go-back"><a href="#">All Kids Fashions</a></li>
+                              <li><a href="products2.html">Ethnic wear </a></li> 
+                              <li><a href="products2.html">inner & Sleepwear </a></li>
+                              <li><a href="products2.html">Dresses & Frocks </a></li>
+                              <li><a href="products2.html">Winter wear</a></li>
+                              <li><a href="products2.html">Diaper & Accessories</a></li>
+                            </ul>
+                          </li> 
+                          <li class="has-children"><a href="#">KIDS FASHION</a>
+                            <ul class="is-hidden">  
+                              <li class="go-back"><a href="#">All Kids Fashions</a></li>
+                              <li><a href="products2.html">Footwear</a></li> 
+                              <li><a href="products2.html">Sunglasses </a></li>
+                              <li><a href="products2.html">School & Stationery</a></li>
+                              <li><a href="products2.html">Jewellery</a></li>
+                              <li><a href="products2.html">Hair bands & Clips</a></li>
+                            </ul>
+                          </li>
+                          <li class="has-children"><a href="#">Baby Care</a>
+                            <ul class="is-hidden"> 
+                              <li class="go-back"><a href="#">All Kids Fashions</a></li>
+                              <li><a href="products2.html">Lotions, Oil & Powder </a></li> 
+                              <li><a href="products2.html">Soaps, Shampoo </a></li>
+                              <li><a href="products2.html">Bath Towels</a></li> 
+                              <li class="has-children">
+                                <a href="#">Feeding</a> 
+                                <ul class="is-hidden">
+                                  <li class="go-back"><a href="#"> </a></li> 
+                                  <li><a href="products2.html">Baby Food </a></li>
+                                  <li><a href="products2.html">Bottle Feeding </a></li>
+                                  <li><a href="products2.html">Breast Feeding</a></li>  
+                                </ul>
+                              </li>  
+                              <li><a href="products2.html">Toddlers' Rooms</a></li>   
+                            </ul><!-- .cd-secondary-dropdown --> 
+                          </li> <!-- .has-children -->                
+                          <li class="has-children"><a href="#">TOYS & GAMES </a>
+                            <ul class="is-hidden"> 
+                              <li class="go-back"><a href="#">All Kids Fashions</a></li>
+                              <li><a href="products2.html">Art & Crafts</a></li> 
+                              <li><a href="products2.html">Educational Toys </a></li>
+                              <li><a href="products2.html">Baby Toys</a></li> 
+                              <li><a href="products2.html">Outdoor Play </a></li> 
+                              <li><a href="products2.html">Musical Instruments</a></li>
+                            </ul>
+                          </li>
+                          <li> 
+                            <ul class="is-hidden">
+                              <li class="go-back"><a href="#">All Kids Fashions</a></li>
+                              <li><a href="products2.html">Toy Tips & Trends</a></li> 
+                              <li><a href="products2.html">Preschool Toys</a></li>
+                              <li><a href="products2.html">Musical Instruments</a></li> 
+                              <li><a href="products2.html">Bikes & Ride-Ons</a></li>
+                              <li><a href="products2.html">Video Games</a></li>
+                              <li><a href="products2.html">PC & Digital Gaming</a></li>
+                            </ul> 
+                          </li> 
+                        </ul><!-- .cd-secondary-dropdown --> 
+                      </li> <!-- .has-children --> 
+                      <li class="has-children">
+                        <a href="#">Home, Furniture & Patio</a> 
+                        <ul class="cd-secondary-dropdown is-hidden">
+                          <li class="go-back"><a href="#">Menu</a></li>
+                          <li class="see-all"><a href="products3.html">All Products</a></li>
+                          <li class="has-children">
+                            <a href="#">Kitchen Uses</a> 
+                            <ul class="is-hidden">  
+                              <li class="go-back"><a href="#"></a></li>
+                              <li><a href="products3.html">Dinner Sets </a></li> 
+                              <li><a href="products3.html">Cookware & Bakeware </a></li>
+                              <li><a href="products3.html">Containers & Jars </a></li>
+                              <li><a href="products3.html">Kitchen Tools </a></li>
+                              <li><a href="products3.html">Food Storage</a></li>
+                              <li><a href="products3.html">Casseroles</a></li>
+                            </ul>
+                          </li> 
+                          <li class="has-children">
+                            <a href="#">Furniture </a> 
+                            <ul class="is-hidden"> 
+                              <li class="go-back"><a href="#"></a></li>
+                              <li><a href="products3.html">Bedroom </a></li> 
+                              <li><a href="products3.html">Dining Room </a></li>
+                              <li><a href="products3.html">Kids' Furniture </a></li>
+                              <li><a href="products3.html">Living Room</a></li>
+                              <li><a href="products3.html">Office</a></li>
+                              <li><a href="products3.html">Mattresses</a></li>
+                            </ul>
+                          </li> 
+                          <li class="has-children">
+                            <a href="#">Home Decor </a> 
+                            <ul class="is-hidden">
+                              <li class="go-back"><a href="#"></a></li>
+                              <li><a href="products3.html">Lighting</a></li> 
+                              <li><a href="products3.html">Painting</a></li>
+                              <li><a href="products3.html">Curtains & Blinds</a></li>
+                              <li><a href="products3.html">Patio Furniture</a></li>
+                              <li><a href="products3.html">Wardrobes & Cabinets</a></li>
+                              <li><a href="products3.html">Mattresses</a></li>
+                            </ul>
+                          </li>  
+                          <li class="has-children">
+                            <a href="#">Gardening & Lawn </a> 
+                            <ul class="is-hidden">
+                              <li class="go-back"><a href="#"> </a></li>  
+                              <li><a href="products3.html">Gardening </a></li> 
+                              <li><a href="products3.html">Landscaping </a></li>
+                              <li><a href="products3.html">Sheds</a></li>
+                              <li><a href="products3.html">Outdoor Storage  </a></li>
+                              <li><a href="products3.html">Garden & Ideas </a></li>
+                              <li><a href="products3.html">Patio Tips</a></li>
+                            </ul>
+                          </li> 
+                          <li class="has-children">
+                            <a href="#">Garage Storage</a> 
+                            <ul class="is-hidden"> 
+                              <li class="go-back"><a href="#"></a></li>
+                              <li><a href="products3.html">Baskets & Bins </a></li> 
+                              <li><a href="products3.html">Garage Door Openers</a></li>
+                              <li><a href="products3.html">Free Standing Shelves </a></li>
+                              <li><a href="products3.html">Floor cleaning</a></li>
+                              <li><a href="products3.html">Tool Kits</a></li>
+                            </ul>
+                          </li>  
+                        </ul><!-- .cd-secondary-dropdown --> 
+                      </li> <!-- .has-children -->  
+                      <li class="has-children">
+                        <a href="#">Sports, Fitness & Outdoor</a>
+                        <ul class="cd-secondary-dropdown is-hidden">
+                          <li class="go-back"><a href="#">Menu</a></li>
+                          <li class="see-all"><a href="products4.html">All Products</a></li>
+                          <li class="has-children">
+                            <a href="#">Single Sports </a> 
+                            <ul class="is-hidden">
+                              <li class="go-back"><a href="#"></a></li>
+                              <li><a href="products4.html">Bikes </a></li> 
+                              <li><a href="products4.html">Fishing  </a></li>
+                              <li><a href="products4.html">Cycling </a></li>
+                              <li><a href="products4.html">Musical Instruments</a></li>
+                              <li><a href="products4.html">Archery </a></li>
+                            </ul>
+                          </li> 
+                          <li class="has-children">
+                            <a href="#">Team Sports</a> 
+                            <ul class="is-hidden"> 
+                              <li class="go-back"><a href="#"></a></li>
+                              <li><a href="products4.html">Cricket </a></li> 
+                              <li><a href="products4.html">Badminton </a></li>
+                              <li><a href="products4.html">Swimming Gear </a></li>
+                              <li><a href="products4.html">Sports Apparel </a></li>
+                              <li><a href="products4.html">Indoor games</a></li>
+                            </ul>
+                          </li> 
+                          <li class="has-children">
+                            <a href="#">Fitness </a> 
+                            <ul class="is-hidden">
+                              <li class="go-back"><a href="#"></a></li>
+                              <li><a href="products4.html">Fitness Accessories </a></li> 
+                              <li><a href="products4.html">Exercise Machines </a></li>
+                              <li><a href="products4.html">Ellipticals </a></li>
+                              <li><a href="products4.html">Home Gyms</a></li> 
+                              <li><a href="products4.html">Exercise Bikes</a></li> 
+                            </ul>
+                          </li>
+                          <li class="has-children">
+                            <a href="#">Camping </a> 
+                            <ul class="is-hidden">
+                              <li class="go-back"><a href="#"></a></li>
+                              <li><a href="products4.html"> Airbeds</a></li> 
+                              <li><a href="products4.html">Tents </a></li>
+                              <li><a href="products4.html">Gazebo's & Shelters</a></li>
+                              <li><a href="products4.html">Coolers </a></li>
+                              <li><a href="products4.html">Canopies</a></li>
+                              <li><a href="products4.html">Sleeping Bags</a></li>
+                            </ul>
+                          </li> 
+                          <li class="has-children">
+                            <a href="#">Camping Tools</a> 
+                            <ul class="is-hidden">
+                              <li class="go-back"><a href="#"></a></li>
+                              <li><a href="products4.html">Shooting </a></li> 
+                              <li><a href="products4.html">Knives & Tools </a></li>
+                              <li><a href="products4.html">Optics & Binoculars </a></li>
+                              <li><a href="products4.html">Lights & Lanterns </a></li>
+                              <li><a href="products4.html">Hunting Clothing </a></li>
+                            </ul>
+                          </li> 
+                          <li class="has-children">
+                            <a href="#">Other</a> 
+                            <ul class="is-hidden">
+                              <li class="go-back"><a href="#"></a></li>
+                              <li><a href="products4.html">Riding Gears & More </a></li> 
+                              <li><a href="products4.html">Body Massagers </a></li>
+                              <li><a href="products4.html">Health Monitors </a></li>
+                              <li><a href="products4.html">Health Drinks </a></li> 
+                            </ul>
+                          </li>   
+                        </ul><!-- .cd-secondary-dropdown --> 
+                      </li> <!-- .has-children -->  
+                      <li class="has-children">
+                        <a href="#">Grocery store</a>
+                        <ul class="cd-secondary-dropdown is-hidden">
+                          <li class="go-back"><a href="#">Menu</a></li>
+                          <li class="see-all"><a href="products5.html">All Products</a></li>
+                          <li class="has-children">
+                            <a href="#">Veggies & Fruits </a> 
+                            <ul class="is-hidden">
+                              <li class="go-back"><a href="#"></a></li>
+                              <li><a href="products5.html">Vegetables </a></li> 
+                              <li><a href="products5.html">Fruits </a></li>
+                              <li><a href="products5.html">Dry Fruits</a></li> 
+                              <li><a href="products5.html">Snacks & Cookies </a></li>
+                              <li><a href="products5.html">Breakfast & Cereal</a></li> 
+                            </ul> 
+                          </li> 
+                          <li class="has-children">
+                            <a href="#">Packet Food</a> 
+                            <ul class="is-hidden">
+                              <li class="go-back"><a href="#"></a></li>
+                              <li><a href="products5.html">Beverages </a></li> 
+                              <li><a href="products5.html">Baking </a></li>
+                              <li><a href="products5.html">Emergency Food </a></li>
+                              <li><a href="products5.html">Candy & Gum </a></li>
+                              <li><a href="products5.html">Meals & Pasta </a></li>
+                            </ul>
+                          </li> 
+                          <li class="has-children">
+                            <a href="#">Shop All Pets </a> 
+                            <ul class="is-hidden">
+                              <li class="go-back"><a href="#"></a></li>
+                              <li><a href="products5.html">Dogs </a></li>  
+                              <li><a href="products5.html">Fish </a></li>                       
+                              <li><a href="products5.html">Cats</a></li>
+                              <li><a href="products5.html">Birds </a></li>
+                              <li><a href="products5.html">Pet Food </a></li>
+                            </ul>
+                          </li>
+                          <li class="has-children">
+                            <a href="#">Household Essentials </a> 
+                            <ul class="is-hidden"> 
+                              <li class="go-back"><a href="#"></a></li>
+                              <li><a href="products5.html">Laundry Room </a></li> 
+                              <li><a href="products5.html">Paper & Plastic</a></li>
+                              <li><a href="products5.html">Pest Control </a></li>
+                              <li><a href="products5.html">Batteries </a></li> 
+                            </ul>
+                          </li> 
+                          <li class="has-children">
+                            <a href="#">Food Shops </a> 
+                            <ul class="is-hidden">
+                              <li class="go-back"><a href="#"></a></li>
+                              <li><a href="products5.html">Fresh Food</a></li> 
+                              <li><a href="products5.html">Food Gifts </a></li>
+                              <li><a href="products5.html">Frozen Food </a></li>
+                              <li><a href="products5.html">Organic </a></li>
+                              <li><a href="products5.html">Gluten Free </a></li>
+                            </ul>
+                          </li> 
+                          <li class="has-children">
+                            <a href="#">Tips </a> 
+                            <ul class="is-hidden">
+                              <li class="go-back"><a href="#"></a></li>
+                              <li><a href="products5.html">Pets Growth</a></li> 
+                              <li><a href="products5.html">Recipes </a></li>
+                              <li><a href="products5.html">Snacks</a></li>
+                              <li><a href="products5.html">Nutrition</a></li> 
+                            </ul>
+                          </li> 
+                        </ul><!-- .cd-secondary-dropdown --> 
+                      </li> <!-- .has-children -->  
+                      <li class="has-children">
+                        <a href="#">Photo, Gifts & Office Supplies</a>
+                        <ul class="cd-secondary-dropdown is-hidden">
+                          <li class="go-back"><a href="#">Menu</a></li>
+                          <li class="see-all"><a href="products6.html">All Products</a></li>
+                          <li class="has-children">
+                            <a href="#">Trending Now </a> 
+                            <ul class="is-hidden">
+                              <li class="go-back"><a href="#"></a></li>
+                              <li><a href="products6.html">Best Priced</a></li> 
+                              <li><a href="products6.html">Chocolates </a></li>
+                              <li><a href="products6.html">Gift Cards </a></li>
+                              <li><a href="products6.html">Fashion & Accessories </a></li>
+                              <li><a href="products6.html">Decorative Plants </a></li>
+                            </ul>
+                          </li> 
+                          <li class="has-children">
+                            <a href="#">Photos </a> 
+                            <ul class="is-hidden">
+                              <li class="go-back"><a href="#"></a></li>
+                              <li><a href="products6.html">Shelf animation </a></li> 
+                              <li><a href="products6.html">3D-rendered </a></li>
+                              <li><a href="products6.html">gift builder </a></li>
+                              <li><a href="products6.html">Frames</a></li>
+                              <li><a href="products6.html">Wall Decor</a></li>
+                            </ul>
+                          </li> 
+                          <li class="has-children">
+                            <a href="#">Gifts </a> 
+                            <ul class="is-hidden">  
+                              <li class="go-back"><a href="#"></a></li>
+                              <li><a href="products6.html">Personalized Gifts </a></li> 
+                              <li><a href="products6.html">Flowers </a></li>
+                              <li><a href="products6.html">Cards & Toys</a></li>
+                              <li><a href="products6.html">Show pieces </a></li>
+                              <li><a href="products6.html">Photo Books</a></li>
+                            </ul>
+                          </li>
+                          <li class="has-children">
+                            <a href="#">Favourite Brands </a> 
+                            <ul class="is-hidden">
+                              <li class="go-back"><a href="#"></a></li>
+                              <li><a href="products6.html">Archies </a></li> 
+                              <li><a href="products6.html">Jewel Fuel </a></li>
+                              <li><a href="products6.html">Ferns N Petals </a></li>
+                              <li><a href="products6.html">Happily Unmarried</a></li>
+                              <li><a href="products6.html">Chumbak</a></li>
+                            </ul>
+                          </li> 
+                          <li class="has-children">
+                            <a href="#">Office</a> 
+                            <ul class="is-hidden"> 
+                              <li class="go-back"><a href="#"></a></li>
+                              <li><a href="products6.html">Calendars</a></li> 
+                              <li><a href="products6.html">Mousepads</a></li>
+                              <li><a href="products6.html">Phone Cases</a></li>
+                              <li><a href="products6.html">Tablet & Laptop Cases</a></li>
+                              <li><a href="products6.html">Mounted Photos</a></li>
+                            </ul>
+                          </li> 
+                          <li class="has-children">
+                            <a href="#">Combos </a> 
+                            <ul class="is-hidden">
+                              <li class="go-back"><a href="#"></a></li>
+                              <li><a href="products6.html">Chocolates </a></li> 
+                              <li><a href="products6.html">Dry Fruits</a></li>
+                              <li><a href="products6.html">Sweets</a></li>
+                              <li><a href="products6.html">Snacks</a></li>
+                              <li><a href="products6.html">Cakes</a></li>
+                            </ul>
+                          </li> 
+                        </ul><!-- .cd-secondary-dropdown --> 
+                      </li> 
+                      <li class="has-children">
+                        <a href="#">Health, Beauty & Pharmacy</a>
+                        <ul class="cd-secondary-dropdown is-hidden">
+                          <li class="go-back"><a href="#">Menu</a></li>
+                          <li class="see-all"><a href="products7.html">All Products</a></li>
+                          <li class="has-children">
+                            <a href="#">Health</a> 
+                            <ul class="is-hidden">
+                              <li class="go-back"><a href="#"></a></li>
+                              <li><a href="products7.html">Home Health Care </a></li> 
+                              <li><a href="products7.html">Sports Nutrition </a></li>
+                              <li><a href="products7.html">Vision </a></li>
+                              <li><a href="products7.html">Vitamins </a></li>
+                              <li><a href="products7.html">Diet & Nutrition </a></li>
+                            </ul>
+                          </li> 
+                          <li class="has-children">
+                            <a href="#">Health Tips</a> 
+                            <ul class="is-hidden">
+                              <li class="go-back"><a href="#"></a></li>
+                              <li><a href="products7.html">Diet</a></li> 
+                              <li><a href="products7.html">Exercise Tips  </a></li>
+                              <li><a href="products7.html">Vitamin Balance</a></li>
+                              <li><a href="products7.html">Health Insurance</a></li>
+                              <li><a href="products7.html">Funeral</a></li>
+                            </ul>
+                          </li> 
+                          <li class="has-children">
+                            <a href="#">Beauty </a> 
+                            <ul class="is-hidden">
+                              <li class="go-back"><a href="#"></a></li>
+                              <li><a href="products7.html">Massage & Spa </a></li> 
+                              <li><a href="products7.html">Face Wash</a></li>
+                              <li><a href="products7.html">Facial Cleanser</a></li>
+                              <li><a href="products7.html">Makeup </a></li>
+                              <li><a href="products7.html">Beauty Tips</a></li>
+                            </ul>
+                          </li>
+                          <li class="has-children">
+                            <a href="#">Pharmacy </a> 
+                            <ul class="is-hidden">
+                              <li class="go-back"><a href="#"></a></li>
+                              <li><a href="products7.html">Home Delivery </a></li> 
+                              <li><a href="products7.html">History & Reports </a></li>
+                              <li><a href="products7.html">Transfer Prescriptions </a></li>
+                              <li><a href="products7.html">Health CheckUp</a></li>
+                              <li><a href="products7.html">Mobile App</a></li>
+                            </ul>
+                          </li> 
+                          <li class="has-children">
+                            <a href="#">Pharmacy Center </a> 
+                            <ul class="is-hidden">
+                              <li class="go-back"><a href="#"></a></li>
+                              <li><a href="products7.html">Diabetes Shop </a></li> 
+                              <li><a href="products7.html">Medicine Cabinet </a></li>
+                              <li><a href="products7.html">Vitamin Selector</a></li>
+                              <li><a href="products7.html">Pharmacy Help</a></li> 
+                            </ul>
+                          </li>  
+                        </ul><!-- .cd-secondary-dropdown --> 
+                      </li>
+                      <li class="has-children">
+                        <a href="#">Automotive</a>
+                        <ul class="cd-secondary-dropdown is-hidden">
+                          <li class="go-back"><a href="#">Menu</a></li>
+                          <li class="see-all"><a href="products8.html">All Products</a></li>
+                          <li class="has-children">
+                            <a href="#">All Motors </a> 
+                            <ul class="is-hidden">
+                              <li class="go-back"><a href="#"></a></li>
+                              <li><a href="products8.html">Bikes </a></li> 
+                              <li><a href="products8.html">Yachts </a></li>
+                              <li><a href="products8.html">Scooters </a></li>
+                              <li><a href="products8.html">Autos</a></li>
+                              <li><a href="products8.html">Bus</a></li>
+                            </ul>
+                          </li> 
+                          <li class="has-children">
+                            <a href="#">Accessories </a> 
+                            <ul class="is-hidden">
+                              <li class="go-back"><a href="#"></a></li>
+                              <li><a href="products8.html">Vehicle Electronics</a></li> 
+                              <li><a href="products8.html">Stereos & Monitors</a></li>
+                              <li><a href="products8.html">Bluetooth Devices</a></li>
+                              <li><a href="products8.html">GPS Navigation</a></li>
+                              <li><a href="products8.html">Speakers & Tweeters</a></li>
+                            </ul>
+                          </li> 
+                          <li class="has-children">
+                            <a href="#">Safety & Security </a> 
+                            <ul class="is-hidden">
+                              <li class="go-back"><a href="#"></a></li>
+                              <li><a href="products8.html">Anti-Theft Devices </a></li> 
+                              <li><a href="products8.html">Helmets</a></li>
+                              <li><a href="products8.html">Sensors</a></li>
+                              <li><a href="products8.html">Auto Repair Tools </a></li>
+                              <li><a href="products8.html">Antifreeze & Coolants </a></li>
+                            </ul>
+                          </li>
+                          <li class="has-children">
+                            <a href="#">Car Interiors</a> 
+                            <ul class="is-hidden">
+                              <li class="go-back"><a href="#"></a></li>
+                              <li><a href="products8.html">Stereos </a></li> 
+                              <li><a href="products8.html">Floor Mats </a></li>
+                              <li><a href="products8.html">Seat Covers</a></li>
+                              <li><a href="products8.html">Chargers </a></li>
+                              <li><a href="products8.html">Audio Finder </a></li>
+                            </ul>
+                          </li>  
+                          <li class="has-children">
+                            <a href="#">Exterior Accessories </a> 
+                            <ul class="is-hidden"> 
+                              <li class="go-back"><a href="#"></a></li>
+                              <li><a href="products8.html">Wheel covers </a></li> 
+                              <li><a href="products8.html">Car Lighting </a></li>
+                              <li><a href="products8.html">Polish & Waxes</a></li>
+                              <li><a href="products8.html">Cargo Management</a></li>
+                              <li><a href="products8.html">Car Decoration </a></li>
+                            </ul>
+                          </li> 
+                          <li class="has-children">
+                            <a href="#">Car Care</a> 
+                            <ul class="is-hidden">
+                              <li class="go-back"><a href="#"></a></li>
+                              <li><a href="products8.html">Auto Tips & Advice </a></li> 
+                              <li><a href="products8.html">Car Washes & Cleaners </a></li>
+                              <li><a href="products8.html">Car Wax & Polish</a></li>
+                              <li><a href="products8.html">Cleaning Tools</a></li>
+                              <li><a href="products8.html">Detailing Kits </a></li>
+                            </ul>
+                          </li> 
+                        </ul><!-- .cd-secondary-dropdown --> 
+                      </li>
+                      <li class="has-children">
+                        <a href="#">Books, Music & Movies</a>
+                        <ul class="cd-secondary-dropdown is-hidden">
+                          <li class="go-back"><a href="#">Menu</a></li>
+                          <li class="see-all"><a href="products9.html">All Products</a></li>
+                          <li class="has-children">
+                            <a href="#">Books</a> 
+                            <ul class="is-hidden">
+                              <li class="go-back"><a href="#"></a></li>
+                              <li class="has-children"><a href="#">Exam books </a>
+                                <ul class="is-hidden">
+                                  <li class="go-back"><a href="#"> </a></li>
+                                  <li><a href="products9.html">CAT/MAT/XAT</a></li>
+                                  <li><a href="products9.html">Civil Services</a></li>
+                                  <li><a href="products9.html">AFCAT</a></li>
+                                  <li><a href="products9.html">New Releases</a></li>
+                                </ul>                       
+                              </li>
+                              <li><a href="products9.html">Academic Text </a></li>
+                              <li><a href="products9.html">Romance Books </a></li>
+                              <li><a href="products9.html">Journals </a></li>
+                              <li><a href="products9.html">Children's & Teen Books </a></li>
+                            </ul>
+                          </li> 
+                          <li class="has-children">
+                            <a href="#">Music</a> 
+                            <ul class="is-hidden">
+                              <li class="go-back"><a href="#"></a></li>
+                              <li><a href="products9.html">New Releases </a></li> 
+                              <li><a href="products9.html">Country Music </a></li>
+                              <li><a href="products9.html">Musical Instruments </a></li>
+                              <li><a href="products9.html">Collections</a></li>
+                              <li><a href="products9.html">Boxed Sets </a></li>
+                            </ul>
+                          </li> 
+                          <li class="has-children">
+                            <a href="#">Music Combo</a> 
+                            <ul class="is-hidden">
+                              <li class="go-back"><a href="#"></a></li>
+                              <li><a href="products9.html">Pop </a></li> 
+                              <li><a href="products9.html">Preorders </a></li>
+                              <li><a href="products9.html">Album Songs</a></li>
+                              <li><a href="products9.html">Top 50 CDs </a></li>
+                              <li><a href="products9.html">Music DVDs </a></li>
+                            </ul>
+                          </li>
+                          <li class="has-children">
+                            <a href="#">Movies</a> 
+                            <ul class="is-hidden"> 
+                              <li class="go-back"><a href="#"></a></li>
+                              <li><a href="products9.html">New Releases </a></li> 
+                              <li><a href="products9.html">Children & Family </a></li>
+                              <li><a href="products9.html">Action</a></li>
+                              <li><a href="products9.html">Classic Movies </a></li>
+                              <li><a href="products9.html">Bollywood Movies </a></li>
+                            </ul>
+                          </li> 
+                          <li class="has-children">
+                            <a href="#">Movies Combo</a> 
+                            <ul class="is-hidden">
+                              <li class="go-back"><a href="#"></a></li>
+                              <li><a href="products9.html">Hollywood Movies </a></li> 
+                              <li><a href="products9.html">Digital Movies </a></li>
+                              <li><a href="products9.html">Boxed Sets</a></li>
+                              <li><a href="products9.html">Animated</a></li>
+                              <li><a href="products9.html">Adventure</a></li>
+                            </ul>
+                          </li> 
+                          <li class="has-children">
+                            <a href="#">TV Shows</a> 
+                            <ul class="is-hidden">
+                              <li class="go-back"><a href="#"></a></li>
+                              <li><a href="products9.html">Serials</a></li> 
+                              <li><a href="products9.html">Best Programs</a></li>
+                              <li><a href="products9.html">Celebrations</a></li>
+                              <li><a href="products9.html">Top Shows</a></li> 
+                            </ul>
+                          </li> 
+                        </ul><!-- .cd-secondary-dropdown --> 
+                      </li>  
+                      <li><a href="sitemap.html">Full Site Directory </a></li>  
+                    </ul> <!-- .cd-dropdown-content -->
+                  </nav> <!-- .cd-dropdown -->
+                </div> <!-- .cd-dropdown-wrapper -->   
+            </div>
+          </div>
+
+          <div class="col-md-3">
+              <div class="move-text">
+                <div class="marquee"><a href="offers.html"> EVENTOS</div>
+              </div>
+          </div>
+       
+          <div class="col-md-3">
+            <div class="move-text">
+              <div class="marquee"><a href="offers.html"> CONTACTANOS</div>
+            </div>
+          </div>
+        
+        </div>
+      </div>
     </div>
-		<!-- InstanceEndEditable --></td>
-      </tr>
-    </table>
+    </div><!-- //header-two -->
+    
   </div>
-  <div id="layout_footer">
-    <table width="100%" border="0" cellspacing="0" cellpadding="10">
-      <tr>
-        <td width="222"><img src="images/logo-kaprichos-footer.png" width="222" height="112" alt="Kapricho's Floristería en El Salvador" /></td>
-        <td><h2>Arreglos Florales a domicilio en El Salvador</h2>
-        <p>Kapricho´s  Floristería nació con el objetivo de   brindar arreglos florales innovadores, especializándonos en actualizar  constantemente todos aquellos detalles que hacen su arreglo diferente. En  Kapricho´s Floristería nos esmeramos porque sus sentimientos sean expresados  con especial cuidado y garantizamos cubrir las expectativas.<br/>
-Todos nuestros  arreglos son elaborados con materia prima de alta calidad, entre las clases de  arreglos que le ofrecemos, tenemos: Frutales, primaverales, tropicales,  orquídeas, globos sorpresa, chocolates, etc. Para toda ocasión, cumpleaños,  felicitaciones, amistad, recuperación.<br />
-También, nos  ponemos a su disposición para cualquier tipo de evento, bodas, primera  comunión, mesas de Honor, Baby shower  decoraciones de salones, eventos de gobierno, Decoración de iglesias, etc. En  donde le ofrecemos calidad, bajos costos y un alto sentido de responsabilidad.<br/>
-Ofrecemos nuestro  servicio los siete días a la semana, por lo que, nos encontramos a su  disposición en aquellos momentos inesperados y donde usted desea expresarse a  través de un lindo detalle.</p></td>
-      </tr>
-      <tr>
-      <td colspan="2" align="center">
-       <ul class="menuppal">
-      <li><a href="catalogo.php">Catálogo</a></li>
-      <li><a href="ofertas.php">Ofertas</a></li>
-      <li><a href="preguntas.php">Preguntas</a></li>
-      <li><a href="pago.php">¿Cómo pagar?</a></li>
-      <li><a href="servicios.php">Servicios</a></li>
-      <li><a href="tip.php">Tips</a></li>
-      <li><a href="contacto.php">Contáctenos</a></li>
-      <li><a href="videos.php">Videos</a></li>
-      <li><a href="politicas.php">Politicas de Reembolso</a></li>
-    </ul>
-      </td>      
-      </tr>
-      <tr>
-        <td colspan="2" align="center"><p><a href="http://www.2checkout.com/" target="_blank" style="color:#FFF; text-decoration:underline;">2Checkout.com</a>, Inc. is an authorized retailer of kaprichosfloristeria.com<br />
-        <img src="images/2cocc05.gif" width="182" height="46" /></p></td>
-      </tr>
-    </table>
+  <!-- //header --> 
+  <!-- banner -->
+  <div class="banner">
+    <div id="kb" class="carousel kb_elastic animate_text kb_wrapper" data-ride="carousel" data-interval="6000" data-pause="hover">
+      <!-- Wrapper-for-Slides -->
+            <div class="carousel-inner" role="listbox">  
+                <div class="item active"><!-- First-Slide -->
+                    <img src="images/5.jpg" alt="" class="img-responsive" />
+                    <div class="carousel-caption kb_caption kb_caption_right">
+                        <h3 data-animation="animated flipInX">Flat <span>50%</span> Discount</h3>
+                        <h4 data-animation="animated flipInX">Hot Offer Today Only</h4>
+                    </div>
+                </div>  
+                <div class="item"> <!-- Second-Slide -->
+                    <img src="images/8.jpg" alt="" class="img-responsive" />
+                    <div class="carousel-caption kb_caption kb_caption_right">
+                        <h3 data-animation="animated fadeInDown">Our Latest Fashion Editorials</h3>
+                        <h4 data-animation="animated fadeInUp">cupidatat non proident</h4>
+                    </div>
+                </div> 
+                <div class="item"><!-- Third-Slide -->
+                    <img src="images/3.jpg" alt="" class="img-responsive"/>
+                    <div class="carousel-caption kb_caption kb_caption_center">
+                        <h3 data-animation="animated fadeInLeft">End Of Season Sale</h3>
+                        <h4 data-animation="animated flipInX">cupidatat non proident</h4>
+                    </div>
+                </div> 
+            </div> 
+            <!-- Left-Button -->
+            <a class="left carousel-control kb_control_left" href="#kb" role="button" data-slide="prev">
+        <span class="fa fa-angle-left kb_icons" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a> 
+            <!-- Right-Button -->
+            <a class="right carousel-control kb_control_right" href="#kb" role="button" data-slide="next">
+                <span class="fa fa-angle-right kb_icons" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a> 
+        </div>
+    <script src="js/custom.js"></script>
   </div>
-</div>
+  <!-- //banner -->  
+  <!-- welcome -->
+  <div class="welcome"> 
+    <div class="container"> 
+      <div class="welcome-info">
+        <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+          <ul id="myTab" class=" nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#home" id="home-tab" role="tab" data-toggle="tab" >
+              <i class="fa fa-laptop" aria-hidden="true"></i> 
+              <h5>Electronics</h5>
+            </a></li>
+            <li role="presentation"><a href="#carl" role="tab" id="carl-tab" data-toggle="tab"> 
+              <i class="fa fa-female" aria-hidden="true"></i>
+              <h5>Fashion</h5>
+            </a></li>
+            <li role="presentation"><a href="#james" role="tab" id="james-tab" data-toggle="tab"> 
+              <i class="fa fa-gift" aria-hidden="true"></i>
+              <h5>Photo & Gifts</h5>
+            </a></li>
+            <li role="presentation"><a href="#decor" role="tab" id="decor-tab" data-toggle="tab"> 
+              <i class="fa fa-home" aria-hidden="true"></i>
+              <h5>Home Decor</h5>
+            </a></li>
+            <li role="presentation"><a href="#sports" role="tab" id="sports-tab" data-toggle="tab"> 
+              <i class="fa fa-motorcycle" aria-hidden="true"></i>
+              <h5>Sports</h5>
+            </a></li> 
+          </ul>
+          <div class="clearfix"> </div>
+          <h3 class="w3ls-title">Featured Products</h3>
+          <div id="myTabContent" class="tab-content">
+            <div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
+              <div class="tabcontent-grids">  
+                <div id="owl-demo" class="owl-carousel"> 
+                  <div class="item">
+                    <div class="glry-w3agile-grids agileits"> 
+                      <a href="products.html"><img src="images/e1.png" alt="img"></a>
+                      <div class="view-caption agileits-w3layouts">           
+                        <h4><a href="products.html">Audio speaker</a></h4>
+                        <p>Lorem ipsum dolor sit amet consectetur</p>
+                        <h5>$100</h5> 
+                        <form action="#" method="post">
+                          <input type="hidden" name="cmd" value="_cart" />
+                          <input type="hidden" name="add" value="1" /> 
+                          <input type="hidden" name="w3ls_item" value="Audio speaker" /> 
+                          <input type="hidden" name="amount" value="100.00" /> 
+                          <button type="submit" class="w3ls-cart" ><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+                        </form>  
+                      </div>   
+                    </div>   
+                  </div>
+                  <div class="item">
+                    <div class="glry-w3agile-grids agileits">
+                      <div class="new-tag"><h6>Sale</h6></div>
+                      <a href="products.html"><img src="images/e2.png" alt="img"></a>
+                      <div class="view-caption agileits-w3layouts">           
+                        <h4><a href="products.html">Refrigerator</a></h4>
+                        <p>Lorem ipsum dolor sit amet consectetur</p> 
+                        <h5>$300</h5>
+                        <form action="#" method="post">
+                          <input type="hidden" name="cmd" value="_cart" />
+                          <input type="hidden" name="add" value="1" /> 
+                          <input type="hidden" name="w3ls_item" value="Refrigerator" /> 
+                          <input type="hidden" name="amount" value="300.00"/> 
+                          <button type="submit" class="w3ls-cart" ><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+                        </form>
+                      </div>       
+                    </div>  
+                  </div>
+                  <div class="item">
+                    <div class="glry-w3agile-grids agileits"> 
+                      <div class="new-tag"><h6>New</h6></div>
+                      <a href="products.html"><img src="images/e3.png" alt="img"></a>
+                      <div class="view-caption agileits-w3layouts">           
+                        <h4><a href="products.html">Smart Phone</a></h4>
+                        <p>Lorem ipsum dolor sit amet consectetur</p>
+                        <h5>$70</h5>
+                        <form action="#" method="post">
+                          <input type="hidden" name="cmd" value="_cart" />
+                          <input type="hidden" name="add" value="1" /> 
+                          <input type="hidden" name="w3ls_item" value="Smart Phone" /> 
+                          <input type="hidden" name="amount" value="70.00"/> 
+                          <button type="submit" class="w3ls-cart" ><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+                        </form>
+                      </div>        
+                    </div>  
+                  </div>
+                  <div class="item">
+                    <div class="glry-w3agile-grids agileits"> 
+                      <a href="products.html"><img src="images/e4.png" alt="img"></a>
+                      <div class="view-caption agileits-w3layouts">           
+                        <h4><a href="products.html">Digital Camera</a></h4>
+                        <p>Lorem ipsum dolor sit amet consectetur</p>
+                        <h5>$80</h5>
+                        <form action="#" method="post">
+                          <input type="hidden" name="cmd" value="_cart" />
+                          <input type="hidden" name="add" value="1" /> 
+                          <input type="hidden" name="w3ls_item" value="Digital Camera"/> 
+                          <input type="hidden" name="amount" value="80.00"/>  
+                          <button type="submit" class="w3ls-cart" ><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+                        </form>
+                      </div>         
+                    </div>  
+                  </div>
+                  <div class="item">
+                    <div class="glry-w3agile-grids agileits"> 
+                      <a href="products.html"><img src="images/e1.png" alt="img"></a>
+                      <div class="view-caption agileits-w3layouts">           
+                        <h4><a href="products.html">Audio speaker</a></h4>
+                        <p>Lorem ipsum dolor sit amet consectetur</p>
+                        <h5>$100</h5> 
+                        <form action="#" method="post">
+                          <input type="hidden" name="cmd" value="_cart" />
+                          <input type="hidden" name="add" value="1" /> 
+                          <input type="hidden" name="w3ls_item" value="Audio speaker" /> 
+                          <input type="hidden" name="amount" value="100.00" /> 
+                          <button type="submit" class="w3ls-cart" ><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+                        </form>  
+                      </div>   
+                    </div>   
+                  </div>
+                  <div class="item">
+                    <div class="glry-w3agile-grids agileits">
+                      <div class="new-tag"><h6>Sale</h6></div>
+                      <a href="products.html"><img src="images/e2.png" alt="img"></a>
+                      <div class="view-caption agileits-w3layouts">           
+                        <h4><a href="products.html">Refrigerator</a></h4>
+                        <p>Lorem ipsum dolor sit amet consectetur</p> 
+                        <h5>$300</h5>
+                        <form action="#" method="post">
+                          <input type="hidden" name="cmd" value="_cart" />
+                          <input type="hidden" name="add" value="1" /> 
+                          <input type="hidden" name="w3ls_item" value="Refrigerator" /> 
+                          <input type="hidden" name="amount" value="300.00"/>  
+                          <button type="submit" class="w3ls-cart" ><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+                        </form>
+                      </div>       
+                    </div>  
+                  </div>
+                  <div class="item">
+                    <div class="glry-w3agile-grids agileits"> 
+                      <div class="new-tag"><h6>New</h6></div>
+                      <a href="products.html"><img src="images/e3.png" alt="img"></a>
+                      <div class="view-caption agileits-w3layouts">           
+                        <h4><a href="products.html">Smart Phone</a></h4>
+                        <p>Lorem ipsum dolor sit amet consectetur</p>
+                        <h5>$70</h5>
+                        <form action="#" method="post">
+                          <input type="hidden" name="cmd" value="_cart" />
+                          <input type="hidden" name="add" value="1" /> 
+                          <input type="hidden" name="w3ls_item" value="Smart Phone" /> 
+                          <input type="hidden" name="amount" value="70.00"/>
+                          <button type="submit" class="w3ls-cart" ><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+                        </form>
+                      </div>        
+                    </div>  
+                  </div>
+                  <div class="item">
+                    <div class="glry-w3agile-grids agileits"> 
+                      <a href="products.html"><img src="images/e4.png" alt="img"></a>
+                      <div class="view-caption agileits-w3layouts">           
+                        <h4><a href="products.html">Digital Camera</a></h4>
+                        <p>Lorem ipsum dolor sit amet consectetur</p>
+                        <h5>$80</h5>
+                        <form action="#" method="post">
+                          <input type="hidden" name="cmd" value="_cart" />
+                          <input type="hidden" name="add" value="1" /> 
+                          <input type="hidden" name="w3ls_item" value="Digital Camera"/> 
+                          <input type="hidden" name="amount" value="80.00"/> 
+                          <button type="submit" class="w3ls-cart" ><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+                        </form>
+                      </div>         
+                    </div>  
+                  </div>
+                </div> 
+              </div>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="carl" aria-labelledby="carl-tab">
+              <div class="tabcontent-grids">
+                <script>
+                  $(document).ready(function() { 
+                    $("#owl-demo1").owlCarousel({
+                   
+                      autoPlay: 3000, //Set AutoPlay to 3 seconds
+                   
+                      items :4,
+                      itemsDesktop : [640,5],
+                      itemsDesktopSmall : [414,4],
+                      navigation : true
+                   
+                    });
+                    
+                  }); 
+                </script>
+                <div id="owl-demo1" class="owl-carousel"> 
+                  <div class="item">
+                    <div class="glry-w3agile-grids agileits"> 
+                      <a href="products1.html"><img src="images/f1.png" alt="img"></a>
+                      <div class="view-caption agileits-w3layouts">           
+                        <h4><a href="products1.html">T Shirt</a></h4>
+                        <p>Lorem ipsum dolor sit amet consectetur</p>
+                        <h5>$10</h5>
+                        <form action="#" method="post">
+                          <input type="hidden" name="cmd" value="_cart" />
+                          <input type="hidden" name="add" value="1" /> 
+                          <input type="hidden" name="w3ls_item" value="T Shirt" /> 
+                          <input type="hidden" name="amount" value="10.00" /> 
+                          <button type="submit" class="w3ls-cart" ><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+                        </form>
+                      </div>        
+                    </div>    
+                  </div>
+                  <div class="item">
+                    <div class="glry-w3agile-grids agileits">
+                      <div class="new-tag"><h6>20% <br> Off</h6></div>
+                      <a href="products1.html"><img src="images/f2.png" alt="img"></a>
+                      <div class="view-caption agileits-w3layouts">           
+                        <h4><a href="products1.html">Women Sandal</a></h4>
+                        <p>Lorem ipsum dolor sit amet consectetur</p>
+                        <h5>$20</h5>
+                        <form action="#" method="post">
+                          <input type="hidden" name="cmd" value="_cart" />
+                          <input type="hidden" name="add" value="1" /> 
+                          <input type="hidden" name="w3ls_item" value="Women Sandal" /> 
+                          <input type="hidden" name="amount" value="20.00" /> 
+                          <button type="submit" class="w3ls-cart" ><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+                        </form>
+                      </div>        
+                    </div> 
+                  </div>
+                  <div class="item">
+                    <div class="glry-w3agile-grids agileits"> 
+                      <a href="products1.html"><img src="images/f3.png" alt="img"></a>
+                      <div class="view-caption agileits-w3layouts">           
+                        <h4><a href="products1.html">Jewellery</a></h4>
+                        <p>Lorem ipsum dolor sit amet consectetur</p>
+                        <h5>$60</h5>
+                        <form action="#" method="post">
+                          <input type="hidden" name="cmd" value="_cart" />
+                          <input type="hidden" name="add" value="1" /> 
+                          <input type="hidden" name="w3ls_item" value="Jewellery" /> 
+                          <input type="hidden" name="amount" value="60.00" /> 
+                          <button type="submit" class="w3ls-cart" ><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+                        </form>
+                      </div>         
+                    </div> 
+                  </div>
+                  <div class="item">
+                    <div class="glry-w3agile-grids agileits"> 
+                      <div class="new-tag"><h6>New</h6></div>
+                      <a href="products1.html"><img src="images/f4.png" alt="img"></a>
+                      <div class="view-caption agileits-w3layouts">           
+                        <h4><a href="products1.html">Party dress</a></h4>
+                        <p>Lorem ipsum dolor sit amet consectetur</p>
+                        <h5>$15</h5>
+                        <form action="#" method="post">
+                          <input type="hidden" name="cmd" value="_cart" />
+                          <input type="hidden" name="add" value="1" /> 
+                          <input type="hidden" name="w3ls_item" value="Party dress" /> 
+                          <input type="hidden" name="amount" value="15.00" /> 
+                          <button type="submit" class="w3ls-cart" ><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+                        </form>
+                      </div>      
+                    </div> 
+                  </div> 
+                  <div class="item">
+                    <div class="glry-w3agile-grids agileits"> 
+                      <a href="products1.html"><img src="images/f1.png" alt="img"></a>
+                      <div class="view-caption agileits-w3layouts">           
+                        <h4><a href="products1.html">T Shirt</a></h4>
+                        <p>Lorem ipsum dolor sit amet consectetur</p>
+                        <h5>$10</h5>
+                        <form action="#" method="post">
+                          <input type="hidden" name="cmd" value="_cart" />
+                          <input type="hidden" name="add" value="1" /> 
+                          <input type="hidden" name="w3ls_item" value="T Shirt" /> 
+                          <input type="hidden" name="amount" value="10.00" /> 
+                          <button type="submit" class="w3ls-cart" ><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+                        </form>
+                      </div>        
+                    </div>    
+                  </div>
+                  <div class="item">
+                    <div class="glry-w3agile-grids agileits">
+                      <div class="new-tag"><h6>20% <br> Off</h6></div>
+                      <a href="products1.html"><img src="images/f2.png" alt="img"></a>
+                      <div class="view-caption agileits-w3layouts">           
+                        <h4><a href="products1.html">Women Sandal</a></h4>
+                        <p>Lorem ipsum dolor sit amet consectetur</p>
+                        <h5>$20</h5>
+                        <form action="#" method="post">
+                          <input type="hidden" name="cmd" value="_cart" />
+                          <input type="hidden" name="add" value="1" /> 
+                          <input type="hidden" name="w3ls_item" value="Women Sandal" /> 
+                          <input type="hidden" name="amount" value="20.00" /> 
+                          <button type="submit" class="w3ls-cart" ><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+                        </form>
+                      </div>        
+                    </div> 
+                  </div>
+                  <div class="item">
+                    <div class="glry-w3agile-grids agileits"> 
+                      <a href="products1.html"><img src="images/f3.png" alt="img"></a>
+                      <div class="view-caption agileits-w3layouts">           
+                        <h4><a href="products1.html">Jewellery</a></h4>
+                        <p>Lorem ipsum dolor sit amet consectetur</p>
+                        <h5>$60</h5>
+                        <form action="#" method="post">
+                          <input type="hidden" name="cmd" value="_cart" />
+                          <input type="hidden" name="add" value="1" /> 
+                          <input type="hidden" name="w3ls_item" value="Jewellery" /> 
+                          <input type="hidden" name="amount" value="60.00" /> 
+                          <button type="submit" class="w3ls-cart" ><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+                        </form>
+                      </div>         
+                    </div> 
+                  </div>
+                  <div class="item">
+                    <div class="glry-w3agile-grids agileits"> 
+                      <div class="new-tag"><h6>New</h6></div>
+                      <a href="products1.html"><img src="images/f4.png" alt="img"></a>
+                      <div class="view-caption agileits-w3layouts">           
+                        <h4><a href="products1.html">Party dress</a></h4>
+                        <p>Lorem ipsum dolor sit amet consectetur</p>
+                        <h5>$15</h5>
+                        <form action="#" method="post">
+                          <input type="hidden" name="cmd" value="_cart" />
+                          <input type="hidden" name="add" value="1" /> 
+                          <input type="hidden" name="w3ls_item" value="Party dress" /> 
+                          <input type="hidden" name="amount" value="15.00" /> 
+                          <button type="submit" class="w3ls-cart" ><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+                        </form>
+                      </div>      
+                    </div> 
+                  </div>   
+                </div>   
+              </div>
+            </div> 
+            <div role="tabpanel" class="tab-pane fade" id="james" aria-labelledby="james-tab">
+              <div class="tabcontent-grids">
+                <script>
+                  $(document).ready(function() { 
+                    $("#owl-demo2").owlCarousel({
+                   
+                      autoPlay: 3000, //Set AutoPlay to 3 seconds
+                   
+                      items :4,
+                      itemsDesktop : [640,5],
+                      itemsDesktopSmall : [414,4],
+                      navigation : true
+                   
+                    });
+                    
+                  }); 
+                </script>
+                <div id="owl-demo2" class="owl-carousel"> 
+                  <div class="item">
+                    <div class="glry-w3agile-grids agileits"> 
+                      <div class="new-tag"><h6>New</h6></div>
+                      <a href="products6.html"><img src="images/p1.png" alt="img"></a>
+                      <div class="view-caption agileits-w3layouts">           
+                        <h4><a href="products6.html">Coffee Mug</a></h4>
+                        <p>Lorem ipsum dolor sit amet consectetur</p>
+                        <h5>$14</h5>
+                        <form action="#" method="post">
+                          <input type="hidden" name="cmd" value="_cart" />
+                          <input type="hidden" name="add" value="1" /> 
+                          <input type="hidden" name="w3ls_item" value="Coffee Mug" /> 
+                          <input type="hidden" name="amount" value="14.00" /> 
+                          <button type="submit" class="w3ls-cart" ><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+                        </form>
+                      </div>         
+                    </div>  
+                  </div>
+                  <div class="item">
+                    <div class="glry-w3agile-grids agileits"> 
+                      <div class="new-tag"><h6>20% <br> Off</h6></div>
+                      <a href="products6.html"><img src="images/p2.png" alt="img"></a>
+                      <div class="view-caption agileits-w3layouts">           
+                        <h4><a href="products6.html">Teddy bear</a></h4>
+                        <p>Lorem ipsum dolor sit amet consectetur</p>
+                        <h5>$20</h5>
+                        <form action="#" method="post">
+                          <input type="hidden" name="cmd" value="_cart" />
+                          <input type="hidden" name="add" value="1" /> 
+                          <input type="hidden" name="w3ls_item" value="Teddy bear" /> 
+                          <input type="hidden" name="amount" value="20.00" /> 
+                          <button type="submit" class="w3ls-cart" ><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+                        </form>
+                      </div>        
+                    </div> 
+                  </div>
+                  <div class="item"> 
+                    <div class="glry-w3agile-grids agileits"> 
+                      <div class="new-tag"><h6>Sale</h6></div>
+                      <a href="products6.html"><img src="images/p3.png" alt="img"></a>
+                      <div class="view-caption agileits-w3layouts">           
+                        <h4><a href="products6.html">Chocolates</a></h4>
+                        <p>Lorem ipsum dolor sit amet consectetur</p>
+                        <h5>$60</h5>
+                        <form action="#" method="post">
+                          <input type="hidden" name="cmd" value="_cart" />
+                          <input type="hidden" name="add" value="1" /> 
+                          <input type="hidden" name="w3ls_item" value="Chocolates" /> 
+                          <input type="hidden" name="amount" value="60.00" /> 
+                          <button type="submit" class="w3ls-cart" ><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+                        </form>
+                      </div>        
+                    </div> 
+                  </div>
+                  <div class="item">
+                    <div class="glry-w3agile-grids agileits"> 
+                      <a href="products6.html"><img src="images/p4.png" alt="img"></a>
+                      <div class="view-caption agileits-w3layouts">           
+                        <h4><a href="products6.html">Gift Card</a></h4>
+                        <p>Lorem ipsum dolor sit amet consectetur</p>
+                        <h5>$22</h5>
+                        <form action="#" method="post">
+                          <input type="hidden" name="cmd" value="_cart" />
+                          <input type="hidden" name="add" value="1" /> 
+                          <input type="hidden" name="w3ls_item" value="Gift Card" /> 
+                          <input type="hidden" name="amount" value="22.00" /> 
+                          <button type="submit" class="w3ls-cart" ><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+                        </form>
+                      </div>       
+                    </div> 
+                  </div>
+                  <div class="item">
+                    <div class="glry-w3agile-grids agileits"> 
+                      <div class="new-tag"><h6>New</h6></div>
+                      <a href="products6.html"><img src="images/p1.png" alt="img"></a>
+                      <div class="view-caption agileits-w3layouts">           
+                        <h4><a href="products6.html">Coffee Mug</a></h4>
+                        <p>Lorem ipsum dolor sit amet consectetur</p>
+                        <h5>$14</h5>
+                        <form action="#" method="post">
+                          <input type="hidden" name="cmd" value="_cart" />
+                          <input type="hidden" name="add" value="1" /> 
+                          <input type="hidden" name="w3ls_item" value="Coffee Mug" /> 
+                          <input type="hidden" name="amount" value="14.00" /> 
+                          <button type="submit" class="w3ls-cart" ><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+                        </form>
+                      </div>         
+                    </div>  
+                  </div>
+                  <div class="item">
+                    <div class="glry-w3agile-grids agileits"> 
+                      <div class="new-tag"><h6>20% <br> Off</h6></div>
+                      <a href="products6.html"><img src="images/p2.png" alt="img"></a>
+                      <div class="view-caption agileits-w3layouts">           
+                        <h4><a href="products6.html">Teddy bear</a></h4>
+                        <p>Lorem ipsum dolor sit amet consectetur</p>
+                        <h5>$20</h5>
+                        <form action="#" method="post">
+                          <input type="hidden" name="cmd" value="_cart" />
+                          <input type="hidden" name="add" value="1" /> 
+                          <input type="hidden" name="w3ls_item" value="Teddy bear" /> 
+                          <input type="hidden" name="amount" value="20.00" /> 
+                          <button type="submit" class="w3ls-cart" ><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+                        </form>
+                      </div>        
+                    </div> 
+                  </div>
+                  <div class="item"> 
+                    <div class="glry-w3agile-grids agileits"> 
+                      <div class="new-tag"><h6>Sale</h6></div>
+                      <a href="products6.html"><img src="images/p3.png" alt="img"></a>
+                      <div class="view-caption agileits-w3layouts">           
+                        <h4><a href="products6.html">Chocolates</a></h4>
+                        <p>Lorem ipsum dolor sit amet consectetur</p>
+                        <h5>$60</h5>
+                        <form action="#" method="post">
+                          <input type="hidden" name="cmd" value="_cart" />
+                          <input type="hidden" name="add" value="1" /> 
+                          <input type="hidden" name="w3ls_item" value="Chocolates" /> 
+                          <input type="hidden" name="amount" value="60.00" /> 
+                          <button type="submit" class="w3ls-cart" ><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+                        </form>
+                      </div>        
+                    </div> 
+                  </div>
+                  <div class="item">
+                    <div class="glry-w3agile-grids agileits"> 
+                      <a href="products6.html"><img src="images/p4.png" alt="img"></a>
+                      <div class="view-caption agileits-w3layouts">           
+                        <h4><a href="products6.html">Gift Card</a></h4>
+                        <p>Lorem ipsum dolor sit amet consectetur</p>
+                        <h5>$22</h5>
+                        <form action="#" method="post">
+                          <input type="hidden" name="cmd" value="_cart" />
+                          <input type="hidden" name="add" value="1" /> 
+                          <input type="hidden" name="w3ls_item" value="Gift Card" /> 
+                          <input type="hidden" name="amount" value="22.00" /> 
+                          <button type="submit" class="w3ls-cart" ><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+                        </form>
+                      </div>       
+                    </div> 
+                  </div> 
+                </div>    
+              </div>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="decor" aria-labelledby="decor-tab">
+              <div class="tabcontent-grids">
+                <script>
+                  $(document).ready(function() { 
+                    $("#owl-demo3").owlCarousel({
+                   
+                      autoPlay: 3000, //Set AutoPlay to 3 seconds
+                   
+                      items :4,
+                      itemsDesktop : [640,5],
+                      itemsDesktopSmall : [414,4],
+                      navigation : true
+                   
+                    });
+                    
+                  }); 
+                </script>
+                <div id="owl-demo3" class="owl-carousel"> 
+                  <div class="item">
+                    <div class="glry-w3agile-grids agileits"> 
+                      <div class="new-tag"><h6>Sale</h6></div>
+                      <a href="products3.html"><img src="images/h1.png" alt="img"></a>
+                      <div class="view-caption agileits-w3layouts">           
+                        <h4><a href="products3.html">Wall Clock</a></h4>
+                        <p>Lorem ipsum dolor sit amet consectetur</p>
+                        <h5>$80</h5>
+                        <form action="#" method="post">
+                          <input type="hidden" name="cmd" value="_cart" />
+                          <input type="hidden" name="add" value="1" /> 
+                          <input type="hidden" name="w3ls_item" value="Wall Clock" /> 
+                          <input type="hidden" name="amount" value="80.00" /> 
+                          <button type="submit" class="w3ls-cart" ><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+                        </form>
+                      </div>         
+                    </div>  
+                  </div>
+                  <div class="item">
+                    <div class="glry-w3agile-grids agileits"> 
+                      <div class="new-tag"><h6>10%<br>Off</h6></div>
+                      <a href="products3.html"><img src="images/h2.png" alt="img"></a>
+                      <div class="view-caption agileits-w3layouts">           
+                        <h4><a href="products3.html">Plants & Vases</a></h4>
+                        <p>Lorem ipsum dolor sit amet consectetur</p>
+                        <h5>$40</h5>
+                        <form action="#" method="post">
+                          <input type="hidden" name="cmd" value="_cart" />
+                          <input type="hidden" name="add" value="1" /> 
+                          <input type="hidden" name="w3ls_item" value="Plants & Vases" /> 
+                          <input type="hidden" name="amount" value="40.00" /> 
+                          <button type="submit" class="w3ls-cart" ><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+                        </form>
+                      </div>         
+                    </div>
+                  </div>
+                  <div class="item">
+                    <div class="glry-w3agile-grids agileits"> 
+                      <a href="products3.html"><img src="images/h3.png" alt="img"></a>
+                      <div class="view-caption agileits-w3layouts">           
+                        <h4><a href="products3.html">Queen Size Bed</a></h4>
+                        <p>Lorem ipsum dolor sit amet consectetur</p>
+                        <h5>$250</h5>
+                        <form action="#" method="post">
+                          <input type="hidden" name="cmd" value="_cart" />
+                          <input type="hidden" name="add" value="1" /> 
+                          <input type="hidden" name="w3ls_item" value="Queen Size Bed" /> 
+                          <input type="hidden" name="amount" value="250.00" /> 
+                          <button type="submit" class="w3ls-cart" ><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+                        </form>
+                      </div>        
+                    </div> 
+                  </div>
+                  <div class="item">
+                    <div class="glry-w3agile-grids agileits"> 
+                      <a href="products3.html"><img src="images/h4.png" alt="img"></a>
+                      <div class="view-caption agileits-w3layouts">           
+                        <h4><a href="products3.html">flower pot</a></h4>
+                        <p>Lorem ipsum dolor sit amet consectetur</p>
+                        <h5>$30</h5>
+                        <form action="#" method="post">
+                          <input type="hidden" name="cmd" value="_cart" />
+                          <input type="hidden" name="add" value="1" /> 
+                          <input type="hidden" name="w3ls_item" value="flower pot" /> 
+                          <input type="hidden" name="amount" value="30.00" /> 
+                          <button type="submit" class="w3ls-cart" ><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+                        </form>
+                      </div>        
+                    </div> 
+                  </div> 
+                  <div class="item">
+                    <div class="glry-w3agile-grids agileits"> 
+                      <div class="new-tag"><h6>Sale</h6></div>
+                      <a href="products3.html"><img src="images/h1.png" alt="img"></a>
+                      <div class="view-caption agileits-w3layouts">           
+                        <h4><a href="products3.html">Wall Clock</a></h4>
+                        <p>Lorem ipsum dolor sit amet consectetur</p>
+                        <h5>$80</h5>
+                        <form action="#" method="post">
+                          <input type="hidden" name="cmd" value="_cart" />
+                          <input type="hidden" name="add" value="1" /> 
+                          <input type="hidden" name="w3ls_item" value="Wall Clock" /> 
+                          <input type="hidden" name="amount" value="80.00" /> 
+                          <button type="submit" class="w3ls-cart" ><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+                        </form>
+                      </div>         
+                    </div>  
+                  </div>
+                  <div class="item">
+                    <div class="glry-w3agile-grids agileits"> 
+                      <div class="new-tag"><h6>10%<br>Off</h6></div>
+                      <a href="products3.html"><img src="images/h2.png" alt="img"></a>
+                      <div class="view-caption agileits-w3layouts">           
+                        <h4><a href="products3.html">Plants & Vases</a></h4>
+                        <p>Lorem ipsum dolor sit amet consectetur</p>
+                        <h5>$40</h5>
+                        <form action="#" method="post">
+                          <input type="hidden" name="cmd" value="_cart" />
+                          <input type="hidden" name="add" value="1" /> 
+                          <input type="hidden" name="w3ls_item" value="Plants & Vases" /> 
+                          <input type="hidden" name="amount" value="40.00" /> 
+                          <button type="submit" class="w3ls-cart" ><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+                        </form>
+                      </div>         
+                    </div>
+                  </div>
+                  <div class="item">
+                    <div class="glry-w3agile-grids agileits"> 
+                      <a href="products3.html"><img src="images/h3.png" alt="img"></a>
+                      <div class="view-caption agileits-w3layouts">           
+                        <h4><a href="products3.html">Queen Size Bed</a></h4>
+                        <p>Lorem ipsum dolor sit amet consectetur</p>
+                        <h5>$250</h5>
+                        <form action="#" method="post">
+                          <input type="hidden" name="cmd" value="_cart" />
+                          <input type="hidden" name="add" value="1" /> 
+                          <input type="hidden" name="w3ls_item" value="Queen Size Bed" /> 
+                          <input type="hidden" name="amount" value="250.00" /> 
+                          <button type="submit" class="w3ls-cart" ><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+                        </form>
+                      </div>        
+                    </div> 
+                  </div>
+                  <div class="item">
+                    <div class="glry-w3agile-grids agileits"> 
+                      <a href="products3.html"><img src="images/h4.png" alt="img"></a>
+                      <div class="view-caption agileits-w3layouts">           
+                        <h4><a href="products3.html">flower pot</a></h4>
+                        <p>Lorem ipsum dolor sit amet consectetur</p>
+                        <h5>$30</h5>
+                        <form action="#" method="post">
+                          <input type="hidden" name="cmd" value="_cart" />
+                          <input type="hidden" name="add" value="1" /> 
+                          <input type="hidden" name="w3ls_item" value="flower pot" /> 
+                          <input type="hidden" name="amount" value="30.00" /> 
+                          <button type="submit" class="w3ls-cart" ><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+                        </form>
+                      </div>        
+                    </div> 
+                  </div>  
+                </div>    
+              </div>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="sports" aria-labelledby="sports-tab">
+              <div class="tabcontent-grids">
+                <script>
+                  $(document).ready(function() { 
+                    $("#owl-demo4").owlCarousel({
+                   
+                      autoPlay: 3000, //Set AutoPlay to 3 seconds
+                   
+                      items :4,
+                      itemsDesktop : [640,5],
+                      itemsDesktopSmall : [414,4],
+                      navigation : true
+                   
+                    }); 
+                  }); 
+                </script>
+                <div id="owl-demo4" class="owl-carousel"> 
+                  <div class="item">
+                    <div class="glry-w3agile-grids agileits"> 
+                      <div class="new-tag"><h6>New</h6></div>
+                      <a href="products4.html"><img src="images/s1.png" alt="img"></a>
+                      <div class="view-caption agileits-w3layouts">           
+                        <h4><a href="products4.html">Roller Skates</a></h4>
+                        <p>Lorem ipsum dolor sit amet consectetur</p>
+                        <h5>$180</h5>
+                        <form action="#" method="post">
+                          <input type="hidden" name="cmd" value="_cart" />
+                          <input type="hidden" name="add" value="1" /> 
+                          <input type="hidden" name="w3ls_item" value="Roller Skates"/> 
+                          <input type="hidden" name="amount" value="180.00" /> 
+                          <button type="submit" class="w3ls-cart" ><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+                        </form>
+                      </div>         
+                    </div>  
+                  </div>
+                  <div class="item">
+                    <div class="glry-w3agile-grids agileits"> 
+                      <a href="products4.html"><img src="images/s2.png" alt="img"></a>
+                      <div class="view-caption agileits-w3layouts">           
+                        <h4><a href="products4.html">Football</a></h4>
+                        <p>Lorem ipsum dolor sit amet consectetur</p>
+                        <h5>$70</h5>
+                        <form action="#" method="post">
+                          <input type="hidden" name="cmd" value="_cart" />
+                          <input type="hidden" name="add" value="1" /> 
+                          <input type="hidden" name="w3ls_item" value="Football"/> 
+                          <input type="hidden" name="amount" value="70.00"/>
+                          <button type="submit" class="w3ls-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+                        </form>
+                      </div>        
+                    </div> 
+                  </div>
+                  <div class="item">
+                    <div class="glry-w3agile-grids agileits"> 
+                      <div class="new-tag"><h6>20% <br>Off</h6></div>
+                      <a href="products4.html"><img src="images/s3.png" alt="img"></a>
+                      <div class="view-caption agileits-w3layouts">           
+                        <h4><a href="products4.html">Nylon Shuttle</a></h4>
+                        <p>Lorem ipsum dolor sit amet consectetur</p>
+                        <h5>$56</h5>
+                        <form action="#" method="post">
+                          <input type="hidden" name="cmd" value="_cart" />
+                          <input type="hidden" name="add" value="1" /> 
+                          <input type="hidden" name="w3ls_item" value="Nylon Shuttle" /> 
+                          <input type="hidden" name="amount" value="56.00"/> 
+                          <button type="submit" class="w3ls-cart" ><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+                        </form>
+                      </div>       
+                    </div> 
+                  </div>
+                  <div class="item">
+                    <div class="glry-w3agile-grids agileits"> 
+                      <a href="products4.html"><img src="images/s4.png" alt="img"></a>
+                      <div class="view-caption agileits-w3layouts">           
+                        <h4><a href="products4.html">Cricket Kit</a></h4>
+                        <p>Lorem ipsum dolor sit amet consectetur</p>
+                        <h5>$80</h5>
+                        <form action="#" method="post">
+                          <input type="hidden" name="cmd" value="_cart" />
+                          <input type="hidden" name="add" value="1" /> 
+                          <input type="hidden" name="w3ls_item" value="Cricket Kit" /> 
+                          <input type="hidden" name="amount" value="80.00" /> 
+                          <button type="submit" class="w3ls-cart" ><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+                        </form>
+                      </div>       
+                    </div> 
+                  </div>
+                  <div class="item">
+                    <div class="glry-w3agile-grids agileits"> 
+                      <div class="new-tag"><h6>New</h6></div>
+                      <a href="products4.html"><img src="images/s1.png" alt="img"></a>
+                      <div class="view-caption agileits-w3layouts">           
+                        <h4><a href="products4.html">Roller Skates</a></h4>
+                        <p>Lorem ipsum dolor sit amet consectetur</p>
+                        <h5>$180</h5>
+                        <form action="#" method="post">
+                          <input type="hidden" name="cmd" value="_cart" />
+                          <input type="hidden" name="add" value="1" /> 
+                          <input type="hidden" name="w3ls_item" value="Roller Skates"/> 
+                          <input type="hidden" name="amount" value="180.00" /> 
+                          <button type="submit" class="w3ls-cart" ><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+                        </form>
+                      </div>         
+                    </div>  
+                  </div>
+                  <div class="item">
+                    <div class="glry-w3agile-grids agileits"> 
+                      <a href="products4.html"><img src="images/s2.png" alt="img"></a>
+                      <div class="view-caption agileits-w3layouts">           
+                        <h4><a href="products4.html">Football</a></h4>
+                        <p>Lorem ipsum dolor sit amet consectetur</p>
+                        <h5>$70</h5>
+                        <form action="#" method="post">
+                          <input type="hidden" name="cmd" value="_cart" />
+                          <input type="hidden" name="add" value="1" /> 
+                          <input type="hidden" name="w3ls_item" value="Football"/> 
+                          <input type="hidden" name="amount" value="70.00"/>
+                          <button type="submit" class="w3ls-cart" ><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+                        </form>
+                      </div>        
+                    </div> 
+                  </div>
+                  <div class="item">
+                    <div class="glry-w3agile-grids agileits"> 
+                      <div class="new-tag"><h6>20% <br>Off</h6></div>
+                      <a href="products4.html"><img src="images/s3.png" alt="img"></a>
+                      <div class="view-caption agileits-w3layouts">           
+                        <h4><a href="products4.html">Nylon Shuttle</a></h4>
+                        <p>Lorem ipsum dolor sit amet consectetur</p>
+                        <h5>$56</h5>
+                        <form action="#" method="post">
+                          <input type="hidden" name="cmd" value="_cart" />
+                          <input type="hidden" name="add" value="1" /> 
+                          <input type="hidden" name="w3ls_item" value="Nylon Shuttle" /> 
+                          <input type="hidden" name="amount" value="56.00"/> 
+                          <button type="submit" class="w3ls-cart" ><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+                        </form>
+                      </div>       
+                    </div> 
+                  </div>
+                  <div class="item">
+                    <div class="glry-w3agile-grids agileits"> 
+                      <a href="products4.html"><img src="images/s4.png" alt="img"></a>
+                      <div class="view-caption agileits-w3layouts">           
+                        <h4><a href="products4.html">Cricket Kit</a></h4>
+                        <p>Lorem ipsum dolor sit amet consectetur</p>
+                        <h5>$80</h5>
+                        <form action="#" method="post">
+                          <input type="hidden" name="cmd" value="_cart" />
+                          <input type="hidden" name="add" value="1" /> 
+                          <input type="hidden" name="w3ls_item" value="Cricket Kit" /> 
+                          <input type="hidden" name="amount" value="80.00" /> 
+                          <button type="submit" class="w3ls-cart" ><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+                        </form>
+                      </div>       
+                    </div> 
+                  </div>
+                </div>    
+              </div>
+            </div> 
+          </div>   
+        </div>  
+      </div>    
+    </div>    
+  </div> 
+  <!-- //welcome -->
+  <!-- add-products -->
+  <div class="add-products"> 
+    <div class="container">  
+      <div class="add-products-row">
+        <div class="w3ls-add-grids">
+          <a href="products1.html"> 
+            <h4>TOP 10 TRENDS FOR YOU FLAT <span>20%</span> OFF</h4>
+            <h6>Shop now <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></h6>
+          </a>
+        </div>
+        <div class="w3ls-add-grids w3ls-add-grids-mdl">
+          <a href="products1.html"> 
+            <h4>SUNDAY SPECIAL DISCOUNT FLAT <span>40%</span> OFF</h4>
+            <h6>Shop now <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></h6>
+          </a>
+        </div>
+        <div class="w3ls-add-grids w3ls-add-grids-mdl1">
+          <a href="products.html"> 
+            <h4>LATEST DESIGNS FOR YOU <span> Hurry !</span></h4>
+            <h6>Shop now <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></h6>
+          </a>
+        </div>
+        <div class="clerfix"> </div>
+      </div>    
+    </div>    
+  </div>
+  <!-- //add-products -->
+  <!-- coming soon -->
+  <div class="soon">
+    <div class="container">
+      <h3>Mega Deal Of the Week</h3>
+      <h4>Coming Soon Don't Miss Out</h4>  
+      <div id="countdown1" class="ClassyCountdownDemo"></div>
+    </div> 
+  </div>
+  <!-- //coming soon -->
+  <!-- deals -->
+  <div class="deals"> 
+    <div class="container"> 
+      <h3 class="w3ls-title">DEALS OF THE DAY </h3>
+      <div class="deals-row">
+        <div class="col-md-3 focus-grid"> 
+          <a href="products.html" class="wthree-btn"> 
+            <div class="focus-image"><i class="fa fa-mobile"></i></div>
+            <h4 class="clrchg">Mobiles</h4> 
+          </a>
+        </div>
+        <div class="col-md-3 focus-grid"> 
+          <a href="products.html" class="wthree-btn wthree1"> 
+            <div class="focus-image"><i class="fa fa-laptop"></i></div>
+            <h4 class="clrchg"> Electronics & Appliances</h4> 
+          </a>
+        </div> 
+        <div class="col-md-3 focus-grid"> 
+          <a href="products4.html" class="wthree-btn wthree2"> 
+            <div class="focus-image"><i class="fa fa-wheelchair"></i></div>
+            <h4 class="clrchg">Furnitures</h4>
+          </a>
+        </div> 
+        <div class="col-md-3 focus-grid"> 
+          <a href="products3.html" class="wthree-btn wthree3"> 
+            <div class="focus-image"><i class="fa fa-home"></i></div>
+            <h4 class="clrchg">Home Decor</h4>
+          </a>
+        </div> 
+        <div class="col-md-2 focus-grid w3focus-grid-mdl"> 
+          <a href="products9.html" class="wthree-btn wthree3"> 
+            <div class="focus-image"><i class="fa fa-book"></i></div>
+            <h4 class="clrchg">Books & Music</h4> 
+          </a>
+        </div>
+        <div class="col-md-2 focus-grid w3focus-grid-mdl"> 
+          <a href="products1.html" class="wthree-btn wthree4"> 
+            <div class="focus-image"><i class="fa fa-asterisk"></i></div>
+            <h4 class="clrchg">Fashion</h4>
+          </a>
+        </div>
+        <div class="col-md-2 focus-grid w3focus-grid-mdl"> 
+          <a href="products2.html" class="wthree-btn wthree2"> 
+            <div class="focus-image"><i class="fa fa-gamepad"></i></div>
+            <h4 class="clrchg">Kids</h4>
+          </a>
+        </div> 
+        <div class="col-md-2 focus-grid w3focus-grid-mdl"> 
+          <a href="products5.html" class="wthree-btn wthree"> 
+            <div class="focus-image"><i class="fa fa-shopping-basket"></i></div>
+            <h4 class="clrchg">Groceries</h4>
+          </a>
+        </div> 
+        <div class="col-md-2 focus-grid w3focus-grid-mdl"> 
+          <a href="products7.html" class="wthree-btn wthree5"> 
+            <div class="focus-image"><i class="fa fa-medkit"></i></div>
+            <h4 class="clrchg">Health</h4> 
+          </a>
+        </div> 
+        <div class="col-md-2 focus-grid w3focus-grid-mdl"> 
+          <a href="products8.html" class="wthree-btn wthree1"> 
+            <div class="focus-image"><i class="fa fa-car"></i></div>
+            <h4 class="clrchg">Automotive</h4> 
+          </a>
+        </div>
+        <div class="col-md-3 focus-grid"> 
+          <a href="products5.html" class="wthree-btn wthree2"> 
+            <div class="focus-image"><i class="fa fa-cutlery"></i></div>
+            <h4 class="clrchg">Food</h4> 
+          </a>
+        </div>
+        <div class="col-md-3 focus-grid"> 
+          <a href="products4.html" class="wthree-btn wthree5"> 
+            <div class="focus-image"><i class="fa fa-futbol-o"></i></div>
+            <h4 class="clrchg">Sports</h4> 
+          </a>
+        </div> 
+        <div class="col-md-3 focus-grid"> 
+          <a href="products2.html" class="wthree-btn wthree3"> 
+            <div class="focus-image"><i class="fa fa-gamepad"></i></div>
+            <h4 class="clrchg">Games & Toys</h4> 
+          </a>
+        </div> 
+        <div class="col-md-3 focus-grid"> 
+          <a href="products6.html" class="wthree-btn "> 
+            <div class="focus-image"><i class="fa fa-gift"></i></div>
+            <h4 class="clrchg">Gifts</h4> 
+          </a>
+        </div> 
+        <div class="clearfix"> </div>
+      </div>    
+    </div>    
+  </div> 
+  <!-- //deals --> 
+  <!-- footer-top -->
+  <div class="w3agile-ftr-top">
+    <div class="container">
+      <div class="ftr-toprow">
+        <div class="col-md-4 ftr-top-grids">
+          <div class="ftr-top-left">
+            <i class="fa fa-truck" aria-hidden="true"></i>
+          </div> 
+          <div class="ftr-top-right">
+            <h4>FREE DELIVERY</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempus justo ac </p>
+          </div> 
+          <div class="clearfix"> </div>
+        </div> 
+        <div class="col-md-4 ftr-top-grids">
+          <div class="ftr-top-left">
+            <i class="fa fa-user" aria-hidden="true"></i>
+          </div> 
+          <div class="ftr-top-right">
+            <h4>CUSTOMER CARE</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempus justo ac </p>
+          </div> 
+          <div class="clearfix"> </div>
+        </div>
+        <div class="col-md-4 ftr-top-grids">
+          <div class="ftr-top-left">
+            <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+          </div> 
+          <div class="ftr-top-right">
+            <h4>GOOD QUALITY</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempus justo ac </p>
+          </div>
+          <div class="clearfix"> </div>
+        </div> 
+        <div class="clearfix"> </div>
+      </div>
+    </div>
+  </div>
+  <!-- //footer-top --> 
+  <!-- subscribe -->
+  <div class="subscribe"> 
+    <div class="container">
+      <div class="col-md-6 social-icons w3-agile-icons">
+        <h4>Keep in touch</h4>  
+        <ul>
+          <li><a href="#" class="fa fa-facebook icon facebook"> </a></li>
+          <li><a href="#" class="fa fa-twitter icon twitter"> </a></li>
+          <li><a href="#" class="fa fa-google-plus icon googleplus"> </a></li>
+          <li><a href="#" class="fa fa-dribbble icon dribbble"> </a></li>
+          <li><a href="#" class="fa fa-rss icon rss"> </a></li> 
+        </ul> 
+        <ul class="apps"> 
+          <li><h4>Download Our app : </h4> </li>
+          <li><a href="#" class="fa fa-apple"></a></li>
+          <li><a href="#" class="fa fa-windows"></a></li>
+          <li><a href="#" class="fa fa-android"></a></li>
+        </ul> 
+      </div> 
+      <div class="col-md-6 subscribe-right">
+        <h4>Sign up for email and get 25%off!</h4>  
+        <form action="#" method="post"> 
+          <input type="text" name="email" placeholder="Enter your Email..." required="">
+          <input type="submit" value="Subscribe">
+        </form>
+        <div class="clearfix"> </div> 
+      </div>
+      <div class="clearfix"> </div>
+    </div>
+  </div>
+  <!-- //subscribe --> 
+  <!-- footer -->
+  <div class="footer">
+    <div class="container">
+      <div class="footer-info w3-agileits-info">
+        <div class="col-md-4 address-left agileinfo">
+          <div class="footer-logo header-logo">
+            <h2><a href="index.html"><span>S</span>mart <i>Bazaar</i></a></h2>
+            <h6>Your stores. Your place.</h6>
+          </div>
+          <ul>
+            <li><i class="fa fa-map-marker"></i> 123 San Sebastian, New York City USA.</li>
+            <li><i class="fa fa-mobile"></i> 333 222 3333 </li>
+            <li><i class="fa fa-phone"></i> +222 11 4444 </li>
+            <li><i class="fa fa-envelope-o"></i> <a href="mailto:example@mail.com"> mail@example.com</a></li>
+          </ul> 
+        </div>
+        <div class="col-md-8 address-right">
+          <div class="col-md-4 footer-grids">
+            <h3>Company</h3>
+            <ul>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="marketplace.html">Marketplace</a></li>  
+              <li><a href="values.html">Core Values</a></li>  
+              <li><a href="privacy.html">Privacy Policy</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4 footer-grids">
+            <h3>Services</h3>
+            <ul>
+              <li><a href="contact.html">Contact Us</a></li>
+              <li><a href="login.html">Returns</a></li> 
+              <li><a href="faq.html">FAQ</a></li>
+              <li><a href="sitemap.html">Site Map</a></li>
+              <li><a href="login.html">Order Status</a></li>
+            </ul> 
+          </div>
+          <div class="col-md-4 footer-grids">
+            <h3>Payment Methods</h3>
+            <ul>
+              <li><i class="fa fa-laptop" aria-hidden="true"></i> Net Banking</li>
+              <li><i class="fa fa-money" aria-hidden="true"></i> Cash On Delivery</li>
+              <li><i class="fa fa-pie-chart" aria-hidden="true"></i>EMI Conversion</li>
+              <li><i class="fa fa-gift" aria-hidden="true"></i> E-Gift Voucher</li>
+              <li><i class="fa fa-credit-card" aria-hidden="true"></i> Debit/Credit Card</li>
+            </ul>  
+          </div>
+          <div class="clearfix"></div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+  <!-- //footer -->   
+  <div class="copy-right"> 
+    <div class="container">
+      <p>© 2016 Smart bazaar . All rights reserved | Design by <a href="http://w3layouts.com"> W3layouts.</a></p>
+    </div>
+  </div> 
+  <!-- cart-js -->
+  <script src="assets/js/minicart.js"></script>
+  <script>
+        w3ls.render();
+
+        w3ls.cart.on('w3sb_checkout', function (evt) {
+          var items, len, i;
+
+          if (this.subtotal() > 0) {
+            items = this.items();
+
+            for (i = 0, len = items.length; i < len; i++) {
+              items[i].set('shipping', 0);
+              items[i].set('shipping2', 0);
+            }
+          }
+        });
+    </script>  
+  <!-- //cart-js -->  
+  <!-- countdown.js --> 
+  <script src="assets/js/jquery.knob.js"></script>
+  <script src="assets/js/jquery.throttle.js"></script>
+  <script src="assets/js/jquery.classycountdown.js"></script>
+    <script>
+      $(document).ready(function() {
+        $('#countdown1').ClassyCountdown({
+          end: '1388268325',
+          now: '1387999995',
+          labels: true,
+          style: {
+            element: "",
+            textResponsive: .5,
+            days: {
+              gauge: {
+                thickness: .10,
+                bgColor: "rgba(0,0,0,0)",
+                fgColor: "#1abc9c",
+                lineCap: 'round'
+              },
+              textCSS: 'font-weight:300; color:#fff;'
+            },
+            hours: {
+              gauge: {
+                thickness: .10,
+                bgColor: "rgba(0,0,0,0)",
+                fgColor: "#05BEF6",
+                lineCap: 'round'
+              },
+              textCSS: ' font-weight:300; color:#fff;'
+            },
+            minutes: {
+              gauge: {
+                thickness: .10,
+                bgColor: "rgba(0,0,0,0)",
+                fgColor: "#8e44ad",
+                lineCap: 'round'
+              },
+              textCSS: ' font-weight:300; color:#fff;'
+            },
+            seconds: {
+              gauge: {
+                thickness: .10,
+                bgColor: "rgba(0,0,0,0)",
+                fgColor: "#f39c12",
+                lineCap: 'round'
+              },
+              textCSS: ' font-weight:300; color:#fff;'
+            }
+
+          },
+          onEndCallback: function() {
+            console.log("Time out!");
+          }
+        });
+      });
+    </script>
+  <!-- //countdown.js -->
+  <!-- menu js aim -->
+  <script src="assets/js/jquery.menu-aim.js"> </script>
+  <script src="assets/js/main.js"></script> <!-- Resource jQuery -->
+  <!-- //menu js aim --> 
+  <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster --> 
 </body>
-<!-- InstanceEnd --></html>
-<?php
-mysql_free_result($rscategorias);
-
-mysql_free_result($rspromociones);
-
-mysql_free_result($rscategorias1);
-
-mysql_free_result($rsrandomcat);
-
-mysql_free_result($rsrandomcat2);
-
-mysql_free_result($rsrandomcat3);
-
-mysql_free_result($rsrandomprod1);
-
-mysql_free_result($rsrandomprod2);
-
-mysql_free_result($rspublicidad);
-
-mysql_free_result($rsarreglos1);
-
-?>
+</html>
