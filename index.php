@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Smart Bazaar an E-commerce Online Shopping Category Flat Bootstrap Responsive Website Template | Home :: w3layouts</title>
+<title>Inicio-Floristeria Kaprichos</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Smart Bazaar Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -105,12 +105,20 @@ $(document).ready(function() {
   </script> 
   <!-- header -->
   <div class="header">
-    <div class="w3ls-header"><!--header-one--> 
-      <div class="w3ls-header-left">
-        <p> <span style="font-size:16px;">+503 <i class="fa fa-phone" aria-hidden="true"></i> ( 2532 - 1561 )  ( 2223 - 3515 ) </span></p>
-      </div>
-      <div class="w3ls-header-right" style="color:black;">
-        <ul>
+    <div class="container">
+      <div class="row">
+        <div class="w3ls-header"><!--header-one--> 
+        <div class="col-md-4">
+          
+          <div class="w3ls-header-left">
+            <p> <span style="font-size:16px;">+503 <i class="fa fa-phone" aria-hidden="true"></i> ( 2532 - 1561 )  ( 2223 - 3515 ) </span></p>
+          </div>
+
+        </div>
+        <div class="col-md-8">
+            
+        <div class="w3ls-header-right" style="color:black;">
+            <ul>
           <li class="dropdown head-dpdn">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true"></i> Iniciar Sesión<span class="caret"></span></a>
             <ul class="dropdown-menu">
@@ -140,64 +148,73 @@ $(document).ready(function() {
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-gift" aria-hidden="true"></i> Idioma<span class="caret"></span></a>
             <ul class="dropdown-menu">
               <li><a href="offers.html">Spanish</a></li> 
-              <li><a href="offers.html">Enhlish</a></li>
+              <li><a href="offers.html">English</a></li>
               
             </ul> 
           </li> 
-        </ul>
-      </div>
-      <div class="clearfix"> </div> 
-    </div>
-    <div class="header-two"><!-- header-two -->
-      <div class="container">
-        <div class="row">
-          <div class="col-ms-3">
-            <div class="header-search">
-              <form action="#" method="post">
-                <button type="submit" class="btn btn-default" aria-label="Left Align">
-                  <i class="fa fa-search" aria-hidden="true" style="color:black;"> </i>
-                </button>
-                <input type="search" name="Search" placeholder="Search for a Product..." required="">
-                
-              </form>
-            </div>
-          </div>
-          <div class="col-ms-3">
-            <div class="header-logo">
-              <img src="images/flores-para-el-salvador.png"/>
-        </div> 
-          </div>
-          <div class="col-ms-3">
-            <div class="header-cart"> 
-          <div class="my-account">
-            <a href="contact.html"><i class="fa fa-money" aria-hidden="true"></i> 0.0 Articulos</a>           
-          </div>
-          <div class="cart"> 
-            <form action="#" method="post" class="last"> 
-              <input type="hidden" name="cmd" value="_cart" />
-              <input type="hidden" name="display" value="1" />
-              <button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
-            </form>  
-          </div>
-          <div class="clearfix"> </div> 
-        </div> 
-          </div>
+            </ul>
         </div>
-        
-         
-        
-        
-        <div class="clearfix"> </div>
+        <div class="clearfix"> </div> 
+        </div>
+      </div>
+      </div>
+
+              <div class="container">
+            <div class="row">
+                <div class="col-ms-3">
+                    <div class="header-search">
+                        <form action="#" method="post">
+                            <button type="submit" class="btn btn-default" aria-label="Left Align">
+                            <i class="fa fa-search" aria-hidden="true" style="color:black;"> </i>
+                            </button>
+                            <input type="search" name="Search" placeholder="Search for a Product..." required="">
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="col-ms-3">
+                    <div class="header-logo">
+                        <img src="images/flores-para-el-salvador.png"/>
+                    </div> 
+                </div>
+
+                <div class="col-ms-3">
+                    <div class="header-cart"> 
+                        <div class="my-account">
+                            <a href="contact.html"><i class="fa fa-money" aria-hidden="true"></i> 0.0 Articulos</a>           
+                        </div>
+                        
+                        <div class="cart"> 
+                            <form action="#" method="post" class="last"> 
+                            <input type="hidden" name="cmd" value="_cart" />
+                            <input type="hidden" name="display" value="1" />
+                            <button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
+                            </form>  
+                        </div>
+                    <div class="clearfix"> </div> 
+                    </div> 
+                </div>
+            </div>
+            <div class="clearfix"> </div>
+        </div> 
+    </div>
 
 
-      </div>    
+    
+
+    
+
+
+    <div class="header-two"><!-- header-two -->
+   
+
       <div class="header-three"><!-- header-three -->
       <div class="container">
         <div class="row">
 
           <div class="col-md-3">
               <div class="move-text">
-                <div class="marquee"><a href="offers.html"> INICIO</div>
+                <div class="marquee"><a href="offers.html"> INICIO</a></div>
               </div>
           </div>
 
@@ -982,13 +999,13 @@ $(document).ready(function() {
 
           <div class="col-md-3">
               <div class="move-text">
-                <div class="marquee"><a href="offers.html"> EVENTOS</div>
+                <div class="marquee"><a href="offers.html"> EVENTOS</a></div>
               </div>
           </div>
        
           <div class="col-md-3">
             <div class="move-text">
-              <div class="marquee"><a href="offers.html"> CONTACTANOS</div>
+              <div class="marquee"><a href="offers.html"> CONTACTANOS</a></div>
             </div>
           </div>
         
@@ -1000,119 +1017,104 @@ $(document).ready(function() {
   </div>
   <!-- //header --> 
   <!-- banner -->
-  <div class="container">
-      <div class="row">
-          <div class="banner">
-    <div id="kb" class="carousel kb_elastic animate_text kb_wrapper" data-ride="carousel"   data-interval="6000" data-pause="hover">
-      <!-- Wrapper-for-Slides -->
-            <div class="carousel-inner" role="listbox">  
-                <div class="item active"><!-- First-Slide -->
-                    <img src="assets/images/5.jpg" alt="" class="img-responsive" />
-                    <div class="carousel-caption kb_caption kb_caption_right">
-                        <h3 data-animation="animated flipInX">Flat <span>50%</span> Discount</h3>
-                        <h4 data-animation="animated flipInX">Hot Offer Today Only</h4>
-                    </div>
-                </div>  
-                <div class="item"> <!-- Second-Slide -->
-                    <img src="assets/images/8.jpg" alt="" class="img-responsive" />
-                    <div class="carousel-caption kb_caption kb_caption_right">
-                        <h3 data-animation="animated fadeInDown">Our Latest Fashion Editorials</h3>
-                        <h4 data-animation="animated fadeInUp">cupidatat non proident</h4>
-                    </div>
-                </div> 
-                <div class="item"><!-- Third-Slide -->
-                    <img src="assets/images/3.jpg" alt="" class="img-responsive"/>
-                    <div class="carousel-caption kb_caption kb_caption_center">
-                        <h3 data-animation="animated fadeInLeft">End Of Season Sale</h3>
-                        <h4 data-animation="animated flipInX">cupidatat non proident</h4>
-                    </div>
-                </div> 
-            </div> 
-            <!-- Left-Button -->
-            <a class="left carousel-control kb_control_left" href="#kb" role="button" data-slide="prev">
-            <span class="fa fa-angle-left kb_icons" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a> 
-            <!-- Right-Button -->
-            <a class="right carousel-control kb_control_right" href="#kb" role="button" data-slide="next">
-                <span class="fa fa-angle-right kb_icons" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a> 
-    </div>
-      <script src="assets/js/custom.js"></script>
-      </div>
-      </div>
-  </div>  
-  <!-- //banner -->  
-
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4">
-
+    <div class="container">
         <div class="row">
-          <div class="col-md-12 focus-grid"> 
-            <a href="products.html" class="wthree-btn"> 
-              <div class="focus-image"><i class="fa fa-facebook"></i></div>
-              <h4 class="clrchg">Facebook</h4> 
-            </a>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-12 focus-grid"> 
-            <a href="products.html" class="wthree-btn"> 
-              <div class="focus-image"><i class="fa fa-instagram"></i></div>
-              <h4 class="clrchg">Instragram</h4> 
-            </a>
-          </div>
-        </div>
-
-
-        <div class="row">
-            <div class="col-md-12 focus-grid"> 
-              <a href="products.html" class="wthree-btn"> 
-                <div class="focus-image"><i class="fa fa-pinterest"></i></div>
-                <h4 class="clrchg">Pinteres</h4> 
-              </a>
+            <div class="banner">
+                <div id="kb" class="carousel kb_elastic animate_text kb_wrapper" data-ride="carousel"   data-interval="6000" data-pause="hover">
+                <!-- Wrapper-for-Slides -->
+                    <div class="carousel-inner" role="listbox">  
+                        <div class="item active"><!-- First-Slide -->
+                            <img src="assets/images/5.jpg" alt="" class="img-responsive" />
+                            <div class="carousel-caption kb_caption kb_caption_right">
+                                <h3 data-animation="animated flipInX">Flat <span>50%</span> Discount</h3>
+                                <h4 data-animation="animated flipInX">Hot Offer Today Only</h4>
+                            </div>
+                        </div>  
+                        <div class="item"> <!-- Second-Slide -->
+                            <img src="assets/images/8.jpg" alt="" class="img-responsive" />
+                            <div class="carousel-caption kb_caption kb_caption_right">
+                                <h3 data-animation="animated fadeInDown">Our Latest Fashion Editorials</h3>
+                                <h4 data-animation="animated fadeInUp">cupidatat non proident</h4>
+                            </div>
+                        </div> 
+                        <div class="item"><!-- Third-Slide -->
+                            <img src="assets/images/3.jpg" alt="" class="img-responsive"/>
+                            <div class="carousel-caption kb_caption kb_caption_center">
+                                <h3 data-animation="animated fadeInLeft">End Of Season Sale</h3>
+                                <h4 data-animation="animated flipInX">cupidatat non proident</h4>
+                            </div>
+                        </div> 
+                    </div> 
+                <!-- Left-Button -->
+                    <a class="left carousel-control kb_control_left" href="#kb" role="button" data-slide="prev">
+                        <span class="fa fa-angle-left kb_icons" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a> 
+                    <!-- Right-Button -->
+                    <a class="right carousel-control kb_control_right" href="#kb" role="button" data-slide="next">
+                        <span class="fa fa-angle-right kb_icons" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a> 
+                </div>
+                <script src="assets/js/custom.js"></script>
             </div>
         </div>
-      </div>
-      <div class="col-md-4 focus-grid">
-        
-          <a href="products.html" class="wthree-btn"> 
-            <div class="focus-image"><i class="fa fa-mobile"></i></div>
-            <h4 class="clrchg">Mobiles</h4> 
-            <h4 class="clrchg">Mobiles</h4> 
-            <h4 class="clrchg">Mobiles</h4> 
-            <h4 class="clrchg">Mobiles</h4> 
-            <h4 class="clrchg">Mobiles</h4> 
-            <h4 class="clrchg">Mobiles</h4> 
-            <h4 class="clrchg">Mobiles</h4> 
-            <h4 class="clrchg">Mobiles</h4> 
-            <h4 class="clrchg">Mobiles</h4> 
 
-          </a>
-     
-      </div>
-      <div class="col-md-4 focus-grid">
+    </div>  
+  <!-- //banner -->  
+
+    <div class="container">
+        <div class="row">
+            <div class="col col-sm-12 col-md-4 col-lg-4">
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12 focus-grid">
+                        <a href="products.html" class="wthree-btn wthree1"> 
+                            <div class="focus-image"><i class="fa fa-facebook"></i></div>
+                            <h4 class="clrchg">Facebook</h4> 
+                        </a>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12 focus-grid"> 
+                        <a href="products.html" class="wthree-btn wthree2"> 
+                            <div class="focus-image"><i class="fa fa-instagram"></i></div>
+                            <h4 class="clrchg">Instragram</h4> 
+                        </a>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12 focus-grid"> 
+                        <a href="products.html" class="wthree-btn wthree3"> 
+                            <div class="focus-image"><i class="fa fa-pinterest"></i></div>
+                            <h4 class="clrchg">Pinteres</h4> 
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-md-8 col-lg-8">
+                
+                <div class="row">
+                    <div class="col-sm-12 col-md-6 col-lg-12">
+                        <a href="products.html" class=""> 
+                            <img src="assets/demo/temporada-banner-786x710.jpg" class="box1">
+                        </a>
+                     
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-12 focus-grid">        
+                        <a href="products.html" class=""> 
+                        <img src="assets/demo/evelyn-events-design-786x710.jpg" class="box1">      
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
         
-          <a href="products.html" class="wthree-btn"> 
-            <div class="focus-image"><i class="fa fa-mobile"></i></div>
-            <h4 class="clrchg">Mobiles</h4> 
-            <h4 class="clrchg">Mobiles</h4> 
-            <h4 class="clrchg">Mobiles</h4> 
-            <h4 class="clrchg">Mobiles</h4> 
-            <h4 class="clrchg">Mobiles</h4> 
-            <h4 class="clrchg">Mobiles</h4> 
-            <h4 class="clrchg">Mobiles</h4> 
-            <h4 class="clrchg">Mobiles</h4> 
-            <h4 class="clrchg">Mobiles</h4> 
-            
-          </a>
-     
-      </div>
+        
     </div>
-  </div>
+
 
 
   <!-- welcome -->

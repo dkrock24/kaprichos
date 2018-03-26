@@ -268,6 +268,7 @@ ul.cd-dropdown-content li {
     background: rgb(201, 78, 99);
     background-size: cover;  
     text-align: center;
+    height: 40px;
 }
 /*-- //header-three --*/
 .menu {
@@ -276,6 +277,7 @@ ul.cd-dropdown-content li {
 
 }
 .move-text {
+    width: 100%;
     float: left;
     display: inline-block;
     padding: 1em; 
@@ -589,14 +591,19 @@ h3.w3ls-title {
     padding: 1em 0;
     height: 100%;
 } 
+
+.box1{
+    width: 100%;
+}
+
 .focus-grid a.wthree-btn.wthree1 {
-    color: #ff4500;
+    color: #3b5998;
 }
 .focus-grid a.wthree-btn.wthree2 {
-    color: #00b300;
+    color: #cd486b;
 }
 .focus-grid a.wthree-btn.wthree3 {
-    color: #E91E63;
+    color: #cb2027;
 }
 .focus-grid a.wthree-btn.wthree4 {
     color: #a94442;
