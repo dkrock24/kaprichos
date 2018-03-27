@@ -16,10 +16,8 @@
           <li class="dropdown head-dpdn">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true"></i> Iniciar Sesión<span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href="login.html">Login </a></li> 
+              <li><a href="#" data-toggle="modal" data-target="#myModal">Login </a></li> 
               <li><a href="signup.html">Sign Up</a></li> 
-              <li><a href="login.html">My Orders</a></li>  
-              <li><a href="login.html">Wallet</a></li> 
             </ul> 
           </li> 
           <li class="dropdown head-dpdn">
@@ -27,7 +25,7 @@
             <ul class="dropdown-menu">
               <li><a href="offers.html">Cash Back Offers</a></li> 
               <li><a href="offers.html">Product Discounts</a></li>
-              <li><a href="offers.html">Special Offers</a></li> 
+              <li><a href="offers.html">Special Offers</a></li>
             </ul> 
           </li> 
           <li class="dropdown head-dpdn">
@@ -144,17 +142,7 @@
                               <li><a href="products.html">Feature Phones</a></li> 
                             </ul>
                           </li> 
-                          <li class="has-children">
-                            <a href="#">LARGE APPLIANCES</a> 
-                            <ul class="is-hidden"> 
-                              <li class="go-back"><a href="#">All Electronics </a></li>
-                              <li><a href="products.html">Refrigerators</a></li> 
-                              <li><a href="products.html">Washing Machine</a></li>
-                              <li><a href="products.html">Office Technology</a></li>
-                              <li><a href="products.html">Air conditioner</a></li>
-                              <li><a href="products.html">Home Automation</a></li>
-                            </ul>
-                          </li> 
+
                           <li class="has-children">
                             <a href="#">ENTERTAINMENT</a> 
                             <ul class="is-hidden"> 
@@ -222,17 +210,7 @@
                               <li><a href="products.html">Auto Electronics</a></li>  
                             </ul>
                           </li>
-                          <li class="has-children">
-                            <a href="#">PERSONAL CARE</a> 
-                            <ul class="is-hidden"> 
-                              <li class="go-back"><a href="#0">All Electronics </a></li>
-                              <li><a href="products.html">Epilator</a></li> 
-                              <li><a href="products.html">Hair Styler</a></li>
-                              <li><a href="products.html">Trimmer & Shaver</a></li>
-                              <li><a href="products.html">Health Care</a></li> 
-                              <li><a href="products.html">cables</a></li>
-                            </ul>
-                          </li>
+
                         </ul> <!-- .cd-secondary-dropdown --> 
                       </li> <!-- .has-children -->
                       <li class="has-children">
@@ -804,87 +782,8 @@
                           </li> 
                         </ul><!-- .cd-secondary-dropdown --> 
                       </li>
-                      <li class="has-children">
-                        <a href="#">Books, Music & Movies</a>
-                        <ul class="cd-secondary-dropdown is-hidden">
-                          <li class="go-back"><a href="#">Menu</a></li>
-                          <li class="see-all"><a href="products9.html">All Products</a></li>
-                          <li class="has-children">
-                            <a href="#">Books</a> 
-                            <ul class="is-hidden">
-                              <li class="go-back"><a href="#"></a></li>
-                              <li class="has-children"><a href="#">Exam books </a>
-                                <ul class="is-hidden">
-                                  <li class="go-back"><a href="#"> </a></li>
-                                  <li><a href="products9.html">CAT/MAT/XAT</a></li>
-                                  <li><a href="products9.html">Civil Services</a></li>
-                                  <li><a href="products9.html">AFCAT</a></li>
-                                  <li><a href="products9.html">New Releases</a></li>
-                                </ul>                       
-                              </li>
-                              <li><a href="products9.html">Academic Text </a></li>
-                              <li><a href="products9.html">Romance Books </a></li>
-                              <li><a href="products9.html">Journals </a></li>
-                              <li><a href="products9.html">Children's & Teen Books </a></li>
-                            </ul>
-                          </li> 
-                          <li class="has-children">
-                            <a href="#">Music</a> 
-                            <ul class="is-hidden">
-                              <li class="go-back"><a href="#"></a></li>
-                              <li><a href="products9.html">New Releases </a></li> 
-                              <li><a href="products9.html">Country Music </a></li>
-                              <li><a href="products9.html">Musical Instruments </a></li>
-                              <li><a href="products9.html">Collections</a></li>
-                              <li><a href="products9.html">Boxed Sets </a></li>
-                            </ul>
-                          </li> 
-                          <li class="has-children">
-                            <a href="#">Music Combo</a> 
-                            <ul class="is-hidden">
-                              <li class="go-back"><a href="#"></a></li>
-                              <li><a href="products9.html">Pop </a></li> 
-                              <li><a href="products9.html">Preorders </a></li>
-                              <li><a href="products9.html">Album Songs</a></li>
-                              <li><a href="products9.html">Top 50 CDs </a></li>
-                              <li><a href="products9.html">Music DVDs </a></li>
-                            </ul>
-                          </li>
-                          <li class="has-children">
-                            <a href="#">Movies</a> 
-                            <ul class="is-hidden"> 
-                              <li class="go-back"><a href="#"></a></li>
-                              <li><a href="products9.html">New Releases </a></li> 
-                              <li><a href="products9.html">Children & Family </a></li>
-                              <li><a href="products9.html">Action</a></li>
-                              <li><a href="products9.html">Classic Movies </a></li>
-                              <li><a href="products9.html">Bollywood Movies </a></li>
-                            </ul>
-                          </li> 
-                          <li class="has-children">
-                            <a href="#">Movies Combo</a> 
-                            <ul class="is-hidden">
-                              <li class="go-back"><a href="#"></a></li>
-                              <li><a href="products9.html">Hollywood Movies </a></li> 
-                              <li><a href="products9.html">Digital Movies </a></li>
-                              <li><a href="products9.html">Boxed Sets</a></li>
-                              <li><a href="products9.html">Animated</a></li>
-                              <li><a href="products9.html">Adventure</a></li>
-                            </ul>
-                          </li> 
-                          <li class="has-children">
-                            <a href="#">TV Shows</a> 
-                            <ul class="is-hidden">
-                              <li class="go-back"><a href="#"></a></li>
-                              <li><a href="products9.html">Serials</a></li> 
-                              <li><a href="products9.html">Best Programs</a></li>
-                              <li><a href="products9.html">Celebrations</a></li>
-                              <li><a href="products9.html">Top Shows</a></li> 
-                            </ul>
-                          </li> 
-                        </ul><!-- .cd-secondary-dropdown --> 
-                      </li>  
-                      <li><a href="sitemap.html">Full Site Directory </a></li>  
+ 
+                      
                     </ul> <!-- .cd-dropdown-content -->
                   </nav> <!-- .cd-dropdown -->
                 </div> <!-- .cd-dropdown-wrapper -->   
@@ -910,3 +809,51 @@
     
   </div>
   <!-- //header --> 
+
+
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        
+        <h1 style="text-align: center"><i class="fa fa-user"></i></h1>
+        <h4 class="modal-title" id="myModalLabel" style="text-align: center">Log in</h4>
+      </div> <!-- /.modal-header -->
+
+      <div class="modal-body">
+        <form role="form">
+          <div class="form-group">
+            <div class="input-group">
+              <input type="text" class="form-control" id="uLogin" placeholder="Email">
+              <label for="uLogin" class="input-group-addon glyphicon glyphicon-user"></label>
+            </div>
+          </div> <!-- /.form-group -->
+
+          <div class="form-group">
+            <div class="input-group">
+              <input type="password" class="form-control" id="uPassword" placeholder="Password">
+              <label for="uPassword" class="input-group-addon glyphicon glyphicon-lock"></label>
+            </div> <!-- /.input-group -->
+          </div> <!-- /.form-group -->
+
+
+        </form>
+
+      </div> <!-- /.modal-body -->
+
+      <div class="modal-footer">
+        <button class="form-control btn btn-primary">Entrar</button>
+
+        <div class="progress">
+          <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="100" style="width: 0%;">
+            <span class="sr-only">progress</span>
+          </div>
+        </div>
+      </div> <!-- /.modal-footer -->
+
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

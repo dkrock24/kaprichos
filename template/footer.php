@@ -8,40 +8,29 @@
             
           </div>
           <ul>
-            <li><i class="fa fa-map-marker"></i> 123 San Sebastian, New York City USA.</li>
-            <li><i class="fa fa-mobile"></i> 333 222 3333 </li>
-            <li><i class="fa fa-phone"></i> +222 11 4444 </li>
-            <li><i class="fa fa-envelope-o"></i> <a href="mailto:example@mail.com"> mail@example.com</a></li>
+            <li><i class="fa fa-map-marker"></i> Avenida Olímpica 65 Av. Sur <br />Local 106, Condominio Galería Olímpica  <br/>San Salvador, El Salvador. Centroamérica</li>
+            <li><i class="fa fa-phone"></i> <b>+503</b> 2223-3515 || 2223-3516 || 2532-1561</li>                        
+            <li><i class="fa fa-phone"></i> 24/7 24 Horas al día, 7 días a la semana. </li>            
+            <li><i class="fa fa-envelope-o"></i> <a href="mailto:info@kaprichosfloristeria.com"> info@kaprichosfloristeria.com</a></li>
           </ul> 
         </div>
         <div class="col-md-8 address-right">
           <div class="col-md-4 footer-grids">
-            <h3>Company</h3>
+            <h3>Servicio</h3>
             <ul>
               <li><a href="about.html">About Us</a></li>
-              <li><a href="marketplace.html">Marketplace</a></li>  
-              <li><a href="values.html">Core Values</a></li>  
-              <li><a href="privacy.html">Privacy Policy</a></li>
             </ul>
           </div>
           <div class="col-md-4 footer-grids">
             <h3>Services</h3>
             <ul>
               <li><a href="contact.html">Contact Us</a></li>
-              <li><a href="login.html">Returns</a></li> 
-              <li><a href="faq.html">FAQ</a></li>
-              <li><a href="sitemap.html">Site Map</a></li>
-              <li><a href="login.html">Order Status</a></li>
             </ul> 
           </div>
           <div class="col-md-4 footer-grids">
             <h3>Payment Methods</h3>
             <ul>
               <li><i class="fa fa-laptop" aria-hidden="true"></i> Net Banking</li>
-              <li><i class="fa fa-money" aria-hidden="true"></i> Cash On Delivery</li>
-              <li><i class="fa fa-pie-chart" aria-hidden="true"></i>EMI Conversion</li>
-              <li><i class="fa fa-gift" aria-hidden="true"></i> E-Gift Voucher</li>
-              <li><i class="fa fa-credit-card" aria-hidden="true"></i> Debit/Credit Card</li>
             </ul>  
           </div>
           <div class="clearfix"></div>
