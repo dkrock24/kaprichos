@@ -14,7 +14,7 @@
         <div class="w3ls-header-right" style="color:black;">
             <ul>
           <li class="dropdown head-dpdn">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true"></i> Iniciar Sesión<span class="caret"></span></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true"></i> <?php echo $messages['login']; ?><span class="caret"></span></a>
             <ul class="dropdown-menu">
               <li><a href="#" data-toggle="modal" data-target="#myModal">Login </a></li> 
               <li><a href="signup.html">Sign Up</a></li> 
@@ -39,8 +39,8 @@
           <li class="dropdown head-dpdn">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-gift" aria-hidden="true"></i> Idioma<span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href="offers.html">Spanish</a></li> 
-              <li><a href="offers.html">English</a></li>
+              <li><a href="index.php?lan=es">Spanish</a></li> 
+              <li><a href="index.php?lan=en">English</a></li>
               
             </ul> 
           </li> 
@@ -73,7 +73,7 @@
                 <div class="col-ms-3">
                     <div class="header-cart"> 
                         <div class="my-account">
-                            <a href="contact.html"><i class="fa fa-money" aria-hidden="true"></i> 0.0 Articulos</a>           
+                            <a href="contact.html"><i class="fa fa-money" aria-hidden="true"></i> 0.0 </a>           
                         </div>
                         
                         <div class="cart"> 

@@ -1,9 +1,26 @@
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
+
+<?php
+    @session_start();
+
+    if(!isset($_SESSION['lan']))
+    {
+        if(isset($_GET['lan']))
+        {        
+            $_SESSION['lan'] = $_GET['lan'];
+        }
+        else
+        {
+            $_SESSION['lan'] = 'es';
+        }
+    }else
+    {
+        $_SESSION['lan'] = 'es';
+    }
+
+    require("lan/".$_SESSION['lan'].'.php');
+    session_destroy();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
