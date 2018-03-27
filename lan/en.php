@@ -19,12 +19,21 @@ $messages['aboutus'] = 'About Us';
 $messages['copy'] 	= 'All rights reserved';
 
 //Slider
+$messages['next'] = 'Next';
+$messages['preview'] = 'preview';
 
 //Destacados
 
 //Design
 
-$messages['signup'] = 'Sign Up';
+//Contactanos
+$messages['sendTitle'] = 'Message Send Succeful';
+$messages['nameC'] = 'Name';
+$messages['phoneC'] = 'Phone';
+$messages['emailC'] = 'Email';
+$messages['messageC'] = 'Message';
+$messages['instructionC'] = 'Black Required Field';
+$messages['sendC'] = 'Send';
 
 /* END INDEX */
-?>
+?>  

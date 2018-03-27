@@ -1,7 +1,11 @@
 
 <?php
-    @session_start();
+    if(session_status()!=PHP_SESSION_ACTIVE) {
+    session_start();
+}
+error_reporting(0);
 
+    echo $_SESSION['lan'];
     if(!isset($_SESSION['lan']))
     {
         if(isset($_GET['lan']))
@@ -18,7 +22,7 @@
     }
 
     require("lan/".$_SESSION['lan'].'.php');
-    session_destroy();
+    //session_destroy();
 ?>
 
 <!DOCTYPE html>
