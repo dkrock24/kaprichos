@@ -22,6 +22,20 @@ $messages['copy'] 	= 'All rights reserved';
 $messages['next'] = 'Next';
 $messages['preview'] = 'preview';
 
+//menu left
+$messages['menuL'] = 'Search';
+$messages['catalogL'] = 'Catalog';
+$messages['ofertL'] = 'Oferts';
+$messages['questionL'] = 'Questions';
+$messages['whopayL'] = 'How Pay?';
+$messages['servicesL'] = 'Services';
+$messages['tipsL'] = 'Tips';
+$messages['contactusL'] = 'Contact Us';
+$messages['videosL'] = 'Videos';
+
+//Question
+$messages['sectionQ'] = 'Question Section';
+$messages['t1Q'] = '¿Cuál es la cobertura del servicio?';
 //Destacados
 
 //Design
