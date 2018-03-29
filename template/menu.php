@@ -1,3 +1,14 @@
+<?php require_once('Connections/conne10.php'); ?>
+<?php
+//Queries Menu
+mysql_select_db($database_conne10, $conne10);
+$query_rscategorias = "SELECT id_categoria, nombre_es FROM tbl_productos_categorias WHERE estatus = 1 ORDER BY orden ASC";
+$rscategorias = mysql_query($query_rscategorias, $conne10) or die(mysql_error());
+$row_rscategorias = mysql_fetch_assoc($rscategorias);
+$totalRows_rscategorias = mysql_num_rows($rscategorias);
+
+?>
+
 <div class="header">
     <div class="container">
       <div class="row">
@@ -129,48 +140,9 @@
                   <nav class="cd-dropdown"> 
                     <a href="#0" class="cd-close">Close</a>
                     <ul class="cd-dropdown-content"> 
-                      <li><a href="offers.html"><?php echo $messages['valentine']; ?></a></li>
-                      <li>
-                        <a href="#"><?php echo $messages['newStyle']; ?></a> 
-                      </li> <!-- . -->
-                      <li class="">
-                        <a href="#"><?php echo $messages['rosasRojas']; ?></a> 
-                      </li> <!-- . -->
-                      <li class="">
-                        <a href="#"><?php echo $messages['macetas']; ?></a>             
-                      </li> <!-- . --> 
-                      <li class="">
-                        <a href="#"><?php echo $messages['redondos']; ?></a>                       
-                      </li> <!-- . -->  
-                      <li class="">
-                        <a href="#"><?php echo $messages['Cofrecitos']; ?></a>                       
-                      </li> <!-- . -->  
-                      <li class="">
-                        <a href="#"><?php echo $messages['Tronquitos']; ?></a>                       
-                      </li> <!-- . -->  
-                      <li class="">
-                        <a href="#"><?php echo $messages['NacimientoBebe']; ?></a>                   
-                      </li> 
-                      <li class="">
-                        <a href="#"><?php echo $messages['Orquideas']; ?></a>                       
-                      </li>
-                      <li class="">
-                        <a href="#"><?php echo $messages['Frutales']; ?></a>                        
-                      </li>
-                      <li class="">
-                        <a href="#"><?php echo $messages['Tropicales']; ?></a>
-                      </li>
-                      <li class="">
-                        <a href="#"><?php echo $messages['globe']; ?></a>
-                      </li>
-                      <li class="">
-                        <a href="#"><?php echo $messages['Condolencias']; ?></a>
-                      </li>
-                      <li class="">
-                        <a href="#"><?php echo $messages['Complementos']; ?></a>
-                      </li>
- 
-                      
+                      <?php do { ?>
+                        <li><a href="categoria.php?c=<?php echo $row_rscategorias['id_categoria']; ?>"><?php echo $row_rscategorias['nombre_es']; ?></a></li>
+                      <?php } while ($row_rscategorias = mysql_fetch_assoc($rscategorias)); ?>                      
                     </ul> <!-- .cd-dropdown-content -->
                   </nav> <!-- .cd-dropdown -->
                 </div> <!-- .cd-dropdown-wrapper -->   
