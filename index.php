@@ -1,33 +1,19 @@
-
-<?php
-
-    $cookie_name = "user";
-    $cookie_value = "John Doe";
-    @setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
-
-    echo $_COOKIE[$cookie_name];
-
-
-
-    @session_start();
-    error_reporting(0);
-
-    echo $_SESSION['lan'];
-    if(!isset($_SESSION['lan']))
+<?php    
+    session_start();
+    header('location=ok');
+    if(isset( $_GET['lan'] ))
     {
-        if(isset($_GET['lan']))
-        {        
-            $_SESSION['lan'] = $_GET['lan'];
-        }
-        else
-        {
-            $_SESSION['lan'] = 'es';
-        }
-    }else
-    {
-        $_SESSION['lan'] = 'es';
+        $_SESSION['lan'] = $_GET['lan'];
+        
     }
-
+    else
+    {
+        if(!isset($_SESSION['lan']))
+        {        
+            echo $_SESSION['lan'] = 'es';
+        }
+        
+    }
     require("lan/".$_SESSION['lan'].'.php');
     //session_destroy();
 ?>
@@ -149,14 +135,14 @@
     <div class="banner-bottom">
         <div class="container">
             <div class="clearfix"> </div>
-          <h3 class="w3ls-title">Destacados</h3>
+          <h3 class="w3ls-title"><?php echo $messages['Destacados']; ?></h3>
             <div class="product-one">
                 <div class="col-md-2 product-left"> 
                     <div class="p-one simpleCart_shelfItem jwe">                            
                             <a href="single.html">
                                 <img src="uploaded/mod_productos/0a31fa8ab353f1cee3f8e528f257cb18.jpg" alt="" class="img-responsive" />
                                 <div class="mask">
-                                    <span>Quick View</span>
+                                    <span><?php echo $messages['QuickView']; ?></span>
                                 </div>
                             </a>
                         <div class="product-left-cart">
@@ -175,7 +161,7 @@
                         <a href="single.html">
                                 <img src="uploaded/mod_productos/0a31fa8ab353f1cee3f8e528f257cb18.jpg" alt="" class="img-responsive" />
                                 <div class="mask">
-                                    <span>Quick View</span>
+                                    <span><?php echo $messages['QuickView']; ?></span>
                                 </div>
                         </a>
                         <div class="product-left-cart">
@@ -194,7 +180,7 @@
                         <a href="single.html">
                                 <img src="uploaded/mod_productos/0a31fa8ab353f1cee3f8e528f257cb18.jpg" alt="" class="img-responsive" />
                                 <div class="mask">
-                                    <span>Quick View</span>
+                                    <span><?php echo $messages['QuickView']; ?></span>
                                 </div>
                         </a>
                         <div class="product-left-cart">
@@ -213,7 +199,7 @@
                         <a href="single.html">
                                 <img src="uploaded/mod_productos/0a31fa8ab353f1cee3f8e528f257cb18.jpg" alt="" class="img-responsive" />
                                 <div class="mask">
-                                    <span>Quick View</span>
+                                    <span><?php echo $messages['QuickView']; ?></span>
                                 </div>
                         </a>
                         <div class="product-left-cart">
@@ -232,7 +218,7 @@
                             <a href="single.html">
                                 <img src="uploaded/mod_productos/0a31fa8ab353f1cee3f8e528f257cb18.jpg" alt="" class="img-responsive" />
                                 <div class="mask">
-                                    <span>Quick View</span>
+                                    <span><?php echo $messages['QuickView']; ?></span>
                                 </div>
                             </a>
                         <div class="product-left-cart">
@@ -251,7 +237,7 @@
                         <a href="single.html">
                                 <img src="uploaded/mod_productos/0a31fa8ab353f1cee3f8e528f257cb18.jpg" alt="" class="img-responsive" />
                                 <div class="mask">
-                                    <span>Quick View</span>
+                                    <span><?php echo $messages['QuickView']; ?></span>
                                 </div>
                         </a>
                         <div class="product-left-cart">
@@ -280,7 +266,7 @@
         <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
 
           <div class="clearfix"> </div>
-          <h3 class="w3ls-title">Kaprichos Design</h3>
+          <h3 class="w3ls-title"><?php echo $messages['KaprichosDesign']; ?></h3>
           <div id="myTabContent" class="tab-content">
             <div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
               <div class="tabcontent-grids">  

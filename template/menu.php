@@ -30,7 +30,7 @@
               <li><a href="offers.html"><?php echo $messages['whopayL']; ?></a></li> 
               <li><a href="offers.html"><?php echo $messages['servicesL']; ?></a></li> 
               <li><a href="offers.html"><?php echo $messages['tipsL']; ?></a></li>   
-              <li><a href="offers.html"><?php echo $messages['contactusL']; ?></a></li>             
+              <li><a href="contacto.php"><?php echo $messages['contactusL']; ?></a></li>             
               <li><a href="offers.html"><?php echo $messages['videosL']; ?></a></li> 
             </ul> 
           </li> 
@@ -79,7 +79,7 @@
                 <div class="col-ms-3">
                     <div class="header-cart"> 
                         <div class="my-account">
-                            <a href="contact.html"><i class="fa fa-money" aria-hidden="true"></i> 0.0 </a>           
+                            <a href="#"><i class="fa fa-money" aria-hidden="true"></i> 0.0 </a>           
                         </div>
                         
                         <div class="cart"> 
@@ -112,7 +112,13 @@
 
           <div class="col-md-3">
               <div class="move-text">
-                <div class="marquee"><a href="offers.html"> <?php echo $messages['home']; ?></a></div>
+                <div class="marquee"><a href="index.php"> <?php echo $messages['home']; ?></a></div>
+              </div>
+          </div>
+
+          <div class="col-md-3">
+              <div class="move-text">
+                <div class="marquee"><a href="offers.html"> <?php echo $messages['event']; ?></a></div>
               </div>
           </div>
 
@@ -131,7 +137,7 @@
                         <a href="#"><?php echo $messages['rosasRojas']; ?></a> 
                       </li> <!-- . -->
                       <li class="">
-                        <a href="products2.html"><?php echo $messages['macetas']; ?></a>             
+                        <a href="#"><?php echo $messages['macetas']; ?></a>             
                       </li> <!-- . --> 
                       <li class="">
                         <a href="#"><?php echo $messages['redondos']; ?></a>                       
@@ -171,15 +177,11 @@
             </div>
           </div>
 
-          <div class="col-md-3">
-              <div class="move-text">
-                <div class="marquee"><a href="offers.html"> <?php echo $messages['event']; ?></a></div>
-              </div>
-          </div>
+          
        
           <div class="col-md-3">
             <div class="move-text">
-              <div class="marquee"><a href="offers.html"> <?php echo $messages['contactus']; ?></a></div>
+              <div class="marquee"><a href="contacto.php"> <?php echo $messages['contactus']; ?></a></div>
             </div>
           </div>
         
@@ -233,6 +235,65 @@
             <span class="sr-only">progress</span>
           </div>
         </div>
+      </div> <!-- /.modal-footer -->
+
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+
+  <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        
+        <h1 style="text-align: center"><img src="images/flores-para-el-salvador.png"/></h1>
+        <h4 class="modal-title" id="myModalLabel" style="text-align: center"><?php echo $messages['aboutus']; ?></h4>
+      </div> <!-- /.modal-header -->
+
+      <div class="modal-body">
+        <p>
+          <?php echo $messages['nosotrosDescripcion']; ?>
+        </p>
+      </div> <!-- /.modal-body -->
+
+      <div class="modal-footer">
+        
+
+      </div> <!-- /.modal-footer -->
+
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+  <div class="modal fade" id="politicas" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        
+        <h1 style="text-align: center"><img src="images/flores-para-el-salvador.png"/></h1>
+        <h4 class="modal-title" id="myModalLabel" style="text-align: center"><?php echo $messages['politicas2']; ?></h4>
+      </div> <!-- /.modal-header -->
+
+      <div class="modal-body">
+        <ul>
+          <li><i class="fa fa-info-circle"></i> <?php echo $messages['politicaCompleta1']; ?></li>
+          <li><i class="fa fa-info-circle"></i> <?php echo $messages['politicaCompleta2']; ?></li>
+          <li><i class="fa fa-info-circle"></i> <?php echo $messages['politicaCompleta3']; ?></li>
+          <li><i class="fa fa-info-circle"></i> <?php echo $messages['politicaCompleta4']; ?></li>
+          <li><i class="fa fa-info-circle"></i> <?php echo $messages['politicaCompleta5']; ?></li>
+          <li><i class="fa fa-info-circle"></i> <?php echo $messages['politicaCompleta6']; ?></li>
+        </ul>
+      </div> <!-- /.modal-body -->
+
+      <div class="modal-footer">
+        
+
       </div> <!-- /.modal-footer -->
 
     </div><!-- /.modal-content -->

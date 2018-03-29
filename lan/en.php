@@ -38,7 +38,20 @@ $messages['Eventos'] = 'Events';
 
 //Footer
 $messages['aboutus'] = 'About Us';
+$messages['Direccion'] = 'Direcction';
+$messages['Products'] = 'Products';
 $messages['copy'] 	= 'All rights reserved';
+$messages['nosotrosDescripcion'] = 'Kapricho´s Floristería nació con el objetivo de  brindar arreglos florales innovadores, especializándonos en actualizar constantemente todos aquellos detalles que hacen su arreglo diferente. En Kapricho´s Floristería nos esmeramos porque sus sentimientos sean expresados con especial cuidado y garantizamos cubrir las expectativas.
+Todos nuestros arreglos son elaborados con materia prima de alta calidad, entre las clases de arreglos que le ofrecemos, tenemos: Frutales, primaverales, tropicales, orquídeas, globos sorpresa, chocolates, etc. Para toda ocasión, cumpleaños, felicitaciones, amistad, recuperación.
+También, nos ponemos a su disposición para cualquier tipo de evento, bodas, primera comunión, mesas de Honor, Baby shower decoraciones de salones, eventos de gobierno, Decoración de iglesias, etc. En donde le ofrecemos calidad, bajos costos y un alto sentido de responsabilidad.
+Ofrecemos nuestro servicio los siete días a la semana, por lo que, nos encontramos a su disposición en aquellos momentos inesperados y donde usted desea expresarse a través de un lindo detalle.';
+
+
+
+$messages['telefonos'] = 'Phones';
+$messages['information'] = 'Information';
+$messages['politicas'] = 'POLITICAS';
+$messages['politicas2'] = 'Políticas de Reembolso';
 
 //Slider
 $messages['next'] = 'Next';
@@ -58,9 +71,13 @@ $messages['videosL'] = 'Videos';
 //Question
 $messages['sectionQ'] = 'Question Section';
 $messages['t1Q'] = '¿Cuál es la cobertura del servicio?';
+
 //Destacados
+$messages['Destacados'] = 'Featured Products';
+$messages['QuickView'] = 'Quick View';
 
 //Design
+$messages['KaprichosDesign'] = 'Kaprichos Design';
 
 //Contactanos
 $messages['sendTitle'] = 'Message Send Succeful';
