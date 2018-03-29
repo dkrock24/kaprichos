@@ -3,20 +3,13 @@
 
     $cookie_name = "user";
     $cookie_value = "John Doe";
-    setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
+    @setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
 
-    if(!isset($_COOKIE[$cookie_name])) {
-        echo "Cookie named '" . $cookie_name . "' is not set!";
-    } else {
-        echo "Cookie '" . $cookie_name . "' is set!<br>";
-        echo "Value is: " . $_COOKIE[$cookie_name];
-    }
+    echo $_COOKIE[$cookie_name];
 
 
 
-    if(session_status()!=PHP_SESSION_ACTIVE) {
-        session_start();
-    }
+    @session_start();
     error_reporting(0);
 
     echo $_SESSION['lan'];

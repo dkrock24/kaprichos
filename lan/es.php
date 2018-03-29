@@ -3,16 +3,39 @@
 /* INDEX */
 // Menu Top
 $messages['login'] 	= 'Iniciar Sesión';
+$messages['Ingresar'] 	= 'Ingresar';
+$messages['Salir'] 	= 'Salir';
 $messages['signup'] = 'Registrarse';
-$messages['cart'] 	= 'Carro de Compras';
+$messages['cart'] 	= 'Carrito de Compras';
 $messages['language'] 	= 'Idioma';
 $messages['paynow'] = 'Comprar Ahora';
 
 // Menu 
-$messages['home'] 	= 'Inicio';
-$messages['buy'] 	= 'Comprar';
-$messages['event'] 	= 'Eventos';
-$messages['contactus'] = 'Contactanos';
+$messages['home'] 	= 'INICIO';
+$messages['buy'] 	= 'COMPRAR';
+$messages['event'] 	= 'EVENTOS';
+$messages['contactus'] = 'CONTACTANOS';
+$messages['myCart'] = 'Mi Carrito';
+$messages['myOrders'] = 'Mis Pedidos';
+$messages['search'] = 'Buscar un Producto';
+
+$messages['newStyle'] = 'Nuevos Estilos';
+$messages['valentine'] = 'San Valentin';
+$messages['rosasRojas'] = 'Rosas Rojas';
+$messages['rosasRojas'] = 'Rosas Preservadas';
+$messages['macetas'] = 'Macetas';
+$messages['redondos'] = 'Redondos';
+$messages['Cofrecitos'] = 'Cofrecitos';
+$messages['Tronquitos'] = 'Tronquitos';
+$messages['NacimientoBebe'] = 'Nacimiento de bebe';
+$messages['Orquideas'] = 'Orquideas';
+$messages['Frutales'] = 'Frutales';
+$messages['Tropicales'] = 'Tropicales';
+$messages['globe'] = 'Globos y Peluches';
+$messages['Condolencias'] = 'Condolencias';
+$messages['Complementos'] = 'Complementos';
+$messages['Eventos'] = 'Eventos';
+
 
 //Footer
 $messages['aboutus'] = 'Sobre Nosotros';
