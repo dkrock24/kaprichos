@@ -88,5 +88,9 @@ $messages['messageC'] = 'Message';
 $messages['instructionC'] = 'Black Required Field';
 $messages['sendC'] = 'Send';
 
+//Categorias
+$messages['cVer'] = 'Show';
+$messages['cAdd'] = 'Add';
+
 /* END INDEX */
 ?>  

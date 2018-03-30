@@ -129,6 +129,7 @@ $objDynamicThumb2->setWatermark(false);
 <html lang="en">
 <head>
 <?php include"template/header.php"; ?>
+
 </head>
 <body>
 
@@ -163,23 +164,36 @@ $objDynamicThumb2->setWatermark(false);
           <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12">
                 <div id="navegando">
-                    <table width="100%" border="0" align="center" cellpadding="5" cellspacing="0">
+                    <table width="100%" border="0" align="center" cellpadding="5" cellspacing="0" class="">
                         <tr>
-                          <td width="55" align="left" valign="top"><?php if ($pageNum_rsarreglos1 > 0) { // Show if not first page ?>
-                              <a href="<?php printf("%s?pageNum_rsarreglos1=%d%s", $currentPage, 0, $queryString_rsarreglos1); ?>" class="fakab">Inicio</a>
-                              <?php } // Show if not first page ?></td>
-                          <td width="85" align="left" valign="top"><?php if ($pageNum_rsarreglos1 > 0) { // Show if not first page ?>
-                              <a href="<?php printf("%s?pageNum_rsarreglos1=%d%s", $currentPage, max(0, $pageNum_rsarreglos1 - 1), $queryString_rsarreglos1); ?>" class="fakab">«Anteriores</a>
-                          <?php } // Show if not first page ?></td>
                           <td align="center" valign="top">&nbsp;<?php echo ($startRow_rsarreglos1 + 1) ?> al <?php echo min($startRow_rsarreglos1 + $maxRows_rsarreglos1, $totalRows_rsarreglos1) ?> de <?php echo $totalRows_rsarreglos1 ?></td>
-                          <td width="85" align="right" valign="top"><?php if ($pageNum_rsarreglos1 < $totalPages_rsarreglos1) { // Show if not last page ?>
-                              <a href="<?php printf("%s?pageNum_rsarreglos1=%d%s", $currentPage, min($totalPages_rsarreglos1, $pageNum_rsarreglos1 + 1), $queryString_rsarreglos1); ?>" class="fakab">Siguientes»</a>
-                              <?php } // Show if not last page ?></td>
-                          <td width="55" align="right" valign="top"><?php if ($pageNum_rsarreglos1 < $totalPages_rsarreglos1) { // Show if not last page ?>
-                              <a href="<?php printf("%s?pageNum_rsarreglos1=%d%s", $currentPage, $totalPages_rsarreglos1, $queryString_rsarreglos1); ?>" class="fakab">Final</a>
-                              <?php } // Show if not last page ?></td>
+                          <td width="85" align="right" valign="top"></td>
+                          <td width="55" align="right" valign="top"></td>
                         </tr>
                     </table>
+
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                            <li class="page-item">
+                                <?php if ($pageNum_rsarreglos1 > 0) { // Show if not first page ?>
+                              <a href="<?php printf("%s?pageNum_rsarreglos1=%d%s", $currentPage, 0, $queryString_rsarreglos1); ?>" class="fakab">Inicio</a>
+                              <?php } // Show if not first page ?>
+                            </li>
+                            <li>
+                                <?php if ($pageNum_rsarreglos1 > 0) { // Show if not first page ?>
+                              <a href="<?php printf("%s?pageNum_rsarreglos1=%d%s", $currentPage, max(0, $pageNum_rsarreglos1 - 1), $queryString_rsarreglos1); ?>" class="fakab">«Anteriores</a>
+                          <?php } // Show if not first page ?>
+                            </li>
+                            <li class="page-item">
+                                <?php if ($pageNum_rsarreglos1 < $totalPages_rsarreglos1) { // Show if not last page ?>
+                                <a href="<?php printf("%s?pageNum_rsarreglos1=%d%s", $currentPage, min($totalPages_rsarreglos1, $pageNum_rsarreglos1 + 1), $queryString_rsarreglos1); ?>" class="fakab">Siguientes»</a></li>
+                              <?php } // Show if not last page ?>
+                            <li class="page-item">
+                                <?php if ($pageNum_rsarreglos1 < $totalPages_rsarreglos1) { // Show if not last page ?>
+                                <a href="<?php printf("%s?pageNum_rsarreglos1=%d%s", $currentPage, $totalPages_rsarreglos1, $queryString_rsarreglos1); ?>" class="page-link">Final</a></li>                              
+                              <?php } // Show if not last page ?>
+                        </ul>
+                    </nav>
                 </div>
             </div>
           </div>  
@@ -250,16 +264,16 @@ $objDynamicThumb2->setWatermark(false);
                                             <a href="arreglos-ver.php?id=<?php echo $row_rsarreglos1['id_producto']; ?>"><?php echo $row_rsarreglos1['nombre_es']; ?>
                                         </div>
                                         <div class="col-sm-12 col-md-12 col-lg-12">
-                                            $<?php echo number_format($row_rsarreglos1['numerico1'],2); ?>                                                        
+                                            <span class="precio">$<?php echo number_format($row_rsarreglos1['numerico1'],2); ?> </span>                                                       
                                         </div>
                                     </div>   
 
                                     <div class="row">
                                         <div class="col-sm-12 col-md-6">
-                                            <a class="btn btn-danger btn-sm" href="uploaded/mod_productos/<?php echo $row_rsarreglos1['imagen'];?>" rel="lytebox[galera]" title="<?php echo $row_rsarreglos1['nombre_es']; ?>"><i class="fa fa-search"></i> Ver</a>
+                                            <a data-toggle="modal" data-target="#detalle_producto" id="uploaded/mod_productos/<?php echo $row_rsarreglos1['imagen'];?>" class="btn btn-danger btn-sm detalleModal" href="#" rel="lytebox[galera]" title="<?php echo $row_rsarreglos1['nombre_es']; ?>" precio="<?php echo number_format($row_rsarreglos1['numerico1'],2); ?>"><i class="fa fa-search"></i> <?php echo $messages['cVer']; ?></a>
                                         </div>
                                         <div class="col-sm-12 col-md-6">
-                                            <a class="btn btn-info btn-sm" href="arreglos-ver.php?id=<?php echo $row_rsarreglos1['id_producto']; ?>"><i class="fa fa-cart-arrow-down"></i> Agregar</a>  
+                                            <a class="btn btn-info btn-sm" href="arreglos-ver.php?id=<?php echo $row_rsarreglos1['id_producto']; ?>"><i class="fa fa-cart-arrow-down"></i> <?php echo $messages['cAdd']; ?></a>  
                                         </div>
                                     </div>                                     
                                 </div>
@@ -305,7 +319,14 @@ $objDynamicThumb2->setWatermark(false);
   <script src="assets/js/jquery.throttle.js"></script>
   <script src="assets/js/jquery.classycountdown.js"></script>
     <script>
+
       $(document).ready(function() {
+        $('.detalleModal').click(function(){
+            var imag = $(this).attr('id');
+            $('.txtTitleModel').text($(this).attr('title')+" / $"+ $(this).attr('precio'));
+            $("#imgModalDetalle").attr('src',imag);            
+        });
+
         $('#countdown1').ClassyCountdown({
           end: '1388268325',
           now: '1387999995',
@@ -361,4 +382,39 @@ $objDynamicThumb2->setWatermark(false);
   <!-- menu js aim -->
   <script src="assets/js/jquery.menu-aim.js"> </script>
   <script src="assets/js/main.js"></script> <!-- Resource jQuery -->
+
 </body>
+
+<!-- /.Modal Detalle de Producto -->
+  <div class="modal fade" id="detalle_producto" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header" style="background-color: #0480be; border-radius:3px 3px 0px 0px;">
+        <button type="button" class="close" style="color:white;" data-dismiss="modal" aria-hidden="true">×</button>
+        
+        <h1 style="text-align: center"><img src="images/flores-para-el-salvador.png" width="20%" /></h1>
+        <h4 class="modal-title" id="myModalLabel" style="text-align: center; color:white;"><span class="txtTitleModel"></span></h4>
+      </div> <!-- /.modal-header -->
+
+      <div class="modal-body">
+            
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12" style="text-align: center">
+                    <img src="" id="imgModalDetalle" width="80%" />
+                </div>
+            </div>
+                  
+      </div> <!-- /.modal-body -->
+
+    <div class="modal-footer">
+        <div class="row">
+            <div class="col-sm-12 col-md-6 col-lg-12" style="text-align: center">                
+                <a class="btn btn-success btn-md" href="#"><i class="fa fa-cart-arrow-down"></i> <?php echo $messages['cAdd']; ?></a>  
+            </div>
+        </div>     
+    </div> <!-- /.modal-footer -->
+
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

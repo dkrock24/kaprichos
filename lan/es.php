@@ -102,5 +102,9 @@ $messages['messageC'] = 'Mensaje';
 $messages['instructionC'] = 'Campos en negrita son requeridos';
 $messages['sendC'] = 'Enviar';
 
+//Categorias
+$messages['cVer'] = 'Ver';
+$messages['cAdd'] = 'Agregar';
+
 /* END INDEX */
 ?>
