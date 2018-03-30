@@ -88,6 +88,7 @@ $totalRows_rscategorias = mysql_num_rows($rscategorias);
                 </div>
 
                 <div class="col-ms-3">
+                    <!--
                     <div class="header-cart"> 
                         <div class="my-account">
                             <i class="fa fa-money" style="font-size: 16px;" aria-hidden="true"></i><span id="totalabc"></span>
@@ -103,6 +104,7 @@ $totalRows_rscategorias = mysql_num_rows($rscategorias);
                         </div>
                     <div class="clearfix"> </div> 
                     </div> 
+                        -->
                 </div>
             </div>
             <div class="clearfix"> </div>

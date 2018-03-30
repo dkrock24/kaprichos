@@ -54,38 +54,45 @@ h1 {
 <script src="SpryAssets/SpryValidationTextarea.js" type="text/javascript"></script>
 <link href="includes/skins/mxkollection3.css" rel="stylesheet" type="text/css" media="all" />
 <link href="SpryAssets/SpryValidationTextarea.css" rel="stylesheet" type="text/css" />
+<link href="assets/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 </head>
 
 <body>
 <form action="https://www.2checkout.com/checkout/purchase" method="post" name="form-comprar" target="_blank" id="form-comprar">
-  <table width="100%" border="0" cellspacing="0" cellpadding="5">
-    <tr>
-      <td colspan="2"><h1>Compra de arreglo <?php echo $_GET['productname']; ?></h1></td>
+
+  <table width="100%" border="0" cellspacing="0" cellpadding="5" class="">
+    <tr>  
+      <td colspan="2">
+        <h1 style="text-align: center"><img src="images/flores-para-el-salvador.png" width="30%" /></h1>
+      </td>
     </tr>
     <tr>
-      <td width="140">Para quién va el arreglo</td>
+      <td colspan="2"><h1 style="text-align: center">Compra de arreglo <?php echo $_GET['productname']; ?></h1></td>
+    </tr>
+    <tr>
+      <td width="140" style="text-align: right;">Para quién va el arreglo </td>
       <td><span id="sprytextfield1">
-        <input type="text" name="nombre_destinatario" id="nombre_destinatario" />
+        <input type="text" name="nombre_destinatario" id="nombre_destinatario" class="form-control" />
       <span class="textfieldRequiredMsg">Campo requerido.</span></span></td>
     </tr>
     <tr>
-      <td>Quién envía el arreglo</td>
+      <td style="text-align: right;">Quién envía el arreglo</td>
       <td><span id="sprytextfield2">
         <input type="text" name="nombre_remitente" id="nombre_remitente" />
       <span class="textfieldRequiredMsg">Campo requerido.</span></span></td>
     </tr>
     <tr>
-      <td>Fecha de entrega</td>
+      <td style="text-align: right;">Fecha de entrega</td>
       <td><input name="fecha_entrega" id="fecha_entrega" style="width: 100px;" value="" wdg:subtype="Calendar" wdg:mask="<?php echo $KT_screen_date_format; ?>" wdg:mondayfirst="true" wdg:type="widget" wdg:singleclick="true" wdg:restricttomask="yes" /></td>
     </tr>
     <tr>
-      <td>Dirección</td>
+      <td style="text-align: right;">Dirección</td>
       <td><span id="sprytextarea1">
         <textarea name="direccion_entrega" id="direccion_entrega" cols="45" rows="4"></textarea>
       <span class="textareaRequiredMsg">Campo requerido.</span></span></td>
     </tr>
     <tr>
-      <td>Dedicatoria</td>
+      <td style="text-align: right;">Dedicatoria</td>
       <td><span id="sprytextarea2">
       <textarea name="dedicatoria" id="dedicatoria" cols="45" rows="4"></textarea>
       <span class="textareaRequiredMsg">Campo requerido.</span><span class="textareaMaxCharsMsg">Excede los 200 caracteres.</span></span></td>
@@ -116,3 +123,5 @@ var sprytextarea2 = new Spry.Widget.ValidationTextarea("sprytextarea2", {hint:"N
 </script>
 </body>
 </html>
+
+

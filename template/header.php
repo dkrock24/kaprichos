@@ -25,6 +25,8 @@
 <link href='//fonts.googleapis.com/css?family=Tangerine:400,700' rel='stylesheet' type='text/css'>
 <!-- web-fonts --> 
 <script src="assets/js/owl.carousel.js"></script>  
+
+<script type="text/javascript" src="Scripts/lytebox.js"></script>
 <script>
 $(document).ready(function() { 
   $("#owl-demo").owlCarousel({ 

@@ -76,6 +76,8 @@ $rselarreglo = mysql_query($query_rselarreglo, $conne10) or die(mysql_error());
 $row_rselarreglo = mysql_fetch_assoc($rselarreglo);
 $totalRows_rselarreglo = mysql_num_rows($rselarreglo);
 
+
+
 ?>
 
 <!DOCTYPE html>
@@ -130,7 +132,32 @@ $totalRows_rselarreglo = mysql_num_rows($rselarreglo);
                 <img src="uploaded/mod_productos/<?php echo $row_rselarreglo['imagen'];?>" width="90%">
             </div>
             <div class="col-sm-12 col-md-6 col-lg-6">
-                <table class="table">
+                <table class="table">                    
+                    <tr>
+                        <td><h4>Precio</h4></td>
+                        <td><h2>$<?php echo $row_rselarreglo['numerico1'];?></h2>Con Tarjeta de Crédito</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <?php echo $row_rselarreglo['contenido1_es'];?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <p>Palabras clave: <?php echo $row_rselarreglo['keywords_es']; ?></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><h4>Descripción</h4></td>
+                        <td><?php echo $row_rselarreglo['introduccion_es'];?></td>
+                    </tr>
+                    <tr> 
+                        <td colspan="2">
+                            <a class="btn btn-success" href="formcomprar.php?product_id=<?php echo $row_rselarreglo['customnum']; ?>&productname=<?php echo $row_rselarreglo['nombre_es']; ?>" rel="lyteframe" rev="width: 500px; height: 500px; scrolling: yes;" style="width: 100%;"><i class="fa fa-money"> </i> Comprar</a>
+                        </td>
+                    </tr>
+
+                    <!--
                     <form action="#" method="post">
                     <tr>
                         <td><h4>Descripción</h4></td>
@@ -167,22 +194,14 @@ $totalRows_rselarreglo = mysql_num_rows($rselarreglo);
                     <tr>
                         <td></td>
                         <td>
-                            <!--
-                            <a class="form-control btn btn-default" href="formcomprar.php?product_id=<?php echo $row_rselarreglo['customnum']; ?>&productname=<?php echo $row_rselarreglo['nombre_es']; ?>" rel="lyteframe" rev="width: 500px; height: 500px; scrolling: yes;"><i class="fa fa-money"></i> Comprar</a>
-                            <br><br>
-                            -->
-                            
                                 <input type="hidden" name="cmd" value="_cart" />
                                 <input type="hidden" name="add" value="1" /> 
                                 <input type="hidden" name="w3ls_item" value="<?php echo $row_rselarreglo['nombre_es']; ?> " /> 
                                 <input type="hidden" name="amount" value="<?php echo $row_rselarreglo['numerico1']; ?> " /> 
-                                <button type="submit" class="w3ls-cart btn btn-primary" ><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
-                            
-                            <!--
-                            <buttom name="agregar" class="form-control btn btn-danger" style="display:inline-block;"><i class="fa fa-cart-arrow-down"></i> Agregar</buttom>                            
-                            -->
+                                <button type="submit" class="btn btn-primary" ><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
                         </td>
                     </tr>
+                    -->
                     <tr>
                         <td colspan="2">
                             <span style="font-size: 12px;">
@@ -203,6 +222,7 @@ $totalRows_rselarreglo = mysql_num_rows($rselarreglo);
 
 <?php include "template/footer.php"; ?>
   <!-- cart-js -->
+  <link href="css/lytebox.css" rel="stylesheet" type="text/css" />
   <script src="assets/js/minicart.js"></script>
   <script>
         w3ls.render();
@@ -325,3 +345,4 @@ $totalRows_rselarreglo = mysql_num_rows($rselarreglo);
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+
