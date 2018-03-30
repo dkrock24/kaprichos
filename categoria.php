@@ -143,6 +143,9 @@ $objDynamicThumb2->setWatermark(false);
     <div class="row">
         <div class="col-sm-12 col-md-12 col-lg-3">
           <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center active">
+                Categorias
+            </li>
             <?php do { ?>
               <li class="list-group-item d-flex justify-content-between align-items-center">
                 <a href="categoria.php?c=<?php echo $row_rscategoriasd['id_categoria']; ?>">
@@ -234,11 +237,12 @@ $objDynamicThumb2->setWatermark(false);
                                         <div class="col-sm-12 col-md-6">
                                             <a class="btn btn-danger btn-sm" href="uploaded/mod_productos/<?php echo $row_rsarreglos1['imagen'];?>" rel="lytebox[galera]" title="<?php echo $row_rsarreglos1['nombre_es']; ?>"><i class="fa fa-search"></i> Ver</a>
                                         </div>
-                                        <div class="col-sm-12 col-md-6">
+                                        <div class="col-sm-12 col-md-6">                                            
                                             <a class="btn btn-info btn-sm" href="arreglos-ver.php?id=<?php echo $row_rsarreglos1['id_producto']; ?>"><i class="fa fa-cart-arrow-down"></i> Agregar</a>  
                                         </div>
                                     </div>                                     
                                 </div>
+
                                 <div class="clearfix"> </div>
                             </div>
                         </div>
@@ -273,7 +277,7 @@ $objDynamicThumb2->setWatermark(false);
                                             <a data-toggle="modal" data-target="#detalle_producto" id="uploaded/mod_productos/<?php echo $row_rsarreglos1['imagen'];?>" class="btn btn-danger btn-sm detalleModal" href="#" rel="lytebox[galera]" title="<?php echo $row_rsarreglos1['nombre_es']; ?>" precio="<?php echo number_format($row_rsarreglos1['numerico1'],2); ?>"><i class="fa fa-search"></i> <?php echo $messages['cVer']; ?></a>
                                         </div>
                                         <div class="col-sm-12 col-md-6">
-                                            <a class="btn btn-info btn-sm" href="arreglos-ver.php?id=<?php echo $row_rsarreglos1['id_producto']; ?>"><i class="fa fa-cart-arrow-down"></i> <?php echo $messages['cAdd']; ?></a>  
+                                            <a class="btn btn-info btn-sm" href="detalle.php?id=<?php echo $row_rsarreglos1['id_producto']; ?>"><i class="fa fa-cart-arrow-down"></i> <?php echo $messages['cAdd']; ?></a>  
                                         </div>
                                     </div>                                     
                                 </div>

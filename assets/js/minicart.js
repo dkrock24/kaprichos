@@ -1652,7 +1652,7 @@ var Product = require('./product'),
  * @param {duration} number Time in milliseconds that the cart data should persist
  */
 function Cart(name, duration) {
-    var data, items, settings, len, i;
+    var data, items, settings, len, i,de,para,mensaje,fecha;
 
     this._items = [];
     this._settings = { bn: constants.BN };
@@ -1694,6 +1694,8 @@ Cart.prototype.add = function add(data) {
         isExisting = false,
         product, key, len, i;
 
+        console.log(data);
+
     // Prune cart settings data from the product
     for (key in data) {
         if (constants.SETTINGS.test(key)) {
@@ -1732,7 +1734,7 @@ Cart.prototype.add = function add(data) {
     if (product) {
         this.fire('add', idx, product, isExisting);
     }
-
+    
     return idx;
 };
 
@@ -1812,9 +1814,21 @@ Cart.prototype.total = function total(config) {
 
     result += this.subtotal();
     result -= this.discount();
-
+    var items1 = this.items().length;
     config = config || {};
     config.currency = this.settings('currency_code');
+
+    $(document).ready(function(){
+      $("#totalabc").text(" $ " + result);
+      if(items1>0){
+        $("#total_items").text( items1 + " Items" );
+      }else{
+        $("#total_items").text( 0 + " Items" );
+      }
+      
+
+      
+    });
 
     return currency(result, config);
 };
@@ -2227,7 +2241,6 @@ Product.prototype.total = function total(config) {
     return currency(this._total, config);
 };
 
-
 /**
  * Determine if this product has the same data as another.
  *
@@ -2244,8 +2257,8 @@ Product.prototype.isEqual = function isEqual(data) {
     if (this.get('w3ls_item') === data.w3ls_item) {
         if (this.get('item_number') === data.item_number) {
             if (this.get('amount') === parser.amount(data.amount)) {
-                var i = 0;
 
+                var i = 0;                
                 match = true;
 
                 while (typeof data['os' + i] !== 'undefined') {

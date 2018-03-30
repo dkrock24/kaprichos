@@ -1070,7 +1070,6 @@
   <!-- cart-js -->
   <script src="assets/js/minicart.js"></script>
   <script>
-    alrt(2);
         w3ls.render();
 
         w3ls.cart.on('w3sb_checkout', function (evt) {

@@ -90,10 +90,11 @@ $totalRows_rscategorias = mysql_num_rows($rscategorias);
                 <div class="col-ms-3">
                     <div class="header-cart"> 
                         <div class="my-account">
-                            <a href="#"><i class="fa fa-money" aria-hidden="true"></i> 0.0 </a>           
+                            <i class="fa fa-money" style="font-size: 16px;" aria-hidden="true"></i><span id="totalabc"></span>
                         </div>
                         
                         <div class="cart"> 
+                            <span id="total_items"></span>
                             <form action="#" method="post" class="last"> 
                             <input type="hidden" name="cmd" value="_cart" />
                             <input type="hidden" name="display" value="1" />
