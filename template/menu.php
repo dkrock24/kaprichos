@@ -37,8 +37,8 @@ $totalRows_rscategorias = mysql_num_rows($rscategorias);
             <ul class="dropdown-menu">
               <li><a href="offers.html"><?php echo $messages['catalogL']; ?></a></li> 
               <li><a href="offers.html"><?php echo $messages['ofertL']; ?></a></li>
-              <li><a href="offers.html"><?php echo $messages['questionL']; ?></a></li> 
-              <li><a href="offers.html"><?php echo $messages['whopayL']; ?></a></li> 
+              <li><a href="#" data-toggle="modal" data-target="#question"><?php echo $messages['questionL']; ?></a></li> 
+              <li><a href="#" data-toggle="modal" data-target="#whopay"><?php echo $messages['whopayL']; ?></a></li> 
               <li><a href="offers.html"><?php echo $messages['servicesL']; ?></a></li> 
               <li><a href="offers.html"><?php echo $messages['tipsL']; ?></a></li>   
               <li><a href="contacto.php"><?php echo $messages['contactusL']; ?></a></li>             
@@ -274,3 +274,174 @@ $totalRows_rscategorias = mysql_num_rows($rscategorias);
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+
+<div class="modal fade" id="whopay" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        
+            <h1 style="text-align: center"><img src="images/flores-para-el-salvador.png"/></h1>
+            <h4 class="modal-title" id="myModalLabel" style="text-align: center">Formas de pago<?php //echo $messages['politicas2']; ?></h4>
+        </div> <!-- /.modal-header -->
+
+        <div class="modal-body">
+            <ul class="list-group">
+                <li class="list-group-item">1. Contra entrega</li>
+                <li class="list-group-item">2. Se aceptan pagos mediante tarjete de crédito o débito: Visa, MasterCard, Discover, American Express, Diners Club, JCB y tarjetas de débito con el logotipo de Visa y MasterCard. Los clientes también podrán pagar por sus compras usando PayPal® y PayPal Pay Later®. Por favor, tome en cuenta que las opciones de pago con PayPal® y PayPal Pay Later® no se encuentran disponibles en todas las monedas. Para realizar un pedido de demostración, diríjase a la siguiente dirección: http://www.acmeonlinebooks.com</li>
+                <li class="" style="text-align: center;list-style-type:none">
+                    <img src="images/cards.png" width="150" />
+                </li>
+            </ul>
+        </div> <!-- /.modal-body -->
+
+    <div class="modal-footer">
+        
+
+      </div> <!-- /.modal-footer -->
+
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+<!-- Question -->
+<div class="modal fade" id="question" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        
+        <h1 style="text-align: center"><img src="images/flores-para-el-salvador.png"/></h1>
+        <h4 class="modal-title" id="myModalLabel" style="text-align: center">Sección de Preguntas<?php //echo $messages['politicas2']; ?></h4>
+      </div> <!-- /.modal-header -->
+
+    <div class="modal-body">
+
+            <div class="row">
+                <div class="col-ms-3 col-md-12 col-lg-12">
+                    <table class="table">
+                        <tr>
+                            <td><b>¿Cuál es la cobertura del servicio?</b></td>
+                            <td><a class="btn btn-primary" data-toggle="collapse" href="#cobertura" role="button" aria-expanded="false" aria-controls="collapseExample">Leer</a></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <div class="collapse" id="cobertura">
+                                    <div class="card card-body">
+                                        Los costos de envío son gratis para la ciudad capital. También hacemos entregas a nivel nacional haciendo el pedido con 48 horas de anticipación en caso contrario la Floristería se reserva el derecho de entregarlo al día siguiente (Solo se realizan entregas en las cabeceras departamentales).
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>¿Con cuánto tiempo de anticipación debo hacer mi pedido?</b></td>
+                            <td><a class="btn btn-primary" data-toggle="collapse" href="#anticipacion" role="button" aria-expanded="false" aria-controls="collapseExample">Leer</a></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <div class="collapse" id="anticipacion">
+                                    <div class="card card-body">
+                                        Para entregas dentro de la ciudad de San Salvador aceptamos ordenes dentro del mismo día, sin embargo se estima prudente ordenarlas con 24 hrs. de anticipación. Para envíos a otros departamentos ordenarlos con 3 días de anticipación para hacer su pedido. En días especiales como 14 de Febrero, 10 de Mayo, 26 de Abril y 2 de Noviembre los pedidos tienen que hacerse con un mínimo de 3 días de anticipación (los costos varían por la temporada).
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>¿Que datos son necesarios para poder hacer exitosa la entrega de mi pedido?</b></td>
+                            <td><a class="btn btn-primary" data-toggle="collapse" href="#datos" role="button" aria-expanded="false" aria-controls="collapseExample">leer</a></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <div class="collapse" id="datos">
+                                    <div class="card card-body">
+                                        <ul>
+                                            <li>Nombre completo de la persona a la que va dirigido el arreglo.</li>
+                                            <li>Dirección exacta y puntos de referencia.</li>
+                                            <li>Teléfonos.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>¿Si quiero hacer modificaciones en mi pedido de cuanto tiempo dispongo para hacerlo?</b></td>
+                            <td><a class="btn btn-primary" data-toggle="collapse" href="#modificacion" role="button" aria-expanded="false" aria-controls="collapseExample">leer</a></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <div class="collapse" id="modificacion">
+                                    <div class="card card-body">
+                                        Para modificaciones de pedidos como cambio de dirección, modificación en el texto de la tarjeta, cambio de fecha, etc. Tengo 8 horas de anticipación para hacerlo.
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>¿Puedo ordenar por teléfono y cuál es su horario de atención?</b></td>
+                            <td><a class="btn btn-primary" data-toggle="collapse" href="#telefono" role="button" aria-expanded="false" aria-controls="collapseExample">leer</a></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <div class="collapse" id="telefono">
+                                    <div class="card card-body">
+                                        Puedes efectuar tus pedidos llamándonos al (503) 2223-3515 y (503) 2223-3516 Nuestros horarios de atención son de lunes a viernes de 7:00 a.m. a 6:00 p.m. los días sábados de 8:00 a.m. a 4:00 p.m. En horas no hábiles puede hacer sus pedidos al (503) 71016356.
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>¿Qué días hacen entregas?</b></td>
+                            <td><a class="btn btn-primary" data-toggle="collapse" href="#dias" role="button" aria-expanded="false" aria-controls="collapseExample">leer</a></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <div class="collapse" id="dias">
+                                    <div class="card card-body">
+                                        Realizamos entregas todos los días del año. Días festivos como 14 de febrero o día de la madre ordénelos con la suficiente anticipación.
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>¿El servicio está garantizado?</b></td>
+                            <td><a class="btn btn-primary" data-toggle="collapse" href="#garantia" role="button" aria-expanded="false" aria-controls="collapseExample">leer</a></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <div class="collapse" id="garantia">
+                                    <div class="card card-body">
+                                        Sí de alguna forma no se encuentra conforme con nuestro servicio al momento de la entrega, por favor contáctanos al teléfono (503) 2223-3515 / (503) 2223-3516 o a nuestro email info@kaprichosfloristeria.com
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>¿La información que proporcione estará segura?</b></td>
+                            <td><a class="btn btn-primary" data-toggle="collapse" href="#informacion" role="button" aria-expanded="false" aria-controls="collapseExample">leer</a></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <div class="collapse" id="informacion">
+                                    <div class="card card-body">
+                                        Nuestros clientes son muy valiosos para nosotros, nos esforzamos por ofrecer el mejor servicio y seguridad. No compartimos la información de nuestros clientes.
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+    </div> <!-- /.modal-body -->
+
+      <div class="modal-footer">
+        
+
+      </div> <!-- /.modal-footer -->
+
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- EndQuestion -->
