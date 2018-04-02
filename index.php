@@ -10,7 +10,7 @@
     {
         if(!isset($_SESSION['lan']))
         {        
-            echo $_SESSION['lan'] = 'es';
+            $_SESSION['lan'] = 'es';
         }
         
     }

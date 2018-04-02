@@ -7,6 +7,21 @@ $rscategorias = mysql_query($query_rscategorias, $conne10) or die(mysql_error())
 $row_rscategorias = mysql_fetch_assoc($rscategorias);
 $totalRows_rscategorias = mysql_num_rows($rscategorias);
 
+    if(isset( $_GET['lan'] ))
+    {
+        $_SESSION['lan'] = $_GET['lan'];
+        
+    }
+    else
+    {
+        if(!isset($_SESSION['lan']))
+        {        
+            $_SESSION['lan'] = 'es';
+        }
+        
+    }
+    require("lan/".$_SESSION['lan'].'.php');
+
 ?>
 
 <div class="header">
@@ -56,8 +71,8 @@ $totalRows_rscategorias = mysql_num_rows($rscategorias);
           <li class="dropdown head-dpdn">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-language" aria-hidden="true"></i> <?php echo $messages['language']; ?><span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href="index.php?lan=es">Spanish</a></li> 
-              <li><a href="index.php?lan=en">English</a></li>
+              <li><a href="<?php echo $_SERVER['REQUEST_URI'] ?>&&lan=es">Spanish</a></li> 
+              <li><a href="<?php echo $_SERVER['REQUEST_URI'] ?>&&lan=en">English</a></li>
               
             </ul> 
           </li> 
@@ -172,6 +187,7 @@ $totalRows_rscategorias = mysql_num_rows($rscategorias);
 
   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
+    <form role="form" action="authentication.php" method="post">
     <div class="modal-content">
 
       <div class="modal-header">
@@ -182,37 +198,34 @@ $totalRows_rscategorias = mysql_num_rows($rscategorias);
       </div> <!-- /.modal-header -->
 
       <div class="modal-body">
-        <form role="form">
+        
           <div class="form-group">
             <div class="input-group">
-              <input type="text" class="form-control" id="uLogin" placeholder="Email">
+              <input type="text" class="form-control" id="uLogin" name="username" placeholder="Email">
               <label for="uLogin" class="input-group-addon glyphicon glyphicon-user"></label>
             </div>
           </div> <!-- /.form-group -->
 
           <div class="form-group">
             <div class="input-group">
-              <input type="password" class="form-control" id="uPassword" placeholder="Password">
+              <input type="password" class="form-control" id="uPassword" name="passwd" placeholder="Password">
               <label for="uPassword" class="input-group-addon glyphicon glyphicon-lock"></label>
             </div> <!-- /.input-group -->
           </div> <!-- /.form-group -->
-
-
-        </form>
-
       </div> <!-- /.modal-body -->
 
       <div class="modal-footer">
         <button class="form-control btn btn-primary"><?php echo $messages['Ingresar']; ?></button>
 
         <div class="progress">
-          <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="100" style="width: 0%;">
+            <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="100" style="width: 0%;">
             <span class="sr-only">progress</span>
-          </div>
+            </div>
         </div>
       </div> <!-- /.modal-footer -->
 
     </div><!-- /.modal-content -->
+    </form>
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 

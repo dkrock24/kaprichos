@@ -1,35 +1,20 @@
-
 <?php
-
-    $cookie_name = "user";
-    $cookie_value = "John Doe";
-    @setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
-
-    echo $_COOKIE[$cookie_name];
-
-
-
-    @session_start();
-    error_reporting(0);
-
-    echo $_SESSION['lan'];
-    if(!isset($_SESSION['lan']))
+    session_start();
+    header('location=ok');
+   if(isset( $_GET['lan'] ))
     {
-        if(isset($_GET['lan']))
+        $_SESSION['lan'] = $_GET['lan'];
+        
+    }
+    else
+    {
+        if(!isset($_SESSION['lan']))
         {        
-            $_SESSION['lan'] = $_GET['lan'];
-        }
-        else
-        {
             $_SESSION['lan'] = 'es';
         }
-    }else
-    {
-        $_SESSION['lan'] = 'es';
+        
     }
-
     require("lan/".$_SESSION['lan'].'.php');
-    //session_destroy();
 ?>
 
 <!DOCTYPE html>
