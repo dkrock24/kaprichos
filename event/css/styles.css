@@ -58,9 +58,9 @@ body {
 	margin:0 auto;
 }
 .logo {
-	width: 246px;
-	height: 177px;
-	background-image: url("../imagenes/logo.png");
+	width: 222;
+	height: 112;
+	background-image: url("../../images/logo-kaprichos-footer.png");
 	margin: 0 auto;
 	margin-top: 10px;
 }
