@@ -67,7 +67,7 @@ body {
 .linea-separador {
 	width: 252px;
 	height: 19px;
-	background-image: url("../imagenes/linea-separador.png");
+	background-image: url("../../images/linea-separador.png");
 	margin: 15px auto;
 }
 .separador1 {

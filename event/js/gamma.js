@@ -411,10 +411,10 @@ var Gamma = (function() {
 				$( '<img/>' ).attr( {
 					alt : $picEl.data( 'alt' ),
 					title : $picEl.data( 'title' ),
-					src : source.src
+					src : sources.src
 				} ).insertAfter( $picEl );
 
-				$picEl.remove();
+				//$picEl.remove();
 
 			} );
 
@@ -688,7 +688,7 @@ var Gamma = (function() {
 				source = _chooseImgSource( sources, properties.wrapper.width ), 
 				// calculate final size and position of image
 				finalSizePosition = _getFinalSizePosition( properties.image, properties.wrapper );
-
+				console.log( properties );
 			// check for new source
 			if( finalSizePosition.checksource ) {
 
