@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once('Connections/conne10.php');
 
 if( true ){
@@ -24,7 +25,7 @@ if( true ){
 	else
 	{
 
-		$newURL = 'index.php';
+		$newURL = 'index2.php';
 		header('Location: '.$newURL);
 	}
 }else

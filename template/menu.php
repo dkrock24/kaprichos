@@ -1,5 +1,6 @@
 <?php require_once('Connections/conne10.php'); ?>
 <?php
+session_start();
 //Queries Menu
 mysql_select_db($database_conne10, $conne10);
 $query_rscategorias = "SELECT id_categoria, nombre_es FROM tbl_productos_categorias WHERE estatus = 1 ORDER BY orden ASC";
@@ -61,11 +62,34 @@ $totalRows_rscategorias = mysql_num_rows($rscategorias);
             </ul> 
           </li> 
           <li class="dropdown head-dpdn">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true"></i> <?php echo $messages['login']; ?><span class="caret"></span></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <i class="fa fa-user" aria-hidden="true"></i> 
+              <?php
+              if($_SESSION['username']){
+                echo $_SESSION['username'];
+              }else
+              {
+                echo $messages['login']; ?><span class="caret"></span><?php
+              }
+              ?>
+              
+            </a>
             <ul class="dropdown-menu">
-              <li><a href="#" data-toggle="modal" data-target="#myModal"><?php echo $messages['login']; ?> </a></li> 
-              <li><a href="signup.html"><?php echo $messages['signup']; ?></a></li> 
-               <li><a href="signup.html"><?php echo $messages['Salir']; ?></a></li> 
+                <?php
+                if($_SESSION['username']){
+                    ?>
+                    <li><a href="logout.php"><?php echo $messages['Salir']; ?></a></li> 
+                    <?php
+                }
+                else
+                {
+                    ?>
+                    <li><a href="#" data-toggle="modal" data-target="#myModal"><?php echo $messages['login']; ?> </a></li> 
+                    <li><a href="signup.html"><?php echo $messages['signup']; ?></a></li> 
+                    <?php
+                }
+                ?>              
+               
             </ul> 
           </li> 
           <li class="dropdown head-dpdn">
