@@ -10,7 +10,7 @@
           <ul>
             <li><i class="fa fa-map-marker"></i> Avenida Olímpica 65 Av. Sur <br />Local 106, Condominio Galería Olímpica  <br/>San Salvador, El Salvador. Centroamérica</li>
                                     
-            <li><i class="fa fa-phone"></i> 24/7 24 Horas al día, 7 días a la semana. </li>            
+            <li><i class="fa fa-phone"></i> <?php echo $messages['schedule']; ?> </li>            
             <li><i class="fa fa-envelope-o"></i> <a href="mailto:info@kaprichosfloristeria.com"> info@kaprichosfloristeria.com</a></li>
           </ul> 
         </div>
