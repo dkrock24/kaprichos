@@ -144,7 +144,7 @@ $objDynamicThumb2->setWatermark(false);
         <div class="col-sm-12 col-md-12 col-lg-3">
           <ul class="list-group">
             <li class="list-group-item d-flex justify-content-between align-items-center active">
-                Categorias
+                <?php echo $messages['categorias']; ?>
             </li>
             <?php do { ?>
               <li class="list-group-item d-flex justify-content-between align-items-center">

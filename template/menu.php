@@ -111,11 +111,11 @@ $totalRows_rscategorias = mysql_num_rows($rscategorias);
             <div class="row">
                 <div class="col-ms-3">
                     <div class="header-search">
-                        <form action="#" method="post">
+                        <form id="formbuscar" name="formbuscar" method="post" action="resultados.php">
                             <button type="submit" class="btn btn-default" aria-label="Left Align">
                             <i class="fa fa-search" aria-hidden="true" style="color:black;"> </i>
                             </button>
-                            <input type="search" name="Search" placeholder="<?php echo $messages['search']; ?>" required="">
+                            <input type="search" name="eltermino" id="eltermino" placeholder="<?php echo $messages['search']; ?>" required="">
                         </form>
                     </div>
                 </div>
@@ -293,13 +293,13 @@ $totalRows_rscategorias = mysql_num_rows($rscategorias);
       </div> <!-- /.modal-header -->
 
       <div class="modal-body">
-        <ul>
-          <li><i class="fa fa-info-circle"></i> <?php echo $messages['politicaCompleta1']; ?></li>
-          <li><i class="fa fa-info-circle"></i> <?php echo $messages['politicaCompleta2']; ?></li>
-          <li><i class="fa fa-info-circle"></i> <?php echo $messages['politicaCompleta3']; ?></li>
-          <li><i class="fa fa-info-circle"></i> <?php echo $messages['politicaCompleta4']; ?></li>
-          <li><i class="fa fa-info-circle"></i> <?php echo $messages['politicaCompleta5']; ?></li>
-          <li><i class="fa fa-info-circle"></i> <?php echo $messages['politicaCompleta6']; ?></li>
+        <ul class="list-group">
+          <li class="list-group-item list-group-item-danger"><i class="fa fa-info-circle"></i> <?php echo $messages['politicaCompleta1']; ?></li>
+          <li class="list-group-item list-group-item-warning"><i class="fa fa-info-circle"></i> <?php echo $messages['politicaCompleta2']; ?></li>
+          <li class="list-group-item list-group-item-danger"><i class="fa fa-info-circle"></i> <?php echo $messages['politicaCompleta3']; ?></li>
+          <li class="list-group-item list-group-item-warning"><i class="fa fa-info-circle"></i> <?php echo $messages['politicaCompleta4']; ?></li>
+          <li class="list-group-item list-group-item-danger"><i class="fa fa-info-circle"></i> <?php echo $messages['politicaCompleta5']; ?></li>
+          <li class="list-group-item list-group-item-warning"><i class="fa fa-info-circle"></i> <?php echo $messages['politicaCompleta6']; ?></li>
         </ul>
       </div> <!-- /.modal-body -->
 

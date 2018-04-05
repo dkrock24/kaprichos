@@ -1,6 +1,13 @@
 <?php
 
 /* INDEX */
+
+//Detalle
+$messages['precio'] 	= 'Precio';
+$messages['card'] 	= 'Con Tarjeta de Crédito';
+$messages['keyword'] 	= 'Palabras clave';
+$messages['descripction'] 	= 'Descripción';
+
 //Title
 $messages['title'] 	= 'Inicio-Floristeria Kaprichos';
 $messages['facebook'] 	= 'Siguenos en Facebook y encuentra promociones y precios exclusivos para nuestros fans';
@@ -108,6 +115,7 @@ $messages['sendC'] = 'Enviar';
 //Categorias
 $messages['cVer'] = 'Ver';
 $messages['cAdd'] = 'Agregar';
+$messages['categorias'] = 'Categorias';
 
 //Aviso
 

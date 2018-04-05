@@ -134,8 +134,8 @@ $totalRows_rselarreglo = mysql_num_rows($rselarreglo);
             <div class="col-sm-12 col-md-6 col-lg-6">
                 <table class="table">                    
                     <tr>
-                        <td><h4>Precio</h4></td>
-                        <td><h2>$<?php echo $row_rselarreglo['numerico1'];?></h2>Con Tarjeta de Crédito</td>
+                        <td><h4><?php echo $messages['precio']; ?></h4></td>
+                        <td><h2>$<?php echo $row_rselarreglo['numerico1'];?></h2><?php echo $messages['card']; ?></td>
                     </tr>
                     <tr>
                         <td colspan="2">
@@ -144,16 +144,16 @@ $totalRows_rselarreglo = mysql_num_rows($rselarreglo);
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <p>Palabras clave: <?php echo $row_rselarreglo['keywords_es']; ?></p>
+                            <p><?php echo $messages['keyword']; ?>: <?php echo $row_rselarreglo['keywords_es']; ?></p>
                         </td>
                     </tr>
                     <tr>
-                        <td><h4>Descripción</h4></td>
+                        <td><h4><?php echo $messages['descripction']; ?></h4></td>
                         <td><?php echo $row_rselarreglo['introduccion_es'];?></td>
                     </tr>
                     <tr> 
                         <td colspan="2">
-                            <a class="btn btn-success" href="formcomprar.php?product_id=<?php echo $row_rselarreglo['customnum']; ?>&productname=<?php echo $row_rselarreglo['nombre_es']; ?>" rel="lyteframe" rev="width: 500px; height: 500px; scrolling: yes;" style="width: 100%;"><i class="fa fa-money"> </i> Comprar</a>
+                            <a class="btn btn-success" href="formcomprar.php?product_id=<?php echo $row_rselarreglo['customnum']; ?>&productname=<?php echo $row_rselarreglo['nombre_es']; ?>" rel="lyteframe" rev="width: 500px; height: 500px; scrolling: yes;" style="width: 100%;"><i class="fa fa-money"> </i> <?php echo $messages['buy']; ?></a>
                         </td>
                     </tr>
 
@@ -206,7 +206,7 @@ $totalRows_rselarreglo = mysql_num_rows($rselarreglo);
                         <td colspan="2">
                             <span style="font-size: 12px;">
 
-                                2Checkout.com, Inc. es un revendedor autorizado de kaprichosfloristeria.com
+                                <?php echo $messages['2checkout']; ?>
 
                             </span>
                         </td>

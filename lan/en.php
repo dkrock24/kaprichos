@@ -1,6 +1,15 @@
 <?php
 
 /* INDEX */
+
+//Detalle
+$messages['precio'] 	= 'Price';
+$messages['card'] 	= 'Credit Card';
+$messages['keyword'] 	= 'Keys Word';
+$messages['descripction'] 	= 'Descrition';
+$messages['buy'] 	= 'Buy';
+$messages['2checkout'] 	= '2Checkout.com, Inc. es un revendedor autorizado de kaprichosfloristeria.com';
+
 //Title
 $messages['title'] 	= 'Log in- Kaprichos Flower shop';
 $messages['facebook'] 	= 'Follow us on Facebook for gifting advise and get special discounts for all our followers';
@@ -49,6 +58,14 @@ $messages['nosotrosDescripcion'] = 'Kapricho’s flower shop was established wit
 We also offer a complete selection of personal for any event, weddings, first communion, honor table, baby shower, salon decoration, government events, church decoration etc. Where we give quality, low prices and high sense of responsibility. We are open seven days a week so that we are at your service at any unexpected moment that you want to express your feelings through an amazing detail
 .';
 
+$messages['politicaCompleta1'] = 'Si alguna vez un producto no llena sus expectativas, por favor, no dude en devolverlo. Si la devolución es resultado de un error de parte de WWW.KAPRICHOSFLORISTERIA.COM, un reembolso completo estará disponible hasta 5 días después de la fecha en la que reciba su orden. Usted deberá solicitar un número de Autorización de Devolución de Producto (ADP) enviándonos un e-mail durante este período de 5 días para calificar para un reembolso. Si su devolución es en cualquier manera un error de parte de WWW.KAPRICHOSFLORISTERIA.COM, por favor, asegúrese de indicar la naturaleza del error cuando solicite el número ADP y un especialista de atención al cliente le proveerá con instrucciones detalladas de cómo proceder.';
+$messages['politicaCompleta2'] = 'Usted deberá enviar su devolución utilizando un carrier que posea tracking (como UPS, FedEx, TNT, o DHL). Usted será responsable de asegurarse que todos los ítems lleguen al Centro de Atención al Cliente en su condición original. Ningún reembolso estará disponible después de 5 días. Cualquier producto devuelto sin autorización será rehusado.';
+$messages['politicaCompleta3'] = 'Asegúrese de incluir lo siguiente junto con su mercadería devuelta: su número ADP, nombre, dirección y dirección de correo, así como una copia de la factura original y cualquier información adicional relacionada con la orden que usted haya olvidado incluir en su petición original de ADP. Devoluciones no estarán disponibles si el producto ha sido dañado o alterado en ninguna forma antes de llegar al Centro de Atención al Cliente, el producto deberá estar en las mismas condiciones en las que le fue entregado.';
+$messages['politicaCompleta4'] = 'Una vez la mercadería ha sido recibida en el Centro de Servicio al Cliente, su tarjeta de crédito será acreditada por la cantidad aplicable. Si usted desea ordenar otro producto en lugar del producto devuelto deberá realizar una orden completamente nueva en línea.';
+$messages['politicaCompleta5'] = 'Por favor envíe su paquete a:
+Dirección de atención al cliente y correo electrónico.';
+
+$messages['politicaCompleta6'] = 'Una vez el producto original haya sido recibido, se le reembolsará en su tarjeta de crédito la cantidad que pagó, incluyendo los gastos de envío. Por favor espere de dos a tres semanas para que su tarjeta de crédito sea reembolsada.';
 
 
 $messages['telefonos'] = 'Phones';
@@ -95,6 +112,7 @@ $messages['sendC'] = 'Send';
 //Categorias
 $messages['cVer'] = 'Show';
 $messages['cAdd'] = 'Add';
+$messages['categorias'] = 'Categories';
 
 //Aviso
 
