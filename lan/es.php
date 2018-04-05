@@ -20,6 +20,8 @@ $messages['signup'] = 'Registrarse';
 $messages['cart'] 	= 'Carrito de Compras';
 $messages['language'] 	= 'Idioma';
 $messages['paynow'] = 'Comprar Ahora';
+$messages['close'] = 'Cerrar';
+$messages['pagos'] = 'Formas de pago';
 
 // Menu 
 $messages['home'] 	= 'INICIO';
@@ -132,6 +134,37 @@ Dirección de atención al cliente y correo electrónico.
 
 Una vez el producto original haya sido recibido, se le reembolsará en su tarjeta de crédito la cantidad que pagó, incluyendo los gastos de envío. Por favor espere de dos a tres semanas para que su tarjeta de crédito sea reembolsada.
 ';
+
+//Formas de pago
+$messages['fp1'] = '1. Contra entrega';
+$messages['fp2'] = '2. Se aceptan pagos mediante tarjete de crédito o débito: Visa, MasterCard, Discover, American Express, Diners Club, JCB y tarjetas de débito con el logotipo de Visa y MasterCard. Los clientes también podrán pagar por sus compras usando PayPal® y PayPal Pay Later®. Por favor, tome en cuenta que las opciones de pago con PayPal® y PayPal Pay Later® no se encuentran disponibles en todas las monedas. Para realizar un pedido de demostración, diríjase a la siguiente dirección: http://www.acmeonlinebooks.com';
+
+$messages['sp1'] = 'Sección de Preguntas';
+$messages['coberturaServicio'] = '¿Cuál es la cobertura del servicio?';
+$messages['coberturaServicioR'] = 'Los costos de envío son gratis para la ciudad capital. También hacemos entregas a nivel nacional haciendo el pedido con 48 horas de anticipación en caso contrario la Floristería se reserva el derecho de entregarlo al día siguiente (Solo se realizan entregas en las cabeceras departamentales).';
+
+$messages['hcerpedido'] = '¿Con cuánto tiempo de anticipación debo hacer mi pedido?';
+$messages['hcerpedidoR'] = 'Para entregas dentro de la ciudad de San Salvador aceptamos ordenes dentro del mismo día, sin embargo se estima prudente ordenarlas con 24 hrs. de anticipación. Para envíos a otros departamentos ordenarlos con 3 días de anticipación para hacer su pedido. En días especiales como 14 de Febrero, 10 de Mayo, 26 de Abril y 2 de Noviembre los pedidos tienen que hacerse con un mínimo de 3 días de anticipación (los costos varían por la temporada).';
+
+$messages['datosexitosaentrega'] = '¿Que datos son necesarios para poder hacer exitosa la entrega de mi pedido?';
+$messages['datosexitosaentregaR1'] = 'Nombre completo de la persona a la que va dirigido el arreglo.';
+$messages['datosexitosaentregaR2'] = 'Dirección exacta y puntos de referencia.';
+$messages['datosexitosaentregaR3'] = 'Teléfonos.';
+
+$messages['modificaionPedido'] = '¿Si quiero hacer modificaciones en mi pedido de cuanto tiempo dispongo para hacerlo?.';
+$messages['modificaionPedidoR1'] = 'Para modificaciones de pedidos como cambio de dirección, modificación en el texto de la tarjeta, cambio de fecha, etc. Tengo 8 horas de anticipación para hacerlo.';
+
+$messages['ordenTelefono'] = '¿Puedo ordenar por teléfono y cuál es su horario de atención?.';
+$messages['ordenTelefonoR1'] = 'Puedes efectuar tus pedidos llamándonos al (503) 2223-3515 y (503) 2223-3516 Nuestros horarios de atención son de lunes a viernes de 7:00 a.m. a 6:00 p.m. los días sábados de 8:00 a.m. a 4:00 p.m. En horas no hábiles puede hacer sus pedidos al (503) 71016356.';
+
+$messages['diasEntregas'] = '¿Qué días hacen entregas?.';
+$messages['diasEntregasR1'] = 'Realizamos entregas todos los días del año. Días festivos como 14 de febrero o día de la madre ordénelos con la suficiente anticipación.';
+
+$messages['servicioGarantizado'] = '¿El servicio está garantizado?';
+$messages['servicioGarantizadoR1'] = 'Sí de alguna forma no se encuentra conforme con nuestro servicio al momento de la entrega, por favor contáctanos al teléfono (503) 2223-3515 / (503) 2223-3516 o a nuestro email info@kaprichosfloristeria.com';
+
+$messages['infoSegura'] = '¿La información que proporcione estará segura?';
+$messages['infoSeguraR1'] = 'Nuestros clientes son muy valiosos para nosotros, nos esforzamos por ofrecer el mejor servicio y seguridad. No compartimos la información de nuestros clientes.';
 
 /* END INDEX */
 ?>

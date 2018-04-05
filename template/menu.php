@@ -180,7 +180,7 @@ $totalRows_rscategorias = mysql_num_rows($rscategorias);
                 <div class="cd-dropdown-wrapper">
                   <a class="cd-dropdown-trigger" href="#0"><?php echo $messages['buy']; ?></a>
                   <nav class="cd-dropdown"> 
-                    <a href="#0" class="cd-close">Close</a>
+                    <a href="#0" class="cd-close"><?php echo $messages['close']; ?></a>
                     <ul class="cd-dropdown-content"> 
                       <?php do { ?>
                         <li><a href="categoria.php?c=<?php echo $row_rscategorias['id_categoria']; ?>"><?php echo $row_rscategorias['nombre_es']; ?></a></li>
@@ -320,13 +320,13 @@ $totalRows_rscategorias = mysql_num_rows($rscategorias);
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
         
             <h1 style="text-align: center"><img src="images/flores-para-el-salvador.png"/></h1>
-            <h4 class="modal-title" id="myModalLabel" style="text-align: center">Formas de pago<?php //echo $messages['politicas2']; ?></h4>
+            <h4 class="modal-title" id="myModalLabel" style="text-align: center"><?php echo $messages['pagos']; ?><?php //echo $messages['politicas2']; ?></h4>
         </div> <!-- /.modal-header -->
 
         <div class="modal-body">
             <ul class="list-group">
-                <li class="list-group-item">1. Contra entrega</li>
-                <li class="list-group-item">2. Se aceptan pagos mediante tarjete de crédito o débito: Visa, MasterCard, Discover, American Express, Diners Club, JCB y tarjetas de débito con el logotipo de Visa y MasterCard. Los clientes también podrán pagar por sus compras usando PayPal® y PayPal Pay Later®. Por favor, tome en cuenta que las opciones de pago con PayPal® y PayPal Pay Later® no se encuentran disponibles en todas las monedas. Para realizar un pedido de demostración, diríjase a la siguiente dirección: http://www.acmeonlinebooks.com</li>
+                <li class="list-group-item"><?php echo $messages['fp1']; ?></li>
+                <li class="list-group-item"><?php echo $messages['fp2']; ?></li>
                 <li class="" style="text-align: center;list-style-type:none">
                     <img src="images/cards.png" width="150" />
                 </li>
@@ -352,7 +352,7 @@ $totalRows_rscategorias = mysql_num_rows($rscategorias);
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
         
         <h1 style="text-align: center"><img src="images/flores-para-el-salvador.png"/></h1>
-        <h4 class="modal-title" id="myModalLabel" style="text-align: center">Sección de Preguntas<?php //echo $messages['politicas2']; ?></h4>
+        <h4 class="modal-title" id="myModalLabel" style="text-align: center"><?php echo $messages['sp1']; ?></h4>
       </div> <!-- /.modal-header -->
 
     <div class="modal-body">
