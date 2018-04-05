@@ -39,36 +39,36 @@
                 <!-- Wrapper-for-Slides -->
                     <div class="carousel-inner" role="listbox">  
                         <div class="item active"><!-- First-Slide -->
-                            <img src="assets/images/5.jpg" alt="" class="img-responsive" />
+                            <img src="assets/images/slide-detalle-1220x440.jpg" alt="" class="img-responsive" />
                             <div class="carousel-caption kb_caption kb_caption_right">
-                                <h3 data-animation="animated flipInX">Flat <span>50%</span> Discount</h3>
-                                <h4 data-animation="animated flipInX">Hot Offer Today Only</h4>
+                                <h3 data-animation="animated flipInX">Entregamos <span>Tus</span> Sentimientos</h3>
+                                <h4 data-animation="animated flipInX">Compra hoy</h4>
                             </div>
                         </div>  
                         <div class="item"> <!-- Second-Slide -->
-                            <img src="assets/images/8.jpg" alt="" class="img-responsive" />
+                            <img src="assets/images/slide2-1220x440.jpg" alt="" class="img-responsive" />
                             <div class="carousel-caption kb_caption kb_caption_right">
-                                <h3 data-animation="animated fadeInDown">Our Latest Fashion Editorials</h3>
-                                <h4 data-animation="animated fadeInUp">cupidatat non proident</h4>
+                                <h3 data-animation="animated fadeInDown">Promociones Hoy</h3>
+                                <h4 data-animation="animated fadeInUp">Compra hoy</h4>
                             </div>
                         </div> 
                         <div class="item"><!-- Third-Slide -->
-                            <img src="assets/images/3.jpg" alt="" class="img-responsive"/>
+                            <img src="assets/images/san-valentin-2018-1220x400.jpg" alt="" class="img-responsive"/>
                             <div class="carousel-caption kb_caption kb_caption_center">
-                                <h3 data-animation="animated fadeInLeft">End Of Season Sale</h3>
-                                <h4 data-animation="animated flipInX">cupidatat non proident</h4>
+                                <h3 data-animation="animated fadeInLeft">Las Mejores Flores</h3>
+                                <h4 data-animation="animated flipInX">Compra hoy</h4>
                             </div>
                         </div> 
                     </div> 
                 <!-- Left-Button -->
                     <a class="left carousel-control kb_control_left" href="#kb" role="button" data-slide="prev">
                         <span class="fa fa-angle-left kb_icons" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
+                        <span class="sr-only">Anterior</span>
                     </a> 
                     <!-- Right-Button -->
                     <a class="right carousel-control kb_control_right" href="#kb" role="button" data-slide="next">
                         <span class="fa fa-angle-right kb_icons" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
+                        <span class="sr-only">Siguiente</span>
                     </a> 
                 </div>
                 <script src="assets/js/custom.js"></script>
@@ -159,7 +159,7 @@
                 <div class="col-md-2 product-left"> 
                     <div class="p-one simpleCart_shelfItem jwe">
                         <a href="single.html">
-                                <img src="uploaded/mod_productos/0a31fa8ab353f1cee3f8e528f257cb18.jpg" alt="" class="img-responsive" />
+                                <img src="uploaded/mod_productos/3ca05786d0d3c8bdf15f47472d8c7850.jpg" alt="" class="img-responsive" />
                                 <div class="mask">
                                     <span><?php echo $messages['QuickView']; ?></span>
                                 </div>
@@ -178,7 +178,7 @@
                 <div class="col-md-2 product-left"> 
                     <div class="p-one simpleCart_shelfItem jwe">
                         <a href="single.html">
-                                <img src="uploaded/mod_productos/0a31fa8ab353f1cee3f8e528f257cb18.jpg" alt="" class="img-responsive" />
+                                <img src="uploaded/mod_productos/2a1efc2f9fac7813e1f3aae4519487db.jpg" alt="" class="img-responsive" />
                                 <div class="mask">
                                     <span><?php echo $messages['QuickView']; ?></span>
                                 </div>
@@ -197,7 +197,7 @@
                 <div class="col-md-2 product-left"> 
                     <div class="p-one simpleCart_shelfItem jwe">
                         <a href="single.html">
-                                <img src="uploaded/mod_productos/0a31fa8ab353f1cee3f8e528f257cb18.jpg" alt="" class="img-responsive" />
+                                <img src="uploaded/mod_productos/a1c928c0408cda363dd30a3ed79ccb30.jpg" alt="" class="img-responsive" />
                                 <div class="mask">
                                     <span><?php echo $messages['QuickView']; ?></span>
                                 </div>
@@ -216,7 +216,7 @@
                 <div class="col-md-2 product-left"> 
                     <div class="p-one simpleCart_shelfItem jwe">                            
                             <a href="single.html">
-                                <img src="uploaded/mod_productos/0a31fa8ab353f1cee3f8e528f257cb18.jpg" alt="" class="img-responsive" />
+                                <img src="uploaded/mod_productos/85cc6a0282feaf7cd66adbba690d517e.jpg" alt="" class="img-responsive" />
                                 <div class="mask">
                                     <span><?php echo $messages['QuickView']; ?></span>
                                 </div>
@@ -235,7 +235,7 @@
                 <div class="col-md-2 product-left"> 
                     <div class="p-one simpleCart_shelfItem jwe">
                         <a href="single.html">
-                                <img src="uploaded/mod_productos/0a31fa8ab353f1cee3f8e528f257cb18.jpg" alt="" class="img-responsive" />
+                                <img src="uploaded/mod_productos/a1a4b9bd25a0aadf2866819979021c79.jpg" alt="" class="img-responsive" />
                                 <div class="mask">
                                     <span><?php echo $messages['QuickView']; ?></span>
                                 </div>
@@ -273,7 +273,7 @@
                 <div id="owl-demo" class="owl-carousel"> 
                   <div class="item">
                     <div class="glry-w3agile-grids agileits"> 
-                      <a href="products.html"><img src="assets/images/e1.png" alt="img"></a>
+                      <a href="products.html"><img src="uploaded/mod_productos/d9dbc275cf9993854b0d1c8acb550206.jpg" alt="img"></a>
                       <div class="view-caption agileits-w3layouts">           
                         <h4><a href="products.html">Audio speaker</a></h4>
                         <p>Lorem ipsum dolor sit amet consectetur</p>
@@ -291,7 +291,7 @@
                   <div class="item">
                     <div class="glry-w3agile-grids agileits">
                       <div class="new-tag"><h6>Sale</h6></div>
-                      <a href="products.html"><img src="assets/images/e2.png" alt="img"></a>
+                      <a href="products.html"><img src="uploaded/mod_productos/foto kaprichos 1.jpg" alt="img"></a>
                       <div class="view-caption agileits-w3layouts">           
                         <h4><a href="products.html">Refrigerator</a></h4>
                         <p>Lorem ipsum dolor sit amet consectetur</p> 
