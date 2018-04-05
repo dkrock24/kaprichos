@@ -361,33 +361,33 @@ $totalRows_rscategorias = mysql_num_rows($rscategorias);
                 <div class="col-ms-3 col-md-12 col-lg-12">
                     <table class="table">
                         <tr>
-                            <td><b>¿Cuál es la cobertura del servicio?</b></td>
+                            <td><b><?php echo $messages['coberturaServicio']; ?></b></td>
                             <td><a class="btn btn-primary" data-toggle="collapse" href="#cobertura" role="button" aria-expanded="false" aria-controls="collapseExample">Leer</a></td>
                         </tr>
                         <tr>
                             <td colspan="2">
                                 <div class="collapse" id="cobertura">
                                     <div class="card card-body">
-                                        Los costos de envío son gratis para la ciudad capital. También hacemos entregas a nivel nacional haciendo el pedido con 48 horas de anticipación en caso contrario la Floristería se reserva el derecho de entregarlo al día siguiente (Solo se realizan entregas en las cabeceras departamentales).
+                                        <?php echo $messages['coberturaServicioR']; ?>
                                     </div>
                                 </div>
                             </td>
                         </tr>
                         <tr>
-                            <td><b>¿Con cuánto tiempo de anticipación debo hacer mi pedido?</b></td>
+                            <td><b><?php echo $messages['hcerpedido']; ?></b></td>
                             <td><a class="btn btn-primary" data-toggle="collapse" href="#anticipacion" role="button" aria-expanded="false" aria-controls="collapseExample">Leer</a></td>
                         </tr>
                         <tr>
                             <td colspan="2">
                                 <div class="collapse" id="anticipacion">
                                     <div class="card card-body">
-                                        Para entregas dentro de la ciudad de San Salvador aceptamos ordenes dentro del mismo día, sin embargo se estima prudente ordenarlas con 24 hrs. de anticipación. Para envíos a otros departamentos ordenarlos con 3 días de anticipación para hacer su pedido. En días especiales como 14 de Febrero, 10 de Mayo, 26 de Abril y 2 de Noviembre los pedidos tienen que hacerse con un mínimo de 3 días de anticipación (los costos varían por la temporada).
+                                        <?php echo $messages['hcerpedidoR']; ?>
                                     </div>
                                 </div>
                             </td>
                         </tr>
                         <tr>
-                            <td><b>¿Que datos son necesarios para poder hacer exitosa la entrega de mi pedido?</b></td>
+                            <td><b><?php echo $messages['datosexitosaentrega']; ?></b></td>
                             <td><a class="btn btn-primary" data-toggle="collapse" href="#datos" role="button" aria-expanded="false" aria-controls="collapseExample">leer</a></td>
                         </tr>
                         <tr>
@@ -395,75 +395,75 @@ $totalRows_rscategorias = mysql_num_rows($rscategorias);
                                 <div class="collapse" id="datos">
                                     <div class="card card-body">
                                         <ul>
-                                            <li>Nombre completo de la persona a la que va dirigido el arreglo.</li>
-                                            <li>Dirección exacta y puntos de referencia.</li>
-                                            <li>Teléfonos.</li>
+                                            <li><?php echo $messages['datosexitosaentregaR1']; ?></li>
+                                            <li><?php echo $messages['datosexitosaentregaR2']; ?></li>
+                                            <li><?php echo $messages['datosexitosaentregaR3']; ?></li>
                                         </ul>
                                     </div>
                                 </div>
                             </td>
                         </tr>
                         <tr>
-                            <td><b>¿Si quiero hacer modificaciones en mi pedido de cuanto tiempo dispongo para hacerlo?</b></td>
+                            <td><b><?php echo $messages['modificaionPedido']; ?></b></td>
                             <td><a class="btn btn-primary" data-toggle="collapse" href="#modificacion" role="button" aria-expanded="false" aria-controls="collapseExample">leer</a></td>
                         </tr>
                         <tr>
                             <td colspan="2">
                                 <div class="collapse" id="modificacion">
                                     <div class="card card-body">
-                                        Para modificaciones de pedidos como cambio de dirección, modificación en el texto de la tarjeta, cambio de fecha, etc. Tengo 8 horas de anticipación para hacerlo.
+                                        <?php echo $messages['modificaionPedidoR1']; ?>
                                     </div>
                                 </div>
                             </td>
                         </tr>
                         <tr>
-                            <td><b>¿Puedo ordenar por teléfono y cuál es su horario de atención?</b></td>
+                            <td><b><?php echo $messages['ordenTelefono']; ?></b></td>
                             <td><a class="btn btn-primary" data-toggle="collapse" href="#telefono" role="button" aria-expanded="false" aria-controls="collapseExample">leer</a></td>
                         </tr>
                         <tr>
                             <td colspan="2">
                                 <div class="collapse" id="telefono">
                                     <div class="card card-body">
-                                        Puedes efectuar tus pedidos llamándonos al (503) 2223-3515 y (503) 2223-3516 Nuestros horarios de atención son de lunes a viernes de 7:00 a.m. a 6:00 p.m. los días sábados de 8:00 a.m. a 4:00 p.m. En horas no hábiles puede hacer sus pedidos al (503) 71016356.
+                                        <?php echo $messages['ordenTelefonoR1']; ?>
                                     </div>
                                 </div>
                             </td>
                         </tr>
                         <tr>
-                            <td><b>¿Qué días hacen entregas?</b></td>
+                            <td><b><?php echo $messages['diasEntregas']; ?></b></td>
                             <td><a class="btn btn-primary" data-toggle="collapse" href="#dias" role="button" aria-expanded="false" aria-controls="collapseExample">leer</a></td>
                         </tr>
                         <tr>
                             <td colspan="2">
                                 <div class="collapse" id="dias">
                                     <div class="card card-body">
-                                        Realizamos entregas todos los días del año. Días festivos como 14 de febrero o día de la madre ordénelos con la suficiente anticipación.
+                                        <?php echo $messages['diasEntregasR1']; ?>
                                     </div>
                                 </div>
                             </td>
                         </tr>
                         <tr>
-                            <td><b>¿El servicio está garantizado?</b></td>
+                            <td><b><?php echo $messages['servicioGarantizado']; ?></b></td>
                             <td><a class="btn btn-primary" data-toggle="collapse" href="#garantia" role="button" aria-expanded="false" aria-controls="collapseExample">leer</a></td>
                         </tr>
                         <tr>
                             <td colspan="2">
                                 <div class="collapse" id="garantia">
                                     <div class="card card-body">
-                                        Sí de alguna forma no se encuentra conforme con nuestro servicio al momento de la entrega, por favor contáctanos al teléfono (503) 2223-3515 / (503) 2223-3516 o a nuestro email info@kaprichosfloristeria.com
+                                        <?php echo $messages['servicioGarantizadoR1']; ?>
                                     </div>
                                 </div>
                             </td>
                         </tr>
                         <tr>
-                            <td><b>¿La información que proporcione estará segura?</b></td>
+                            <td><b><?php echo $messages['infoSegura']; ?></b></td>
                             <td><a class="btn btn-primary" data-toggle="collapse" href="#informacion" role="button" aria-expanded="false" aria-controls="collapseExample">leer</a></td>
                         </tr>
                         <tr>
                             <td colspan="2">
                                 <div class="collapse" id="informacion">
                                     <div class="card card-body">
-                                        Nuestros clientes son muy valiosos para nosotros, nos esforzamos por ofrecer el mejor servicio y seguridad. No compartimos la información de nuestros clientes.
+                                         <?php echo $messages['infoSeguraR1']; ?>
                                     </div>
                                 </div>
                             </td>
