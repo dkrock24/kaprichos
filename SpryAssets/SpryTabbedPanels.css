@@ -31,7 +31,7 @@
 	padding: 0px;
 	float: left;
 	clear: none;
-	width: 81%; /* IE Hack to force proper layout when preceded by a paragraph. (hasLayout Bug)*/
+	width: 100%; /* IE Hack to force proper layout when preceded by a paragraph. (hasLayout Bug)*/
 	outline:none;
 	}
 

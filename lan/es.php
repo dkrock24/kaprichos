@@ -198,6 +198,20 @@ $messages['decoraciones5'] = 'Baby shower.';
 $messages['decoraciones6'] = 'Decoraciones de salones.';
 $messages['decoraciones7'] = 'Eventos de gobierno, etc.';
 
+//Cuidado de las Flores
+
+$messages['cuidadoflores'] = 'Cuidado de las Flores';
+$messages['cuidadoflores1'] = 'Las  flores deben ser mantenidas en un ambiente fresco y lejos de la luz directa del  sol. Evita colocarlas cerca de fuentes que emitan calor y protégelas de los  cambios bruscos de temperatura y de las corrientes de aire.';
+$messages['cuidadoflores2'] = 'Con una tijera de jardinería corta cerca de dos centímetros y medio del extremo  de cada tallo. El corte se debe hacer diagonalmente. En el caso de que el tallo  tenga uniones (codos), como por ejemplo el clavel, el corte debe hacerse sobre  o bajo la unión. Es ideal que el corte se haga bajo agua. Una vez efectuado el  corte y que la flor tenga la temperatura ambiente, colócalas en un recipiente  con agua.
+     	El cambio de agua del recipiente debe ser  diario, cortando del tallo las hojas que estén en contacto con el agua, para  evitar que estas se pudran.';
+$messages['cuidadoflores3'] = 'Tanto  el agua como las flores pueden tener una vida útil más larga de lo esperado,  algunos de estos cuidados son:<br />
+     	En  época de verano se colocan en el florero cubos de hielo, para que la flor dure  más tiempo fresca.';
+
+
+$messages['significadocolores'] = 'Significado del color de las flores';
+
+
+
 
 
 

@@ -197,5 +197,17 @@ $messages['decoraciones5'] = 'Baby shower.';
 $messages['decoraciones6'] = 'Hall decoration.';
 $messages['decoraciones7'] = 'Government decoration.';
 
+//Cuidado de las Flores
+
+$messages['cuidadoflores'] = 'Flower care';
+$messages['cuidadoflores1'] = 'Flowers should be kept in a fresh environment and out of direct sunlight. Avoid placing them near heating and protect them from sudden changes in temperature air currents.';
+
+$messages['cuidadoflores2'] = 'Using a gardening scissors cut about two centimeters and a half from the bottom of each stem. The cut must be diagonal. In case that the stem has joints (elbows), for example, the carnation, the cut must be on the joint or below it. It is ideal that the cut is made under water. Once the cut is made and the flower has a room temperature, place them in vase of water. Change the water of the container daily, cutting the stem of the leaves that are in water to prevent them from rotting.';
+
+$messages['cuidadoflores3'] = 'These are the most effective cares you can have to make the water and flowers last longer: During the summer season, you can add some ice cubes into the vase, so that the flowers keep looking fresh for a longer time.';
+
+
+$messages['significadocolores'] = 'Meaning of the color of the flowers
+';
 /* END INDEX */
 ?>  

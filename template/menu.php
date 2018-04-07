@@ -65,13 +65,13 @@ $totalRows_rscategorias = mysql_num_rows($rscategorias);
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-gift" aria-hidden="true"></i> <?php echo $messages['paynow']; ?> <span class="caret"></span></a>
             <ul class="dropdown-menu">
               <li><a href="offers.html"><?php echo $messages['catalogL']; ?></a></li> 
-              <li><a href="offers.html"><?php echo $messages['ofertL']; ?></a></li>
+              
               <li><a href="#" data-toggle="modal" data-target="#question"><?php echo $messages['questionL']; ?></a></li> 
               <li><a href="#" data-toggle="modal" data-target="#whopay"><?php echo $messages['whopayL']; ?></a></li> 
               <li><a href="#" data-toggle="modal" data-target="#servicios"><?php echo $messages['servicesL']; ?></a></li> 
-              <li><a href="offers.html"><?php echo $messages['tipsL']; ?></a></li>   
+              <li><a href="tip.php"><?php echo $messages['tipsL']; ?></a></li>   
               <li><a href="contacto.php"><?php echo $messages['contactusL']; ?></a></li>             
-              <li><a href="offers.html"><?php echo $messages['videosL']; ?></a></li> 
+              <li><a href="videos.php"><?php echo $messages['videosL']; ?></a></li> 
             </ul> 
           </li> 
           <li class="dropdown head-dpdn">
@@ -583,3 +583,4 @@ $totalRows_rscategorias = mysql_num_rows($rscategorias);
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.servicios -->
+

@@ -1,8 +1,37 @@
-<?php require_once('Connections/conne10.php'); ?>
+<?php    
+    session_start();
+    header('location=ok');
+    if(isset( $_GET['lan'] ))
+    {
+        $_SESSION['lan'] = $_GET['lan'];
+        
+    }
+    else
+    {
+        if(!isset($_SESSION['lan']))
+        {        
+            echo $_SESSION['lan'] = 'es';
+        }
+        
+    }
+    require("lan/".$_SESSION['lan'].'.php');
+    //session_destroy();
+?>
 <?php
-// Load the tNG classes
+require_once('Connections/conne10.php');
+mysql_select_db($database_conne10, $conne10);
+$query_rscategoriasd = "SELECT c.id_categoria, c.nombre_es, COUNT(p.id_producto) as totalP
+FROM tbl_productos_categorias as c
+left join tbl_productos as p ON c.id_categoria=p.categoria
+WHERE c.estatus = 1
+group by p.categoria
+ORDER BY c.orden ASC";
+$rscategoriasd = mysql_query($query_rscategoriasd, $conne10) or die(mysql_error());
+$row_rscategoriasd = mysql_fetch_assoc($rscategoriasd);
+$totalRows_rscategoriasd = mysql_num_rows($rscategoriasd);
+?>
+<?php
 require_once('includes/tng/tNG.inc.php');
-
 if (!function_exists("GetSQLValueString")) {
 function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
 {
@@ -34,13 +63,17 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
 }
 }
 
-$currentPage = $_SERVER["PHP_SELF"];
 
+$colname_rsthiscat = "-1";
+if (isset($_GET['c'])) {
+  $colname_rsthiscat = $_GET['c'];
+}
 mysql_select_db($database_conne10, $conne10);
-$query_rscategorias = "SELECT id_categoria, nombre_es FROM tbl_productos_categorias WHERE estatus = 1 ORDER BY orden ASC";
-$rscategorias = mysql_query($query_rscategorias, $conne10) or die(mysql_error());
-$row_rscategorias = mysql_fetch_assoc($rscategorias);
-$totalRows_rscategorias = mysql_num_rows($rscategorias);
+$query_rsthiscat = sprintf("SELECT nombre_es FROM tbl_productos_categorias WHERE estatus='1' AND id_categoria = %s", GetSQLValueString($colname_rsthiscat, "int"));
+$rsthiscat = mysql_query($query_rsthiscat, $conne10) or die(mysql_error());
+$row_rsthiscat = mysql_fetch_assoc($rsthiscat);
+$totalRows_rsthiscat = mysql_num_rows($rsthiscat);
+
 
 $maxRows_rsvideos = 25;
 $pageNum_rsvideos = 0;
@@ -109,148 +142,63 @@ $objDynamicThumb1->setFolder("uploaded/mod_videos/");
 $objDynamicThumb1->setRenameRule("{rsvideos.imagen}");
 $objDynamicThumb1->setResize(120, 120, true);
 $objDynamicThumb1->setWatermark(false);
-?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/kaprichos01.dwt.php" codeOutsideHTMLIsLocked="false" -->
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<!-- InstanceBeginEditable name="doctitle" -->
-<title>Floristeria Kaprichos</title>
-<!-- InstanceEndEditable -->
-<!-- InstanceBeginEditable name="head" -->
-<meta name="Description" content="descripcion" />
-<meta name="Keywords" content="keywords" />
-<!-- InstanceEndEditable -->
-<meta name="language" content="es" />
-<meta name="author" content="Rodolfo Semsch - www.wboxinteractive.com" />
-<meta name="robots" content="INDEX, FOLLOW" />
-<meta name="revisit-after" content="15 days" />
-<meta name="Reply-to" content="rodolfo@wboxinteractive.com" />
-<meta name="document-rights" content="Copyrighted Work" />
-<meta name="document-type" content="Web Page" />
-<meta name="document-rating" content="General" />
-<meta name="document-distribution" content="Global" />
-<meta name="document-state" content="Dynamic" />
-<meta name="cache-control" content="Public" />
-<link href="css/layoutcss.css" rel="stylesheet" type="text/css" />
-<link href="css/globalcss.css" rel="stylesheet" type="text/css" />
-<link href="css/lytebox.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="Scripts/lytebox.js"></script>
-<style type="text/css">
-<!--
-#logotipo {
-	position:absolute;
-	width:222px;
-	height:112px;
-	z-index:1;
-	left: 10px;
-	top: 10px;
-}
-#Facebook {
-	position:absolute;
-	width:120px;
-	height:28px;
-	z-index:2;
-	left: 550px;
-	top: 19px;
-}
-#facebooktxt {
-	position:absolute;
-	width:111px;
-	height:53px;
-	z-index:3;
-	left: 555px;
-	top: 53px;
-}
-#buscador {
-	position:absolute;
-	width:186px;
-	height:26px;
-	z-index:1;
-	left: 786px;
-	top: 6px;
-}
-#buscatxt {
-	position:absolute;
-	width:55px;
-	height:21px;
-	z-index:2;
-	left: 731px;
-	top: 9px;
-}
-#contactoheader {
-	position:absolute;
-	width:252px;
-	height:97px;
-	z-index:4;
-	left: 281px;
-	top: 17px;
-}
--->
-</style>
-</head>
 
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<?php include"template/header.php"; ?>
+
+</head>
 <body>
-<div id="layout_wrapper">
-  <div id="layout_header">
-    <div id="logotipo"><a href="index.php"><img src="images/flores-para-el-salvador.png" width="222" height="112" alt="Kapricho's Floristería - Flores para El Salvador" border="0" /></a></div>
-    <div id="Facebook"><a href="http://www.facebook.com/pages/Kaprichos-Floristeria/151224814917493" target="_blank"><img src="images/boton-facebook.png" width="120" height="28" alt="Visítenos en Facebook" border="0"/></a></div>
-    <div id="facebooktxt"><a href="http://www.facebook.com/pages/Kaprichos-Floristeria/151224814917493" target="_blank">Siguenos en Facebook y encuentra promociones y precios exclusivos para nuestros fans</a></div>
-    <div id="contactoheader"><img src="images/numero.png" border="0"><br />
-       <a href="mailto:info@kaprichosfloristeria.com" style="font-size:14px; color:#5E6332;; line-height:18px;"><strong>info@kaprichosfloristeria.com</strong></a><br />
-    <span style="color:#D82686; font-size: 12px; line-height:22px;"><strong>Entregas a domicilio en todo El Salvador</strong></span></div>
-  </div>
-  <div id="layout_menu">
-    <div id="buscador">
-      <form id="formbuscar" name="formbuscar" method="post" action="resultados.php">
-          <div id="inputkeyword">
-            <input type="text" name="eltermino" id="eltermino" style="border:none; width:145px" />
-          </div>
-          <div id="botonbuscar">
-            <input type="image" name="clicktosearch" id="clicktosearch" src="images/buscar-flores-el-salvador.png" />
-          </div>
-      </form>
-    </div>
-    <div id="buscatxt">Buscar:</div>
-    <ul class="menuppal">
-      <li><a href="catalogo.php">Catálogo</a></li>
-      <li><a href="ofertas.php">Ofertas</a></li>
-      <li><a href="preguntas.php">Preguntas</a></li>
-      <li><a href="pago.php">¿Cómo pagar?</a></li>
-      <li><a href="servicios.php">Servicios</a></li>
-      <li><a href="tip.php">Tips</a></li>
-      <li><a href="contacto.php">Contáctenos</a></li>
-      <li><a href="videos.php">Videos</a></li>
-    </ul>
-  </div>
-  <div id="layout_content">
-    <table width="100%" border="0" cellspacing="10" cellpadding="0">
-      <tr>
-        <td width="170" valign="top"><div id="subcategorias">
-          <h1>Arreglos florales para<br/> El Salvador</h1>
-          <ul id="categorias">
+
+  <script>
+    $('#myModal88').modal('show');
+  </script> 
+  <!-- header -->
+  <?php include"template/menu.php"; ?>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-3">
+          <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center active">
+                <?php echo $messages['categorias']; ?>
+            </li>
             <?php do { ?>
-              <li><a href="categoria.php?c=<?php echo $row_rscategorias['id_categoria']; ?>"><?php echo $row_rscategorias['nombre_es']; ?></a></li>
-              <?php } while ($row_rscategorias = mysql_fetch_assoc($rscategorias)); ?>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                <a href="categoria.php?c=<?php echo $row_rscategoriasd['id_categoria']; ?>">
+                  <?php echo $row_rscategoriasd['nombre_es']; ?>                    
+                </a>
+                <span class="badge badge-default badge-pill"><?php echo $row_rscategoriasd['totalP']; ?></span>
+              </li>
+            <?php } while ($row_rscategoriasd = mysql_fetch_assoc($rscategoriasd)); ?>    
           </ul>
-        </div></td>
-        <td valign="top"><!-- InstanceBeginEditable name="MAIN" -->
-<div id="navbar"><a href="index.php">Inicio</a> &gt; <a href="videos.php">Videos</a> &gt; <a href="?categoria=<?php echo $row_rslacategoria['id_categoria']; ?>"><?php echo $row_rslacategoria['nombre_es']; ?></a>
-  <?php if(isset($_GET['video'])) { ?>
-  &gt; <a href="?categoria=<?php echo $row_rselvideo['categoria']; ?>&amp;video=<?php echo $row_rselvideo['id_video']; ?>"><?php echo $row_rselvideo['nombre_es']; ?></a>
-  <?php } ?>
-</div>
-<?php if(!isset($_GET['video'])) { ?>
-<div id="v_catalogo">
-  <?php do { ?>
-    <div class="videobox">
-      <div class="video"><a href="?categoria=<?php echo $row_rsvideos['categoria']; ?>&amp;video=<?php echo $row_rsvideos['id_video']; ?>" title="<?php echo $row_rsvideos['nombre_es']; ?>"><img src="<?php echo $objDynamicThumb1->Execute(); ?>" alt="<?php echo $row_rsvideos['nombre_es']; ?>" border="0" class="boxshadow" /></a></div>
-      <div class="info">
-        <h2><?php echo $row_rsvideos['nombre_es']; ?></h2>
-        <p><?php echo $row_rsvideos['sinopsis_es']; ?></p>
-      </div>
-    </div>
-    <?php } while ($row_rsvideos = mysql_fetch_assoc($rsvideos)); ?>
+
+        </div>
+
+        <div class="col-sm-12 col-md-12 col-lg-9">
+            <table width="100%" border="0" cellspacing="10" cellpadding="0">
+                <tr>
+
+                    <td valign="top"><!-- InstanceBeginEditable name="MAIN" -->
+                        <div id="navbar"><a href="index.php">Inicio</a> &gt; <a href="videos.php">Videos</a> &gt; <a href="?categoria=<?php echo $row_rslacategoria['id_categoria']; ?>"><?php echo $row_rslacategoria['nombre_es']; ?></a>
+                            <?php if(isset($_GET['video'])) { ?>
+                                &gt; <a href="?categoria=<?php echo $row_rselvideo['categoria']; ?>&amp;video=<?php echo $row_rselvideo['id_video']; ?>"><?php echo $row_rselvideo['nombre_es']; ?></a>
+                            <?php } ?>
+                        </div>
+                        <?php if(!isset($_GET['video'])) { ?>
+                        <div id="v_catalogo">
+                        <?php do { ?>
+                            <div class="videobox">
+                                <div class="video"><a href="?categoria=<?php echo $row_rsvideos['categoria']; ?>&amp;video=<?php echo $row_rsvideos['id_video']; ?>" title="<?php echo $row_rsvideos['nombre_es']; ?>"><img src="<?php echo $objDynamicThumb1->Execute(); ?>" alt="<?php echo $row_rsvideos['nombre_es']; ?>" border="0" class="boxshadow" /></a></div>
+                                    <div class="info">
+                                        <h2><?php echo $row_rsvideos['nombre_es']; ?></h2>
+                                        <p><?php echo $row_rsvideos['sinopsis_es']; ?></p>
+                                    </div>
+                                </div>
+                        <?php } while ($row_rsvideos = mysql_fetch_assoc($rsvideos)); ?>
   <div class="clear"></div>
   <table width="100%" border="0" cellpadding="5" cellspacing="0">
     <tr>
@@ -269,7 +217,7 @@ $objDynamicThumb1->setWatermark(false);
           <?php } // Show if not last page ?></td>
     </tr>
   </table>
-<div class="clear"></div>
+  <div class="clear"></div>
 </div>
 <div class="clear"></div>
 <?php } else { ?>
@@ -283,45 +231,133 @@ $objDynamicThumb1->setWatermark(false);
 <!-- InstanceEndEditable --></td>
       </tr>
     </table>
-  </div>
-  <div id="layout_footer">
-    <table width="100%" border="0" cellspacing="0" cellpadding="10">
-      <tr>
-        <td width="222"><img src="images/logo-kaprichos-footer.png" width="222" height="112" alt="Kapricho's Floristería en El Salvador" /></td>
-        <td><h2>Arreglos Florales a domicilio en El Salvador</h2>
-        <p>Kapricho´s  Floristería nació con el objetivo de   brindar arreglos florales innovadores, especializándonos en actualizar  constantemente todos aquellos detalles que hacen su arreglo diferente. En  Kapricho´s Floristería nos esmeramos porque sus sentimientos sean expresados  con especial cuidado y garantizamos cubrir las expectativas.<br/>
-Todos nuestros  arreglos son elaborados con materia prima de alta calidad, entre las clases de  arreglos que le ofrecemos, tenemos: Frutales, primaverales, tropicales,  orquídeas, globos sorpresa, chocolates, etc. Para toda ocasión, cumpleaños,  felicitaciones, amistad, recuperación.<br />
-También, nos  ponemos a su disposición para cualquier tipo de evento, bodas, primera  comunión, mesas de Honor, Baby shower  decoraciones de salones, eventos de gobierno, Decoración de iglesias, etc. En  donde le ofrecemos calidad, bajos costos y un alto sentido de responsabilidad.<br/>
-Ofrecemos nuestro  servicio los siete días a la semana, por lo que, nos encontramos a su  disposición en aquellos momentos inesperados y donde usted desea expresarse a  través de un lindo detalle.</p></td>
-      </tr>
-      <tr>
-      <td colspan="2" align="center">
-       <ul class="menuppal">
-      <li><a href="catalogo.php">Catálogo</a></li>
-      <li><a href="ofertas.php">Ofertas</a></li>
-      <li><a href="preguntas.php">Preguntas</a></li>
-      <li><a href="pago.php">¿Cómo pagar?</a></li>
-      <li><a href="servicios.php">Servicios</a></li>
-      <li><a href="tip.php">Tips</a></li>
-      <li><a href="contacto.php">Contáctenos</a></li>
-      <li><a href="videos.php">Videos</a></li>
-      <li><a href="politicas.php">Politicas de Reembolso</a></li>
-    </ul>
-      </td>      
-      </tr>
-      <tr>
-        <td colspan="2" align="center"><p><a href="http://www.2checkout.com/" target="_blank" style="color:#FFF; text-decoration:underline;">2Checkout.com</a>, Inc. is an authorized retailer of kaprichosfloristeria.com<br />
-        <img src="images/2cocc05.gif" width="182" height="46" /></p></td>
-      </tr>
-    </table>
-  </div>
+        </div>
+
+    </div>
 </div>
+
+
+<?php include "template/footer.php"; ?>
+  <!-- cart-js -->
+  <script src="assets/js/minicart.js"></script>
+  <script>
+        w3ls.render();
+
+        w3ls.cart.on('w3sb_checkout', function (evt) {
+          var items, len, i;
+
+          if (this.subtotal() > 0) {
+            items = this.items();
+
+            for (i = 0, len = items.length; i < len; i++) {
+              items[i].set('shipping', 0);
+              items[i].set('shipping2', 0);
+            }
+          }
+        });
+    </script>  
+  <!-- //cart-js -->  
+  <!-- countdown.js --> 
+  <script src="assets/js/jquery.knob.js"></script>
+  <script src="assets/js/jquery.throttle.js"></script>
+  <script src="assets/js/jquery.classycountdown.js"></script>
+    <script>
+
+      $(document).ready(function() {
+        $('.detalleModal').click(function(){
+            var imag = $(this).attr('id');
+            $('.txtTitleModel').text($(this).attr('title')+" / $"+ $(this).attr('precio'));
+            $("#imgModalDetalle").attr('src',imag);            
+        });
+
+        $('#countdown1').ClassyCountdown({
+          end: '1388268325',
+          now: '1387999995',
+          labels: true,
+          style: {
+            element: "",
+            textResponsive: .5,
+            days: {
+              gauge: {
+                thickness: .10,
+                bgColor: "rgba(0,0,0,0)",
+                fgColor: "#1abc9c",
+                lineCap: 'round'
+              },
+              textCSS: 'font-weight:300; color:#fff;'
+            },
+            hours: {
+              gauge: {
+                thickness: .10,
+                bgColor: "rgba(0,0,0,0)",
+                fgColor: "#05BEF6",
+                lineCap: 'round'
+              },
+              textCSS: ' font-weight:300; color:#fff;'
+            },
+            minutes: {
+              gauge: {
+                thickness: .10,
+                bgColor: "rgba(0,0,0,0)",
+                fgColor: "#8e44ad",
+                lineCap: 'round'
+              },
+              textCSS: ' font-weight:300; color:#fff;'
+            },
+            seconds: {
+              gauge: {
+                thickness: .10,
+                bgColor: "rgba(0,0,0,0)",
+                fgColor: "#f39c12",
+                lineCap: 'round'
+              },
+              textCSS: ' font-weight:300; color:#fff;'
+            }
+
+          },
+          onEndCallback: function() {
+            console.log("Time out!");
+          }
+        });
+      });
+    </script>
+  <!-- //countdown.js -->
+  <!-- menu js aim -->
+  <script src="assets/js/jquery.menu-aim.js"> </script>
+  <script src="assets/js/main.js"></script> <!-- Resource jQuery -->
+
 </body>
-<!-- InstanceEnd --></html>
-<?php
-mysql_free_result($rsvideos);
 
-mysql_free_result($rslacategoria);
+<!-- /.Modal Detalle de Producto -->
+  <div class="modal fade" id="detalle_producto" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
 
-mysql_free_result($rselvideo);
-?>
+      <div class="modal-header" style="background-color: #0480be; border-radius:3px 3px 0px 0px;">
+        <button type="button" class="close" style="color:white;" data-dismiss="modal" aria-hidden="true">×</button>
+        
+        <h1 style="text-align: center"><img src="images/flores-para-el-salvador.png" width="20%" /></h1>
+        <h4 class="modal-title" id="myModalLabel" style="text-align: center; color:white;"><span class="txtTitleModel"></span></h4>
+      </div> <!-- /.modal-header -->
+
+      <div class="modal-body">
+            
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12" style="text-align: center">
+                    <img src="" id="imgModalDetalle" width="80%" />
+                </div>
+            </div>
+                  
+      </div> <!-- /.modal-body -->
+
+    <div class="modal-footer">
+        <div class="row">
+            <div class="col-sm-12 col-md-6 col-lg-12" style="text-align: center">                
+                <a class="btn btn-success btn-md" href="#"><i class="fa fa-cart-arrow-down"></i> <?php echo $messages['cAdd']; ?></a>  
+            </div>
+        </div>     
+    </div> <!-- /.modal-footer -->
+
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
