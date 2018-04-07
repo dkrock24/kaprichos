@@ -1,23 +1,4 @@
-<?php    
-    session_start();
-    header('location=ok');
-    if(isset( $_GET['lan'] ))
-    {
-        $_SESSION['lan'] = $_GET['lan'];
-        
-    }
-    else
-    {
-        if(!isset($_SESSION['lan']))
-        {        
-            $_SESSION['lan'] = 'es';
-        }
-        
-    }
-    require("lan/".$_SESSION['lan'].'.php');
-    //session_destroy();
-?>
-
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

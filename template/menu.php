@@ -1,6 +1,6 @@
-<?php require_once('Connections/conne10.php'); ?>
 <?php
 session_start();
+require_once('Connections/conne10.php');
 //Queries Menu
 mysql_select_db($database_conne10, $conne10);
 $query_rscategorias = "SELECT id_categoria, nombre_es FROM tbl_productos_categorias WHERE estatus = 1 ORDER BY orden ASC";
@@ -8,22 +8,35 @@ $rscategorias = mysql_query($query_rscategorias, $conne10) or die(mysql_error())
 $row_rscategorias = mysql_fetch_assoc($rscategorias);
 $totalRows_rscategorias = mysql_num_rows($rscategorias);
 
-    if(isset( $_GET['lan'] ))
+    if(isset( $_POST['lan'] ))
     {
-        $_SESSION['lan'] = $_GET['lan'];
-        
+        $_SESSION['lan'] = $_POST['lan'];        
     }
     else
     {
         if(!isset($_SESSION['lan']))
         {        
             $_SESSION['lan'] = 'es';
+        }else{
+            $_SESSION['lan'];
         }
         
     }
     require("lan/".$_SESSION['lan'].'.php');
 
 ?>
+<style type="text/css">
+    .demo{
+        display: inline-block;
+        position: relative;
+        float: left;
+        width: 100%;
+        padding: 2px;        
+    }
+    .abc{
+        text-align: center;
+    }
+</style>
 
 <div class="header">
     <div class="container">
@@ -55,7 +68,7 @@ $totalRows_rscategorias = mysql_num_rows($rscategorias);
               <li><a href="offers.html"><?php echo $messages['ofertL']; ?></a></li>
               <li><a href="#" data-toggle="modal" data-target="#question"><?php echo $messages['questionL']; ?></a></li> 
               <li><a href="#" data-toggle="modal" data-target="#whopay"><?php echo $messages['whopayL']; ?></a></li> 
-              <li><a href="offers.html"><?php echo $messages['servicesL']; ?></a></li> 
+              <li><a href="#" data-toggle="modal" data-target="#servicios"><?php echo $messages['servicesL']; ?></a></li> 
               <li><a href="offers.html"><?php echo $messages['tipsL']; ?></a></li>   
               <li><a href="contacto.php"><?php echo $messages['contactusL']; ?></a></li>             
               <li><a href="offers.html"><?php echo $messages['videosL']; ?></a></li> 
@@ -88,19 +101,27 @@ $totalRows_rscategorias = mysql_num_rows($rscategorias);
                     <li><a href="signup.html"><?php echo $messages['signup']; ?></a></li> 
                     <?php
                 }
-                ?>              
-               
+                ?>
             </ul> 
-          </li> 
-          <li class="dropdown head-dpdn">
+        </li> 
+        <li class="dropdown head-dpdn">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-language" aria-hidden="true"></i> <?php echo $messages['language']; ?><span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="<?php echo $_SERVER['REQUEST_URI'] ?>&&lan=es">Spanish</a></li> 
-              <li><a href="<?php echo $_SERVER['REQUEST_URI'] ?>&&lan=en">English</a></li>
-              
-            </ul> 
-          </li> 
-            </ul>
+                <ul class="dropdown-menu abc">
+                    <li>
+                        
+                        <form action="" method="post" name="es" >
+                            <input type="hidden" name="lan"  class="lenguage" value="es">
+                            <button type="submit" class="demo btn btn-default"><i class="fa fa-user"></i>Esp</button>           
+                        </form>
+                        <form action="" method="post" name="en" >
+                            <input type="hidden" name="lan"  class="lenguage" value="en">
+                           <button type="submit" class="demo btn btn-default">Eng</button></li>              
+                        </form>
+                    
+
+                </ul>
+        </li>
+    </ul>
         </div>
         <div class="clearfix"> </div> 
         </div>
@@ -482,3 +503,83 @@ $totalRows_rscategorias = mysql_num_rows($rscategorias);
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- EndQuestion -->
+
+
+<div class="modal fade" id="servicios" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        
+            <h1 style="text-align: center"><img src="images/flores-para-el-salvador.png"/></h1>
+            <h4 class="modal-title" id="myModalLabel" style="text-align: center"><?php echo $messages['nuestrosServicios']; ?><?php //echo $messages['politicas2']; ?></h4>
+        </div> <!-- /.modal-header -->
+
+        <div class="modal-body">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                  <li class="nav-item">
+                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><?php echo $messages['serviciosGenerales']; ?></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false"><?php echo $messages['arreglos']; ?></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false"><?php echo $messages['decoraciones']; ?></a>
+                  </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <br>
+                  <div class="tab-pane fade active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                      
+                        <ul class="list-group">
+                            <li class="list-group-item list-group-item-info"><?php echo $messages['decoraciones']; ?></li>
+                            <li class="list-group-item"><?php echo $messages['servicios1']; ?></li>
+                            <li class="list-group-item"><?php echo $messages['servicios2']; ?></li>
+                            <li class="list-group-item"><?php echo $messages['servicios3']; ?></li>
+                            <li class="" style="text-align: center;list-style-type:none">
+                                <img src="images/cards.png" width="150" />
+                            </li>
+                        </ul>
+                  </div>
+                  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                        <ul class="list-group">
+                            <li class="list-group-item list-group-item-info"><?php echo $messages['arreglos']; ?></li>
+                            <li class="list-group-item"><?php echo $messages['arreglos1']; ?></li>
+                            <li class="list-group-item"><?php echo $messages['arreglos2']; ?></li>
+                            <li class="list-group-item"><?php echo $messages['arreglos3']; ?></li>
+                            <li class="list-group-item"><?php echo $messages['arreglos4']; ?></li>
+                            <li class="list-group-item"><?php echo $messages['arreglos5']; ?></li>
+                            <li class="list-group-item"><?php echo $messages['arreglos6']; ?></li>
+                            <li class="list-group-item"><?php echo $messages['arreglos7']; ?></li>
+                            <li class="" style="text-align: center;list-style-type:none">
+                                <img src="images/prueba.jpg" width="245" height="100" />
+                            </li>
+                        </ul>
+                  </div>
+                  <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                      <ul class="list-group">
+                            <li class="list-group-item list-group-item-info"><?php echo $messages['decoraciones']; ?></li>
+                            <li class="list-group-item"><?php echo $messages['decoraciones1']; ?></li>
+                            <li class="list-group-item"><?php echo $messages['decoraciones2']; ?></li>
+                            <li class="list-group-item"><?php echo $messages['decoraciones3']; ?></li>
+                            <li class="list-group-item"><?php echo $messages['decoraciones4']; ?></li>
+                            <li class="list-group-item"><?php echo $messages['decoraciones5']; ?></li>
+                            <li class="list-group-item"><?php echo $messages['decoraciones6']; ?></li>
+                            <li class="list-group-item"><?php echo $messages['decoraciones7']; ?></li>
+                            <li class="" style="text-align: center;list-style-type:none">
+                                <img src="images/evento.jpg" width="245" height="100" />
+                            </li>
+                        </ul>
+                  </div>
+                </div>
+        </div> <!-- /.modal-body -->
+
+    <div class="modal-footer">
+        
+
+      </div> <!-- /.modal-footer -->
+
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.servicios -->

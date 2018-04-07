@@ -59,10 +59,13 @@ $messages['nosotrosDescripcion'] = 'Kapricho´s Floristería nació con el objet
 Ofrecemos nuestro servicio los siete días a la semana, por lo que, nos encontramos a su disposición en aquellos momentos inesperados y donde usted desea expresarse a través de un lindo detalle.';
 
 $messages['politicaCompleta1'] = 'Si alguna vez un producto no llena sus expectativas, por favor, no dude en devolverlo. Si la devolución es resultado de un error de parte de WWW.KAPRICHOSFLORISTERIA.COM, un reembolso completo estará disponible hasta 5 días después de la fecha en la que reciba su orden. Usted deberá solicitar un número de Autorización de Devolución de Producto (ADP) enviándonos un e-mail durante este período de 5 días para calificar para un reembolso. Si su devolución es en cualquier manera un error de parte de WWW.KAPRICHOSFLORISTERIA.COM, por favor, asegúrese de indicar la naturaleza del error cuando solicite el número ADP y un especialista de atención al cliente le proveerá con instrucciones detalladas de cómo proceder.';
+
 $messages['politicaCompleta2'] = 'Usted deberá enviar su devolución utilizando un carrier que posea tracking (como UPS, FedEx, TNT, o DHL). Usted será responsable de asegurarse que todos los ítems lleguen al Centro de Atención al Cliente en su condición original. Ningún reembolso estará disponible después de 5 días. Cualquier producto devuelto sin autorización será rehusado.';
+
 $messages['politicaCompleta3'] = 'Asegúrese de incluir lo siguiente junto con su mercadería devuelta: su número ADP, nombre, dirección y dirección de correo, así como una copia de la factura original y cualquier información adicional relacionada con la orden que usted haya olvidado incluir en su petición original de ADP. Devoluciones no estarán disponibles si el producto ha sido dañado o alterado en ninguna forma antes de llegar al Centro de Atención al Cliente, el producto deberá estar en las mismas condiciones en las que le fue entregado.';
 
 $messages['politicaCompleta4'] = 'Una vez la mercadería ha sido recibida en el Centro de Servicio al Cliente, su tarjeta de crédito será acreditada por la cantidad aplicable. Si usted desea ordenar otro producto en lugar del producto devuelto deberá realizar una orden completamente nueva en línea.';
+
 $messages['politicaCompleta5'] = 'Por favor envíe su paquete a:
 Dirección de atención al cliente y correo electrónico.';
 
@@ -165,6 +168,38 @@ $messages['servicioGarantizadoR1'] = 'Sí de alguna forma no se encuentra confor
 
 $messages['infoSegura'] = '¿La información que proporcione estará segura?';
 $messages['infoSeguraR1'] = 'Nuestros clientes son muy valiosos para nosotros, nos esforzamos por ofrecer el mejor servicio y seguridad. No compartimos la información de nuestros clientes.';
+
+//Servicios
+
+$messages['nuestrosServicios'] = 'Nuestros Servicios';
+
+$messages['serviciosGenerales'] = 'Servicios Generales';
+$messages['servicios1'] = 'Servicio las 24 horas del día, los 365 días del año.';
+$messages['servicios2'] = 'Servicio a domicilio gratis para la ciudad capital.';
+$messages['servicios3'] = 'Servicio a nivel nacional. (Con recargo ver listado).';
+
+$messages['arreglos'] = 'Arreglos';
+
+$messages['arreglos1'] = 'Primaverales.';
+$messages['arreglos2'] = 'Tropicales.';
+$messages['arreglos3'] = 'Orquídeas.';
+$messages['arreglos4'] = 'Frutales.';
+$messages['arreglos5'] = 'Globos sorpresa.';
+$messages['arreglos6'] = 'Arreglos fúnebres.';
+$messages['arreglos7'] = 'Chocolates, etc.';
+
+$messages['decoraciones'] = 'Decoraciones';
+
+$messages['decoraciones1'] = 'Decoración de iglesias.';
+$messages['decoraciones2'] = 'Bodas.';
+$messages['decoraciones3'] = 'Primera comunión.';
+$messages['decoraciones4'] = 'Mesas de Honor.';
+$messages['decoraciones5'] = 'Baby shower.';
+$messages['decoraciones6'] = 'Decoraciones de salones.';
+$messages['decoraciones7'] = 'Eventos de gobierno, etc.';
+
+
+
 
 /* END INDEX */
 ?>
