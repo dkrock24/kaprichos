@@ -265,7 +265,7 @@ ul.cd-dropdown-content li {
 /*-- header-three --*/ 
 .header-three {
     border-bottom: 1px solid #eaeaea; 
-    background: rgb(201, 78, 99);
+    background: #D82787;
     background-size: cover;  
     text-align: center;
     height: 40px;
@@ -1081,9 +1081,11 @@ p {
 /*-- //social-icons --*/ 
 /*-- footer --*/
 .footer {
-    padding-top: 5em;
-    background: url(../images/bg.png)#42d406 no-repeat;
+    padding-top: 2em;
+    /*background: url(../images/bg.png)#42d406 no-repeat;*/
+    background: #D82787 no-repeat;
     background-size: cover;
+    border-top: 1px solid white;
 }
 .footer-logo.header-logo {
     float: none;
@@ -1091,23 +1093,14 @@ p {
 }
 .address-left {
     background: #fff;
-    padding: 2em;
+    padding: 1em;
     z-index: 9;
 }
 .address-right{
 	position:relative;	
 }
 .address-right:before {
-    content: '';
-    background: url(../images/a1.png)no-repeat 0px 0px;
-    background-size: 100%;
-    display: block;
-    position: absolute;
-    bottom: -189px;
-    left: -36px;
-    width: 500px;
-    height: 155px;
-    z-index: 0;
+
 }
 .address-left ul li {
     display: block;

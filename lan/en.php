@@ -24,6 +24,7 @@ $messages['language'] 	= 'Language';
 $messages['paynow'] = 'Pay Now';
 $messages['close'] = 'Close';
 $messages['pagos'] = 'Formas de pago';
+$messages['detalle'] = 'Detail';
 
 // Menu 
 $messages['home'] 	= 'HOME';
@@ -83,7 +84,8 @@ $messages['schedule'] = 'Open 24/7, Seven days a week';
 
 //Slider
 $messages['next'] = 'Next';
-$messages['preview'] = 'preview';
+$messages['preview'] = 'Preview';
+$messages['start'] = 'Home';
 
 //menu left
 $messages['menuL'] = 'Search';

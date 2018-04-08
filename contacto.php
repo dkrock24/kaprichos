@@ -31,40 +31,100 @@
   <?php include"template/menu.php"; ?>
 
 <div class="container">
-    <div class="row">
+    <div class="row">         
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <ul class="list-group">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-6 col-lg-6">
+                                    <span class="badge badge-primary badge-pill">
+                                        <i class="fa fa-envelope"></i>
+                                    </span>
+                                    <span style="font-size: 16px;">info@kaprichosfloristeria.com</span>
+                                </div>
+                                <div class="col-sm-12 col-md-6 col-lg-6">
+                                    <span class="badge badge-primary badge-pill">
+                                        <i class="fa fa-envelope"></i>
+                                    </span>
+                                    <span style="font-size: 12px;"><?php echo $messages['schedule']; ?></span>
+                                </div>
+                            </div>  
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-4 col-lg-4">
+                                    <span class="badge badge-primary badge-pill">
+                                        <i class="fa fa-phone"></i> +503
+                                    </span>
+                                    <span style="font-size: 16px;">2223-3515</span>
+                                </div>
+                                <div class="col-sm-12 col-md-4 col-lg-4">
+                                    <span class="badge badge-primary badge-pill">
+                                        <i class="fa fa-phone"></i> +503
+                                    </span>
+                                    <span style="font-size: 16px;">2223-3516</span>
+                                </div>
+                                <div class="col-sm-12 col-md-4 col-lg-4">
+                                    <span class="badge badge-primary badge-pill">
+                                        <i class="fa fa-phone"></i> +503
+                                    </span>
+                                    <span style="font-size: 16px;">2532-1561</span>
+                                </div>
+                            </div>  
+                        </div>                       
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">        
         <div class="col-sm-12 col-md-12 col-lg-6">
             <iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/ms?msa=0&amp;msid=213829194681019803634.00049258fe14996871c18&amp;ie=UTF8&amp;t=m&amp;ll=13.699278,-89.223876&amp;spn=0.007297,0.006437&amp;z=16&amp;output=embed"></iframe><br /><small>Ver <a href="https://www.google.com/maps/ms?msa=0&amp;msid=213829194681019803634.00049258fe14996871c18&amp;ie=UTF8&amp;t=m&amp;ll=13.699278,-89.223876&amp;spn=0.007297,0.006437&amp;z=16&amp;source=embed" style="color:#0000FF;text-align:left">Kaprichos Floristeria</a> en un mapa ampliado</small>
         </div>
         <div class="col-sm-12 col-md-12 col-lg-6">
             <form action="" method="post" name="form1" id="form1" onsubmit="MM_validateForm('elnombre','','R','elemail','','RisEmail','elmensaje','','R');return document.MM_returnValue">
-                <div class="row">
-                    <div class="col-sm-12 col-md-12 col-lg-6"><strong>Nombre:</strong></div>
-                    <div class="col-sm-12 col-md-12 col-lg-6"><input type="text" class="form-control" name="elnombre" id="elnombre" style="width:100%" /></div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-12 col-md-12 col-lg-6"><strong>Teléfono:</strong></div>
-                    <div class="col-sm-12 col-md-12 col-lg-6"><input type="text" class="form-control" name="eltelefono" id="eltelefono" style="width:100%" /></div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-12 col-md-12 col-lg-6"><strong>E-mail:</strong></div>
-                    <div class="col-sm-12 col-md-12 col-lg-6"><input type="text" class="form-control" name="elemail" id="elemail" style="width:100%" /></div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-12 col-md-6 col-lg-6"><strong>Mensaje:</strong></div>
-                    <div class="col-sm-12 col-md-6 col-lg-6"><textarea name="elmensaje" class="form-control" cols="28" rows="6" id="elmensaje" style="width:100%"></textarea></div>
-                </div>
+            <ul class="list-group">
+                <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-success">                        
+                    <?php echo $messages['contactusL']; ?>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center default">                        
+                    <div class="row">
+                        <div class="col-sm-12 col-md-12 col-lg-6"><strong><?php echo $messages['phoneC']; ?>:</strong></div>
+                        <div class="col-sm-12 col-md-12 col-lg-6"><input type="text" class="form-control" name="eltelefono" id="eltelefono" style="width:100%" /></div>
+                    </div>   
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center default">                        
+                    <div class="row">
+                        <div class="col-sm-12 col-md-12 col-lg-6"><strong><?php echo $messages['emailC']; ?>:</strong></div>
+                        <div class="col-sm-12 col-md-12 col-lg-6"><input type="text" class="form-control" name="elemail" id="elemail" style="width:100%" /></div>
+                    </div>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center default">                        
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6 col-lg-6"><strong><?php echo $messages['messageC']; ?>:</strong></div>
+                        <div class="col-sm-12 col-md-6 col-lg-6"><textarea name="elmensaje" class="form-control" cols="28" rows="6" id="elmensaje" style="width:100%"></textarea></div>
+                    </div>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center default">                        
                 <div class="row">                    
-                    <div class="col-sm-12 col-md-6 col-lg-6"></div>
-                    <div class="col-sm-12 col-md-6 col-lg-6"><strong>* Campos en negrita son requeridos</strong></div>
-                </div>
-                <div class="row">                    
-                    <div class="col-sm-12 col-md-6 col-lg-6"></div>
+                    <div class="col-sm-12 col-md-6 col-lg-6"><strong>* <?php echo $messages['instructionC']; ?></strong></div>
                     <div class="col-sm-12 col-md-6 col-lg-6">
                         <input name="envio" type="hidden" id="envio" value="1" />
-                        <input type="submit" name="button" class="form-control" id="button" value="Enviar Mensaje" />
+                        <input type="submit" name="button" class="form-control" id="button" value="<?php echo $messages['sendC']; ?>" />
                     </div>
                 </div>
+                </li>
+            </ul>
             </form>
+                
+                
+                
+                
+                
+                
+            
         </div>
     </div>
 </div>

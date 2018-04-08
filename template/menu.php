@@ -64,7 +64,7 @@ $totalRows_rscategorias = mysql_num_rows($rscategorias);
           <li class="dropdown head-dpdn">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-gift" aria-hidden="true"></i> <?php echo $messages['paynow']; ?> <span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href="offers.html"><?php echo $messages['catalogL']; ?></a></li> 
+              <li><a href="catalogo.php"><?php echo $messages['catalogL']; ?></a></li> 
               
               <li><a href="#" data-toggle="modal" data-target="#question"><?php echo $messages['questionL']; ?></a></li> 
               <li><a href="#" data-toggle="modal" data-target="#whopay"><?php echo $messages['whopayL']; ?></a></li> 
@@ -192,7 +192,7 @@ $totalRows_rscategorias = mysql_num_rows($rscategorias);
 
           <div class="col-md-3">
               <div class="move-text">
-                <div class="marquee"><a href="offers.html"> <?php echo $messages['event']; ?></a></div>
+                <div class="marquee"><a href="event/index.html"> <?php echo $messages['event']; ?></a></div>
               </div>
           </div>
 
