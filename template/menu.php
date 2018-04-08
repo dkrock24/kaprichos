@@ -36,7 +36,18 @@ $totalRows_rscategorias = mysql_num_rows($rscategorias);
     .abc{
         text-align: center;
     }
+    .recuperar{
+        display: none;
+    }
 </style>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#recuperar").click(function(){
+            $('.recuperar').show();
+            $('#ingresar').hide();
+        });
+    })
+</script>
 
 <div class="header">
     <div class="container">
@@ -260,17 +271,31 @@ $totalRows_rscategorias = mysql_num_rows($rscategorias);
       </div> <!-- /.modal-body -->
 
       <div class="modal-footer">
-        <button class="form-control btn btn-primary"><?php echo $messages['Ingresar']; ?></button>
+        <div class="row">
+            <div class="col-ms-6 col-md-6"></div>
+            <div class="col-ms-6 col-md-6"><a href="#" id="recuperar">Olvide mi Password.</a></div>
+        </div>  
 
-        <div class="progress">
-            <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="100" style="width: 0%;">
-            <span class="sr-only">progress</span>
-            </div>
-        </div>
+
+        <button class="form-control btn btn-primary" id="ingresar" style="background: #e4e4e4;color: black;border-color: #e4e4e4;"><?php echo $messages['Ingresar']; ?></button>
+
+
       </div> <!-- /.modal-footer -->
 
     </div><!-- /.modal-content -->
     </form>
+    <div class="form-group recuperar">
+            <form action="recuperar.php" method="post">
+                <div class="input-group">
+                    <input type="text" class="form-control" id="recuperar" name="recuperar" placeholder="Ingrese Su Correo Electronico">
+                    <label for="uPassword" class="input-group-addon glyphicon glyphicon-envelope"></label>
+                </div> <!-- /.input-group -->
+                <div class="input-group">
+                    <button class="form-control btn btn-primary" id="recuperarbtn" style="background: #e4e4e4;color: black;border-color: #e4e4e4;">Recuperar</button>
+                    <label for="uPassword2" class="input-group-addon glyphicon glyphicon-send"></label>
+                </div> <!-- /.input-group -->
+            </form>
+        </div> <!-- /.form-group -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
@@ -517,23 +542,23 @@ $totalRows_rscategorias = mysql_num_rows($rscategorias);
         </div> <!-- /.modal-header -->
 
         <div class="modal-body">
-            <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <ul class="nav nav-tabs" id="myTab" role="tablist" style="background: #D82787;">
                   <li class="nav-item">
-                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><?php echo $messages['serviciosGenerales']; ?></a>
+                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true" style="color:white;"><?php echo $messages['serviciosGenerales']; ?></a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false"><?php echo $messages['arreglos']; ?></a>
+                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false" style="color:white;"><?php echo $messages['arreglos']; ?></a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false"><?php echo $messages['decoraciones']; ?></a>
+                    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false" style="color:white;"><?php echo $messages['decoraciones']; ?></a>
                   </li>
                 </ul>
                 <div class="tab-content" id="myTabContent">
-                    <br>
+                    
                   <div class="tab-pane fade active" id="home" role="tabpanel" aria-labelledby="home-tab">
                       
                         <ul class="list-group">
-                            <li class="list-group-item list-group-item-info"><?php echo $messages['decoraciones']; ?></li>
+                            <li class="list-group-item " style="background: #e4e4e4;color: black;border-color: #e4e4e4;" ><?php echo $messages['serviciosGenerales']; ?></li>
                             <li class="list-group-item"><?php echo $messages['servicios1']; ?></li>
                             <li class="list-group-item"><?php echo $messages['servicios2']; ?></li>
                             <li class="list-group-item"><?php echo $messages['servicios3']; ?></li>
@@ -544,7 +569,7 @@ $totalRows_rscategorias = mysql_num_rows($rscategorias);
                   </div>
                   <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                         <ul class="list-group">
-                            <li class="list-group-item list-group-item-info"><?php echo $messages['arreglos']; ?></li>
+                            <li class="list-group-item " style="background: #e4e4e4;color: black;border-color: #e4e4e4;"><?php echo $messages['arreglos']; ?></li>
                             <li class="list-group-item"><?php echo $messages['arreglos1']; ?></li>
                             <li class="list-group-item"><?php echo $messages['arreglos2']; ?></li>
                             <li class="list-group-item"><?php echo $messages['arreglos3']; ?></li>
@@ -559,7 +584,7 @@ $totalRows_rscategorias = mysql_num_rows($rscategorias);
                   </div>
                   <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
                       <ul class="list-group">
-                            <li class="list-group-item list-group-item-info"><?php echo $messages['decoraciones']; ?></li>
+                            <li class="list-group-item" style="background: #e4e4e4;color: black;border-color: #e4e4e4;"><?php echo $messages['decoraciones']; ?></li>
                             <li class="list-group-item"><?php echo $messages['decoraciones1']; ?></li>
                             <li class="list-group-item"><?php echo $messages['decoraciones2']; ?></li>
                             <li class="list-group-item"><?php echo $messages['decoraciones3']; ?></li>

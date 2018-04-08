@@ -25,7 +25,7 @@ if( true ){
 	else
 	{
 
-		$newURL = 'index2.php';
+		$newURL = 'index.php';
 		header('Location: '.$newURL);
 	}
 }else

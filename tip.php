@@ -145,7 +145,7 @@ $objDynamicThumb2->setWatermark(false);
     <div class="row">
         <div class="col-sm-12 col-md-12 col-lg-3">
           <ul class="list-group">
-            <li class="list-group-item d-flex justify-content-between align-items-center active">
+            <li class="list-group-item d-flex justify-content-between align-items-center active" style="background: #e4e4e4;color: black;border-color: #e4e4e4;">
                 <?php echo $messages['categorias']; ?>
             </li>
             <?php do { ?>
@@ -161,7 +161,7 @@ $objDynamicThumb2->setWatermark(false);
         </div>
         <div class="col-sm-12 col-md-12 col-lg-9">
           <div class="list-group">
-            <a href="#" class="list-group-item list-group-item-action active">
+            <a href="#" class="list-group-item list-group-item-action" style="background: #e4e4e4;color: black;border-color: #e4e4e4;">
               <span class="badge-pill"><h3><?php echo $messages['tipsL']; ?></h3></span>
             </a>
           </div>
@@ -169,7 +169,7 @@ $objDynamicThumb2->setWatermark(false);
             <div class="row">
                 <div class="col-sm-12 col-md-12 col-lg-12">
                     <div class="list-group">
-                          <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
+                          <a href="#" class="list-group-item list-group-item-action flex-column align-items-start" style="background: #e4e4e4;color: black;border-color: #e4e4e4;">
                             <div class="d-flex w-100 justify-content-between">
                               <h4 class="mb-1"><?php echo $messages['cuidadoflores']; ?></h4>
                               
@@ -202,7 +202,7 @@ $objDynamicThumb2->setWatermark(false);
             <div class="row">
                 <div class="col-sm-12 col-md-12 col-lg-12">
                     <div class="list-group">
-                          <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
+                          <a href="#" class="list-group-item list-group-item-action flex-column align-items-start" style="background: #e4e4e4;color: black;border-color: #e4e4e4;">
                             <div class="d-flex w-100 justify-content-between">
                               <h4 class="mb-1"><?php echo $messages['significadocolores']; ?></h4>
                               
@@ -246,7 +246,7 @@ $objDynamicThumb2->setWatermark(false);
             <div class="row">
                 <div class="col-sm-12 col-md-12 col-lg-12">
                     <div class="list-group">
-                          <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
+                          <a href="#" class="list-group-item list-group-item-action flex-column align-items-start" style="background: #e4e4e4;color: black;border-color: #e4e4e4;">
                             <div class="d-flex w-100 justify-content-between">
                               <h4 class="mb-1">Significado de las Flores</h4>
                               

@@ -130,6 +130,9 @@ $objDynamicThumb2->setWatermark(false);
 <head>
 <?php include"template/header.php"; ?>
 
+
+<link href="css/lytebox.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="Scripts/lytebox.js"></script>
 </head>
 <body>
 
@@ -215,37 +218,12 @@ $objDynamicThumb2->setWatermark(false);
                   {       ?>
 
                     <div class="col-md-3 product-left"  style=""> 
-                        <div class="p-one simpleCart_shelfItem jwe" style="width: 100%;margin: 0 auto;" >                         
-                                <a href="single.html">
-                                    <img src="<?php if($width >= $height) { ?><?php echo str_replace($buscar, $reempla, $objDynamicThumb2->Execute()); ?><?php } if($width < $height) { ?><?php echo str_replace($buscar, $reempla, $objDynamicThumb1->Execute()); ?><?php } ?>) no-repeat center center;" alt="" class="img-responsive" />
-                                    <div class="mask">
-                                        <span><?php echo $messages['QuickView']; ?></span>
-                                    </div>
-                                </a>
-                            <div class="product-left-cart">
-                                <div class="">                                    
-                                    <div class="row">
-                                        <div class="col-sm-12 col-md-6 col-lg-6">
-                                            <a href="arreglos-ver.php?id=<?php echo $row_rsarreglos1['id_producto']; ?>"><?php echo $row_rsarreglos1['nombre_es']; ?>
-                                        </div>
-                                        <div class="col-sm-12 col-md-6 col-lg-6">
-                                            $<?php echo number_format($row_rsarreglos1['numerico1'],2); ?>                                                        
-                                        </div>
-                                    </div>   
-
-                                    <div class="row">
-                                        <div class="col-sm-12 col-md-6">
-                                            <a class="btn btn-defaul btn-sm" href="uploaded/mod_productos/<?php echo $row_rsarreglos1['imagen'];?>" rel="lytebox[galera]" title="<?php echo $row_rsarreglos1['nombre_es']; ?>"><i class="fa fa-search"></i> Ver</a>
-                                        </div>
-                                        <div class="col-sm-12 col-md-6">                                            
-                                            <a class="btn btn-info btn-sm" href="arreglos-ver.php?id=<?php echo $row_rsarreglos1['id_producto']; ?>"><i class="fa fa-cart-arrow-down"></i> Agregar</a>  
-                                        </div>
-                                    </div>                                     
-                                </div>
-
-                                <div class="clearfix"> </div>
-                            </div>
-                        </div>
+                        <div class="boxarreglo" style="margin-right:10px;" >
+                <div class="foto" style="background: url(<?php if($width >= $height) { ?><?php echo str_replace($buscar, $reempla, $objDynamicThumb2->Execute()); ?><?php } if($width < $height) { ?><?php echo str_replace($buscar, $reempla, $objDynamicThumb1->Execute()); ?><?php } ?>) no-repeat center center;">
+              <a href="uploaded/mod_productos/<?php echo $row_rsarreglos1['imagen']; ?>" rel="lytebox[galera]" title="<?php echo $row_rsarreglos1['nombre_es']; ?>"><img src="images/blank.gif" width="140" height="200" border="0" /></a></div>
+                <div class="texto"><a href="arreglos-ver.php?id=<?php echo $row_rsarreglos1['id_producto']; ?>"><?php echo $row_rsarreglos1['nombre_es']; ?></a>
+                              </div>
+              </div>
                     </div>
                     <?php 
                     } 
@@ -258,7 +236,8 @@ $objDynamicThumb2->setWatermark(false);
                                 <a href="single.html">
                                     <img src="<?php if($width >= $height) { ?><?php echo str_replace($buscar, $reempla, $objDynamicThumb2->Execute()); ?><?php } if($width < $height) { ?><?php echo str_replace($buscar, $reempla, $objDynamicThumb1->Execute()); ?><?php } ?>" alt="" class="img-responsive" style="height: 200px;" />
                                     <div class="mask">                                        
-                                        <a data-toggle="modal" data-target="#detalle_producto" id="uploaded/mod_productos/<?php echo $row_rsarreglos1['imagen'];?>" class="btn btn-default btn-sm detalleModal" href="#" rel="lytebox[galera]" title="<?php echo $row_rsarreglos1['nombre_es']; ?>" precio="<?php echo number_format($row_rsarreglos1['numerico1'],2); ?>"><i class="fa fa-search"></i> <?php echo $messages['QuickView']; ?></a>
+                                        <a href="uploaded/mod_productos/<?php echo $row_rsarreglos1['imagen'];?>" rel="lytebox[galera]" class="btn btn-default btn-sm detalleModal" href="#" rel="lytebox[galera]" title="<?php echo $row_rsarreglos1['nombre_es']; ?>" precio="<?php echo number_format($row_rsarreglos1['numerico1'],2); ?>"><i class="fa fa-search"></i> <?php echo $messages['QuickView']; ?></a>
+                                        
                                     </div>
                                 </a>
                             <div class="product-left-cart">
