@@ -15,6 +15,7 @@
   <!-- banner -->
     <div class="container">
         <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12">
             <div class="banner">
                 <div id="kb" class="carousel kb_elastic animate_text kb_wrapper" data-ride="carousel"   data-interval="6000" data-pause="hover">
                 <!-- Wrapper-for-Slides -->
@@ -54,6 +55,7 @@
                 </div>
                 <script src="assets/js/custom.js"></script>
             </div>
+            </div>
         </div>
 
     </div>  
@@ -73,7 +75,7 @@
 
                 <div class="row">
                     <div class="col-sm-12 col-md-12 col-lg-12 focus-grid"> 
-                        <a href="https://www.instagram.com/kaprichosfloristeria/" class="wthree-btn wthree2"> 
+                        <a href="https://www.instagram.com/kaprichosfloristeria/" target="_blank" class="wthree-btn wthree2"> 
                             <div class="focus-image"><i class="fa fa-instagram"></i></div>
                             <h4 class="clrchg">Instragram</h4> 
                         </a>
@@ -116,7 +118,7 @@
     <div class="banner-bottom">
         <div class="container">
             <div class="clearfix"> </div>
-          <h3 class="w3ls-title"><?php echo $messages['Destacados']; ?></h3>
+          <h3 class="w3ls-title" style="background: #D82787; color: white; width: 300px; text-align: center; padding: 1%;"><?php echo $messages['Destacados']; ?></h3><hr>
             <div class="product-one">
                 <div class="col-md-2 product-left"> 
                     <div class="p-one simpleCart_shelfItem jwe">                            
@@ -127,11 +129,9 @@
                                 </div>
                             </a>
                         <div class="product-left-cart">
-                            <div class="product-left-cart-l">
-                                <p><a class="item_add" href="#"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i> <span class=" item_price">$729</span></a></p>
-                            </div>
-                            <div class="product-left-cart-r">
-                                <a href="#"> </a>
+                            <h3 class=" item_price">$729</h3>
+                            <div class="">
+                                <a href="#" class="btn btn-default" style="width: 100%;">Agregar</a>
                             </div>
                             <div class="clearfix"> </div>
                         </div>
@@ -145,12 +145,10 @@
                                     <span><?php echo $messages['QuickView']; ?></span>
                                 </div>
                         </a>
-                        <div class="product-left-cart">
-                            <div class="product-left-cart-l">
-                                <p><a class="item_add" href="#"><i></i> <span class=" item_price">$729</span></a></p>
-                            </div>
-                            <div class="product-left-cart-r">
-                                <a href="#"> </a>
+                       <div class="product-left-cart">
+                            <h3 class=" item_price">$729</h3>
+                            <div class="">
+                                <a href="#" class="btn btn-default" style="width: 100%;">Agregar</a>
                             </div>
                             <div class="clearfix"> </div>
                         </div>
@@ -165,11 +163,9 @@
                                 </div>
                         </a>
                         <div class="product-left-cart">
-                            <div class="product-left-cart-l">
-                                <p><a class="item_add" href="#"><i></i> <span class=" item_price">$729</span></a></p>
-                            </div>
-                            <div class="product-left-cart-r">
-                                <a href="#"> </a>
+                            <h3 class=" item_price">$729</h3>
+                            <div class="">
+                                <a href="#" class="btn btn-default" style="width: 100%;">Agregar</a>
                             </div>
                             <div class="clearfix"> </div>
                         </div>
@@ -184,11 +180,9 @@
                                 </div>
                         </a>
                         <div class="product-left-cart">
-                            <div class="product-left-cart-l">
-                                <p><a class="item_add" href="#"><i></i> <span class=" item_price">$729</span></a></p>
-                            </div>
-                            <div class="product-left-cart-r">
-                                <a href="#"> </a>
+                            <h3 class=" item_price">$729</h3>
+                            <div class="">
+                                <a href="#" class="btn btn-default" style="width: 100%;">Agregar</a>
                             </div>
                             <div class="clearfix"> </div>
                         </div>
@@ -203,11 +197,9 @@
                                 </div>
                             </a>
                         <div class="product-left-cart">
-                            <div class="product-left-cart-l">
-                                <p><a class="item_add" href="#"><i></i> <span class=" item_price">$729</span></a></p>
-                            </div>
-                            <div class="product-left-cart-r">
-                                <a href="#"> </a>
+                            <h3 class=" item_price">$729</h3>
+                            <div class="">
+                                <a href="#" class="btn btn-default" style="width: 100%;">Agregar</a>
                             </div>
                             <div class="clearfix"> </div>
                         </div>
@@ -222,17 +214,15 @@
                                 </div>
                         </a>
                         <div class="product-left-cart">
-                            <div class="product-left-cart-l">
-                                <p><a class="item_add" href="#"><i></i> <span class=" item_price">$729</span></a></p>
-                            </div>
-                            <div class="product-left-cart-r">
-                                <a href="#"> </a>
+                            <h3 class=" item_price">$729</h3>
+                            <div class="">
+                                <a href="#" class="btn btn-default" style="width: 100%;">Agregar</a>
                             </div>
                             <div class="clearfix"> </div>
                         </div>
                     </div>
                 </div>
-                <div class="clearfix"> </div>
+              
             </div>
         </div>
     </div>
@@ -247,150 +237,51 @@
         <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
 
           <div class="clearfix"> </div>
-          <h3 class="w3ls-title"><?php echo $messages['KaprichosDesign']; ?></h3>
+          <h3 class="w3ls-title" style="text-align: center;padding: 50px;"><?php echo $messages['KaprichosDesign']; ?></h3>
           <div id="myTabContent" class="tab-content">
             <div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
               <div class="tabcontent-grids">  
                 <div id="owl-demo" class="owl-carousel"> 
-                  <div class="item">
-                    <div class="glry-w3agile-grids agileits"> 
-                      <a href="products.html"><img src="uploaded/mod_productos/d9dbc275cf9993854b0d1c8acb550206.jpg" alt="img"></a>
-                      <div class="view-caption agileits-w3layouts">           
-                        <h4><a href="products.html">Audio speaker</a></h4>
-                        <p>Lorem ipsum dolor sit amet consectetur</p>
-                        <h5>$100</h5> 
-                        <form action="#" method="post">
-                          <input type="hidden" name="cmd" value="_cart" />
-                          <input type="hidden" name="add" value="1" /> 
-                          <input type="hidden" name="w3ls_item" value="Audio speaker" /> 
-                          <input type="hidden" name="amount" value="100.00" /> 
-                          <button type="submit" class="w3ls-cart" ><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
-                        </form>  
-                      </div>   
+                  <div class="">
+                    <div style="background: url('uploaded/mod_productos/foto kaprichos 1.jpg') center no-repeat; width: 200px; height: 200px; background-size: 100%; border-radius: 50%;"> 
+                      
                     </div>   
                   </div>
-                  <div class="item">
-                    <div class="glry-w3agile-grids agileits">
-                      <div class="new-tag"><h6>Sale</h6></div>
-                      <a href="products.html"><img src="uploaded/mod_productos/foto kaprichos 1.jpg" alt="img"></a>
-                      <div class="view-caption agileits-w3layouts">           
-                        <h4><a href="products.html">Refrigerator</a></h4>
-                        <p>Lorem ipsum dolor sit amet consectetur</p> 
-                        <h5>$300</h5>
-                        <form action="#" method="post">
-                          <input type="hidden" name="cmd" value="_cart" />
-                          <input type="hidden" name="add" value="1" /> 
-                          <input type="hidden" name="w3ls_item" value="Refrigerator" /> 
-                          <input type="hidden" name="amount" value="300.00"/> 
-                          <button type="submit" class="w3ls-cart" ><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
-                        </form>
-                      </div>       
+                  <div class="">
+                    <div style="background: url('uploaded/mod_productos/foto kaprichos 1.jpg') center no-repeat; width: 200px; height: 200px;background-size: 100%;border-radius: 50%;"> 
+      
                     </div>  
                   </div>
-                  <div class="item">
-                    <div class="glry-w3agile-grids agileits"> 
-                      <div class="new-tag"><h6>New</h6></div>
-                      <a href="products.html"><img src="assets/images/e3.png" alt="img"></a>
-                      <div class="view-caption agileits-w3layouts">           
-                        <h4><a href="products.html">Smart Phone</a></h4>
-                        <p>Lorem ipsum dolor sit amet consectetur</p>
-                        <h5>$70</h5>
-                        <form action="#" method="post">
-                          <input type="hidden" name="cmd" value="_cart" />
-                          <input type="hidden" name="add" value="1" /> 
-                          <input type="hidden" name="w3ls_item" value="Smart Phone" /> 
-                          <input type="hidden" name="amount" value="70.00"/> 
-                          <button type="submit" class="w3ls-cart" ><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
-                        </form>
-                      </div>        
+                  <div class="" style="width: 150px;">
+                    <div style="background: url('uploaded/mod_productos/foto kaprichos 1.jpg') center no-repeat; width: 200px; height: 200px;background-size: 100%;border-radius: 50%;"> 
+      
                     </div>  
                   </div>
-                  <div class="item">
-                    <div class="glry-w3agile-grids agileits"> 
-                      <a href="products.html"><img src="assets/images/e4.png" alt="img"></a>
-                      <div class="view-caption agileits-w3layouts">           
-                        <h4><a href="products.html">Digital Camera</a></h4>
-                        <p>Lorem ipsum dolor sit amet consectetur</p>
-                        <h5>$80</h5>
-                        <form action="#" method="post">
-                          <input type="hidden" name="cmd" value="_cart" />
-                          <input type="hidden" name="add" value="1" /> 
-                          <input type="hidden" name="w3ls_item" value="Digital Camera"/> 
-                          <input type="hidden" name="amount" value="80.00"/>  
-                          <button type="submit" class="w3ls-cart" ><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
-                        </form>
-                      </div>         
+                  <div class="" style="width: 150px;">
+                    <div style="background: url('uploaded/mod_productos/foto kaprichos 1.jpg') center no-repeat; width: 200px; height: 200px;background-size: 100%;border-radius: 50%;"> 
+      
+                    </div>
+                  </div>
+                  <div class="" style="width: 150px;">
+                   <div style="background: url('uploaded/mod_productos/foto kaprichos 1.jpg') center no-repeat; width: 200px; height: 200px;
+                   background-size: 100%;border-radius: 50%;"> 
+      
                     </div>  
                   </div>
-                  <div class="item">
-                    <div class="glry-w3agile-grids agileits"> 
-                      <a href="products.html"><img src="assets/images/e1.png" alt="img"></a>
-                      <div class="view-caption agileits-w3layouts">           
-                        <h4><a href="products.html">Audio speaker</a></h4>
-                        <p>Lorem ipsum dolor sit amet consectetur</p>
-                        <h5>$100</h5> 
-                        <form action="#" method="post">
-                          <input type="hidden" name="cmd" value="_cart" />
-                          <input type="hidden" name="add" value="1" /> 
-                          <input type="hidden" name="w3ls_item" value="Audio speaker" /> 
-                          <input type="hidden" name="amount" value="100.00" /> 
-                          <button type="submit" class="w3ls-cart" ><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
-                        </form>  
-                      </div>   
-                    </div>   
+                  <div class="" style="width: 150px;">
+                   <div style="background: url('uploaded/mod_productos/foto kaprichos 1.jpg') center no-repeat; width: 200px; height: 200px; background-size: 100%;border-radius: 50%;"> 
+      
+                    </div> 
                   </div>
-                  <div class="item">
-                    <div class="glry-w3agile-grids agileits">
-                      <div class="new-tag"><h6>Sale</h6></div>
-                      <a href="products.html"><img src="assets/images/e2.png" alt="img"></a>
-                      <div class="view-caption agileits-w3layouts">           
-                        <h4><a href="products.html">Refrigerator</a></h4>
-                        <p>Lorem ipsum dolor sit amet consectetur</p> 
-                        <h5>$300</h5>
-                        <form action="#" method="post">
-                          <input type="hidden" name="cmd" value="_cart" />
-                          <input type="hidden" name="add" value="1" /> 
-                          <input type="hidden" name="w3ls_item" value="Refrigerator" /> 
-                          <input type="hidden" name="amount" value="300.00"/>  
-                          <button type="submit" class="w3ls-cart" ><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
-                        </form>
-                      </div>       
-                    </div>  
+                  <div class="" style="width: 150px;">
+                   <div style="background: url('uploaded/mod_productos/foto kaprichos 1.jpg') center no-repeat; width: 200px; height: 200px;  background-size: 100%;border-radius: 50%;"> 
+      
+                    </div> 
                   </div>
-                  <div class="item">
-                    <div class="glry-w3agile-grids agileits"> 
-                      <div class="new-tag"><h6>New</h6></div>
-                      <a href="products.html"><img src="assets/images/e3.png" alt="img"></a>
-                      <div class="view-caption agileits-w3layouts">           
-                        <h4><a href="products.html">Smart Phone</a></h4>
-                        <p>Lorem ipsum dolor sit amet consectetur</p>
-                        <h5>$70</h5>
-                        <form action="#" method="post">
-                          <input type="hidden" name="cmd" value="_cart" />
-                          <input type="hidden" name="add" value="1" /> 
-                          <input type="hidden" name="w3ls_item" value="Smart Phone" /> 
-                          <input type="hidden" name="amount" value="70.00"/>
-                          <button type="submit" class="w3ls-cart" ><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
-                        </form>
-                      </div>        
-                    </div>  
-                  </div>
-                  <div class="item">
-                    <div class="glry-w3agile-grids agileits"> 
-                      <a href="products.html"><img src="assets/images/e4.png" alt="img"></a>
-                      <div class="view-caption agileits-w3layouts">           
-                        <h4><a href="products.html">Digital Camera</a></h4>
-                        <p>Lorem ipsum dolor sit amet consectetur</p>
-                        <h5>$80</h5>
-                        <form action="#" method="post">
-                          <input type="hidden" name="cmd" value="_cart" />
-                          <input type="hidden" name="add" value="1" /> 
-                          <input type="hidden" name="w3ls_item" value="Digital Camera"/> 
-                          <input type="hidden" name="amount" value="80.00"/> 
-                          <button type="submit" class="w3ls-cart" ><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
-                        </form>
-                      </div>         
-                    </div>  
+                  <div class="" style="width: 150px;">
+                   <div style="background: url('uploaded/mod_productos/foto kaprichos 1.jpg') center no-repeat; width: 200px; height: 200px; background-size: 100%;border-radius: 50%;"> 
+      
+                    </div>
                   </div>
                 </div> 
               </div>
@@ -399,6 +290,7 @@
       </div>    
     </div>    
   </div> 
+  <br>
   <!-- //welcome -->
 
 <?php include "template/footer.php"; ?>
