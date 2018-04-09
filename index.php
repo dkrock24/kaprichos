@@ -73,7 +73,7 @@
 
                 <div class="row">
                     <div class="col-sm-12 col-md-12 col-lg-12 focus-grid"> 
-                        <a href="products.html" class="wthree-btn wthree2"> 
+                        <a href="https://www.instagram.com/kaprichosfloristeria/" class="wthree-btn wthree2"> 
                             <div class="focus-image"><i class="fa fa-instagram"></i></div>
                             <h4 class="clrchg">Instragram</h4> 
                         </a>
