@@ -49,6 +49,8 @@ $totalRows_rscategorias = mysql_num_rows($rscategorias);
     })
 </script>
 
+
+
 <div class="header">
     <div class="container">
       <div class="row">
@@ -195,42 +197,31 @@ $totalRows_rscategorias = mysql_num_rows($rscategorias);
       <div class="container">
         <div class="row">
 
-          <div class="col-md-3">
-              <div class="move-text">
-                <div class="marquee"><a href="index.php"> <?php echo $messages['home']; ?></a></div>
-              </div>
-          </div>
-
-          <div class="col-md-3">
-              <div class="move-text">
-                <div class="marquee"><a href="event/index.html"> <?php echo $messages['event']; ?></a></div>
-              </div>
-          </div>
-
-          <div class="col-md-3">
-            <div class="menu">
-                <div class="cd-dropdown-wrapper">
-                  <a class="cd-dropdown-trigger" href="#0"><?php echo $messages['buy']; ?></a>
-                  <nav class="cd-dropdown"> 
-                    <a href="#0" class="cd-close"><?php echo $messages['close']; ?></a>
-                    <ul class="cd-dropdown-content"> 
-                      <?php do { ?>
-                        <li><a href="categoria.php?c=<?php echo $row_rscategorias['id_categoria']; ?>"><?php echo $row_rscategorias['nombre_es']; ?></a></li>
-                      <?php } while ($row_rscategorias = mysql_fetch_assoc($rscategorias)); ?>                      
-                    </ul> <!-- .cd-dropdown-content -->
-                  </nav> <!-- .cd-dropdown -->
-                </div> <!-- .cd-dropdown-wrapper -->   
-            </div>
-          </div>
-
-          
-       
-          <div class="col-md-3">
-            <div class="move-text">
-              <div class="marquee"><a href="contacto.php"> <?php echo $messages['contactus']; ?></a></div>
-            </div>
-          </div>
-        
+            <nav class="navbar navbar-inverse" style="background: #D82787; border: 0px solid;">
+                <div class="container-fluid">
+                   
+                <ul class="nav navbar-nav">
+                    <li class="active">                       
+                        <a href="index.php"> <?php echo $messages['home']; ?></a>  
+                    </li>
+                    <li class="">                        
+                        <a href="event/index.html"> <?php echo $messages['event']; ?></a>  
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><?php echo $messages['buy']; ?>
+                        <span class="caret"></span></a>
+                        <ul class="dropdown-menu"> 
+                             <?php do { ?>
+                            <li><a href="categoria.php?c=<?php echo $row_rscategorias['id_categoria']; ?>"><?php echo $row_rscategorias['nombre_es']; ?></a></li>
+                            <?php } while ($row_rscategorias = mysql_fetch_assoc($rscategorias)); ?>                      
+                            </ul> <!-- .cd-dropdown-content -->
+                    </li>
+                    <li>
+                        <a href="contacto.php"> <?php echo $messages['contactus']; ?></a>
+                    </li>
+                </ul>
+                </div>
+            </nav>        
         </div>
       </div>
     </div>
