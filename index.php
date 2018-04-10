@@ -63,9 +63,9 @@
 
     <div class="container">
         <div class="row">
-            <div class="col col-sm-12 col-md-4 col-lg-4">
+            <div class="col-sm-12 col-md-4 col-lg-4">
                 <div class="row">
-                    <div class="col-sm-12 col-md-12 col-lg-12 focus-grid">
+                    <div class="col-sm-12 col-md-12 col-lg-12 focus-grid" style="width: 100%;">
                         <a href="https://www.facebook.com/kaprichosfloristeria/" target="_blank" class="wthree-btn wthree1"> 
                             <div class="focus-image"><i class="fa fa-facebook"></i></div>
                             <h4 class="clrchg">Facebook</h4> 
@@ -74,7 +74,7 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-sm-12 col-md-12 col-lg-12 focus-grid"> 
+                    <div class="col-sm-12 col-md-12 col-lg-12 focus-grid" style="width: 100%;"> 
                         <a href="https://www.instagram.com/kaprichosfloristeria/" target="_blank" class="wthree-btn wthree2"> 
                             <div class="focus-image"><i class="fa fa-instagram"></i></div>
                             <h4 class="clrchg">Instragram</h4> 
@@ -83,7 +83,7 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-sm-12 col-md-12 col-lg-12 focus-grid"> 
+                    <div class="col-sm-12 col-md-12 col-lg-12 focus-grid" style="width: 100%;"> 
                         <a href="products.html" class="wthree-btn wthree3"> 
                             <div class="focus-image"><i class="fa fa-pinterest"></i></div>
                             <h4 class="clrchg">Pinteres</h4> 
@@ -95,13 +95,13 @@
             <div class="col-sm-12 col-md-8 col-lg-8">
                 <br>
                 <div class="row">
-                    <div class="col-sm-12 col-md-6 col-lg-6">
+                    <div class="col-sm-6 col-md-6 col-lg-6 focus-grid">
                         <a href="products.html" class=""> 
                             <img src="assets/demo/temporada-banner-786x710.jpg" class="box1">
                         </a>
                      
                     </div>
-                    <div class="col-sm-12 col-md-6 col-lg-6 focus-grid">        
+                    <div class="col-sm-6 col-md-6 col-lg-6 focus-grid">        
                         <a href="products.html" class=""> 
                         <img src="assets/demo/evelyn-events-design-786x710.jpg" class="box1">      
                         </a>

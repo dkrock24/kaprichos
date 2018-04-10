@@ -195,29 +195,34 @@ $totalRows_rscategorias = mysql_num_rows($rscategorias);
 
       <div class="header-three"><!-- header-three -->
       <div class="container">
-        <div class="row">
+        <div class="row">             
 
             <nav class="navbar navbar-inverse" style="background: #D82787; border: 0px solid;">
                 <div class="container-fluid">
                    
-                <ul class="nav navbar-nav">
-                    <li class="active">                       
-                        <a href="index.php"> <?php echo $messages['home']; ?></a>  
+                <ul class="nav navbar-nav" style="width: 100%;color: white; background: none;">
+                    
+                        <li class="" style="width: 25%;">
+                        <a href="index.php" style="color: white"> <?php echo $messages['home']; ?></a>  
+                        </li>
+                    
+                    
+                    <li class="" style="width: 25%;">    
+                        
+                                <a href="event/index.html" style="color: white"> <?php echo $messages['event']; ?></a>  
+
                     </li>
-                    <li class="">                        
-                        <a href="event/index.html"> <?php echo $messages['event']; ?></a>  
-                    </li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><?php echo $messages['buy']; ?>
+                    <li class="dropdown" style="width: 25%">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color: white"><?php echo $messages['buy']; ?>
                         <span class="caret"></span></a>
-                        <ul class="dropdown-menu"> 
+                        <ul class="dropdown-menu" > 
                              <?php do { ?>
-                            <li><a href="categoria.php?c=<?php echo $row_rscategorias['id_categoria']; ?>"><?php echo $row_rscategorias['nombre_es']; ?></a></li>
+                            <li style="width: 100%;"><a href="categoria.php?c=<?php echo $row_rscategorias['id_categoria']; ?>"><?php echo $row_rscategorias['nombre_es']; ?></a></li>
                             <?php } while ($row_rscategorias = mysql_fetch_assoc($rscategorias)); ?>                      
                             </ul> <!-- .cd-dropdown-content -->
                     </li>
-                    <li>
-                        <a href="contacto.php"> <?php echo $messages['contactus']; ?></a>
+                    <li style="width: 25%;">
+                        <a href="contacto.php" style="color: white"> <?php echo $messages['contactus']; ?></a>
                     </li>
                 </ul>
                 </div>
