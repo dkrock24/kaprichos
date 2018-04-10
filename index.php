@@ -21,14 +21,14 @@
                 <!-- Wrapper-for-Slides -->
                     <div class="carousel-inner" role="listbox">  
                         <div class="item active"><!-- First-Slide -->
-                            <img src="assets/images/slide-detalle-1220x440.jpg" alt="" class="img-responsive" />
+                            <img src="assets/images/portadapagina 2.jpg" alt="" class="img-responsive" />
                             <div class="carousel-caption kb_caption kb_caption_right">
                                 <h3 data-animation="animated flipInX">Entregamos <span>Tus</span> Sentimientos</h3>
                                 <h4 data-animation="animated flipInX">Compra hoy</h4>
                             </div>
                         </div>  
                         <div class="item"> <!-- Second-Slide -->
-                            <img src="assets/images/slide2-1220x440.jpg" alt="" class="img-responsive" />
+                            <img src="assets/images/portadapagina 3.jpg" alt="" class="img-responsive" />
                             <div class="carousel-caption kb_caption kb_caption_right">
                                 <h3 data-animation="animated fadeInDown">Promociones Hoy</h3>
                                 <h4 data-animation="animated fadeInUp">Compra hoy</h4>
