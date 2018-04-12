@@ -1,5 +1,4 @@
 <?php
-session_start();
 require_once('Connections/conne10.php');
 //Queries Menu
 mysql_select_db($database_conne10, $conne10);
@@ -91,7 +90,7 @@ $totalRows_rscategorias = mysql_num_rows($rscategorias);
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-user" aria-hidden="true"></i> 
               <?php
-              if($_SESSION['username']){
+              if(isset($_SESSION['username'])){
                 echo $_SESSION['username'];
               }else
               {
