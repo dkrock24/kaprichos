@@ -30,6 +30,20 @@ ul,label{
 body a:hover{
 	text-decoration:none;
 }
+
+@font-face {
+    font-family: 'you';   
+    src: url('YoungBeautiful.woff') format('woff'), 
+    url('MfYoungBeautiful.ttf') format('truetype');   
+    font-weight: normal;
+    font-style: normal;
+}
+
+.abc{
+    font-family: 'you', sans-serif;
+    font-size: 100%;
+}
+
 /*-- header --*/
 .w3ls-header {
     background: rgb(244, 244, 244);
@@ -624,9 +638,11 @@ h3.w3ls-title {
 .p-one {
     box-shadow:2px 2px 11px #CCCBCB;
     padding:1.5em 0 0;
+    height: 300px;
 }
 .jwe a img {
   margin: 0 auto 1.5em;
+  height: 100%;
 }
 .prd img {
   margin: 0 auto;

@@ -32,7 +32,7 @@ $totalRows_rscategorias = mysql_num_rows($rscategorias);
         width: 100%;
         padding: 2px;        
     }
-    .abc{
+    .abc2{
         text-align: center;
     }
     .recuperar{
@@ -66,6 +66,7 @@ $totalRows_rscategorias = mysql_num_rows($rscategorias);
         <div class="w3ls-header-right" style="color:black;">
             <ul>
           
+          <!--
           <li class="dropdown head-dpdn">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i> <?php echo $messages['cart']; ?><span class="caret"></span></a>
             <ul class="dropdown-menu">
@@ -73,6 +74,7 @@ $totalRows_rscategorias = mysql_num_rows($rscategorias);
               <li><a href="offers.html"><?php echo $messages['myOrders']; ?></a></li>
             </ul> 
           </li> 
+        -->
           <li class="dropdown head-dpdn">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-gift" aria-hidden="true"></i> <?php echo $messages['paynow']; ?> <span class="caret"></span></a>
             <ul class="dropdown-menu">
@@ -101,7 +103,7 @@ $totalRows_rscategorias = mysql_num_rows($rscategorias);
             </a>
             <ul class="dropdown-menu">
                 <?php
-                if($_SESSION['username']){
+                if(isset($_SESSION['username'])){
                     ?>
                     <li><a href="logout.php"><?php echo $messages['Salir']; ?></a></li> 
                     <?php
@@ -118,16 +120,16 @@ $totalRows_rscategorias = mysql_num_rows($rscategorias);
         </li> 
         <li class="dropdown head-dpdn">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-language" aria-hidden="true"></i> <?php echo $messages['language']; ?><span class="caret"></span></a>
-                <ul class="dropdown-menu abc">
+                <ul class="dropdown-menu abc2">
                     <li>
                         
                         <form action="" method="post" name="es" >
                             <input type="hidden" name="lan"  class="lenguage" value="es">
-                            <button type="submit" class="demo btn btn-default"><i class="fa fa-user"></i>Esp</button>           
+                            <button type="submit" class="demo btn btn-default">Español</button>           
                         </form>
                         <form action="" method="post" name="en" >
                             <input type="hidden" name="lan"  class="lenguage" value="en">
-                           <button type="submit" class="demo btn btn-default">Eng</button></li>              
+                           <button type="submit" class="demo btn btn-default">English</button></li>              
                         </form>
                     
 

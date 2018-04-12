@@ -22,25 +22,27 @@
                     <div class="carousel-inner" role="listbox">  
                         <div class="item active"><!-- First-Slide -->
                             <img src="assets/images/portadapagina 2.jpg" alt="" class="img-responsive" />
-                            <div class="carousel-caption kb_caption kb_caption_right">
-                                <h3 data-animation="animated flipInX">Entregamos <span>Tus</span> Sentimientos</h3>
-                                <h4 data-animation="animated flipInX">Compra hoy</h4>
+                            <div class="carousel-caption kb_caption kb_caption_right" style="float: left; display: inline-block; position: absolute;left:8%">
+                                <h3 data-animation="animated flipInX" class="abc">Entregamos <span>Tus</span> Sentimientos</h3>  
+                                <h4 data-animation="animated flipInX" class="abc" style="color: black;">Compra hoy</h4>                              
                             </div>
                         </div>  
                         <div class="item"> <!-- Second-Slide -->
                             <img src="assets/images/portadapagina 3.jpg" alt="" class="img-responsive" />
-                            <div class="carousel-caption kb_caption kb_caption_right">
-                                <h3 data-animation="animated fadeInDown">Promociones Hoy</h3>
-                                <h4 data-animation="animated fadeInUp">Compra hoy</h4>
+                            <div class="carousel-caption kb_caption kb_caption_left" style="float: left; display: inline-block; position: absolute;left:60%" >
+                                <h3 data-animation="animated fadeInDown" class="abc">Promociones Hoy</h3>
+                                <h4 data-animation="animated fadeInUp" class="abc">Compra hoy</h4>
                             </div>
                         </div> 
-                        <div class="item"><!-- Third-Slide -->
+                        <!--
+                        <div class="item">
                             <img src="assets/images/san-valentin-2018-1220x400.jpg" alt="" class="img-responsive"/>
-                            <div class="carousel-caption kb_caption kb_caption_center">
-                                <h3 data-animation="animated fadeInLeft">Las Mejores Flores</h3>
-                                <h4 data-animation="animated flipInX">Compra hoy</h4>
+                            <div class="carousel-caption kb_caption kb_caption_left" style="float: left; display: inline-block; position: absolute;left:8%">
+                                <h3 data-animation="animated fadeInLeft" class="abc">Las Mejores Flores</h3>
+                                <h4 data-animation="animated flipInX" class="abc">Compra hoy</h4>
                             </div>
-                        </div> 
+                        </div> -->
+
                     </div> 
                 <!-- Left-Button -->
                     <a class="left carousel-control kb_control_left" href="#kb" role="button" data-slide="prev">
@@ -118,20 +120,20 @@
     <div class="banner-bottom">
         <div class="container">
             <div class="clearfix"> </div>
-          <h3 class="w3ls-title" style="background: #D82787; color: white; width: 300px; text-align: center; padding: 1%;"><?php echo $messages['Destacados']; ?></h3><hr>
+          <h3 class="abc" style="background: #D82787; color: white; width: 300px; text-align: center; padding: 1%; font-size: 50px;"><?php echo $messages['Destacados']; ?></h3><hr>
             <div class="product-one">
                 <div class="col-md-2 product-left"> 
                     <div class="p-one simpleCart_shelfItem jwe">                            
-                            <a href="single.html">
-                                <img src="uploaded/mod_productos/0a31fa8ab353f1cee3f8e528f257cb18.jpg" alt="" class="img-responsive" />
+                            <a href="detalle.php?id=7">
+                                <img src="uploaded/mod_productos/IMM03.jpg" alt="" class="img-responsive" />
                                 <div class="mask">
                                     <span><?php echo $messages['QuickView']; ?></span>
                                 </div>
                             </a>
                         <div class="product-left-cart">
-                            <h3 class=" item_price">$729</h3>
+                            <h3 class=" item_price">$100.00</h3>
                             <div class="">
-                                <a href="#" class="btn btn-default" style="width: 100%;">Agregar</a>
+                                <a href="detalle.php?id=7" class="btn btn-default" style="width: 100%;">Agregar</a>
                             </div>
                             <div class="clearfix"> </div>
                         </div>
@@ -139,16 +141,16 @@
                 </div>
                 <div class="col-md-2 product-left"> 
                     <div class="p-one simpleCart_shelfItem jwe">
-                        <a href="single.html">
-                                <img src="uploaded/mod_productos/3ca05786d0d3c8bdf15f47472d8c7850.jpg" alt="" class="img-responsive" />
+                        <a href="detalle.php?id=6">
+                                <img src="uploaded/mod_productos/IMM02.jpg" alt="" class="img-responsive" />
                                 <div class="mask">
                                     <span><?php echo $messages['QuickView']; ?></span>
                                 </div>
                         </a>
                        <div class="product-left-cart">
-                            <h3 class=" item_price">$729</h3>
+                            <h3 class=" item_price">$100</h3>
                             <div class="">
-                                <a href="#" class="btn btn-default" style="width: 100%;">Agregar</a>
+                                <a href="detalle.php?id=6" class="btn btn-default" style="width: 100%;">Agregar</a>
                             </div>
                             <div class="clearfix"> </div>
                         </div>
@@ -156,16 +158,16 @@
                 </div>
                 <div class="col-md-2 product-left"> 
                     <div class="p-one simpleCart_shelfItem jwe">
-                        <a href="single.html">
-                                <img src="uploaded/mod_productos/2a1efc2f9fac7813e1f3aae4519487db.jpg" alt="" class="img-responsive" />
+                        <a href="detalle.php?id=200">
+                                <img src="uploaded/mod_productos/IMM09 SIN FONDO Y CON LOGO.jpg" alt="" class="img-responsive" />
                                 <div class="mask">
                                     <span><?php echo $messages['QuickView']; ?></span>
                                 </div>
                         </a>
                         <div class="product-left-cart">
-                            <h3 class=" item_price">$729</h3>
+                            <h3 class=" item_price">$50.00</h3>
                             <div class="">
-                                <a href="#" class="btn btn-default" style="width: 100%;">Agregar</a>
+                                <a href="detalle.php?id=200" class="btn btn-default" style="width: 100%;">Agregar</a>
                             </div>
                             <div class="clearfix"> </div>
                         </div>
@@ -173,16 +175,16 @@
                 </div>
                 <div class="col-md-2 product-left"> 
                     <div class="p-one simpleCart_shelfItem jwe">
-                        <a href="single.html">
-                                <img src="uploaded/mod_productos/a1c928c0408cda363dd30a3ed79ccb30.jpg" alt="" class="img-responsive" />
+                        <a href="detalle.php?id=471">
+                                <img src="uploaded/mod_productos/IMSV05.jpg" alt="" class="img-responsive" />
                                 <div class="mask">
                                     <span><?php echo $messages['QuickView']; ?></span>
                                 </div>
                         </a>
                         <div class="product-left-cart">
-                            <h3 class=" item_price">$729</h3>
+                            <h3 class=" item_price">$50.00</h3>
                             <div class="">
-                                <a href="#" class="btn btn-default" style="width: 100%;">Agregar</a>
+                                <a href="detalle.php?id=471" class="btn btn-default" style="width: 100%;">Agregar</a>
                             </div>
                             <div class="clearfix"> </div>
                         </div>
@@ -190,16 +192,16 @@
                 </div>
                 <div class="col-md-2 product-left"> 
                     <div class="p-one simpleCart_shelfItem jwe">                            
-                            <a href="single.html">
-                                <img src="uploaded/mod_productos/85cc6a0282feaf7cd66adbba690d517e.jpg" alt="" class="img-responsive" />
+                            <a href="detalle.php?id=266">
+                                <img src="uploaded/mod_productos/IMM11 SIN FONDO CON LOGO.jpg" alt="" class="img-responsive" />
                                 <div class="mask">
                                     <span><?php echo $messages['QuickView']; ?></span>
                                 </div>
                             </a>
                         <div class="product-left-cart">
-                            <h3 class=" item_price">$729</h3>
+                            <h3 class=" item_price">$125.00</h3>
                             <div class="">
-                                <a href="#" class="btn btn-default" style="width: 100%;">Agregar</a>
+                                <a href="detalle.php?id=266" class="btn btn-default" style="width: 100%;">Agregar</a>
                             </div>
                             <div class="clearfix"> </div>
                         </div>
@@ -207,16 +209,16 @@
                 </div>
                 <div class="col-md-2 product-left"> 
                     <div class="p-one simpleCart_shelfItem jwe">
-                        <a href="single.html">
-                                <img src="uploaded/mod_productos/a1a4b9bd25a0aadf2866819979021c79.jpg" alt="" class="img-responsive" />
+                        <a href="detalle.php?id=153">
+                                <img src="uploaded/mod_productos/IMM07 SIN FONDO Y CON LOGO.jpg" alt="" class="img-responsive" />
                                 <div class="mask">
                                     <span><?php echo $messages['QuickView']; ?></span>
                                 </div>
                         </a>
                         <div class="product-left-cart">
-                            <h3 class=" item_price">$729</h3>
+                            <h3 class=" item_price">$100.00</h3>
                             <div class="">
-                                <a href="#" class="btn btn-default" style="width: 100%;">Agregar</a>
+                                <a href="detalle.php?id=153" class="btn btn-default" style="width: 100%;">Agregar</a>
                             </div>
                             <div class="clearfix"> </div>
                         </div>
@@ -237,49 +239,49 @@
         <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
 
           <div class="clearfix"> </div>
-          <h3 class="w3ls-title" style="text-align: center;padding: 50px;"><?php echo $messages['KaprichosDesign']; ?></h3>
+          <h3  class="abc" style="text-align: center;padding: 50px; font-size: 50px; color:grey;"><?php echo $messages['KaprichosDesign']; ?></h3>
           <div id="myTabContent" class="tab-content">
             <div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
               <div class="tabcontent-grids">  
                 <div id="owl-demo" class="owl-carousel"> 
                   <div class="">
-                    <div style="background: url('uploaded/mod_productos/foto kaprichos 1.jpg') center no-repeat; width: 200px; height: 200px; background-size: 100%; border-radius: 50%;"> 
+                    <div style="background: url('uploaded/mod_productos/85 para web.jpg') center no-repeat; width: 200px; height: 200px; background-size: 150%; border-radius: 50%;"> 
                       
                     </div>   
                   </div>
                   <div class="">
-                    <div style="background: url('uploaded/mod_productos/foto kaprichos 1.jpg') center no-repeat; width: 200px; height: 200px;background-size: 100%;border-radius: 50%;"> 
+                    <div style="background: url('uploaded/mod_productos/DSCF5250.jpg') center no-repeat; width: 200px; height: 200px;background-size: 150%;border-radius: 50%;"> 
       
                     </div>  
                   </div>
                   <div class="" style="width: 150px;">
-                    <div style="background: url('uploaded/mod_productos/foto kaprichos 1.jpg') center no-repeat; width: 200px; height: 200px;background-size: 100%;border-radius: 50%;"> 
+                    <div style="background: url('uploaded/mod_productos/DSCF5263.jpg') center no-repeat; width: 200px; height: 200px;background-size: 150%;border-radius: 50%;"> 
       
                     </div>  
                   </div>
                   <div class="" style="width: 150px;">
-                    <div style="background: url('uploaded/mod_productos/foto kaprichos 1.jpg') center no-repeat; width: 200px; height: 200px;background-size: 100%;border-radius: 50%;"> 
+                    <div style="background: url('uploaded/mod_productos/DSCF5387.jpg') center no-repeat; width: 200px; height: 200px;background-size: 150%;border-radius: 50%;"> 
       
                     </div>
                   </div>
                   <div class="" style="width: 150px;">
-                   <div style="background: url('uploaded/mod_productos/foto kaprichos 1.jpg') center no-repeat; width: 200px; height: 200px;
-                   background-size: 100%;border-radius: 50%;"> 
+                   <div style="background: url('uploaded/mod_productos/DSCF5447.jpg') center no-repeat; width: 200px; height: 200px;
+                   background-size: 150%;border-radius: 50%;"> 
       
                     </div>  
                   </div>
                   <div class="" style="width: 150px;">
-                   <div style="background: url('uploaded/mod_productos/foto kaprichos 1.jpg') center no-repeat; width: 200px; height: 200px; background-size: 100%;border-radius: 50%;"> 
+                   <div style="background: url('uploaded/mod_productos/Evento 1.jpg') center no-repeat; width: 200px; height: 200px; background-size: 150%;border-radius: 50%;"> 
       
                     </div> 
                   </div>
                   <div class="" style="width: 150px;">
-                   <div style="background: url('uploaded/mod_productos/foto kaprichos 1.jpg') center no-repeat; width: 200px; height: 200px;  background-size: 100%;border-radius: 50%;"> 
+                   <div style="background: url('uploaded/mod_productos/Evento11.jpg') center no-repeat; width: 200px; height: 200px;  background-size: 150%;border-radius: 50%;"> 
       
                     </div> 
                   </div>
                   <div class="" style="width: 150px;">
-                   <div style="background: url('uploaded/mod_productos/foto kaprichos 1.jpg') center no-repeat; width: 200px; height: 200px; background-size: 100%;border-radius: 50%;"> 
+                   <div style="background: url('uploaded/mod_productos/Hortensias 2.jpg') center no-repeat; width: 200px; height: 200px; background-size: 150%;border-radius: 50%;"> 
       
                     </div>
                   </div>

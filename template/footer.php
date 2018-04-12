@@ -4,14 +4,14 @@
       <div class="footer-info w3-agileits-info">
         <div class="col-md-4 address-left agileinfo">
           <div class="footer-logo header-logo">
-            <h2><a href="index.html" style="color:rgb(201, 78, 99);"><span style="color:rgb(201, 78, 99);">K</span>apricho's <i style="color:black;">Floristeria</i></a></h2>
+            <h2><a href="index.html" style="color:rgb(201, 78, 99);"><span style="color:rgb(201, 78, 99);">K</span>aprichos <i style="color:black;">Floristeria</i></a></h2>
             
           </div>
           <ul>
             <li><i class="fa fa-map-marker"></i> Avenida Olímpica 65 Av. Sur <br />Local 106, Condominio Galería Olímpica  <br/>San Salvador, El Salvador. Centroamérica</li>
                                     
             <li><i class="fa fa-phone"></i> <?php echo $messages['schedule']; ?> </li>            
-            <li><i class="fa fa-envelope-o"></i> <a href="mailto:info@kaprichosfloristeria.com"> info@kaprichosfloristeria.com</a></li>
+            <li><i class="fa fa-envelope-o"></i> <a href="mailto:info@kaprichosfloristeria.com"> info@kaprichosfloristeria.com</a><a href="mailto:kaprichosfloristeria@gmail.com"> kaprichosfloristeria@gmail.com</a></li>
           </ul> 
         </div>
         <div class="col-md-8 address-right">

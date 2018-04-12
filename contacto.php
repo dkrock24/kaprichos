@@ -48,7 +48,7 @@
                                     <span class="badge badge-primary badge-pill">
                                         <i class="fa fa-envelope"></i>
                                     </span>
-                                    <span style="font-size: 12px;"><?php echo $messages['schedule']; ?></span>
+                                    <span style="font-size: 16px;">kaprichosfloristeria@gmail.com</span>
                                 </div>
                             </div>  
                         </div>
