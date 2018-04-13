@@ -204,7 +204,7 @@ $objDynamicThumb2->setWatermark(false);
       
                 do { 
                   list($width, $height, $type, $attr) = @getimagesize("uploaded/mod_productos/".str_replace($buscar, $reempla, $row_rsarreglos1['imagen']));
-                  if($_GET['c']==10 OR $_GET['c']==32)
+                  if(isset($_GET['c'])==10 OR isset($_GET['c'])==32)
                   {       ?>
 
                     <div class="col-md-3 product-left"  style=""> 
