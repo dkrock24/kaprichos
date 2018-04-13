@@ -195,17 +195,28 @@ $totalRows_rscategorias = mysql_num_rows($rscategorias);
    
 
       <div class="header-three"><!-- header-three -->
-      <div class="container">
+
+
         <div class="row">             
 
-            <nav class="navbar navbar-inverse" style="background: #D82787; border: 0px solid;">
-                <div class="container-fluid">
-                   
+            <nav class="navbar navbar-default " style="background: #D82787; border: 0px solid;">
+                <div class="container-fluid ">
+
+                    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+      </button>
+      
+    </div>
+
+            <div class="collapse navbar-collapse" id="myNavbar">              
                 <ul class="nav navbar-nav" style="width: 100%;color: white; background: none;">
                     
-                        <li class="" style="width: 25%;">
+                    <li class="" style="width: 25%;">
                         <a href="index.php" style="color: white"> <?php echo $messages['home']; ?></a>  
-                        </li>
+                    </li>
                     
                     
                     <li class="" style="width: 25%;">    
@@ -227,10 +238,11 @@ $totalRows_rscategorias = mysql_num_rows($rscategorias);
                     </li>
                 </ul>
                 </div>
+            </div>
             </nav>        
         </div>
       </div>
-    </div>
+    
     </div><!-- //header-two -->
     
   </div>
