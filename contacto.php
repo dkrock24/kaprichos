@@ -42,13 +42,14 @@
                                     <span class="badge badge-primary badge-pill">
                                         <i class="fa fa-envelope"></i>
                                     </span>
-                                    <span style="font-size: 16px;">info@kaprichosfloristeria.com</span>
+                                    <span style="font-size: 16px;">
+                                      <a href="mailto:info@kaprichosfloristeria.com">info@kaprichosfloristeria.com </a> </span>
                                 </div>
                                 <div class="col-sm-12 col-md-6 col-lg-6">
                                     <span class="badge badge-primary badge-pill">
                                         <i class="fa fa-envelope"></i>
                                     </span>
-                                    <span style="font-size: 16px;">kaprichosfloristeria@gmail.com</span>
+                                    <span style="font-size: 16px;"><a href="mailto:kaprichosfloristeria@gmail.com">kaprichosfloristeria@gmail.com</a></span>
                                 </div>
                             </div>  
                         </div>
@@ -84,7 +85,7 @@
             <iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/ms?msa=0&amp;msid=213829194681019803634.00049258fe14996871c18&amp;ie=UTF8&amp;t=m&amp;ll=13.699278,-89.223876&amp;spn=0.007297,0.006437&amp;z=16&amp;output=embed"></iframe><br /><small>Ver <a href="https://www.google.com/maps/ms?msa=0&amp;msid=213829194681019803634.00049258fe14996871c18&amp;ie=UTF8&amp;t=m&amp;ll=13.699278,-89.223876&amp;spn=0.007297,0.006437&amp;z=16&amp;source=embed" style="color:#0000FF;text-align:left">Kaprichos Floristeria</a> en un mapa ampliado</small>
         </div>
         <div class="col-sm-12 col-md-12 col-lg-6">
-            <form action="" method="post" name="form1" id="form1" onsubmit="MM_validateForm('elnombre','','R','elemail','','RisEmail','elmensaje','','R');return document.MM_returnValue">
+            <form action="saveContactanos.php" method="post" name="form1" id="form1" onsubmit="MM_validateForm('elnombre','','R','elemail','','RisEmail','elmensaje','','R');return document.MM_returnValue">
             <ul class="list-group">
                 <li class="list-group-item d-flex justify-content-between align-items-center" style="background: #e4e4e4;color: black;border-color: #e4e4e4;">                        
                     <?php echo $messages['contactusL']; ?>
@@ -92,19 +93,19 @@
                 <li class="list-group-item d-flex justify-content-between align-items-center default">                        
                     <div class="row">
                         <div class="col-sm-12 col-md-12 col-lg-6"><strong><?php echo $messages['phoneC']; ?>:</strong></div>
-                        <div class="col-sm-12 col-md-12 col-lg-6"><input type="text" class="form-control" name="eltelefono" id="eltelefono" style="width:100%" /></div>
+                        <div class="col-sm-12 col-md-12 col-lg-6"><input type="text" required="true" class="form-control" name="eltelefono" required="" id="eltelefono" style="width:100%" /></div>
                     </div>   
                 </li>
                 <li class="list-group-item d-flex justify-content-between align-items-center default">                        
                     <div class="row">
                         <div class="col-sm-12 col-md-12 col-lg-6"><strong><?php echo $messages['emailC']; ?>:</strong></div>
-                        <div class="col-sm-12 col-md-12 col-lg-6"><input type="text" class="form-control" name="elemail" id="elemail" style="width:100%" /></div>
+                        <div class="col-sm-12 col-md-12 col-lg-6"><input type="text" required="true" class="form-control" name="elemail" id="elemail" style="width:100%" /></div>
                     </div>
                 </li>
                 <li class="list-group-item d-flex justify-content-between align-items-center default">                        
                     <div class="row">
                         <div class="col-sm-12 col-md-6 col-lg-6"><strong><?php echo $messages['messageC']; ?>:</strong></div>
-                        <div class="col-sm-12 col-md-6 col-lg-6"><textarea name="elmensaje" class="form-control" cols="28" rows="6" id="elmensaje" style="width:100%"></textarea></div>
+                        <div class="col-sm-12 col-md-6 col-lg-6"><textarea name="elmensaje" class="form-control" cols="28" rows="6" required="true" id="elmensaje" style="width:100%"></textarea></div>
                     </div>
                 </li>
                 <li class="list-group-item d-flex justify-content-between align-items-center default">                        

@@ -3,6 +3,10 @@
 <html lang="en">
 <head>
 <?php include"template/header.php"; ?>
+
+<link href="css/lytebox.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="Scripts/lytebox.js"></script>
+
 </head>
 <body>
 
@@ -159,10 +163,12 @@
                     <?php
                         while($estilos = mysql_fetch_array($rsEstilos)){
                         ?>
-                            <div class="">
+                            <div class="circulo">
+                                <a href="uploaded/mod_productos/<?php echo $estilos['url']; ?>" rel="lytebox[galera]" rel="lytebox[galera]">
                                 <div style="background: url('uploaded/mod_productos/<?php echo $estilos['url']; ?>') center no-repeat; width: 200px; height: 200px; background-size: 150%; border-radius: 50%;"> 
-                      
-                                </div>   
+                                    <div class="sombra"></div>
+                                </div> 
+                                </a>  
                             </div>
                         <?php
                         }

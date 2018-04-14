@@ -28,6 +28,54 @@ mysql_select_db($database_conne10, $conne10);
 $estilos_query = "SELECT * FROM tbl_gale AS gale LEFT JOIN tbl_gale_tipo AS tipo ON tipo.id_tipo=gale.tipo WHERE tipo.nombre_tipo = 'estilos'";
 $rsEstilos = mysql_query($estilos_query, $conne10) or die(mysql_error());
 
+
+require_once('includes/tng/tNG.inc.php');
+if (!function_exists("GetSQLValueString")) {
+function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
+{
+  if (PHP_VERSION < 6) {
+    $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
+  }
+
+  $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
+
+  switch ($theType) {
+    case "text":
+      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
+      break;    
+    case "long":
+    case "int":
+      $theValue = ($theValue != "") ? intval($theValue) : "NULL";
+      break;
+    case "double":
+      $theValue = ($theValue != "") ? doubleval($theValue) : "NULL";
+      break;
+    case "date":
+      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
+      break;
+    case "defined":
+      $theValue = ($theValue != "") ? $theDefinedValue : $theNotDefinedValue;
+      break;
+  }
+  return $theValue;
+}
+}
+
+// Show Dynamic Thumbnail
+$objDynamicThumb1 = new tNG_DynamicThumbnail("", "KT_thumbnail1");
+$objDynamicThumb1->setFolder("uploaded/mod_productos/");
+$objDynamicThumb1->setRenameRule("{rsEstilos.url}");
+$objDynamicThumb1->setResize(180, 0, true);
+$objDynamicThumb1->setWatermark(false);
+
+// Show Dynamic Thumbnail
+$objDynamicThumb2 = new tNG_DynamicThumbnail("", "KT_thumbnail2");
+$objDynamicThumb2->setFolder("uploaded/mod_productos/");
+$objDynamicThumb2->setRenameRule("{rsEstilos.url}");
+$objDynamicThumb2->setResize(0, 200, true);
+$objDynamicThumb2->setWatermark(false);
+
+
     if(isset( $_POST['lan'] ))
     {
         $_SESSION['lan'] = $_POST['lan'];        
@@ -58,6 +106,23 @@ $rsEstilos = mysql_query($estilos_query, $conne10) or die(mysql_error());
     }
     .recuperar{
         display: none;
+    }
+
+    .circulo{
+      margin: 0 auto;
+      text-align: center;
+      width: 200px; height: 200px; border-radius: 50%;
+    }
+
+    .circulo:hover .sombra{
+      background:grey;
+      background-image: url('assets/images/move-up.png') no-repeat;
+      background-position: center;
+      border:3px solid #D82787;
+      margin: 0 auto;
+      opacity: 0.4;
+      width: 200px; height: 200px; border-radius: 50%;
+      z-index: auto;
     }
 </style>
 <script type="text/javascript">
