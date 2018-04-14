@@ -4,10 +4,9 @@
 <head>
 <?php include"template/header.php"; ?>
 
-<link href="css/lytebox.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="Scripts/lytebox.js"></script>
 
 </head>
+
 <body>
 
   <script>

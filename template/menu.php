@@ -61,21 +61,6 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
 }
 }
 
-// Show Dynamic Thumbnail
-$objDynamicThumb1 = new tNG_DynamicThumbnail("", "KT_thumbnail1");
-$objDynamicThumb1->setFolder("uploaded/mod_productos/");
-$objDynamicThumb1->setRenameRule("{rsEstilos.url}");
-$objDynamicThumb1->setResize(180, 0, true);
-$objDynamicThumb1->setWatermark(false);
-
-// Show Dynamic Thumbnail
-$objDynamicThumb2 = new tNG_DynamicThumbnail("", "KT_thumbnail2");
-$objDynamicThumb2->setFolder("uploaded/mod_productos/");
-$objDynamicThumb2->setRenameRule("{rsEstilos.url}");
-$objDynamicThumb2->setResize(0, 200, true);
-$objDynamicThumb2->setWatermark(false);
-
-
     if(isset( $_POST['lan'] ))
     {
         $_SESSION['lan'] = $_POST['lan'];        
@@ -133,6 +118,9 @@ $objDynamicThumb2->setWatermark(false);
         });
     })
 </script>
+
+<link href="css/lytebox.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="Scripts/lytebox.js"></script>
 
 
 
