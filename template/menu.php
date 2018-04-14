@@ -7,6 +7,27 @@ $rscategorias = mysql_query($query_rscategorias, $conne10) or die(mysql_error())
 $row_rscategorias = mysql_fetch_assoc($rscategorias);
 $totalRows_rscategorias = mysql_num_rows($rscategorias);
 
+// Imagenes desde la  BD
+//Slider
+mysql_select_db($database_conne10, $conne10);
+$slider_query = "SELECT * FROM tbl_gale as gale left join tbl_gale_tipo as tipo ON tipo.id_tipo=gale.tipo WHERE tipo.nombre_tipo = 'slider'";
+$rsSlider = mysql_query($slider_query, $conne10) or die(mysql_error());
+
+//Temporada
+mysql_select_db($database_conne10, $conne10);
+$temporada_query = "SELECT * FROM tbl_gale as gale left join tbl_gale_tipo as tipo ON tipo.id_tipo=gale.tipo WHERE tipo.nombre_tipo = 'temporada'";
+$rsTemporada = mysql_query($temporada_query, $conne10) or die(mysql_error());
+
+//Destacados
+mysql_select_db($database_conne10, $conne10);
+$destacados_query = "SELECT * FROM tbl_gale AS gale LEFT JOIN tbl_gale_tipo AS tipo ON tipo.id_tipo=gale.tipo left join tbl_productos as p ON p.id_producto=gale.id_producto WHERE tipo.nombre_tipo = 'destacados'";
+$rsDestacados = mysql_query($destacados_query, $conne10) or die(mysql_error());
+
+//Estilos
+mysql_select_db($database_conne10, $conne10);
+$estilos_query = "SELECT * FROM tbl_gale AS gale LEFT JOIN tbl_gale_tipo AS tipo ON tipo.id_tipo=gale.tipo WHERE tipo.nombre_tipo = 'estilos'";
+$rsEstilos = mysql_query($estilos_query, $conne10) or die(mysql_error());
+
     if(isset( $_POST['lan'] ))
     {
         $_SESSION['lan'] = $_POST['lan'];        

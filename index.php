@@ -20,28 +20,21 @@
                 <div id="kb" class="carousel kb_elastic animate_text kb_wrapper" data-ride="carousel"   data-interval="6000" data-pause="hover">
                 <!-- Wrapper-for-Slides -->
                     <div class="carousel-inner" role="listbox">  
-                        <div class="item active"><!-- First-Slide -->
-                            <img src="assets/images/portadapagina 2.jpg" alt="" class="img-responsive" />
-                            <div class="carousel-caption kb_caption kb_caption_right" style="float: left; display: inline-block; position: absolute;left:8%">
-                                <h3 data-animation="animated flipInX" class="abc">Entregamos <span>Tus</span> Sentimientos</h3>  
-                                <h4 data-animation="animated flipInX" class="abc" style="color: black;">Compra hoy</h4>                              
+                        <?php
+                        while($slider = mysql_fetch_array($rsSlider)){
+                            ?>
+                            <div class="item <?php echo $slider['css']; ?>"><!-- First-Slide -->
+                                <img src="assets/images/<?php echo $slider['url']; ?>" alt="" class="img-responsive" />
+                                <div class="carousel-caption kb_caption kb_caption_right" style="float: left; display: inline-block; position: absolute;left:8%">
+                                    <h3 data-animation="animated flipInX" class="abc"><?php echo $slider['texto1']; ?></h3>  
+                                    <h4 data-animation="animated flipInX" class="abc" style="color: black;"><?php echo $slider['texto2']; ?></h4>                              
+                                </div>
                             </div>
-                        </div>  
-                        <div class="item"> <!-- Second-Slide -->
-                            <img src="assets/images/portadapagina 3.jpg" alt="" class="img-responsive" />
-                            <div class="carousel-caption kb_caption kb_caption_left" style="float: left; display: inline-block; position: absolute;left:60%" >
-                                <h3 data-animation="animated fadeInDown" class="abc">Promociones Hoy</h3>
-                                <h4 data-animation="animated fadeInUp" class="abc">Compra hoy</h4>
-                            </div>
-                        </div> 
-                        <!--
-                        <div class="item">
-                            <img src="assets/images/san-valentin-2018-1220x400.jpg" alt="" class="img-responsive"/>
-                            <div class="carousel-caption kb_caption kb_caption_left" style="float: left; display: inline-block; position: absolute;left:8%">
-                                <h3 data-animation="animated fadeInLeft" class="abc">Las Mejores Flores</h3>
-                                <h4 data-animation="animated flipInX" class="abc">Compra hoy</h4>
-                            </div>
-                        </div> -->
+                            <?php
+                        }
+                        ?>
+
+                        
 
                     </div> 
                 <!-- Left-Button -->
@@ -97,22 +90,22 @@
             <div class="col-sm-12 col-md-8 col-lg-8">
                 <br>
                 <div class="row">
-                    <div class="col-sm-12 col-md-6 col-lg-6 focus-grid">
-                        <a href="categoria.php?c=36" class=""> 
-                            <img src="assets/images/valentines2.jpg" width="100%" class="box1">
-                        </a>
-                     
-                    </div>
-                    <div class="col-sm-12 col-md-6 col-lg-6 focus-grid">        
-                        <a href="event/index.html" class=""> 
-                        <img src="assets/images/events.jpg" class="box1">      
-                        </a>
-                    </div>
+                    <?php
+                        while($temporada = mysql_fetch_array($rsTemporada)){
+                            ?>
+                            <div class="col-sm-12 col-md-6 col-lg-6 focus-grid">
+                                <a href="<?php echo $temporada['texto1']; ?>" class=""> 
+                                    <img src="assets/images/<?php echo $temporada['url']; ?>" width="100%" class="box1">
+                                </a>
+                             
+                            </div>
+                            <?php
+                        }
+                    ?>                    
                 </div>
             </div>
         </div>
-        
-        
+
     </div>
 
 
@@ -124,61 +117,25 @@
                 <h3 class="abc" style="background: #D82787; color: white; width: 300px; text-align: center; padding: 1%; font-size: 50px;"><?php echo $messages['Destacados']; ?></h3><hr>
             </div>
             <div class="row">
-                <div class="col-sm-3 col-md-3 col-lg-3" style="">                            
-                    <a href="detalle.php?id=7">
-                        <img src="uploaded/mod_productos/IMM03.jpg" alt="" style="border-radius: 5px; height: 280px; margin: auto;" class="img-responsive" />
-                    </a>
-                    
-                    <div class="product-left-cart">
-                        <h3 class=" item_price" style="text-align: center;">$100.00</h3>
-                        <div class="">
-                            <a href="detalle.php?id=7" class="btn btn-default" style="width: 100%;">Agregar</a>
+                <?php
+                while ($destacados = mysql_fetch_array($rsDestacados)) {
+                    ?>
+                    <div class="col-sm-3 col-md-3 col-lg-3" style="">                            
+                        <a href="detalle.php?id=<?php echo $destacados['id_producto']; ?>">
+                            <img src="uploaded/mod_productos/<?php echo $destacados['imagen']; ?>" alt="" style="border-radius: 5px; height: 280px; margin: auto;" class="img-responsive" />
+                        </a>
+                        
+                        <div class="product-left-cart">
+                            <h3 class=" item_price" style="text-align: center;"><?php echo $destacados['numerico1']; ?></h3>
+                            <div class="">
+                                <a href="detalle.php?id=<?php echo $destacados['id_producto']; ?>" class="btn btn-default" style="width: 100%;">Agregar</a>
+                            </div>
+                            <div class="clearfix"> </div>
                         </div>
-                        <div class="clearfix"> </div>
                     </div>
-                </div>
-
-                <div class="col-sm-3 col-md-3 col-lg-3" style="">                            
-                    <a href="detalle.php?id=200">
-                        <img src="uploaded/mod_productos/IMM09 SIN FONDO Y CON LOGO.jpg" alt="" style="border-radius: 5px; height: 280px; margin: auto; " class="img-responsive" />
-                    </a>
-                    
-                    <div class="product-left-cart">
-                        <h3 class=" item_price" style="text-align: center;">$50.00</h3>
-                        <div class="">
-                            <a href="detalle.php?id=200" class="btn btn-default" style="width: 100%;">Agregar</a>
-                        </div>
-                        <div class="clearfix"> </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-3 col-md-3 col-lg-3" style="">                            
-                    <a href="detalle.php?id=266">
-                        <img src="uploaded/mod_productos/IMM11 SIN FONDO CON LOGO.jpg" alt="" style="border-radius: 5px; height: 280px; margin: auto; " class="img-responsive" />
-                    </a>
-                    
-                    <div class="product-left-cart">
-                        <h3 class=" item_price" style="text-align: center;">$125.00</h3>
-                        <div class="">
-                            <a href="detalle.php?id=266" class="btn btn-default" style="width: 100%;">Agregar</a>
-                        </div>
-                        <div class="clearfix"> </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-3 col-md-3 col-lg-3" style="">                            
-                    <a href="detalle.php?id=153">
-                        <img src="uploaded/mod_productos/IMM07 SIN FONDO Y CON LOGO.jpg" alt="" style="border-radius: 5px; height: 280px; margin: auto;" class="img-responsive" />
-                    </a>
-                    
-                    <div class="product-left-cart">
-                        <h3 class=" item_price" style="text-align: center;">$100.00</h3>
-                        <div class="">
-                            <a href="detalle.php?id=153" class="btn btn-default" style="width: 100%;">Agregar</a>
-                        </div>
-                        <div class="clearfix"> </div>
-                    </div>
-                </div>
+                    <?php
+                }
+                ?>                
 
             </div>
         </div>
@@ -199,47 +156,17 @@
             <div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
               <div class="tabcontent-grids">  
                 <div id="owl-demo" class="owl-carousel"> 
-                  <div class="">
-                    <div style="background: url('uploaded/mod_productos/85 para web.jpg') center no-repeat; width: 200px; height: 200px; background-size: 150%; border-radius: 50%;"> 
+                    <?php
+                        while($estilos = mysql_fetch_array($rsEstilos)){
+                        ?>
+                            <div class="">
+                                <div style="background: url('uploaded/mod_productos/<?php echo $estilos['url']; ?>') center no-repeat; width: 200px; height: 200px; background-size: 150%; border-radius: 50%;"> 
                       
-                    </div>   
-                  </div>
-                  <div class="">
-                    <div style="background: url('uploaded/mod_productos/DSCF5250.jpg') center no-repeat; width: 200px; height: 200px;background-size: 150%;border-radius: 50%;"> 
-      
-                    </div>  
-                  </div>
-                  <div class="" style="width: 150px;">
-                    <div style="background: url('uploaded/mod_productos/DSCF5263.jpg') center no-repeat; width: 200px; height: 200px;background-size: 150%;border-radius: 50%;"> 
-      
-                    </div>  
-                  </div>
-                  <div class="" style="width: 150px;">
-                    <div style="background: url('uploaded/mod_productos/DSCF5387.jpg') center no-repeat; width: 200px; height: 200px;background-size: 150%;border-radius: 50%;"> 
-      
-                    </div>
-                  </div>
-                  <div class="" style="width: 150px;">
-                   <div style="background: url('uploaded/mod_productos/DSCF5447.jpg') center no-repeat; width: 200px; height: 200px;
-                   background-size: 150%;border-radius: 50%;"> 
-      
-                    </div>  
-                  </div>
-                  <div class="" style="width: 150px;">
-                   <div style="background: url('uploaded/mod_productos/Evento 1.jpg') center no-repeat; width: 200px; height: 200px; background-size: 150%;border-radius: 50%;"> 
-      
-                    </div> 
-                  </div>
-                  <div class="" style="width: 150px;">
-                   <div style="background: url('uploaded/mod_productos/Evento11.jpg') center no-repeat; width: 200px; height: 200px;  background-size: 150%;border-radius: 50%;"> 
-      
-                    </div> 
-                  </div>
-                  <div class="" style="width: 150px;">
-                   <div style="background: url('uploaded/mod_productos/Hortensias 2.jpg') center no-repeat; width: 200px; height: 200px; background-size: 150%;border-radius: 50%;"> 
-      
-                    </div>
-                  </div>
+                                </div>   
+                            </div>
+                        <?php
+                        }
+                    ?>
                 </div> 
               </div>
             </div>  
