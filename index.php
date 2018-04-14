@@ -97,15 +97,15 @@
             <div class="col-sm-12 col-md-8 col-lg-8">
                 <br>
                 <div class="row">
-                    <div class="col-sm-6 col-md-6 col-lg-6 focus-grid">
-                        <a href="products.html" class=""> 
-                            <img src="assets/demo/temporada-banner-786x710.jpg" class="box1">
+                    <div class="col-sm-12 col-md-6 col-lg-6 focus-grid">
+                        <a href="categoria.php?c=36" class=""> 
+                            <img src="assets/images/valentines2.jpg" width="100%" class="box1">
                         </a>
                      
                     </div>
-                    <div class="col-sm-6 col-md-6 col-lg-6 focus-grid">        
-                        <a href="products.html" class=""> 
-                        <img src="assets/demo/evelyn-events-design-786x710.jpg" class="box1">      
+                    <div class="col-sm-12 col-md-6 col-lg-6 focus-grid">        
+                        <a href="event/index.html" class=""> 
+                        <img src="assets/images/events.jpg" class="box1">      
                         </a>
                     </div>
                 </div>
@@ -117,114 +117,69 @@
 
 
     <!-- banner-bottom -->
-    <div class="banner-bottom">
+    <div class="clearfix"> </div>
+    <div class="">
         <div class="container">
-            <div class="clearfix"> </div>
-          <h3 class="abc" style="background: #D82787; color: white; width: 300px; text-align: center; padding: 1%; font-size: 50px;"><?php echo $messages['Destacados']; ?></h3><hr>
-            <div class="product-one">
-                <div class="col-md-2 product-left"> 
-                    <div class="p-one simpleCart_shelfItem jwe">                            
-                            <a href="detalle.php?id=7">
-                                <img src="uploaded/mod_productos/IMM03.jpg" alt="" class="img-responsive" />
-                                <div class="mask">
-                                    <span><?php echo $messages['QuickView']; ?></span>
-                                </div>
-                            </a>
-                        <div class="product-left-cart">
-                            <h3 class=" item_price">$100.00</h3>
-                            <div class="">
-                                <a href="detalle.php?id=7" class="btn btn-default" style="width: 100%;">Agregar</a>
-                            </div>
-                            <div class="clearfix"> </div>
+            <div class="row">
+                <h3 class="abc" style="background: #D82787; color: white; width: 300px; text-align: center; padding: 1%; font-size: 50px;"><?php echo $messages['Destacados']; ?></h3><hr>
+            </div>
+            <div class="row">
+                <div class="col-sm-3 col-md-3 col-lg-3" style="">                            
+                    <a href="detalle.php?id=7">
+                        <img src="uploaded/mod_productos/IMM03.jpg" alt="" style="border-radius: 5px; height: 280px; margin: auto;" class="img-responsive" />
+                    </a>
+                    
+                    <div class="product-left-cart">
+                        <h3 class=" item_price" style="text-align: center;">$100.00</h3>
+                        <div class="">
+                            <a href="detalle.php?id=7" class="btn btn-default" style="width: 100%;">Agregar</a>
                         </div>
+                        <div class="clearfix"> </div>
                     </div>
                 </div>
-                <div class="col-md-2 product-left"> 
-                    <div class="p-one simpleCart_shelfItem jwe">
-                        <a href="detalle.php?id=6">
-                                <img src="uploaded/mod_productos/IMM02.jpg" alt="" class="img-responsive" />
-                                <div class="mask">
-                                    <span><?php echo $messages['QuickView']; ?></span>
-                                </div>
-                        </a>
-                       <div class="product-left-cart">
-                            <h3 class=" item_price">$100</h3>
-                            <div class="">
-                                <a href="detalle.php?id=6" class="btn btn-default" style="width: 100%;">Agregar</a>
-                            </div>
-                            <div class="clearfix"> </div>
+
+                <div class="col-sm-3 col-md-3 col-lg-3" style="">                            
+                    <a href="detalle.php?id=200">
+                        <img src="uploaded/mod_productos/IMM09 SIN FONDO Y CON LOGO.jpg" alt="" style="border-radius: 5px; height: 280px; margin: auto; " class="img-responsive" />
+                    </a>
+                    
+                    <div class="product-left-cart">
+                        <h3 class=" item_price" style="text-align: center;">$50.00</h3>
+                        <div class="">
+                            <a href="detalle.php?id=200" class="btn btn-default" style="width: 100%;">Agregar</a>
                         </div>
+                        <div class="clearfix"> </div>
                     </div>
                 </div>
-                <div class="col-md-2 product-left"> 
-                    <div class="p-one simpleCart_shelfItem jwe">
-                        <a href="detalle.php?id=200">
-                                <img src="uploaded/mod_productos/IMM09 SIN FONDO Y CON LOGO.jpg" alt="" class="img-responsive" />
-                                <div class="mask">
-                                    <span><?php echo $messages['QuickView']; ?></span>
-                                </div>
-                        </a>
-                        <div class="product-left-cart">
-                            <h3 class=" item_price">$50.00</h3>
-                            <div class="">
-                                <a href="detalle.php?id=200" class="btn btn-default" style="width: 100%;">Agregar</a>
-                            </div>
-                            <div class="clearfix"> </div>
+
+                <div class="col-sm-3 col-md-3 col-lg-3" style="">                            
+                    <a href="detalle.php?id=266">
+                        <img src="uploaded/mod_productos/IMM11 SIN FONDO CON LOGO.jpg" alt="" style="border-radius: 5px; height: 280px; margin: auto; " class="img-responsive" />
+                    </a>
+                    
+                    <div class="product-left-cart">
+                        <h3 class=" item_price" style="text-align: center;">$125.00</h3>
+                        <div class="">
+                            <a href="detalle.php?id=266" class="btn btn-default" style="width: 100%;">Agregar</a>
                         </div>
+                        <div class="clearfix"> </div>
                     </div>
                 </div>
-                <div class="col-md-2 product-left"> 
-                    <div class="p-one simpleCart_shelfItem jwe">
-                        <a href="detalle.php?id=471">
-                                <img src="uploaded/mod_productos/IMSV05.jpg" alt="" class="img-responsive" />
-                                <div class="mask">
-                                    <span><?php echo $messages['QuickView']; ?></span>
-                                </div>
-                        </a>
-                        <div class="product-left-cart">
-                            <h3 class=" item_price">$50.00</h3>
-                            <div class="">
-                                <a href="detalle.php?id=471" class="btn btn-default" style="width: 100%;">Agregar</a>
-                            </div>
-                            <div class="clearfix"> </div>
+
+                <div class="col-sm-3 col-md-3 col-lg-3" style="">                            
+                    <a href="detalle.php?id=153">
+                        <img src="uploaded/mod_productos/IMM07 SIN FONDO Y CON LOGO.jpg" alt="" style="border-radius: 5px; height: 280px; margin: auto;" class="img-responsive" />
+                    </a>
+                    
+                    <div class="product-left-cart">
+                        <h3 class=" item_price" style="text-align: center;">$100.00</h3>
+                        <div class="">
+                            <a href="detalle.php?id=153" class="btn btn-default" style="width: 100%;">Agregar</a>
                         </div>
+                        <div class="clearfix"> </div>
                     </div>
                 </div>
-                <div class="col-md-2 product-left"> 
-                    <div class="p-one simpleCart_shelfItem jwe">                            
-                            <a href="detalle.php?id=266">
-                                <img src="uploaded/mod_productos/IMM11 SIN FONDO CON LOGO.jpg" alt="" class="img-responsive" />
-                                <div class="mask">
-                                    <span><?php echo $messages['QuickView']; ?></span>
-                                </div>
-                            </a>
-                        <div class="product-left-cart">
-                            <h3 class=" item_price">$125.00</h3>
-                            <div class="">
-                                <a href="detalle.php?id=266" class="btn btn-default" style="width: 100%;">Agregar</a>
-                            </div>
-                            <div class="clearfix"> </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-2 product-left"> 
-                    <div class="p-one simpleCart_shelfItem jwe">
-                        <a href="detalle.php?id=153">
-                                <img src="uploaded/mod_productos/IMM07 SIN FONDO Y CON LOGO.jpg" alt="" class="img-responsive" />
-                                <div class="mask">
-                                    <span><?php echo $messages['QuickView']; ?></span>
-                                </div>
-                        </a>
-                        <div class="product-left-cart">
-                            <h3 class=" item_price">$100.00</h3>
-                            <div class="">
-                                <a href="detalle.php?id=153" class="btn btn-default" style="width: 100%;">Agregar</a>
-                            </div>
-                            <div class="clearfix"> </div>
-                        </div>
-                    </div>
-                </div>
-              
+
             </div>
         </div>
     </div>

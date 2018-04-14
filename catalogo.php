@@ -136,7 +136,7 @@ $objDynamicThumb2->setWatermark(false);
     <div class="row">
         <div class="col-sm-12 col-md-12 col-lg-3">
           <ul class="list-group">
-            <li class="list-group-item d-flex justify-content-between align-items-center" style="background: #e4e4e4;color: black;border-color: #e4e4e4;">
+            <li class="list-group-item d-flex justify-content-between align-items-center" style="background: #D82787;color: white;border-color: #e4e4e4;">
                 <?php echo $messages['categorias']; ?>
             </li>
             <?php do { ?>
@@ -152,8 +152,8 @@ $objDynamicThumb2->setWatermark(false);
         </div>
         <div class="col-sm-12 col-md-12 col-lg-9">
           <div class="list-group">
-            <a href="#" class="list-group-item list-group-item-action" style="background: #e4e4e4;color: black;border-color: #e4e4e4;">
-              <span class="badge-pill"><h3><?php echo $messages['catalogL']; ?></h3></span>
+            <a href="#" class="list-group-item list-group-item-action" style="background: #D82787;color: white;border-color: #e4e4e4;">
+              <span class="badge-pill"><h4><?php echo $messages['catalogL']; ?></h4></span>
             </a>
           </div>
 
