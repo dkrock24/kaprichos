@@ -103,7 +103,17 @@ h1 {
             <input type='hidden' name='sid' value='1461075'>
             <input type='hidden' name='quantity' value='1'>
             <input type='hidden' name='product_id' value='<?php echo $_GET['product_id']; ?>'>
-            <input type='hidden' name='lang' value='es_la'>
+            <?php
+              if($_SESSION['country'] == '$')
+              {                  
+                ?><input type='hidden' name='currency_code' value='USD'><?php
+              }
+              else
+              {
+                ?><input type='hidden' name='currency_code' value='GTQ'><?php
+              }
+            ?>
+            <input type='hidden' name='lang' value='es_la'>            
             <input name='submit' type='submit' value='Comprar' >
       </td>
     </tr>
