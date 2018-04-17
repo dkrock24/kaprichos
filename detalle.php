@@ -10,7 +10,7 @@
     {
         if(!isset($_SESSION['lan']))
         {        
-            echo $_SESSION['lan'] = 'es';
+            $_SESSION['lan'] = 'es';
         }
         
     }
@@ -22,9 +22,9 @@
     }
     else
     {
-        if(!isset($_SESSION['lan']))
+        if(!isset($_SESSION['country']))
         {        
-            $_SESSION['country'] = $monedas['503'];
+            $_SESSION['country'] = '$';
         }else{
             $_SESSION['country'] ;
         }

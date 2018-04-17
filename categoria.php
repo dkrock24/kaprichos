@@ -22,7 +22,7 @@
     }
     else
     {
-        if(!isset($_SESSION['lan']))
+        if(!isset($_SESSION['country']))
         {        
             $_SESSION['country'] = $monedas['503'];
         }else{
@@ -40,7 +40,7 @@ mysql_select_db($database_conne10, $conne10);
 $query_rscategoriasd = "SELECT c.id_categoria, c.nombre_es, COUNT(p.id_producto) as totalP
 FROM tbl_productos_categorias as c
 left join tbl_productos as p ON c.id_categoria=p.categoria
-WHERE c.estatus = 1
+WHERE c.estatus = 1 and p.estatus=1
 group by p.categoria
 ORDER BY c.orden ASC";
 $rscategoriasd = mysql_query($query_rscategoriasd, $conne10) or die(mysql_error());
@@ -200,21 +200,21 @@ $objDynamicThumb2->setWatermark(false);
                         <ul class="pagination">
                             <li class="page-item">
                                 <?php if ($pageNum_rsarreglos1 > 0) { // Show if not first page ?>
-                              <a href="<?php printf("%s?pageNum_rsarreglos1=%d%s", $currentPage, 0, $queryString_rsarreglos1); ?>" class="fakab">Inicio</a>
+                              <a href="<?php printf("%s?pageNum_rsarreglos1=%d%s", @$currentPage, 0, $queryString_rsarreglos1); ?>" class="fakab">Inicio</a>
                               <?php } // Show if not first page ?>
                             </li>
                             <li>
                                 <?php if ($pageNum_rsarreglos1 > 0) { // Show if not first page ?>
-                              <a href="<?php printf("%s?pageNum_rsarreglos1=%d%s", $currentPage, max(0, $pageNum_rsarreglos1 - 1), $queryString_rsarreglos1); ?>" class="fakab">«Anteriores</a>
+                              <a href="<?php printf("%s?pageNum_rsarreglos1=%d%s", @$currentPage, max(0, $pageNum_rsarreglos1 - 1), $queryString_rsarreglos1); ?>" class="fakab">«Anteriores</a>
                           <?php } // Show if not first page ?>
                             </li>
                             <li class="page-item">
                                 <?php if ($pageNum_rsarreglos1 < $totalPages_rsarreglos1) { // Show if not last page ?>
-                                <a href="<?php printf("%s?pageNum_rsarreglos1=%d%s", $currentPage, min($totalPages_rsarreglos1, $pageNum_rsarreglos1 + 1), $queryString_rsarreglos1); ?>" class="fakab">Siguientes»</a></li>
+                                <a href="<?php printf("%s?pageNum_rsarreglos1=%d%s", @$currentPage, min($totalPages_rsarreglos1, $pageNum_rsarreglos1 + 1), $queryString_rsarreglos1); ?>" class="fakab">Siguientes»</a></li>
                               <?php } // Show if not last page ?>
                             <li class="page-item">
                                 <?php if ($pageNum_rsarreglos1 < $totalPages_rsarreglos1) { // Show if not last page ?>
-                                <a href="<?php printf("%s?pageNum_rsarreglos1=%d%s", $currentPage, $totalPages_rsarreglos1, $queryString_rsarreglos1); ?>" class="page-link">Final</a></li>                              
+                                <a href="<?php printf("%s?pageNum_rsarreglos1=%d%s", @$currentPage, $totalPages_rsarreglos1, $queryString_rsarreglos1); ?>" class="page-link">Final</a></li>                              
                               <?php } // Show if not last page ?>
                         </ul>
                     </nav>
@@ -239,7 +239,7 @@ $objDynamicThumb2->setWatermark(false);
                         <div class="boxarreglo" style="margin-right:10px;" >
                 <div class="foto" style="background: url(<?php if($width >= $height) { ?><?php echo str_replace($buscar, $reempla, $objDynamicThumb2->Execute()); ?><?php } if($width < $height) { ?><?php echo str_replace($buscar, $reempla, $objDynamicThumb1->Execute()); ?><?php } ?>) no-repeat center center;">
               <a href="uploaded/mod_productos/<?php echo $row_rsarreglos1['imagen']; ?>" rel="lytebox[galera]" title="<?php echo $row_rsarreglos1['nombre_es']; ?>"><img src="images/blank.gif" width="140" height="200" border="0" /></a></div>
-                <div class="texto"><a href="arreglos-ver.php?id=<?php echo $row_rsarreglos1['id_producto']; ?>"><?php echo $row_rsarreglos1['nombre_es']; ?></a>
+                <div class="texto"><a href="#"><?php echo $row_rsarreglos1['nombre_es']; ?></a>
                               </div>
               </div>
                     </div>

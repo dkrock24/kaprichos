@@ -341,7 +341,7 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
                     
                     <li class="" style="width: 25%;">    
                         
-                                <a href="event/index.html" style="color: white"> <?php echo $messages['event']; ?></a>  
+                                <a href="categoria.php?c=10" style="color: white"> <?php echo $messages['event']; ?></a>  
 
                     </li>
                     <li class="dropdown" style="width: 25%">
