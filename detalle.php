@@ -14,6 +14,22 @@
         }
         
     }
+
+    if( isset( $_POST['country'] ) )
+    {
+        
+        $_SESSION['country'] = $_SESSION['moneda']; 
+    }
+    else
+    {
+        if(!isset($_SESSION['lan']))
+        {        
+            $_SESSION['country'] = $monedas['503'];
+        }else{
+            $_SESSION['country'] ;
+        }
+        
+    }
     require("lan/".$_SESSION['lan'].'.php');
     //session_destroy();
 ?>
@@ -98,8 +114,8 @@ $totalRows_rselarreglo = mysql_num_rows($rselarreglo);
     <div class="row">
         <div class="col-sm-12 col-md-12 col-lg-3">
           <ul class="list-group">
-            <li class="list-group-item d-flex justify-content-between align-items-center active">
-                Categorias
+            <li class="list-group-item d-flex justify-content-between align-items-center" style="background: #D82787;color: white;font-size: 14px;">
+               <?php echo $messages['categorias']; ?>
             </li>
             <?php do { ?>
               <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -115,9 +131,9 @@ $totalRows_rselarreglo = mysql_num_rows($rselarreglo);
         <div class="col-sm-12 col-md-12 col-lg-9">
 
           <div class="list-group">
-            <a href="#" class="list-group-item list-group-item-action active">
+            <a href="categoria.php?c=<?php echo $row_rselarreglo['categoria']; ?>" class="list-group-item list-group-item-action" style="background: #D82787;color: white;font-size: 14px;">
                 
-                <span class="badge-pill"><h3><a href="categoria.php?c=<?php echo $row_rselarreglo['categoria']; ?>"><i class="fa fa-arrow-circle-left"></i></a> <?php echo $row_rselarreglo['categoria2']; ?> / <?php echo $row_rselarreglo['nombre_es']; ?> </h3></span>
+                <span class="badge-pill"><h4><i class="fa fa-arrow-circle-left"></i> <?php echo $row_rselarreglo['categoria2']; ?> / <?php echo $row_rselarreglo['nombre_es']; ?> </h4></span>
             </a>
           </div>
 
@@ -135,7 +151,14 @@ $totalRows_rselarreglo = mysql_num_rows($rselarreglo);
                 <table class="table">                    
                     <tr>
                         <td><h4><?php echo $messages['precio']; ?></h4></td>
-                        <td><h2>$<?php echo $row_rselarreglo['numerico1'];?></h2><?php echo $messages['card']; ?></td>
+                        <td><h2><?php 
+                                                  echo $_SESSION['country'];
+                                                  if($_SESSION['country'] == '$'){                       
+                                                      echo number_format($row_rselarreglo['numerico1'],2);  
+                                                  }else{
+                                                      echo number_format($row_rselarreglo['numerico2'],2);     
+                                                  }
+                                                ?> </h2><?php echo $messages['card']; ?></td>
                     </tr>
                     <tr>
                         <td colspan="2">

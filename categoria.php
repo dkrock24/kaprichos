@@ -14,6 +14,23 @@
         }
         
     }
+
+    if( isset( $_POST['country'] ) )
+    {
+        
+        $_SESSION['country'] = $_SESSION['moneda']; 
+    }
+    else
+    {
+        if(!isset($_SESSION['lan']))
+        {        
+            $_SESSION['country'] = $monedas['503'];
+        }else{
+            $_SESSION['country'] ;
+        }
+        
+    }
+
     require("lan/".$_SESSION['lan'].'.php');
     //session_destroy();
 ?>
@@ -109,6 +126,7 @@ if (!empty($_SERVER['QUERY_STRING'])) {
   }
 }
 $queryString_rsarreglos1 = sprintf("&totalRows_rsarreglos1=%d%s", $totalRows_rsarreglos1, $queryString_rsarreglos1);
+
 
 // Show Dynamic Thumbnail
 $objDynamicThumb1 = new tNG_DynamicThumbnail("", "KT_thumbnail1");
@@ -233,7 +251,7 @@ $objDynamicThumb2->setWatermark(false);
 
                     <div class="col-md-3 product-left"  style=""> 
                         <div class="p-one simpleCart_shelfItem jwe" style="width: 100%;margin: 0 auto;" >                         
-                                <a href="single.html">
+                                <a href="detalle.php?id=<?php echo $row_rsarreglos1['id_producto']; ?>">
                                     <img src="<?php if($width >= $height) { ?><?php echo str_replace($buscar, $reempla, $objDynamicThumb2->Execute()); ?><?php } if($width < $height) { ?><?php echo str_replace($buscar, $reempla, $objDynamicThumb1->Execute()); ?><?php } ?>" alt="" class="img-responsive" style="height: 200px;" />
                                     <div class="mask">                                        
                                         <a href="uploaded/mod_productos/<?php echo $row_rsarreglos1['imagen'];?>" rel="lytebox[galera]" class="btn btn-default btn-sm detalleModal" href="#" rel="lytebox[galera]" title="<?php echo $row_rsarreglos1['nombre_es']; ?>" precio="<?php echo number_format($row_rsarreglos1['numerico1'],2); ?>"><i class="fa fa-search"></i> <?php echo $messages['QuickView']; ?></a>
@@ -251,7 +269,16 @@ $objDynamicThumb2->setWatermark(false);
                                     <div class="row" style="">
                                         <div class="col-sm-12 col-md-4">
                                             <h3>
-                                              <span class="precio">$<?php echo number_format($row_rsarreglos1['numerico1'],2); ?> </span>                                                       
+                                              <span class="precio">
+                                                <?php 
+                                                  echo $_SESSION['country'];
+                                                  if($_SESSION['country'] == '$'){                       
+                                                      echo number_format($row_rsarreglos1['numerico1'],2);  
+                                                  }else{
+                                                      echo number_format($row_rsarreglos1['numerico2'],2);     
+                                                  }
+                                                ?>                                                  
+                                              </span>                                                       
                                             </h3>
                                             
                                         </div>

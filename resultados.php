@@ -122,7 +122,7 @@ $objDynamicThumb2->setWatermark(false);
     <div class="row">
         <div class="col-sm-12 col-md-12 col-lg-3">
           <ul class="list-group">
-            <li class="list-group-item d-flex justify-content-between align-items-center active">
+            <li class="list-group-item d-flex justify-content-between align-items-center" style="background: #D82787;color: white;font-size: 14px;">
                 <?php echo $messages['categorias']; ?>
             </li>
             <?php do { ?>
@@ -138,8 +138,8 @@ $objDynamicThumb2->setWatermark(false);
         </div>
         <div class="col-sm-12 col-md-12 col-lg-9">
           <div class="list-group">
-            <a href="#" class="list-group-item list-group-item-action active">
-              <span class="badge-pill"><h3><?php echo $KTColParam1_rsarreglos1; ?></h3></span>
+            <a href="#" class="list-group-item list-group-item-action" style="background: #D82787;color:white; font-size: 14px;">
+              <span class="badge-pill"><h4><?php echo $KTColParam1_rsarreglos1; ?></h4></span>
             </a>
           </div>
 
@@ -158,10 +158,10 @@ $objDynamicThumb2->setWatermark(false);
     ?>                  
                     <div class="col-md-3 product-left"  style=""> 
                         <div class="p-one simpleCart_shelfItem jwe" style="width: 100%;margin: 0 auto;" >                         
-                                <a href="single.html">
+                                <a href="#">
                                     <img src="<?php if($width >= $height) { ?><?php echo str_replace($buscar, $reempla, $objDynamicThumb2->Execute()); ?><?php } if($width < $height) { ?><?php echo str_replace($buscar, $reempla, $objDynamicThumb1->Execute()); ?><?php } ?>" alt="" class="img-responsive" style="height: 200px;" />
                                     <div class="mask">
-                                        <span><?php echo $messages['QuickView']; ?></span>
+                                        <a href="uploaded/mod_productos/<?php echo $row_rsarreglos1['imagen'];?>" rel="lytebox[galera]" class="btn btn-default btn-sm detalleModal" href="#" rel="lytebox[galera]" title="<?php echo $row_rsarreglos1['nombre_es']; ?>" precio="<?php echo number_format($row_rsarreglos1['numerico1'],2); ?>"><i class="fa fa-search"></i> <?php echo $messages['QuickView']; ?></a>
                                     </div>
                                 </a>
                             <div class="product-left-cart">
@@ -170,17 +170,26 @@ $objDynamicThumb2->setWatermark(false);
                                         <div class="col-sm-12 col-md-12 col-lg-12">
                                             <a href="arreglos-ver.php?id=<?php echo $row_rsarreglos1['id_producto']; ?>"><?php echo $row_rsarreglos1['nombre_es']; ?>
                                         </div>
-                                        <div class="col-sm-12 col-md-12 col-lg-12">
-                                            <span class="precio">$<?php echo number_format($row_rsarreglos1['numerico1'],2); ?> </span>                                                       
-                                        </div>
                                     </div>   
 
-                                    <div class="row">
-                                        <div class="col-sm-12 col-md-6">
-                                            <a data-toggle="modal" data-target="#detalle_producto" id="uploaded/mod_productos/<?php echo $row_rsarreglos1['imagen'];?>" class="btn btn-danger btn-sm detalleModal" href="#" rel="lytebox[galera]" title="<?php echo $row_rsarreglos1['nombre_es']; ?>" precio="<?php echo number_format($row_rsarreglos1['numerico1'],2); ?>"><i class="fa fa-search"></i> <?php echo $messages['cVer']; ?></a>
+                                    <div class="row" style="">
+                                        <div class="col-sm-12 col-md-4">
+                                            <h3>
+                                              <span class="precio">
+                                                <?php 
+                                                  echo $_SESSION['country'];
+                                                  if($_SESSION['country'] == '$'){                       
+                                                      echo number_format($row_rsarreglos1['numerico1'],2);  
+                                                  }else{
+                                                      echo number_format($row_rsarreglos1['numerico2'],2);     
+                                                  }
+                                                ?>                                                  
+                                              </span>                                                       
+                                            </h3>
+                                            
                                         </div>
-                                        <div class="col-sm-12 col-md-6">
-                                            <a class="btn btn-info btn-sm" href="detalle.php?id=<?php echo $row_rsarreglos1['id_producto']; ?>"><i class="fa fa-cart-arrow-down"></i> <?php echo $messages['cAdd']; ?></a>  
+                                        <div class="col-sm-12 col-md-8">
+                                            <a style="width: 100%;" class="btn btn-info btn-sm" href="detalle.php?id=<?php echo $row_rsarreglos1['id_producto']; ?>"><i class="fa fa-cart-arrow-down"></i> <?php echo $messages['cAdd']; ?></a>  
                                         </div>
                                     </div>                                     
                                 </div>

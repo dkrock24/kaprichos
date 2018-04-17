@@ -129,7 +129,17 @@
                         </a>
                         
                         <div class="product-left-cart">
-                            <h3 class=" item_price" style="text-align: center;"><?php echo $destacados['numerico1']; ?></h3>
+                            <h3 class=" item_price" style="text-align: center;">
+                                <?php 
+                                    echo $_SESSION['country'];
+                                    if($_SESSION['country'] == '$'){
+                                        echo $destacados['numerico1'];  
+                                    }else{
+                                        echo $destacados['numerico2'];      
+                                    }
+                                                                      
+                                ?>
+                            </h3>
                             <div class="">
                                 <a href="detalle.php?id=<?php echo $destacados['id_producto']; ?>" class="btn btn-default" style="width: 100%;">Agregar</a>
                             </div>

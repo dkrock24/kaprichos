@@ -28,6 +28,20 @@ mysql_select_db($database_conne10, $conne10);
 $estilos_query = "SELECT * FROM tbl_gale AS gale LEFT JOIN tbl_gale_tipo AS tipo ON tipo.id_tipo=gale.tipo WHERE tipo.nombre_tipo = 'estilos'";
 $rsEstilos = mysql_query($estilos_query, $conne10) or die(mysql_error());
 
+//Moneda
+
+    $sqlMoneda = "SELECT * FROM tbl_moneda where estado =1";
+    $rsMoneda = mysql_query($sqlMoneda)or die(mysql_error());
+    
+    $monedas = array();
+    while($dataMoneda = mysql_fetch_array($rsMoneda)){
+        $monedas[$dataMoneda['codigo']] = $dataMoneda['moneda'];
+    }   
+
+    $_SESSION['moneda'] = $monedas;
+
+
+
 
 require_once('includes/tng/tNG.inc.php');
 if (!function_exists("GetSQLValueString")) {
@@ -75,6 +89,22 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
         }
         
     }
+
+    if( isset( $_POST['country'] ) )
+    {
+        $_SESSION['country'] = $monedas[$_POST['country']]; 
+    }
+    else
+    {
+        if(!isset($_SESSION['lan']))
+        {        
+            $_SESSION['country'] = $monedas['503'];
+        }else{
+            $_SESSION['country'] ;
+        }
+        
+    }
+
     require("lan/".$_SESSION['lan'].'.php');
 
 ?>
@@ -206,6 +236,22 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
                            <button type="submit" class="demo btn btn-default">English</button></li>              
                         </form>
                     
+
+                </ul>
+        </li>
+        <li class="dropdown head-dpdn">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-world" aria-hidden="true"></i> <?php echo $messages['country']; ?><span class="caret"></span></a>
+                <ul class="dropdown-menu abc2">
+                    <li>
+                        
+                        <form action="" method="post" name="503" >
+                            <input type="hidden" name="country"  class="lenguage" value="503">
+                            <button type="submit" class="demo btn btn-default"><img src="assets/images/503.jpg" width="20px;">El Salvador</button>           
+                        </form>
+                        <form action="" method="post" name="502" >
+                            <input type="hidden" name="country"  class="lenguage" value="502">
+                           <button type="submit" class="demo btn btn-default"><img src="assets/images/502.png" width="20px;">Guatemala</button></li>              
+                        </form>
 
                 </ul>
         </li>

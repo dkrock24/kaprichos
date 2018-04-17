@@ -25,6 +25,7 @@ $messages['paynow'] = 'Pay Now';
 $messages['close'] = 'Close';
 $messages['pagos'] = 'Formas de pago';
 $messages['detalle'] = 'Detail';
+$messages['country'] = 'Country';
 
 // Menu 
 $messages['home'] 	= 'HOME';

@@ -23,6 +23,7 @@ $messages['paynow'] = 'Comprar Ahora';
 $messages['close'] = 'Cerrar';
 $messages['pagos'] = 'Formas de pago';
 $messages['detalle'] = 'Detalle';
+$messages['country'] = 'Pais';
 
 // Menu 
 $messages['home'] 	= 'INICIO';
