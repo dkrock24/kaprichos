@@ -144,32 +144,32 @@ Once the original product is received by the customer service center, your credi
 $messages['fp1'] = '1. Contra entrega';
 $messages['fp2'] = '2. Se aceptan pagos mediante tarjete de crédito o débito: Visa, MasterCard, Discover, American Express, Diners Club, JCB y tarjetas de débito con el logotipo de Visa y MasterCard. Los clientes también podrán pagar por sus compras usando PayPal® y PayPal Pay Later®. Por favor, tome en cuenta que las opciones de pago con PayPal® y PayPal Pay Later® no se encuentran disponibles en todas las monedas. Para realizar un pedido de demostración, diríjase a la siguiente dirección: http://www.acmeonlinebooks.com';
 
-$messages['sp1'] = 'Sección de Preguntas';
-$messages['coberturaServicio'] = '¿Cuál es la cobertura del servicio?';
-$messages['coberturaServicioR'] = 'Los costos de envío son gratis para la ciudad capital. También hacemos entregas a nivel nacional haciendo el pedido con 48 horas de anticipación en caso contrario la Floristería se reserva el derecho de entregarlo al día siguiente (Solo se realizan entregas en las cabeceras departamentales).';
+$messages['sp1'] = 'Questions Section';
+$messages['coberturaServicio'] = 'What is the service coverage?';
+$messages['coberturaServicioR'] = 'Free shipping costs in the capital city. We also make nationwide delivery, placing the order 48 hours in advance, otherwise, Kapricho’s flower shop reserves the right to deliver it the following day ( deliveries are only made to departmental headers).';
 
-$messages['hcerpedido'] = '¿Con cuánto tiempo de anticipación debo hacer mi pedido?';
-$messages['hcerpedidoR'] = 'Para entregas dentro de la ciudad de San Salvador aceptamos ordenes dentro del mismo día, sin embargo se estima prudente ordenarlas con 24 hrs. de anticipación. Para envíos a otros departamentos ordenarlos con 3 días de anticipación para hacer su pedido. En días especiales como 14 de Febrero, 10 de Mayo, 26 de Abril y 2 de Noviembre los pedidos tienen que hacerse con un mínimo de 3 días de anticipación (los costos varían por la temporada).';
+$messages['hcerpedido'] = 'How much time in advance should I place my order?';
+$messages['hcerpedidoR'] = 'To deliver in San Salvador city we take same day orders, however we consider it would be ideal to place them 24 hour in advance. To ship to other departments, please place order 3 days in advance. In special days like February 14th, May 10th, April 26th and November 2nd, the orders must be placed 3 days in advance at a minimum (the costs vary according to the season)';
 
-$messages['datosexitosaentrega'] = '¿Que datos son necesarios para poder hacer exitosa la entrega de mi pedido?';
-$messages['datosexitosaentregaR1'] = 'Nombre completo de la persona a la que va dirigido el arreglo.';
-$messages['datosexitosaentregaR2'] = 'Dirección exacta y puntos de referencia.';
-$messages['datosexitosaentregaR3'] = 'Teléfonos.';
+$messages['datosexitosaentrega'] = 'What information is it necessary to make a successful delivery?';
+$messages['datosexitosaentregaR1'] = 'Full name of the receiver.';
+$messages['datosexitosaentregaR2'] = 'Exact address and reference points.';
+$messages['datosexitosaentregaR3'] = 'Telephone.';
 
-$messages['modificaionPedido'] = '¿Si quiero hacer modificaciones en mi pedido de cuanto tiempo dispongo para hacerlo?.';
-$messages['modificaionPedidoR1'] = 'Para modificaciones de pedidos como cambio de dirección, modificación en el texto de la tarjeta, cambio de fecha, etc. Tengo 8 horas de anticipación para hacerlo.';
+$messages['modificaionPedido'] = 'How much time do I have if I want to modify my order?';
+$messages['modificaionPedidoR1'] = 'To modify orders as change of address, changes in the text of the card, change of date, etc. I have 8 hours in advance to do it.';
 
-$messages['ordenTelefono'] = '¿Puedo ordenar por teléfono y cuál es su horario de atención?.';
-$messages['ordenTelefonoR1'] = 'Puedes efectuar tus pedidos llamándonos al (503) 2223-3515 y (503) 2223-3516 Nuestros horarios de atención son de lunes a viernes de 7:00 a.m. a 6:00 p.m. los días sábados de 8:00 a.m. a 4:00 p.m. En horas no hábiles puede hacer sus pedidos al (503) 71016356.';
+$messages['ordenTelefono'] = 'Can I order through the phone and what are your hours of operation?';
+$messages['ordenTelefonoR1'] = 'Puedes efectuar tus pedidos llamándonos al (503) 2223-351You can place your orders calling us at (503)2223-3515 and (503) 2223-3516. Our schedule is from Monday-Friday from 7:00 a.m to 6:00 p.m. on saturdays from 8:00 a.m to 4:00 p.m. During Non Business hours you can order at (503) 71016356.';
 
-$messages['diasEntregas'] = '¿Qué días hacen entregas?.';
-$messages['diasEntregasR1'] = 'Realizamos entregas todos los días del año. Días festivos como 14 de febrero o día de la madre ordénelos con la suficiente anticipación.';
+$messages['diasEntregas'] = 'What days do you deliver?';
+$messages['diasEntregasR1'] = 'We deliver all day of the year. Holidays such as February 14th or Mother’s day, please place the order with enough time in advance.';
 
-$messages['servicioGarantizado'] = '¿El servicio está garantizado?';
-$messages['servicioGarantizadoR1'] = 'Sí de alguna forma no se encuentra conforme con nuestro servicio al momento de la entrega, por favor contáctanos al teléfono (503) 2223-3515 / (503) 2223-3516 o a nuestro email info@kaprichosfloristeria.com';
+$messages['servicioGarantizado'] = 'Is the service guaranteed?';
+$messages['servicioGarantizadoR1'] = 'If in any way you are not satisfied with the service at the time of delivery, please call us at (503) 2223-3515/ (503)2223-3516 or send an email to info@kaprichosfloristeri.com';
 
-$messages['infoSegura'] = '¿La información que proporcione estará segura?';
-$messages['infoSeguraR1'] = 'Nuestros clientes son muy valiosos para nosotros, nos esforzamos por ofrecer el mejor servicio y seguridad. No compartimos la información de nuestros clientes.';
+$messages['infoSegura'] = 'Will the information that I provide be safe?';
+$messages['infoSeguraR1'] = 'For us our clients are very valuable, we give our best to offer the best service and safety. We do not share our clients information.';
 
 //Servicios
 

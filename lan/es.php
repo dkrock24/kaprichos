@@ -7,6 +7,8 @@ $messages['precio'] 	= 'Precio';
 $messages['card'] 	= 'Con Tarjeta de Crédito';
 $messages['keyword'] 	= 'Palabras clave';
 $messages['descripction'] 	= 'Descripción';
+$messages['buy'] 	= 'Buy';
+$messages['2checkout'] 	= '2Checkout.com, Inc. es un revendedor autorizado de kaprichosfloristeria.com';
 
 //Title
 $messages['title'] 	= 'Inicio-Floristeria Kaprichos';

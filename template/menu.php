@@ -192,6 +192,7 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
               <li><a href="videos.php"><?php echo $messages['videosL']; ?></a></li> 
             </ul> 
           </li> 
+          <!--
           <li class="dropdown head-dpdn">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-user" aria-hidden="true"></i> 
@@ -221,7 +222,7 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
                 }
                 ?>
             </ul> 
-        </li> 
+        </li> -->
         <li class="dropdown head-dpdn">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-language" aria-hidden="true"></i> <?php echo $messages['language']; ?><span class="caret"></span></a>
                 <ul class="dropdown-menu abc2">

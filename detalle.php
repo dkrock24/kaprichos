@@ -144,10 +144,14 @@ $totalRows_rselarreglo = mysql_num_rows($rselarreglo);
           </div>  
 
         <div class="row">
+          <?php
+              if($row_rselarreglo){
+              ?>
             <div class="col-sm-12 col-md-6 col-lg-6">
                 <img src="uploaded/mod_productos/<?php echo $row_rselarreglo['imagen'];?>" width="90%">
             </div>
             <div class="col-sm-12 col-md-6 col-lg-6">
+              
                 <table class="table">                    
                     <tr>
                         <td><h4><?php echo $messages['precio']; ?></h4></td>
@@ -236,7 +240,18 @@ $totalRows_rselarreglo = mysql_num_rows($rselarreglo);
                     </tr>
                     </form> 
                 </table>
+
             </div>
+            <?php
+              }else{
+                ?>
+                <div class="col-sm-12 col-md-6 col-lg-6">
+                  <h4><i class="fa fa-info-circle"></i> Producto No Encontrado</h4>
+                </div>
+                <?php
+                
+              }
+              ?>
         </div>        
         </div>
     </div>
