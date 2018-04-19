@@ -283,7 +283,7 @@ $objDynamicThumb2->setWatermark(false);
                                             
                                         </div>
                                         <div class="col-sm-12 col-md-8">
-                                            <a style="width: 100%;" class="btn btn-info btn-sm" href="detalle.php?id=<?php echo $row_rsarreglos1['id_producto']; ?>"><i class="fa fa-cart-arrow-down"></i> <?php echo $messages['cAdd']; ?></a>  
+                                            <a style="width: 100%; background: #dc9ee8; border-color: grey;" class="btn btn-info btn-sm" href="detalle.php?id=<?php echo $row_rsarreglos1['id_producto']; ?>"><i class="fa fa-cart-arrow-down"></i> <?php echo $messages['cAdd']; ?></a>  
                                         </div>
                                     </div>                                     
                                 </div>
