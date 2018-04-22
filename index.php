@@ -30,7 +30,7 @@
                                 <img src="assets/images/<?php echo $slider['url']; ?>" alt="" class="img-responsive" />
                                 <div class="carousel-caption kb_caption kb_caption_right" style="float: left; display: inline-block; position: absolute;left:8%">
                                     <h3 data-animation="animated flipInX" class="abc"><?php echo $slider['texto1']; ?></h3>  
-                                    <h4 data-animation="animated flipInX" class="abc" style="color: black;"><?php echo $slider['texto2']; ?></h4>                              
+                                    <h4 data-animation="animated flipInX" class="abc" style="color: black; background: white; padding: 5px; box-shadow: 0px 2px 1px white;"><?php echo $slider['texto2']; ?></h4>                              
                                 </div>
                             </div>
                             <?php

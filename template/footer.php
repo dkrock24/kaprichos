@@ -4,7 +4,7 @@
       <div class="footer-info w3-agileits-info">
         <div class="col-md-4 address-left agileinfo">
           <div class="footer-logo header-logo">
-            <h2><a href="index.html" style="color:rgb(201, 78, 99);"><img src="images/flores-para-el-salvador.png"/></a></h2>
+            <h2><a href="index.html" style="color:rgb(201, 78, 99);"><img src="images/flores-para-el-salvador.png" width="80%" /></a></h2>
             
           </div>
           <ul>

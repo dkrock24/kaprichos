@@ -1,6 +1,5 @@
 <?php    
     session_start();
-    header('location=ok');
     if(isset( $_GET['lan'] ))
     {
         $_SESSION['lan'] = $_GET['lan'];
@@ -163,21 +162,39 @@ $objDynamicThumb2->setWatermark(false);
 <div class="container">
     <div class="row">
         <div class="col-sm-12 col-md-12 col-lg-3">
-          <ul class="list-group">
-            <li class="list-group-item d-flex justify-content-between align-items-center" style="background: #D82787;color: white;font-size: 14px;">
-                <?php echo $messages['categorias']; ?>
-            </li>
-            <?php do { ?>
-              <li class="list-group-item d-flex justify-content-between align-items-center">
-                <a href="categoria.php?c=<?php echo $row_rscategoriasd['id_categoria']; ?>">
-                  <?php echo $row_rscategoriasd['nombre_es']; ?>                    
-                </a>
-                <span class="badge badge-default badge-pill"><?php echo $row_rscategoriasd['totalP']; ?></span>
-              </li>
-            <?php } while ($row_rscategoriasd = mysql_fetch_assoc($rscategoriasd)); ?>    
-          </ul>
 
+            <nav class="navbar navbar-default " style="border: 0px solid; ">
+                <div class="container-fluid ">
+
+                    <div class="navbar-header">
+
+                        
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar2">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span> 
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse" id="myNavbar2" style=""> 
+            
+                        <ul class="list-group">
+                            <li class="list-group-item d-flex justify-content-between align-items-center" style="background: #D82787;color: white;font-size: 14px;">
+                                <?php echo $messages['categorias']; ?>
+                            </li>
+                            <?php do { ?>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <a href="categoria.php?c=<?php echo $row_rscategoriasd['id_categoria']; ?>">
+                                    <?php echo $row_rscategoriasd['nombre_es']; ?>                    
+                                </a>
+                                <span class="badge badge-default badge-pill"><?php echo $row_rscategoriasd['totalP']; ?></span>
+                            </li>
+                            <?php } while ($row_rscategoriasd = mysql_fetch_assoc($rscategoriasd)); ?>
+                        </ul>
+                    </div>
+                </div>
+            </nav>         
         </div>
+
         <div class="col-sm-12 col-md-12 col-lg-9">
           <div class="list-group">
             <a href="#" class="list-group-item list-group-item-action" style="background: #D82787;color:white; font-size: 14px;">
@@ -267,22 +284,29 @@ $objDynamicThumb2->setWatermark(false);
                                     </div>   
 
                                     <div class="row" style="">
-                                        <div class="col-sm-12 col-md-4">
+                                        <div class="col-sm-12 col-md-6">
                                             <h3>
-                                              <span class="precio">
+                                              <span class="precio" style="font-size: 16px;">
                                                 <?php 
-                                                  echo $_SESSION['country'];
-                                                  if($_SESSION['country'] == '$'){                       
+                                                  //echo $_SESSION['country'];
+                                                  if($_SESSION['country'] == '$'){  
+                                                      echo "$ ";
                                                       echo number_format($row_rsarreglos1['numerico1'],2);  
                                                   }else{
+                                                    if($row_rsarreglos1['numerico2']!=null){
+                                                      echo "Q ";
                                                       echo number_format($row_rsarreglos1['numerico2'],2);     
+                                                    }else{
+                                                      echo "$ ";
+                                                      echo number_format($row_rsarreglos1['numerico1'],2);
+                                                    }
                                                   }
                                                 ?>                                                  
                                               </span>                                                       
                                             </h3>
                                             
                                         </div>
-                                        <div class="col-sm-12 col-md-8">
+                                        <div class="col-sm-12 col-md-6">
                                             <a style="width: 100%; background: #dc9ee8; border-color: grey;" class="btn btn-info btn-sm" href="detalle.php?id=<?php echo $row_rsarreglos1['id_producto']; ?>"><i class="fa fa-cart-arrow-down"></i> <?php echo $messages['cAdd']; ?></a>  
                                         </div>
                                     </div>                                     

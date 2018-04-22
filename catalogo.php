@@ -1,6 +1,5 @@
 <?php    
     session_start();
-    header('location=ok');
     //session_destroy();
 ?>
 <?php
@@ -231,7 +230,7 @@ $objDynamicThumb2->setWatermark(false);
                                             <a class="btn btn-defaul btn-sm" href="uploaded/mod_productos/<?php echo $row_rsarreglos1['imagen'];?>" rel="lytebox[galera]" title="<?php echo $row_rsarreglos1['nombre_es']; ?>"><i class="fa fa-search"></i> Ver</a>
                                         </div>
                                         <div class="col-sm-12 col-md-6">                                            
-                                            <a class="btn btn-info btn-sm" href="arreglos-ver.php?id=<?php echo $row_rsarreglos1['id_producto']; ?>"><i class="fa fa-cart-arrow-down"></i> Agregar</a>  
+                                            <a class="btn btn-info btn-sm" href="arreglos-ver.php?id=<?php echo $row_rsarreglos1['id_producto']; ?>" style="background: #dc9ee8;"><i class="fa fa-cart-arrow-down"></i> Agregar</a>  
                                         </div>
                                     </div>                                     
                                 </div>
@@ -262,7 +261,7 @@ $objDynamicThumb2->setWatermark(false);
 
                                     <div class="row" style="">
                                         <div class="col-sm-12 col-md-12">
-                                            <a style="width: 100%;" class="btn btn-info btn-sm" href="categoria.php?c=<?php echo $row_rsarreglos1['id_categoria']; ?>"><i class="fa fa-check-circle"></i> <?php echo $messages['detalle']; ?></a>  
+                                            <a style="width: 100%; background: #dc9ee8;border-color: grey;" class="btn btn-info btn-sm" href="categoria.php?c=<?php echo $row_rsarreglos1['id_categoria']; ?>"><i class="fa fa-check-circle"></i> <?php echo $messages['detalle']; ?></a>  
                                         </div>
                                     </div>                                     
                                 </div>

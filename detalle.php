@@ -1,6 +1,5 @@
 <?php    
     session_start();
-    header('location=ok');
     if(isset( $_GET['lan'] ))
     {
         $_SESSION['lan'] = $_GET['lan'];
@@ -113,19 +112,36 @@ $totalRows_rselarreglo = mysql_num_rows($rselarreglo);
 <div class="container">
     <div class="row">
         <div class="col-sm-12 col-md-12 col-lg-3">
-          <ul class="list-group">
-            <li class="list-group-item d-flex justify-content-between align-items-center" style="background: #D82787;color: white;font-size: 14px;">
-               <?php echo $messages['categorias']; ?>
-            </li>
-            <?php do { ?>
-              <li class="list-group-item d-flex justify-content-between align-items-center">
-                <a href="categoria.php?c=<?php echo $row_rscategoriasd['id_categoria']; ?>">
-                  <?php echo $row_rscategoriasd['nombre_es']; ?>                    
-                </a>
-                <span class="badge badge-default badge-pill"><?php echo $row_rscategoriasd['totalP']; ?></span>
-              </li>
-            <?php } while ($row_rscategoriasd = mysql_fetch_assoc($rscategoriasd)); ?>    
-          </ul>
+          <nav class="navbar navbar-default " style="border: 0px solid; ">
+                <div class="container-fluid ">
+
+                    <div class="navbar-header">
+
+                        
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar2">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span> 
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse" id="myNavbar2" style=""> 
+            
+                        <ul class="list-group">
+                            <li class="list-group-item d-flex justify-content-between align-items-center" style="background: #D82787;color: white;font-size: 14px;">
+                                <?php echo $messages['categorias']; ?>
+                            </li>
+                            <?php do { ?>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <a href="categoria.php?c=<?php echo $row_rscategoriasd['id_categoria']; ?>">
+                                    <?php echo $row_rscategoriasd['nombre_es']; ?>                    
+                                </a>
+                                <span class="badge badge-default badge-pill"><?php echo $row_rscategoriasd['totalP']; ?></span>
+                            </li>
+                            <?php } while ($row_rscategoriasd = mysql_fetch_assoc($rscategoriasd)); ?>
+                        </ul>
+                    </div>
+                </div>
+            </nav>   
 
         </div>
         <div class="col-sm-12 col-md-12 col-lg-9">
@@ -156,11 +172,18 @@ $totalRows_rselarreglo = mysql_num_rows($rselarreglo);
                     <tr>
                         <td><h4><?php echo $messages['precio']; ?></h4></td>
                         <td><h2><?php 
-                                                  echo $_SESSION['country'];
-                                                  if($_SESSION['country'] == '$'){                       
+                                                  //echo $_SESSION['country'];
+                                                  if($_SESSION['country'] == '$'){  
+                                                      echo "$ ";
                                                       echo number_format($row_rselarreglo['numerico1'],2);  
                                                   }else{
+                                                    if($row_rselarreglo['numerico2']!=null){
+                                                      echo "Q ";
                                                       echo number_format($row_rselarreglo['numerico2'],2);     
+                                                    }else{
+                                                      echo "$ ";
+                                                      echo number_format($row_rselarreglo['numerico1'],2);
+                                                    }
                                                   }
                                                 ?> </h2><?php echo $messages['card']; ?></td>
                     </tr>

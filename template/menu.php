@@ -96,7 +96,7 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
     }
     else
     {
-        if(!isset($_SESSION['lan']))
+        if(!isset($_SESSION['country']))
         {        
             $_SESSION['country'] = $monedas['503'];
         }else{
@@ -320,7 +320,7 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
 
         <div class="row">             
 
-            <nav class="navbar navbar-default " style="background: #D82787; border: 0px solid;">
+            <nav class="navbar navbar-default " style="background: #D82787; border: 0px solid; z-index: 100;">
                 <div class="container-fluid ">
 
                     <div class="navbar-header">
@@ -332,8 +332,8 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
       
     </div>
 
-            <div class="collapse navbar-collapse" id="myNavbar">              
-                <ul class="nav navbar-nav" style="width: 100%;color: white; background: none;">
+            <div class="collapse navbar-collapse" id="myNavbar" style="z-index: 100;">              
+                <ul class="nav navbar-nav" style="width: 100%;color: white; background: none; z-index: 100;">
                     
                     <li class="" style="width: 25%;">
                         <a href="index.php" style="color: white"> <?php echo $messages['home']; ?></a>  
@@ -345,13 +345,17 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
                                 <a href="categoria.php?c=10" style="color: white"> <?php echo $messages['event']; ?></a>  
 
                     </li>
-                    <li class="dropdown" style="width: 25%">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color: white"><?php echo $messages['buy']; ?>
+                    <li class="dropdown" style="width: 25%; ">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color: white; "><?php echo $messages['buy']; ?>
                         <span class="caret"></span></a>
-                        <ul class="dropdown-menu" > 
+                        <ul class="dropdown-menu" style="background: #D82787; position: absolute;" > 
+                            
                              <?php do { ?>
-                            <li style="width: 100%;"><a href="categoria.php?c=<?php echo $row_rscategorias['id_categoria']; ?>"><?php echo $row_rscategorias['nombre_es']; ?></a></li>
+
+                            <li style="width: 100%; display: inline-block;">
+                                <a href="categoria.php?c=<?php echo $row_rscategorias['id_categoria']; ?>" style="color: white;"><?php echo $row_rscategorias['nombre_es']; ?></a></li>
                             <?php } while ($row_rscategorias = mysql_fetch_assoc($rscategorias)); ?>                      
+                           
                             </ul> <!-- .cd-dropdown-content -->
                     </li>
                     <li style="width: 25%;">
