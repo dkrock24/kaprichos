@@ -20,7 +20,7 @@ $hostname_conne10 = "localhost";
 $database_conne10 = "db_global_lapizzeria2";
 $database_conne11 = "kapricho_wbcms";
 $username_conne10 = "root";
-$password_conne10 = "";
+$password_conne10 = "24101989";
 
 //global $conne10;
 $conne10 = mysql_pconnect($hostname_conne10, $username_conne10, $password_conne10) or trigger_error(mysql_error(),E_USER_ERROR); 

@@ -6,6 +6,9 @@ require_once('includes/wdg/WDG.php');
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:wdg="http://ns.adobe.com/addt">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<script src="assets/js/jquery-2.2.3.min.js"></script> 
+
 <title>Kapricho's Floristería</title>
 <style type="text/css">
 <!--
@@ -104,9 +107,15 @@ h1 {
     <tr>
       <td>&nbsp;</td>
       <td>
+            <input type='hidden' name='mode' value='2CO' >
             <input type='hidden' name='sid' value='901379331'>
-            <input type='hidden' name='quantity' value='1'>
-            <input type='hidden' name='product_id' value='2'>
+            <!--<input type='hidden' name='quantity' value='1'>-->
+            <input type='hidden' name='quantity' value='1' >
+            <!--<input type='hidden' name='product_id' value='2'>-->
+            <input type='hidden' name='li_0_type' value='product' >
+            <input type='hidden' name='li_0_name' value='IMM01' />
+            <input type='hidden' name='li_0_product_id' value='Example Product ID' >
+            <input type='hidden' name='li_0_price' id="li_0_price" value='50' />
             <?php
               if($_SESSION['country'] == '$')
               {                  
@@ -127,6 +136,19 @@ h1 {
     </tr>
   </table>
 </form>
+
+<script type="text/javascript">
+
+  $(document).ready(function(){
+      var valor = $('#li_0_price').val();
+      var producto = $('#li_0_name').val();
+
+      $("#form-comprar").on("submit", function(){
+          $('#li_0_price').val(valor);
+          $('#li_0_name').val(producto);
+      })
+  });
+</script>
 <script type="text/javascript">
 <!--
 var sprytextfield1 = new Spry.Widget.ValidationTextField("sprytextfield1", "none", {hint:"Nombre del destinatario"});
