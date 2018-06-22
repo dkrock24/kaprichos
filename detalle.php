@@ -203,7 +203,7 @@ $totalRows_rselarreglo = mysql_num_rows($rselarreglo);
                     </tr>
                     <tr> 
                         <td colspan="2">
-                            <a class="btn btn-success" href="formcomprar.php?product_id=<?php echo $row_rselarreglo['customnum']; ?>&productname=<?php echo $row_rselarreglo['nombre_es']; ?>" rel="lyteframe" rev="width: 500px; height: 500px; scrolling: yes;" style="width: 100%;"><i class="fa fa-money"> </i> <?php echo $messages['buy']; ?></a>
+                            <a class="btn btn-success" href="formcomprar.php?product_id=<?php echo $row_rselarreglo['customnum']; ?>&productname=<?php echo $row_rselarreglo['nombre_es']; ?>&price=<?php echo $row_rselarreglo['numerico1']; ?>" rel="lyteframe" rev="width: 500px; height: 500px; scrolling: yes;" style="width: 100%;"><i class="fa fa-money"> </i> <?php echo $messages['buy']; ?></a>
                         </td>
                     </tr>
 

@@ -6,6 +6,9 @@ require_once('includes/wdg/WDG.php');
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:wdg="http://ns.adobe.com/addt">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<script src="assets/js/jquery-2.2.3.min.js"></script> 
+
 <title>Kapricho's Floristería</title>
 <style type="text/css">
 <!--
@@ -54,42 +57,49 @@ h1 {
 <script src="SpryAssets/SpryValidationTextarea.js" type="text/javascript"></script>
 <link href="includes/skins/mxkollection3.css" rel="stylesheet" type="text/css" media="all" />
 <link href="SpryAssets/SpryValidationTextarea.css" rel="stylesheet" type="text/css" />
+<link href="assets/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 </head>
 
 <body>
-<form action="https://www.2checkout.com/checkout/purchase" method="post" name="form-comprar" target="_blank" id="form-comprar">
-  <table width="100%" border="0" cellspacing="0" cellpadding="5">
+<form action="https://sandbox.2checkout.com/checkout/purchase" method="post" name="form-comprar" target="_blank" id="form-comprar">
+
+  <table width="100%" border="0" cellspacing="0" cellpadding="5" class="">
+    <tr>  
+      <td colspan="2">
+        <h1 style="text-align: center"><img src="images/flores-para-el-salvador.png" width="30%" /></h1>
+      </td>
+    </tr>
     <tr>
-      <td colspan="2"><h1>Compra de arreglo <?php echo $_GET['productname']; ?></h1></td>
+      <td colspan="2"><h1 style="text-align: center">Compra de arreglo <?php echo $_GET['productname']; ?></h1></td>
     </tr>
     <tr>
       <td colspan="2"><h5 style="text-align: center; color:red;">Pedido Para El Pais de 
         <?php if($_SESSION['country'] == '$'){ echo "El Salvador"; }else{ echo "Guatemala"; }  ?></h5></td>
     </tr>
     <tr>
-      <td width="140">Para quién va el arreglo</td>
+      <td width="140" style="text-align: right;">Para quién va el arreglo </td>
       <td><span id="sprytextfield1">
-        <input type="text" name="nombre_destinatario" id="nombre_destinatario" />
+        <input type="text" name="nombre_destinatario" id="nombre_destinatario" class="form-control" />
       <span class="textfieldRequiredMsg">Campo requerido.</span></span></td>
     </tr>
     <tr>
-      <td>Quién envía el arreglo</td>
+      <td style="text-align: right;">Quién envía el arreglo</td>
       <td><span id="sprytextfield2">
         <input type="text" name="nombre_remitente" id="nombre_remitente" />
       <span class="textfieldRequiredMsg">Campo requerido.</span></span></td>
     </tr>
     <tr>
-      <td>Fecha de entrega</td>
+      <td style="text-align: right;">Fecha de entrega</td>
       <td><input name="fecha_entrega" id="fecha_entrega" style="width: 100px;" value="" wdg:subtype="Calendar" wdg:mask="<?php echo $KT_screen_date_format; ?>" wdg:mondayfirst="true" wdg:type="widget" wdg:singleclick="true" wdg:restricttomask="yes" /></td>
     </tr>
     <tr>
-      <td>Dirección</td>
+      <td style="text-align: right;">Dirección</td>
       <td><span id="sprytextarea1">
         <textarea name="direccion_entrega" id="direccion_entrega" cols="45" rows="4"></textarea>
       <span class="textareaRequiredMsg">Campo requerido.</span></span></td>
     </tr>
     <tr>
-      <td>Dedicatoria</td>
+      <td style="text-align: right;">Dedicatoria</td>
       <td><span id="sprytextarea2">
       <textarea name="dedicatoria" id="dedicatoria" cols="45" rows="4"></textarea>
       <span class="textareaRequiredMsg">Campo requerido.</span><span class="textareaMaxCharsMsg">Excede los 200 caracteres.</span></span></td>
@@ -97,15 +107,15 @@ h1 {
     <tr>
       <td>&nbsp;</td>
       <td>
-            <input type='hidden' name='sid' value='1461075'>
-            <input type='hidden' name='quantity' value='1'>
-
+            <input type='hidden' name='mode' value='2CO' >
+            <input type='hidden' name='sid' value='901379331'>
+            <!--<input type='hidden' name='quantity' value='1'>-->
+            <input type='hidden' name='quantity' value='1' >
+            <!--<input type='hidden' name='product_id' value='2'>-->
             <input type='hidden' name='li_0_type' value='product' >
-            <input type='hidden' name='li_0_name' value='<?php echo $_GET['productname']; ?>' />
+            <input type='hidden' name='li_0_name' value='IMM01' />
             <input type='hidden' name='li_0_product_id' value='Example Product ID' >
-            <input type='hidden' name='li_0_price' id="li_0_price" value='<?php echo $_GET['price']; ?>' />
-
-            <input type='hidden' name='product_id' value='<?php echo $_GET['product_id']; ?>'>
+            <input type='hidden' name='li_0_price' id="li_0_price" value='50' />
             <?php
               if($_SESSION['country'] == '$')
               {                  
@@ -116,7 +126,7 @@ h1 {
                 ?><input type='hidden' name='currency_code' value='GTQ'><?php
               }
             ?>
-            <input type='hidden' name='lang' value='es_la'>
+            <input type='hidden' name='lang' value='es_la'>            
             <input name='submit' type='submit' value='Comprar' >
       </td>
     </tr>
@@ -139,7 +149,6 @@ h1 {
       })
   });
 </script>
-
 <script type="text/javascript">
 <!--
 var sprytextfield1 = new Spry.Widget.ValidationTextField("sprytextfield1", "none", {hint:"Nombre del destinatario"});
@@ -150,3 +159,5 @@ var sprytextarea2 = new Spry.Widget.ValidationTextarea("sprytextarea2", {hint:"N
 </script>
 </body>
 </html>
+
+
